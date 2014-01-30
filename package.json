@@ -1,0 +1,30 @@
+{
+  "name": "kollavarsham",
+  "version": "0.0.0",
+  "main": "lib/kollavarsham.js",
+  "description": "Convert Gregorian date to Kollavarsham date and vice versa",
+  "homepage": "http://kollavarsham.org",
+  "bugs": "https://github.com/kollavarsham/kollavarsham/issues",
+  "author": {
+    "name": "Floyd Pink",
+    "email": "imbleedingme@googlemail.com",
+    "url": "https://github.com/floydpink"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kollavarsham/kollavarsham"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.7.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-watch": "~0.5.0",
+    "load-grunt-tasks": "~0.2.0",
+    "time-grunt": "~0.2.0",
+    "jshint-stylish": "~0.1.3"
+  }
+}
