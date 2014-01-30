@@ -20,6 +20,9 @@
       "type" : "MIT"
     }
   ],
+  "scripts"         : {
+    "test" : "grunt nodeunit"
+  },
   "devDependencies" : {
     "grunt-contrib-jshint"   : "~0.7.0",
     "grunt-contrib-nodeunit" : "~0.2.0",
