@@ -8,36 +8,36 @@ module.exports = function (grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    nodeunit: {
-      files: ['test/**/*_test.js']
+    nodeunit : {
+      files : ['test/**/*_test.js']
     },
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc',
-        reporter: require('jshint-stylish')
+    jshint   : {
+      options   : {
+        jshintrc : '.jshintrc',
+        reporter : require('jshint-stylish')
       },
-      gruntfile: {
-        src: 'Gruntfile.js'
+      gruntfile : {
+        src : 'Gruntfile.js'
       },
-      lib: {
-        src: ['lib/**/*.js']
+      lib       : {
+        src : ['lib/**/*.js']
       },
-      test: {
-        src: ['test/**/*.js']
+      test      : {
+        src : ['test/**/*.js']
       }
     },
-    watch: {
-      gruntfile: {
-        files: '<%= jshint.gruntfile.src %>',
-        tasks: ['jshint:gruntfile']
+    watch    : {
+      gruntfile : {
+        files : '<%= jshint.gruntfile.src %>',
+        tasks : ['jshint:gruntfile']
       },
-      lib: {
-        files: '<%= jshint.lib.src %>',
-        tasks: ['jshint:lib', 'nodeunit']
+      lib       : {
+        files : '<%= jshint.lib.src %>',
+        tasks : ['jshint:lib', 'nodeunit']
       },
-      test: {
-        files: '<%= jshint.test.src %>',
-        tasks: ['jshint:test', 'nodeunit']
+      test      : {
+        files : '<%= jshint.test.src %>',
+        tasks : ['jshint:test', 'nodeunit']
       }
     }
   });
