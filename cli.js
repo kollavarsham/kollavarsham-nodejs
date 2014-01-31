@@ -30,3 +30,6 @@ if (opts.help) {
   }
 }
 
+kollavarsham.awesome();
+
+kollavarsham.sayHello();
