@@ -21,7 +21,7 @@
     }
   ],
   "scripts"         : {
-    "test" : "grunt nodeunit"
+    "test" : "grunt"
   },
   "devDependencies" : {
     "grunt-contrib-jshint"   : "~0.7.0",
