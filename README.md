@@ -6,6 +6,8 @@ Convert Gregorian date to Kollavarsham date and vice versa
 Install the module with: `npm install kollavarsham`
 
 ## Usage
+
+```
 ./cli.js [options] [arguments]
 options
 -h --help 
@@ -33,6 +35,7 @@ Date
 		DD is the day of the Malayalam month
                 MM 01 for Chingam, 02 for Kanni, 03 for Thulam, 04 for Vrischikam, 05 for Dhanu, 06 for Makaram, 07 for Kumbham, 08 for Meenam, 09 for Medam, 10 for Edavam, 11 for Mithunam, 12 for Karkidakam
 		YYYY is the Malayalam Year (Kollavarshan)
+```
 
 RESOURCES AND DOCUMENTATION
  http://kollavarsham.org
