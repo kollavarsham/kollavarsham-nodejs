@@ -7,8 +7,20 @@ Install the module with: `npm install kollavarsham`
 
 ## Usage
 
+#### As library/module
+
+```javascript
+var kollavarsham = require('kollavarsham');
+kollavarsham.awesome(); // "awesome"
 ```
-./cli.js [options] [arguments]
+
+#### As globally installed node.js CLI app
+
+```plain
+npm install -g kollavarsham
+
+kollavarsham [options] [arguments]
+
 options
 -h --help 
 	Show this text
@@ -39,11 +51,6 @@ Date
 
 RESOURCES AND DOCUMENTATION
  http://kollavarsham.org
-
-```javascript
-var kollavarsham = require('kollavarsham');
-kollavarsham.awesome(); // "awesome"
-```
 
 ## Documentation
 _(Coming soon)_
