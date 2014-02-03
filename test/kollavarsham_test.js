@@ -1,6 +1,6 @@
 'use strict';
 
-var kollavarsham = require('../lib/kollavarsham.js');
+// var kollavarsham = require('../lib/kollavarsham.js');
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -26,11 +26,5 @@ exports.kollavarsham = {
   setUp: function(done) {
     // setup here
     done();
-  },
-  'no args': function(test) {
-    test.expect(1);
-    // tests here
-    test.equal(kollavarsham.awesome(), 'awesome', 'should be awesome.');
-    test.done();
   }
 };

@@ -23,7 +23,7 @@ var mathHelper = require('../lib/math-helper.js');
 */
 
 function floatingPointCompare(n1, n2) {
-  return Math.abs(n1 - n2) < 0.0000000001;
+  return Math.abs(n1 - n2) < mathHelper.epsilon;
 }
 
 exports.kollavarshamHelper = {

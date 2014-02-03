@@ -11,7 +11,7 @@ Install the module with: `npm install kollavarsham`
 
 ```javascript
 var kollavarsham = require('kollavarsham');
-kollavarsham.awesome(); // "awesome"
+kollvarsham.doStuff();
 ```
 
 #### As globally installed node.js CLI app
@@ -49,8 +49,9 @@ Date
 		YYYY is the Malayalam Year (Kollavarshan)
 ```
 
-RESOURCES AND DOCUMENTATION
- http://kollavarsham.org
+Resources and Documentation
+
+http://kollavarsham.org
 
 ## Documentation
 _(Coming soon)_
