@@ -47,5 +47,31 @@ exports.calendar = {
     dateFrom0AD.setFullYear(0);
     test.equal(cal.gregorianDateToJulianDay(dateFrom0AD), 1721057.5);
     test.done();
+  },
+  'julianInEngland' : function(test){
+    test.expect(7);
+    test.equal(cal.julianInEngland(2299158.5), false);
+    test.equal(cal.julianInEngland(2299159.5), false);
+    test.equal(cal.julianInEngland(2299160.5), true);
+    test.equal(cal.julianInEngland(2299161.5), true);
+    test.equal(cal.julianInEngland(2361220.5), true);
+    test.equal(cal.julianInEngland(2361221.5), false);
+    test.equal(cal.julianInEngland(2361222.5), false);
+    test.done();
+  },
+  'julianInEnglandFromGregorian' : function(test){
+    test.expect(11);
+    test.equal(cal.julianInEngland(cal.gregorianDateToJulianDay(new Date(200, cal.months.JANUARY, 31))), false);
+    test.equal(cal.julianInEngland(cal.gregorianDateToJulianDay(new Date(1582, cal.months.OCTOBER, 12))), false);
+    test.equal(cal.julianInEngland(cal.gregorianDateToJulianDay(new Date(1582, cal.months.OCTOBER, 13))), false);
+    test.equal(cal.julianInEngland(cal.gregorianDateToJulianDay(new Date(1582, cal.months.OCTOBER, 14))), false);
+    test.equal(cal.julianInEngland(cal.gregorianDateToJulianDay(new Date(1582, cal.months.OCTOBER, 15))), true);
+    test.equal(cal.julianInEngland(cal.gregorianDateToJulianDay(new Date(1582, cal.months.OCTOBER, 16))), true);
+    test.equal(cal.julianInEngland(cal.gregorianDateToJulianDay(new Date(1752, cal.months.SEPTEMBER, 11))), true);
+    test.equal(cal.julianInEngland(cal.gregorianDateToJulianDay(new Date(1752, cal.months.SEPTEMBER, 12))), true);
+    test.equal(cal.julianInEngland(cal.gregorianDateToJulianDay(new Date(1752, cal.months.SEPTEMBER, 13))), true);
+    test.equal(cal.julianInEngland(cal.gregorianDateToJulianDay(new Date(1752, cal.months.SEPTEMBER, 14))), false);
+    test.equal(cal.julianInEngland(cal.gregorianDateToJulianDay(new Date(1752, cal.months.SEPTEMBER, 15))), false);
+    test.done();
   }
 };
