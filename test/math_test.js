@@ -47,7 +47,7 @@ exports.math = {
     test.done();
   },
   'truncate'         : function (test) {
-    test.expect(8);
+    test.expect(9);
     test.equal(math.truncate(0.2345), 0);
     test.equal(math.truncate(0.2385), 0);
     test.equal(math.truncate(0.23999), 0);
@@ -56,6 +56,7 @@ exports.math = {
     test.equal(math.truncate('456.999'), 456);
     test.equal(math.truncate('A quick brown fox'), 0);
     test.equal(math.truncate('-123456.350'), -123456);
+    test.equal(math.truncate('-123456'), -123456);
     test.done();
   },
   'floor'            : function (test) {
