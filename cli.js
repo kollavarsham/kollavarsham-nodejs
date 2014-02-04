@@ -13,6 +13,7 @@ var opts = nopt({
   mode    : Number,
   showlongitudes : Boolean,
   showlatitudes : Boolean
+
 }, {
   h : '--help',
   v : '--version',
@@ -32,7 +33,6 @@ if (opts.help) {
 } else if (opts.version) {
   return console.log(pkg.version);
 } else if (opts.showlatitudes){
-
   helper.showLatitudes();
 } else if (opts.showlongitudes){
   helper.showLongitudes();
@@ -52,7 +52,3 @@ else {
     console.log('Command: %s', cmd);
   }
 }
-
-kollavarsham.awesome();
-
-kollavarsham.sayHello();
