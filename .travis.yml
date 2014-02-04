@@ -5,3 +5,7 @@ node_js:
 install:
   - npm install -g grunt-cli
   - npm install
+notifications:
+  email:
+    - info@kollavarsham.org
+    - imbleedingme@googlemail.com
