@@ -8,10 +8,14 @@ var kollavarsham = require('./lib/kollavarsham');
 
 var opts = nopt({
   help    : Boolean,
-  version : Boolean
+  version : Boolean,
+  bija    : Boolean,
+  mode    : Number,
 }, {
   h : '--help',
-  v : '--version'
+  v : '--version',
+  b : '--bija',
+  m : '--mode'
 });
 
 var args = opts.argv.remain;
@@ -24,7 +28,16 @@ if (opts.help) {
 } else if (opts.version) {
   return console.log(pkg.version);
 } else {
-  console.log('TODO: Implement the rest...');
+    if (opts.mode){
+      console.log("mode is " + opts.mode);
+      kollavarsham.setMode(opts.mode);
+    }
+    if (opts.bija){
+      console.log("bija is " + opts.bija);
+      kollavarsham.setBija(opts.bija);
+    }
+  //console.log('TODO: Implement the rest...');
+
   if (cmd) {
     console.log('Command: %s', cmd);
   }
