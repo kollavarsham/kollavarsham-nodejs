@@ -10,7 +10,7 @@ var opts = nopt({
   help    : Boolean,
   version : Boolean,
   bija    : Boolean,
-  mode    : Number,
+  mode    : Number
 }, {
   h : '--help',
   v : '--version',
@@ -28,21 +28,17 @@ if (opts.help) {
 } else if (opts.version) {
   return console.log(pkg.version);
 } else {
-    if (opts.mode){
-      console.log("mode is " + opts.mode);
-      kollavarsham.setMode(opts.mode);
-    }
-    if (opts.bija){
-      console.log("bija is " + opts.bija);
-      kollavarsham.setBija(opts.bija);
-    }
+  if (opts.mode) {
+    console.log("mode is " + opts.mode);
+    kollavarsham.setMode(opts.mode);
+  }
+  if (opts.bija) {
+    console.log("bija is " + opts.bija);
+    kollavarsham.setBija(opts.bija);
+  }
   //console.log('TODO: Implement the rest...');
 
   if (cmd) {
     console.log('Command: %s', cmd);
   }
 }
-
-kollavarsham.awesome();
-
-kollavarsham.sayHello();
