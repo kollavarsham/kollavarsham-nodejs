@@ -11,11 +11,15 @@ var opts = nopt({
   version : Boolean,
   bija    : Boolean,
   mode    : Number,
+  showlongitudes : Boolean,
+  showlatitudes : Boolean
 }, {
   h : '--help',
   v : '--version',
   b : '--bija',
-  m : '--mode'
+  m : '--mode',
+  s : '--showlatitudes'
+  //s: '--showlongitudes'
 });
 
 var args = opts.argv.remain;
@@ -27,7 +31,13 @@ if (opts.help) {
   helper.helpMessage();
 } else if (opts.version) {
   return console.log(pkg.version);
-} else {
+} else if (opts.showlatitudes){
+
+  helper.showLatitudes();
+} else if (opts.showlongitudes){
+  helper.showLongitudes();
+}
+else {
     if (opts.mode){
       console.log("mode is " + opts.mode);
       kollavarsham.setMode(opts.mode);
