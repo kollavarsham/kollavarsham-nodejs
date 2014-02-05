@@ -12,15 +12,19 @@ var opts = nopt({
   bija           : Boolean,
   mode           : Number,
   showlongitudes : Boolean,
-  showlatitudes  : Boolean
+  showlatitudes  : Boolean,
+  latitude       : Number,
+  longitude      : Number
 
 }, {
   h : '--help',
   v : '--version',
   b : '--bija',
   m : '--mode',
-  s : '--showlatitudes'
-  //s: '--showlongitudes'
+  sla : '--showlatitudes',
+  slo: '--showlongitudes',
+  la : '--latitude',
+  lo : '--longitude'
 });
 
 var args = opts.argv.remain;
@@ -46,7 +50,14 @@ else {
     console.log("bija is " + opts.bija);
     kollavarsham.setBija(opts.bija);
   }
-  //console.log('TODO: Implement the rest...');
+  if (opts.latitude) {
+    console.log("latitude is " + opts.latitude);
+    kollavarsham.setLatitude(opts.latitude);
+  }
+  if (opts.longitude) {
+    console.log("longitude is " + opts.longitude);
+    kollavarsham.setLongitude(opts.longitude);
+  }
 
   if (cmd) {
     console.log('Command: %s', cmd);
