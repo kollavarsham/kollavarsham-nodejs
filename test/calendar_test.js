@@ -75,7 +75,7 @@ exports.calendar = {
     test.done();
   },
   'julianDayToJulianDate'        : function (test) {
-    test.expect();
+    test.expect(8);
     test.equal(cal.julianDayToJulianDate(2299158.5).toString(), '1582 10 02');
     test.equal(cal.julianDayToJulianDate(2299159.5).toString(), '1582 10 03');
     test.equal(cal.julianDayToJulianDate(2299160.5).toString(), '1582 10 04');
@@ -87,7 +87,7 @@ exports.calendar = {
     test.done();
   },
   'julianDayToGregorianDate'     : function (test) {
-    test.expect();
+    test.expect(14);
     test.ok(cmpDates(cal.julianDayToGregorianDate(2299158.5), new Date(1582, cal.months.OCTOBER, 13)));
     test.ok(cmpDates(cal.julianDayToGregorianDate(2299159.5), new Date(1582, cal.months.OCTOBER, 14)));
     test.ok(cmpDates(cal.julianDayToGregorianDate(2299160.5), new Date(1582, cal.months.OCTOBER, 15)));
@@ -107,7 +107,7 @@ exports.calendar = {
     test.done();
   },
   'julianDayToModernDate'        : function (test) {
-    test.expect();
+    test.expect(14);
     test.equal(cal.julianDayToModernDate(2299158.5).toString(), '1582 10 02');
     test.equal(cal.julianDayToModernDate(2299159.5).toString(), '1582 10 03');
     test.equal(cal.julianDayToModernDate(2299160.5).toString(), '1582 10 04');
@@ -123,5 +123,42 @@ exports.calendar = {
     test.ok(cmpDates(cal.julianDayToModernDate(2455985.5), new Date(2012, cal.months.FEBRUARY, 28)));
     test.ok(cmpDates(cal.julianDayToModernDate(2433313.5), new Date(1950, cal.months.FEBRUARY, 1)));
     test.done();
+  },
+  'julianDayToAhargana'          : function (test) {
+    test.expect(14);
+    test.equal(cal.julianDayToAhargana(2299158.5), 1710693);
+    test.equal(cal.julianDayToAhargana(2299159.5), 1710694);
+    test.equal(cal.julianDayToAhargana(2299160.5), 1710695);
+    test.equal(cal.julianDayToAhargana(2299161.5), 1710696);
+    test.equal(cal.julianDayToAhargana(2361220.5), 1772755);
+    test.equal(cal.julianDayToAhargana(2361221.5), 1772756);
+    test.equal(cal.julianDayToAhargana(2361222.5), 1772757);
+    test.equal(cal.julianDayToAhargana(1721457.5), 1132992);
+    test.equal(cal.julianDayToAhargana(2456656.5), 1868191);
+    test.equal(cal.julianDayToAhargana(2456657.5), 1868192);
+    test.equal(cal.julianDayToAhargana(2455957.5), 1867492);
+    test.equal(cal.julianDayToAhargana(2456351.5), 1867886);
+    test.equal(cal.julianDayToAhargana(2455985.5), 1867520);
+    test.equal(cal.julianDayToAhargana(2433313.5), 1844848);
+    test.done();
+  },
+  'aharganaToJulianDay'          : function (test) {
+    test.expect(14);
+    test.equal(cal.aharganaToJulianDay(1710693), 2299158.5);
+    test.equal(cal.aharganaToJulianDay(1710694), 2299159.5);
+    test.equal(cal.aharganaToJulianDay(1710695), 2299160.5);
+    test.equal(cal.aharganaToJulianDay(1710696), 2299161.5);
+    test.equal(cal.aharganaToJulianDay(1772755), 2361220.5);
+    test.equal(cal.aharganaToJulianDay(1772756), 2361221.5);
+    test.equal(cal.aharganaToJulianDay(1772757), 2361222.5);
+    test.equal(cal.aharganaToJulianDay(1132992), 1721457.5);
+    test.equal(cal.aharganaToJulianDay(1868191), 2456656.5);
+    test.equal(cal.aharganaToJulianDay(1868192), 2456657.5);
+    test.equal(cal.aharganaToJulianDay(1867492), 2455957.5);
+    test.equal(cal.aharganaToJulianDay(1867886), 2456351.5);
+    test.equal(cal.aharganaToJulianDay(1867520), 2455985.5);
+    test.equal(cal.aharganaToJulianDay(1844848), 2433313.5);
+    test.done();
+
   }
 };
