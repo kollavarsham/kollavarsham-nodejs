@@ -9,10 +9,10 @@ function cmpDates(date1, date2) {
 }
 
 exports.calendar = {
-  setUp                      : function (done) {
+  setUp                          : function (done) {
     done();
   },
-  'nextDate'                 : function (test) {
+  'nextDate'                     : function (test) {
     test.expect(9);
     test.ok(cmpDates(cal.nextDate(new Date(2013, cal.months.DECEMBER, 31)), new Date(2014, cal.months.JANUARY, 1)));
     test.ok(cmpDates(cal.nextDate(new Date(2012, cal.months.JANUARY, 31)), new Date(2012, cal.months.FEBRUARY, 1)));
@@ -25,7 +25,7 @@ exports.calendar = {
     test.ok(cmpDates(cal.nextDate(new Date(1997, cal.months.DECEMBER, 30)), new Date(1997, cal.months.DECEMBER, 31)));
     test.done();
   },
-  'gregorianDateToJulianDay' : function (test) {
+  'gregorianDateToJulianDay'     : function (test) {
     test.expect(14);
     test.equal(cal.gregorianDateToJulianDay(new Date(2013, cal.months.DECEMBER, 30)), 2456656.5);
     test.equal(cal.gregorianDateToJulianDay(new Date(2013, cal.months.DECEMBER, 31)), 2456657.5);
@@ -48,7 +48,7 @@ exports.calendar = {
     test.equal(cal.gregorianDateToJulianDay(dateFrom0AD), 1721057.5);
     test.done();
   },
-  'julianInEngland' : function(test){
+  'julianInEngland'              : function (test) {
     test.expect(7);
     test.equal(cal.julianInEngland(2299158.5), false);
     test.equal(cal.julianInEngland(2299159.5), false);
@@ -59,7 +59,7 @@ exports.calendar = {
     test.equal(cal.julianInEngland(2361222.5), false);
     test.done();
   },
-  'julianInEnglandFromGregorian' : function(test){
+  'julianInEnglandFromGregorian' : function (test) {
     test.expect(11);
     test.equal(cal.julianInEngland(cal.gregorianDateToJulianDay(new Date(200, cal.months.JANUARY, 31))), false);
     test.equal(cal.julianInEngland(cal.gregorianDateToJulianDay(new Date(1582, cal.months.OCTOBER, 12))), false);
@@ -72,6 +72,18 @@ exports.calendar = {
     test.equal(cal.julianInEngland(cal.gregorianDateToJulianDay(new Date(1752, cal.months.SEPTEMBER, 13))), true);
     test.equal(cal.julianInEngland(cal.gregorianDateToJulianDay(new Date(1752, cal.months.SEPTEMBER, 14))), false);
     test.equal(cal.julianInEngland(cal.gregorianDateToJulianDay(new Date(1752, cal.months.SEPTEMBER, 15))), false);
+    test.done();
+  },
+  'julianDayToJulianDate'        : function (test) {
+    test.expect();
+    test.equal(cal.julianDayToJulianDate(2299158.5).toString(), '1582 10 02');
+    test.equal(cal.julianDayToJulianDate(2299159.5).toString(), '1582 10 03');
+    test.equal(cal.julianDayToJulianDate(2299160.5).toString(), '1582 10 04');
+    test.equal(cal.julianDayToJulianDate(2299161.5).toString(), '1582 10 05');
+    test.equal(cal.julianDayToJulianDate(2361220.5).toString(), '1752 09 01');
+    test.equal(cal.julianDayToJulianDate(2361221.5).toString(), '1752 09 02');
+    test.equal(cal.julianDayToJulianDate(2361222.5).toString(), '1752 09 03');
+    test.equal(cal.julianDayToJulianDate(1721457.5).toString(), '0001 02 03');
     test.done();
   }
 };
