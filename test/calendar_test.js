@@ -105,5 +105,23 @@ exports.calendar = {
     test.ok(cmpDates(cal.julianDayToGregorianDate(2455985.5), new Date(2012, cal.months.FEBRUARY, 28)));
     test.ok(cmpDates(cal.julianDayToGregorianDate(2433313.5), new Date(1950, cal.months.FEBRUARY, 1)));
     test.done();
+  },
+  'julianDayToModernDate'        : function (test) {
+    test.expect();
+    test.equal(cal.julianDayToModernDate(2299158.5).toString(), '1582 10 02');
+    test.equal(cal.julianDayToModernDate(2299159.5).toString(), '1582 10 03');
+    test.equal(cal.julianDayToModernDate(2299160.5).toString(), '1582 10 04');
+    test.equal(cal.julianDayToModernDate(2299161.5).toString(), '1582 10 05');
+    test.equal(cal.julianDayToModernDate(1721457.5).toString(), '0001 02 03');
+    test.ok(cmpDates(cal.julianDayToModernDate(2361220.5), new Date(1752, cal.months.SEPTEMBER, 13)));
+    test.ok(cmpDates(cal.julianDayToModernDate(2361221.5), new Date(1752, cal.months.SEPTEMBER, 14)));
+    test.ok(cmpDates(cal.julianDayToModernDate(2361222.5), new Date(1752, cal.months.SEPTEMBER, 15)));
+    test.ok(cmpDates(cal.julianDayToModernDate(2456656.5), new Date(2013, cal.months.DECEMBER, 30)));
+    test.ok(cmpDates(cal.julianDayToModernDate(2456657.5), new Date(2013, cal.months.DECEMBER, 31)));
+    test.ok(cmpDates(cal.julianDayToModernDate(2455957.5), new Date(2012, cal.months.JANUARY, 31)));
+    test.ok(cmpDates(cal.julianDayToModernDate(2456351.5), new Date(2013, cal.months.FEBRUARY, 28)));
+    test.ok(cmpDates(cal.julianDayToModernDate(2455985.5), new Date(2012, cal.months.FEBRUARY, 28)));
+    test.ok(cmpDates(cal.julianDayToModernDate(2433313.5), new Date(1950, cal.months.FEBRUARY, 1)));
+    test.done();
   }
 };
