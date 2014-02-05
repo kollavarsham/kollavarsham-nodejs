@@ -85,5 +85,25 @@ exports.calendar = {
     test.equal(cal.julianDayToJulianDate(2361222.5).toString(), '1752 09 03');
     test.equal(cal.julianDayToJulianDate(1721457.5).toString(), '0001 02 03');
     test.done();
+  },
+  'julianDayToGregorianDate'     : function (test) {
+    test.expect();
+    test.ok(cmpDates(cal.julianDayToGregorianDate(2299158.5), new Date(1582, cal.months.OCTOBER, 13)));
+    test.ok(cmpDates(cal.julianDayToGregorianDate(2299159.5), new Date(1582, cal.months.OCTOBER, 14)));
+    test.ok(cmpDates(cal.julianDayToGregorianDate(2299160.5), new Date(1582, cal.months.OCTOBER, 15)));
+    test.ok(cmpDates(cal.julianDayToGregorianDate(2299161.5), new Date(1582, cal.months.OCTOBER, 16)));
+    test.ok(cmpDates(cal.julianDayToGregorianDate(2361220.5), new Date(1752, cal.months.SEPTEMBER, 13)));
+    test.ok(cmpDates(cal.julianDayToGregorianDate(2361221.5), new Date(1752, cal.months.SEPTEMBER, 14)));
+    test.ok(cmpDates(cal.julianDayToGregorianDate(2361222.5), new Date(1752, cal.months.SEPTEMBER, 15)));
+    var dateFrom1AD = new Date(1, cal.months.FEBRUARY, 2);
+    dateFrom1AD.setFullYear(1);
+    test.ok(cmpDates(cal.julianDayToGregorianDate(1721457.5), dateFrom1AD));
+    test.ok(cmpDates(cal.julianDayToGregorianDate(2456656.5), new Date(2013, cal.months.DECEMBER, 30)));
+    test.ok(cmpDates(cal.julianDayToGregorianDate(2456657.5), new Date(2013, cal.months.DECEMBER, 31)));
+    test.ok(cmpDates(cal.julianDayToGregorianDate(2455957.5), new Date(2012, cal.months.JANUARY, 31)));
+    test.ok(cmpDates(cal.julianDayToGregorianDate(2456351.5), new Date(2013, cal.months.FEBRUARY, 28)));
+    test.ok(cmpDates(cal.julianDayToGregorianDate(2455985.5), new Date(2012, cal.months.FEBRUARY, 28)));
+    test.ok(cmpDates(cal.julianDayToGregorianDate(2433313.5), new Date(1950, cal.months.FEBRUARY, 1)));
+    test.done();
   }
 };
