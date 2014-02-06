@@ -159,6 +159,23 @@ exports.calendar = {
     test.equal(cal.aharganaToJulianDay(1867520), 2455985.5);
     test.equal(cal.aharganaToJulianDay(1844848), 2433313.5);
     test.done();
-
+  },
+  'julianDayToWeekday' : function(test) {
+    test.expect();
+    test.equal(cal.julianDayToWeekday(2299158.5), 'Wednesday');
+    test.equal(cal.julianDayToWeekday(2299159.5), 'Thursday');
+    test.equal(cal.julianDayToWeekday(2299160.5), 'Friday');
+    test.equal(cal.julianDayToWeekday(2299161.5), 'Saturday');
+    test.equal(cal.julianDayToWeekday(2361220.5), 'Wednesday');
+    test.equal(cal.julianDayToWeekday(2361221.5), 'Thursday');
+    test.equal(cal.julianDayToWeekday(2361222.5), 'Friday');
+    test.equal(cal.julianDayToWeekday(1721457.5), 'Friday');
+    test.equal(cal.julianDayToWeekday(2456656.5), 'Monday');
+    test.equal(cal.julianDayToWeekday(2456657.5), 'Tuesday');
+    test.equal(cal.julianDayToWeekday(2455957.5), 'Tuesday');
+    test.equal(cal.julianDayToWeekday(2456351.5), 'Thursday');
+    test.equal(cal.julianDayToWeekday(2455985.5), 'Tuesday');
+    test.equal(cal.julianDayToWeekday(2433313.5), 'Wednesday');
+    test.done();
   }
 };
