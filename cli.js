@@ -22,11 +22,11 @@ var opts = nopt({
   v : '--version',
   b : '--bija',
   m : '--mode',
-  sla : '--showlatitudes',
-  slo: '--showlongitudes',
-  la : '--latitude',
-  lo : '--longitude',
-  o  : '--output'
+  a : '--showlatitudes',
+  o : '--showlongitudes',
+  t : '--latitude',
+  g : '--longitude',
+  f : '--outputformat'
 });
 
 var args = opts.argv.remain;
