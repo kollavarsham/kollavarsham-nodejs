@@ -1,4 +1,13 @@
 #!/usr/bin/env node
+
+/*
+ * kollavarsham
+ * http://kollavarsham.org
+ *
+ * Copyright (c) 2014 The Kollavarsham Team
+ * Licensed under the MIT license.
+ */
+
 'use strict';
 
 var nopt = require('nopt');

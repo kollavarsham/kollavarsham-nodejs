@@ -7,10 +7,22 @@
   "homepage"        : "http://kollavarsham.org",
   "bugs"            : "https://github.com/kollavarsham/kollavarsham-nodejs/issues",
   "author"          : {
-    "name"  : "Floyd Pink",
-    "email" : "imbleedingme@googlemail.com",
-    "url"   : "https://github.com/floydpink"
+    "name"  : "The Kollavarsham Team",
+    "email" : "info@kollavarsham.org",
+    "url"   : "http://kollavarsham.org"
   },
+  "contributors"    : [
+    {
+      "name"  : "Arun N. Kutty",
+      "email" : "kuttysulthan@yahoo.com",
+      "url"   : "https://github.com/arunkutty"
+    },
+    {
+      "name"  : "Floyd Pink",
+      "email" : "imbleedingme@googlemail.com",
+      "url"   : "https://github.com/floydpink"
+    }
+  ],
   "repository"      : {
     "type" : "git",
     "url"  : "https://github.com/kollavarsham/kollavarsham-nodejs"
