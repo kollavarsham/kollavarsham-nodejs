@@ -14,7 +14,8 @@ var opts = nopt({
   showlongitudes : Boolean,
   showlatitudes  : Boolean,
   latitude       : Number,
-  longitude      : Number
+  longitude      : Number,
+  output         : ["list", "verbose"]
 
 }, {
   h : '--help',
@@ -24,7 +25,8 @@ var opts = nopt({
   sla : '--showlatitudes',
   slo: '--showlongitudes',
   la : '--latitude',
-  lo : '--longitude'
+  lo : '--longitude',
+  o  : '--output'
 });
 
 var args = opts.argv.remain;
@@ -43,24 +45,27 @@ if (opts.help) {
 }
 else {
   if (opts.mode) {
-    console.log("mode is " + opts.mode);
     kollavarsham.setMode(opts.mode);
   }
   if (opts.bija) {
-    console.log("bija is " + opts.bija);
     kollavarsham.setBija(opts.bija);
   }
   if (opts.latitude) {
-    console.log("latitude is " + opts.latitude);
     kollavarsham.setLatitude(opts.latitude);
   }
   if (opts.longitude) {
-    console.log("longitude is " + opts.longitude);
     kollavarsham.setLongitude(opts.longitude);
+  }
+  if (opts.output){
+    kollavarsham.setOutput(opts.output);
   }
 
   if (cmd) {
-    console.log('Command: %s', cmd);
+    console.log('You are trying to convert: %s', cmd);
+    var inputDate = helper.parseDate(cmd);
+    if (!isNaN(inputDate)){
+      kollavarsham.setInputDate(inputDate);
+    }
   }
 }
 
