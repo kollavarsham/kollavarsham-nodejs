@@ -63,3 +63,5 @@ else {
     console.log('Command: %s', cmd);
   }
 }
+
+kollavarsham.displaySettings();
