@@ -97,5 +97,16 @@ exports.celestial = {
     test.ok(floatingPointCompare(celestial.getMandaEquation(-42.8326673204595, "saturn"), -5.25521105975762));
     test.ok(floatingPointCompare(celestial.getMandaEquation(-40.2050617905807, "saturn"), -4.98912071710793));
     test.done();
+  },
+  'declination'      : function (test) {
+    test.expect(7);
+    test.ok(floatingPointCompare(celestial.declination(31.3101877453024), 12.2026059914001));
+    test.ok(floatingPointCompare(celestial.declination(42.2597957259723), 15.8742931864835));
+    test.ok(floatingPointCompare(celestial.declination(59.2349729472294), 20.4565845497204));
+    test.ok(floatingPointCompare(celestial.declination(62.5975972349908), 21.1677169773821));
+    test.ok(floatingPointCompare(celestial.declination(80.4818781723799), 23.6492922420057));
+    test.ok(floatingPointCompare(celestial.declination(121.1497130809087), 20.3707052985127));
+    test.ok(floatingPointCompare(celestial.declination(320.8687779979979), -14.8738036439391));
+    test.done();
   }
 };
