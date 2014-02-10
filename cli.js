@@ -15,6 +15,8 @@ var pkg = require('./package.json');
 var helper = require('./lib/cli-helper');
 var kollavarsham = require('./lib/kollavarsham');
 
+//TO DO akutty
+//Option for setting latitude/longitude using preset values from ./locations.js
 var opts = nopt({
   help           : Boolean,
   version        : Boolean,
