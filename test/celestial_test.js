@@ -17,6 +17,10 @@ function floatingPointCompare(n1, n2) {
 
 exports.celestial = {
   setUp              : function (done) {
+    celestial.setPrimaryConstants();
+    celestial.applyBija();
+    celestial.setSecondaryConstants();
+    celestial.setPlanetaryConstants();
     done();
   },
   'zero360'          : function (test) {
@@ -48,10 +52,6 @@ exports.celestial = {
   },
   'getMandaEquation' : function (test) {
     test.expect(44);
-    celestial.setPrimaryConstants();
-    celestial.applyBija();
-    celestial.setSecondaryConstants();
-    celestial.setPlanetaryConstants();
     test.ok(floatingPointCompare(celestial.getMandaEquation(216.448410870245, "sun"), -1.30810722363905));
     test.ok(floatingPointCompare(celestial.getMandaEquation(-72.3184309200178, "moon"), -4.83281883352571));
     test.ok(floatingPointCompare(celestial.getMandaEquation(150.807334962742, "moon"), 2.47190852495064));
