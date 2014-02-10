@@ -168,7 +168,7 @@ exports.calendar = {
     test.equal(cal.aharganaToJulianDay(1844848), 2433313.5);
     test.done();
   },
-  'julianDayToWeekday' : function(test) {
+  'julianDayToWeekday'           : function (test) {
     test.expect();
     test.equal(cal.julianDayToWeekday(2299158.5), 'Wednesday');
     test.equal(cal.julianDayToWeekday(2299159.5), 'Thursday');
@@ -184,6 +184,24 @@ exports.calendar = {
     test.equal(cal.julianDayToWeekday(2456351.5), 'Thursday');
     test.equal(cal.julianDayToWeekday(2455985.5), 'Tuesday');
     test.equal(cal.julianDayToWeekday(2433313.5), 'Wednesday');
+    test.done();
+  },
+  'getMasaNum'                             : function (test) {
+    test.expect(14);
+    test.equal(cal.getMasaNum(31.3101877453024, 190.002232417937), 1);
+    test.equal(cal.getMasaNum(42.2597957259723, 209.07961889886), 1);
+    test.equal(cal.getMasaNum(59.2349729472294, 183.469749507872), 1);
+    test.equal(cal.getMasaNum(62.5975972349908, 208.58681756282), 2);
+    test.equal(cal.getMasaNum(80.4818781723799, 180.203508055438), 2);
+    test.equal(cal.getMasaNum(121.1497130809087, 208.340416894636), 4);
+    test.equal(cal.getMasaNum(320.8687779979979, 195.735990965544), 10);
+    test.equal(cal.getMasaNum(131.3101877453024, 10.002232417937), 4);
+    test.equal(cal.getMasaNum(242.2597957259723, 9.07961889886), 8);
+    test.equal(cal.getMasaNum(359.2349729472294, 83.469749507872), 11);
+    test.equal(cal.getMasaNum(62.5975972349908, 108.58681756282), 2);
+    test.equal(cal.getMasaNum(280.4818781723799, 180.203508055438), 9);
+    test.equal(cal.getMasaNum(21.1497130809087, 108.340416894636), 0);
+    test.equal(cal.getMasaNum(20.8687779979979, 286.735990965544), 0);
     test.done();
   }
 };

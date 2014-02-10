@@ -10,10 +10,6 @@
 
 var math = require('../lib/math.js');
 
-function floatingPointCompare(n1, n2) {
-  return Math.abs(n1 - n2) < math.epsilon;
-}
-
 exports.math = {
   setUp              : function (done) {
     done();
@@ -83,16 +79,16 @@ exports.math = {
   },
   'fractional'       : function (test) {
     test.expect(10);
-    test.ok(floatingPointCompare(math.fractional(0.2345), 0.2345));
-    test.ok(floatingPointCompare(math.fractional(-0.2385), -0.2385));
-    test.ok(floatingPointCompare(math.fractional(0.23999), 0.23999));
-    test.ok(floatingPointCompare(math.fractional(-456.23999), -0.23999));
-    test.ok(floatingPointCompare(math.fractional(456.999), 0.999));
-    test.ok(floatingPointCompare(math.fractional('456.999'), 0.999));
-    test.ok(floatingPointCompare(math.fractional('A quick brown fox'), 0));
-    test.ok(floatingPointCompare(math.fractional('-123456.350'), -0.350));
-    test.ok(floatingPointCompare(math.fractional(42.999), 0.999));
-    test.ok(floatingPointCompare(math.fractional(42.00001), 0.00001));
+    test.ok(math.floatingPointEqual(math.fractional(0.2345), 0.2345));
+    test.ok(math.floatingPointEqual(math.fractional(-0.2385), -0.2385));
+    test.ok(math.floatingPointEqual(math.fractional(0.23999), 0.23999));
+    test.ok(math.floatingPointEqual(math.fractional(-456.23999), -0.23999));
+    test.ok(math.floatingPointEqual(math.fractional(456.999), 0.999));
+    test.ok(math.floatingPointEqual(math.fractional('456.999'), 0.999));
+    test.ok(math.floatingPointEqual(math.fractional('A quick brown fox'), 0));
+    test.ok(math.floatingPointEqual(math.fractional('-123456.350'), -0.350));
+    test.ok(math.floatingPointEqual(math.fractional(42.999), 0.999));
+    test.ok(math.floatingPointEqual(math.fractional(42.00001), 0.00001));
     test.done();
   },
   'round'            : function (test) {
@@ -112,17 +108,17 @@ exports.math = {
   },
   'square'           : function (test) {
     test.expect(11);
-    test.ok(floatingPointCompare(math.square(0.2345), 0.05499025));
-    test.ok(floatingPointCompare(math.square(-0.2385), 0.05688225));
-    test.ok(floatingPointCompare(math.square(0.23999), 0.0575952001));
-    test.ok(floatingPointCompare(math.square(-456.23999), 208154.9284752001));
-    test.ok(floatingPointCompare(math.square(456.999), 208848.086001));
-    test.ok(floatingPointCompare(math.square('456.999'), 208848.086001));
-    test.ok(floatingPointCompare(math.square('A quick brown fox'), 0));
-    test.ok(floatingPointCompare(math.square(42.999), 1848.914001));
-    test.ok(floatingPointCompare(math.square(42.00001), 1764.0008400001));
-    test.ok(floatingPointCompare(math.square(5), 25));
-    test.ok(floatingPointCompare(math.square(9), 81));
+    test.ok(math.floatingPointEqual(math.square(0.2345), 0.05499025));
+    test.ok(math.floatingPointEqual(math.square(-0.2385), 0.05688225));
+    test.ok(math.floatingPointEqual(math.square(0.23999), 0.0575952001));
+    test.ok(math.floatingPointEqual(math.square(-456.23999), 208154.9284752001));
+    test.ok(math.floatingPointEqual(math.square(456.999), 208848.086001));
+    test.ok(math.floatingPointEqual(math.square('456.999'), 208848.086001));
+    test.ok(math.floatingPointEqual(math.square('A quick brown fox'), 0));
+    test.ok(math.floatingPointEqual(math.square(42.999), 1848.914001));
+    test.ok(math.floatingPointEqual(math.square(42.00001), 1764.0008400001));
+    test.ok(math.floatingPointEqual(math.square(5), 25));
+    test.ok(math.floatingPointEqual(math.square(9), 81));
     test.done();
   }
 };
