@@ -9,6 +9,7 @@
 'use strict';
 
 var cal = require('../lib/calendar.js');
+var celestial = require('../lib/celestial.js');
 
 function cmpDates(date1, date2) {
   return date1.getFullYear() === date2.getFullYear() &&
@@ -18,6 +19,10 @@ function cmpDates(date1, date2) {
 
 exports.calendar = {
   setUp                          : function (done) {
+    celestial.setPrimaryConstants();
+    celestial.applyBija();
+    celestial.setSecondaryConstants();
+    celestial.setPlanetaryConstants();
     done();
   },
   'nextDate'                     : function (test) {
@@ -186,7 +191,7 @@ exports.calendar = {
     test.equal(cal.julianDayToWeekday(2433313.5), 'Wednesday');
     test.done();
   },
-  'getMasaNum'                             : function (test) {
+  'getMasaNum'                   : function (test) {
     test.expect(14);
     test.equal(cal.getMasaNum(31.3101877453024, 190.002232417937), 1);
     test.equal(cal.getMasaNum(42.2597957259723, 209.07961889886), 1);
@@ -202,6 +207,38 @@ exports.calendar = {
     test.equal(cal.getMasaNum(280.4818781723799, 180.203508055438), 9);
     test.equal(cal.getMasaNum(21.1497130809087, 108.340416894636), 0);
     test.equal(cal.getMasaNum(20.8687779979979, 286.735990965544), 0);
+    test.done();
+  },
+  'getSauraMasaMonthDay'         : function (test) {
+    test.expect(28);
+    test.equal(cal.getSauraMasaMonthDay(2299158.5).month, 7);
+    test.equal(cal.getSauraMasaMonthDay(2299159.5).month, 7);
+    test.equal(cal.getSauraMasaMonthDay(2299160.5).month, 7);
+    test.equal(cal.getSauraMasaMonthDay(2299161.5).month, 7);
+    test.equal(cal.getSauraMasaMonthDay(2361220.5).month, 6);
+    test.equal(cal.getSauraMasaMonthDay(2361221.5).month, 6);
+    test.equal(cal.getSauraMasaMonthDay(2361222.5).month, 6);
+    test.equal(cal.getSauraMasaMonthDay(1721457.5).month, 11);
+    test.equal(cal.getSauraMasaMonthDay(2456656.5).month, 9);
+    test.equal(cal.getSauraMasaMonthDay(2456657.5).month, 9);
+    test.equal(cal.getSauraMasaMonthDay(2455957.5).month, 10);
+    test.equal(cal.getSauraMasaMonthDay(2456351.5).month, 11);
+    test.equal(cal.getSauraMasaMonthDay(2455985.5).month, 11);
+    test.equal(cal.getSauraMasaMonthDay(2433313.5).month, 10);
+    test.equal(cal.getSauraMasaMonthDay(2299158.5).day, 6);
+    test.equal(cal.getSauraMasaMonthDay(2299159.5).day, 7);
+    test.equal(cal.getSauraMasaMonthDay(2299160.5).day, 8);
+    test.equal(cal.getSauraMasaMonthDay(2299161.5).day, 9);
+    test.equal(cal.getSauraMasaMonthDay(2361220.5).day, 4);
+    test.equal(cal.getSauraMasaMonthDay(2361221.5).day, 5);
+    test.equal(cal.getSauraMasaMonthDay(2361222.5).day, 6);
+    test.equal(cal.getSauraMasaMonthDay(1721457.5).day, 27);
+    test.equal(cal.getSauraMasaMonthDay(2456656.5).day, 19);
+    test.equal(cal.getSauraMasaMonthDay(2456657.5).day, 20);
+    test.equal(cal.getSauraMasaMonthDay(2455957.5).day, 21);
+    test.equal(cal.getSauraMasaMonthDay(2456351.5).day, 20);
+    test.equal(cal.getSauraMasaMonthDay(2455985.5).day, 19);
+    test.equal(cal.getSauraMasaMonthDay(2433313.5).day, 23);
     test.done();
   }
 };
