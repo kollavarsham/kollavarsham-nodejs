@@ -10,6 +10,7 @@
 
 var cal = require('../lib/calendar.js');
 var celestial = require('../lib/celestial.js');
+var math = require('../lib/math.js');
 
 function cmpDates(date1, date2) {
   return date1.getFullYear() === date2.getFullYear() &&
@@ -20,7 +21,6 @@ function cmpDates(date1, date2) {
 exports.calendar = {
   setUp                          : function (done) {
     celestial.setPrimaryConstants();
-    celestial.applyBija();
     celestial.setSecondaryConstants();
     celestial.setPlanetaryConstants();
     done();
@@ -239,6 +239,15 @@ exports.calendar = {
     test.equal(cal.getSauraMasaMonthDay(2456351.5).day, 20);
     test.equal(cal.getSauraMasaMonthDay(2455985.5).day, 19);
     test.equal(cal.getSauraMasaMonthDay(2433313.5).day, 23);
+    test.done();
+  },
+  'findSamkranti'                : function (test) {
+    test.expect(5);
+    test.ok(math.floatingPointEqual(cal.findSamkranti(1868206, 1868207), 1868206.71761142));
+    test.ok(math.floatingPointEqual(cal.findSamkranti(1868236, 1868237), 1868236.15636098));
+    test.ok(math.floatingPointEqual(cal.findSamkranti(1868266, 1868267), 1868266.00000001));
+    test.ok(math.floatingPointEqual(cal.findSamkranti(1721431, 1721432), 1721431.9425787));
+    test.ok(math.floatingPointEqual(cal.findSamkranti(2299153, 2299154), 2299153.23922039));
     test.done();
   }
 };
