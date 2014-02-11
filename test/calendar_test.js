@@ -281,5 +281,23 @@ exports.calendar = {
     test.equal(cal.getSauraMasaName(10), 'Kumbha ');
     test.equal(cal.getSauraMasaName(11), 'Mina   ');
     test.done();
+  },
+  'getNaksatraName'              : function (test) {
+    test.expect(14);
+    test.equal(cal.getNaksatraName(167.084587116821), 'Hasta');
+    test.equal(cal.getNaksatraName(179.618866280373), 'Citra');
+    test.equal(cal.getNaksatraName(191.953219840454), 'Svati');
+    test.equal(cal.getNaksatraName(204.131519861513), 'Visakha');
+    test.equal(cal.getNaksatraName(349.195739637822), 'Revati');
+    test.equal(cal.getNaksatraName(1.82309136307406), 'Asvini');
+    test.equal(cal.getNaksatraName(14.6945040053245), 'Bharani');
+    test.equal(cal.getNaksatraName(6.55724149356419), 'Asvini');
+    test.equal(cal.getNaksatraName(16.24829446685), 'Bharani');
+    test.equal(cal.getNaksatraName(29.8253740270552), 'Krttika');
+    test.equal(cal.getNaksatraName(156.709071062542), 'U-phalguni');
+    test.equal(cal.getNaksatraName(316.081404838166), 'Satabhisaj');
+    test.equal(cal.getNaksatraName(165.854323537076), 'Hasta');
+    test.equal(cal.getNaksatraName(236.806759936797), 'Jyestha');
+    test.done();
   }
 };
