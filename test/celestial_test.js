@@ -8,8 +8,19 @@
 
 'use strict';
 
+var calculations = require('../lib/calculations.js');
 var celestial = require('../lib/celestial.js');
+var globals = require('../lib/globals.js');
+var kollavarsham = require('../lib/kollavarsham.js');
 var math = require('../lib/math.js');
+
+var runCalculationsWithADate = function () {
+  globals.year = 2014;
+  globals.month = 2;
+  globals.day = 11;
+  calculations.main(kollavarsham.settings);
+  calculations.planetary();
+};
 
 exports.celestial = {
   setUp              : function (done) {
@@ -104,7 +115,7 @@ exports.celestial = {
     test.ok(math.floatingPointEqual(celestial.declination(320.8687779979979), -14.8738036439391));
     test.done();
   },
-  'getTllong':function(test){
+  'getTllong'        : function (test) {
     test.expect(14);
     test.ok(math.floatingPointEqual(celestial.getTllong(2299158.5), 167.084587116821));
     test.ok(math.floatingPointEqual(celestial.getTllong(2299159.5), 179.618866280373));
@@ -122,7 +133,7 @@ exports.celestial = {
     test.ok(math.floatingPointEqual(celestial.getTllong(2433313.5), 236.806759936797));
     test.done();
   },
-  'getTslong':function(test){
+  'getTslong'        : function (test) {
     test.expect(14);
     test.ok(math.floatingPointEqual(celestial.getTslong(2299158.5), 215.330481398828));
     test.ok(math.floatingPointEqual(celestial.getTslong(2299159.5), 216.345092245966));
@@ -140,7 +151,7 @@ exports.celestial = {
     test.ok(math.floatingPointEqual(celestial.getTslong(2433313.5), 322.249740952942));
     test.done();
   },
-  'getMeanLongitude':function(test){
+  'getMeanLongitude' : function (test) {
     test.expect();
     test.ok(math.floatingPointEqual(celestial.getMeanLongitude(1868236.15634155, 4320000), 298.54776362783));
     test.ok(math.floatingPointEqual(celestial.getMeanLongitude(1868236.15637207, 4320000), 298.547793708385));
@@ -156,6 +167,81 @@ exports.celestial = {
     test.ok(math.floatingPointEqual(celestial.getMeanLongitude(1868236.15636253, 4320000), 298.54778430592));
     test.ok(math.floatingPointEqual(celestial.getMeanLongitude(1868236.15636063, 4320000), 298.547782433088));
     test.ok(math.floatingPointEqual(celestial.getMeanLongitude(1868236.15636253, 4320000), 298.54778430592));
+    test.done();
+  },
+  'getTrueLongitude' : function (test) {
+    runCalculationsWithADate();
+    test.expect(70);
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1710693, 215.330481398828, 'mercury'), 290.256193246842));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1710694, 216.345092245966, 'mercury'), 287.939466847665));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1710695, 217.360117559963, 'mercury'), 285.69872602331));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1710696, 218.375548627069, 'mercury'), 283.567766431273));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1772755, 183.139229101953, 'mercury'), 292.367822361191));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1772756, 184.136821438217, 'mercury'), 293.462095381124));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1772757, 185.135030298228, 'mercury'), 294.554161309681));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1132992, 355.302664567532, 'mercury'), 294.330597635538));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1868191, 288.309252298232, 'mercury'), 280.5291286866));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1868192, 289.32751969395, 'mercury'), 281.497932838323));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1867492, 320.200309773426, 'mercury'), 285.388042602287));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1867886, 348.803993428264, 'mercury'), 308.404674687418));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1867520, 348.072902270539, 'mercury'), 312.012169567129));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1844848, 322.249740952942, 'mercury'), 287.862667589296));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1710693, 215.330481398828, 'venus'), 324.308933009715));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1710694, 216.345092245966, 'venus'), 321.407541005215));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1710695, 217.360117559963, 'venus'), 318.226901026202));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1710696, 218.375548627069, 'venus'), 314.775291122611));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1772755, 183.139229101953, 'venus'), 253.240856229459));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1772756, 184.136821438217, 'venus'), 253.582115854346));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1772757, 185.135030298228, 'venus'), 253.942554219963));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1132992, 355.302664567532, 'venus'), 331.723144303665));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1868191, 288.309252298232, 'venus'), 344.369387070859));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1868192, 289.32751969395, 'venus'), 344.125688357144));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1867492, 320.200309773426, 'venus'), 338.204333524322));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1867886, 348.803993428264, 'venus'), 303.63668762932));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1867520, 348.072902270539, 'venus'), 343.326701630526));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1844848, 322.249740952942, 'venus'), 289.230030387495));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1710693, 215.330481398828, 'mars'), 158.887067202077));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1710694, 216.345092245966, 'mars'), 159.240835569617));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1710695, 217.360117559963, 'mars'), 159.593872869183));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1710696, 218.375548627069, 'mars'), 159.946154425643));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1772755, 183.139229101953, 'mars'), 147.311514092937));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1772756, 184.136821438217, 'mars'), 147.677928778235));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1772757, 185.135030298228, 'mars'), 148.044220074319));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1132992, 355.302664567532, 'mars'), 149.172853178935));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1868191, 288.309252298232, 'mars'), 179.846235661092));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1868192, 289.32751969395, 'mars'), 180.010186773321));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1867492, 320.200309773426, 'mars'), 179.72880836255));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1867886, 348.803993428264, 'mars'), 158.084536851156));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1867520, 348.072902270539, 'mars'), 159.029060106121));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1844848, 322.249740952942, 'mars'), 179.131773264678));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1710693, 215.330481398828, 'saturn'), 194.843713150225));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1710694, 216.345092245966, 'saturn'), 194.935519951897));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1710695, 217.360117559963, 'saturn'), 195.027563651004));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1710696, 218.375548627069, 'saturn'), 195.119823966232));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1772755, 183.139229101953, 'saturn'), 192.153417342728));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1772756, 184.136821438217, 'saturn'), 192.226932462565));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1772757, 185.135030298228, 'saturn'), 192.301333486724));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1132992, 355.302664567532, 'saturn'), 201.3134602354));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1868191, 288.309252298232, 'saturn'), 200.822899002374));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1868192, 289.32751969395, 'saturn'), 200.88079361344));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1867492, 320.200309773426, 'saturn'), 201.987978576402));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1867886, 348.803993428264, 'saturn'), 201.614465529182));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1867520, 348.072902270539, 'saturn'), 201.643214770863));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1844848, 322.249740952942, 'saturn'), 202.010337361371));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1710693, 215.330481398828, 'saturn'), 194.843713150225));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1710694, 216.345092245966, 'saturn'), 194.935519951897));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1710695, 217.360117559963, 'saturn'), 195.027563651004));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1710696, 218.375548627069, 'saturn'), 195.119823966232));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1772755, 183.139229101953, 'saturn'), 192.153417342728));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1772756, 184.136821438217, 'saturn'), 192.226932462565));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1772757, 185.135030298228, 'saturn'), 192.301333486724));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1132992, 355.302664567532, 'saturn'), 201.3134602354));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1868191, 288.309252298232, 'saturn'), 200.822899002374));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1868192, 289.32751969395, 'saturn'), 200.88079361344));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1867492, 320.200309773426, 'saturn'), 201.987978576402));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1867886, 348.803993428264, 'saturn'), 201.614465529182));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1867520, 348.072902270539, 'saturn'), 201.643214770863));
+    test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1844848, 322.249740952942, 'saturn'), 202.010337361371));
     test.done();
   }
 };
