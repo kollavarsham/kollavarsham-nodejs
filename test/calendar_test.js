@@ -299,5 +299,41 @@ exports.calendar = {
     test.equal(cal.getNaksatraName(165.854323537076), 'Hasta');
     test.equal(cal.getNaksatraName(236.806759936797), 'Jyestha');
     test.done();
+  },
+  'aharganaToKali'               : function (test) {
+    test.expect(14);
+    test.equal(cal.aharganaToKali(1710693), 4683);
+    test.equal(cal.aharganaToKali(1710694), 4683);
+    test.equal(cal.aharganaToKali(1710695), 4683);
+    test.equal(cal.aharganaToKali(1710696), 4683);
+    test.equal(cal.aharganaToKali(1772755), 4853);
+    test.equal(cal.aharganaToKali(1772756), 4853);
+    test.equal(cal.aharganaToKali(1772757), 4853);
+    test.equal(cal.aharganaToKali(1132992), 3101);
+    test.equal(cal.aharganaToKali(1868191), 5114);
+    test.equal(cal.aharganaToKali(1868192), 5114);
+    test.equal(cal.aharganaToKali(1867492), 5112);
+    test.equal(cal.aharganaToKali(1867886), 5113);
+    test.equal(cal.aharganaToKali(1867520), 5112);
+    test.equal(cal.aharganaToKali(1844848), 5050);
+    test.done();
+  },
+  'kaliToSaka'                   : function (test) {
+    test.expect(14);
+    test.equal(cal.kaliToSaka(4683), 1504);
+    test.equal(cal.kaliToSaka(4683), 1504);
+    test.equal(cal.kaliToSaka(4683), 1504);
+    test.equal(cal.kaliToSaka(4683), 1504);
+    test.equal(cal.kaliToSaka(4853), 1674);
+    test.equal(cal.kaliToSaka(4853), 1674);
+    test.equal(cal.kaliToSaka(4853), 1674);
+    test.equal(cal.kaliToSaka(3101), -78);
+    test.equal(cal.kaliToSaka(5114), 1935);
+    test.equal(cal.kaliToSaka(5114), 1935);
+    test.equal(cal.kaliToSaka(5112), 1933);
+    test.equal(cal.kaliToSaka(5113), 1934);
+    test.equal(cal.kaliToSaka(5112), 1933);
+    test.equal(cal.kaliToSaka(5050), 1871);
+    test.done();
   }
 };
