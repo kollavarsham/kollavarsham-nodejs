@@ -56,8 +56,10 @@ module.exports = function (grunt) {
         version     : '<%= pkg.version %>',
         url         : '<%= pkg.homepage %>',
         options     : {
-          paths    : 'lib/',
-          outdir   : 'doc/'
+          paths    : 'lib',
+          themedir : 'themes/kollavarsham',
+          outdir   : 'doc',
+          helpers  : ['themes/kollavarsham/helpers/helpers.js']
         }
       }
     },
