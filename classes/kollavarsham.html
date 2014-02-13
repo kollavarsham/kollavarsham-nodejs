@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lib/kollavarsham.js - kollavarsham</title>
+    <title>kollavarsham - kollavarsham</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -112,81 +112,66 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: lib/kollavarsham.js</h1>
+                        <h1>kollavarsham Class</h1>
+<div class="box meta">
+    
 
-<div class="file">
-    <pre class="code prettyprint linenums">
-/*
- * kollavarsham
- * http://kollavarsham.org
- *
- * Copyright (c) 2014 The Kollavarsham Team
- * Licensed under the MIT license.
- */
+    
 
-/**
- CLI app to convert Gregorian date to Kollavarsham date and vice versa
- @module kollavrsham
- */
+    
+        <div class="foundat">
+            Defined in: <a href="../files/lib_kollavarsham.js.html#l19"><code>lib&#x2F;kollavarsham.js:19</code></a>
+        </div>
+    
 
-&#x27;use strict&#x27;;
+    
+        
+            Module: <a href="../modules/kollavrsham.html">kollavrsham</a>
+        
+    
 
-var globals = require(&#x27;./globals&#x27;);
-var locations = require(&#x27;./locations&#x27;);
+    
+</div>
 
-/**
- * @class kollavarsham
- * @static
- * @type {{settings: {bija: boolean, mode: number, latitude: number, longitude: number, output: string, gregorianDate: Date}, setMode: &#x27;setMode&#x27;, setBija: &#x27;setBija&#x27;, setLatitude: &#x27;setLatitude&#x27;, setLongitude: &#x27;setLongitude&#x27;, setOutput: &#x27;setOutput&#x27;, displaySettings: &#x27;displaySettings&#x27;, setInputDate: &#x27;setInputDate&#x27;}}
- */
-var kollavarsham = {
-  settings          : {
-    //These are the defaults
-    bija          : false,
-    mode          : 0,
-    latitude      : 23.2,
-    longitude     : 75.8,
-    output        : &quot;verbose&quot;,
-    gregorianDate : new Date()
-  },
-  &#x27;setMode&#x27;         : function (mode) {
-    this.settings.mode = mode;
-  },
-  &#x27;setBija&#x27;         : function (bija) {
-    this.settings.bija = bija;
-  },
-  &#x27;setLatitude&#x27;     : function (latitude) {
-    this.settings.latitude = latitude;
-  },
-  &#x27;setLongitude&#x27;    : function (longitude) {
-    this.settings.longitude = longitude;
-    globals.desantara = (longitude - locations.Ujjain.longitude) / 360;
-  },
-  &#x27;setOutput&#x27;       : function (output) {
-    this.settings.output = output;
-  },
-  &#x27;displaySettings&#x27; : function () {
-    console.log(&quot;The settings for kollavarsham calculations are as follows:&quot;);
-    console.log(&quot;Bija      : &quot; + this.settings.bija);
-    console.log(&quot;Mode      : &quot; + this.settings.mode);
-    console.log(&quot;Latitude  : &quot; + this.settings.latitude);
-    console.log(&quot;Longitude : &quot; + this.settings.longitude);
-    console.log(&quot;Output    : &quot; + this.settings.output);
-    console.log(&quot;Gregorian Date: &quot; + this.settings.gregorianDate);
-  },
-  /**
-   * Sets the input Gregorian date for conversion
-   * method setInputDate
-   * @param date
-   */
-  &#x27;setInputDate&#x27;    : function (date) {
-    this.settings.gregorianDate = date;
-  }
-};
 
-module.exports = kollavarsham;
 
-    </pre>
+<div class="box intro">
+    
+</div>
+
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+        
+        
+        
+        
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+            
+
+            
+
+            
+
+            
+        </div>
+
+        
+
+        
+
+        
+
+        
+    </div>
 </div>
 
                     </div>

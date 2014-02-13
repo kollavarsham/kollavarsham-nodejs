@@ -5,6 +5,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "calendar",
         "cliHelper",
         "globals",
+        "kollavarsham",
         "locations",
         "math"
     ],

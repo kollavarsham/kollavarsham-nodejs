@@ -75,7 +75,9 @@
             "modules": {
                 "kollavrsham": 1
             },
-            "classes": {},
+            "classes": {
+                "kollavarsham": 1
+            },
             "fors": {},
             "namespaces": {}
         },
@@ -181,12 +183,14 @@
         "kollavrsham": {
             "name": "kollavrsham",
             "submodules": {},
-            "classes": {},
+            "classes": {
+                "kollavarsham": 1
+            },
             "fors": {},
             "namespaces": {},
             "tag": "module",
             "file": "lib/kollavarsham.js",
-            "line": 9,
+            "line": 19,
             "description": "CLI app to convert Gregorian date to Kollavarsham date and vice versa"
         },
         "locations": {
@@ -287,6 +291,21 @@
                 }
             ],
             "is_constructor": 1
+        },
+        "kollavarsham": {
+            "name": "kollavarsham",
+            "shortname": "kollavarsham",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "kollavrsham",
+            "namespace": "",
+            "file": "lib/kollavarsham.js",
+            "line": 19,
+            "static": 1,
+            "type": "{{settings: {bija: boolean, mode: number, latitude: number, longitude: number, output: string, gregorianDate: Date}, setMode: 'setMode', setBija: 'setBija', setLatitude: 'setLatitude', setLongitude: 'setLongitude', setOutput: 'setOutput', displaySettings: 'displaySettings', setInputDate: 'setInputDate'}}"
         },
         "locations": {
             "name": "locations",
@@ -427,7 +446,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 54,
+            "line": 59,
             "description": "Sets the input Gregorian date for conversion\nmethod setInputDate",
             "params": [
                 {
@@ -435,7 +454,7 @@
                     "description": ""
                 }
             ],
-            "class": "locations",
+            "class": "kollavarsham",
             "module": "kollavrsham"
         }
     ],
@@ -462,7 +481,7 @@
         },
         {
             "message": "Missing item type\nSets the input Gregorian date for conversion\nmethod setInputDate",
-            "line": " lib/kollavarsham.js:54"
+            "line": " lib/kollavarsham.js:59"
         }
     ]
 }
