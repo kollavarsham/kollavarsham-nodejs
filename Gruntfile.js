@@ -16,11 +16,11 @@ module.exports = function (grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    pkg      : grunt.file.readJSON('package.json'),
-    nodeunit : {
+    pkg          : grunt.file.readJSON('package.json'),
+    nodeunit     : {
       files : ['test/**/*_test.js']
     },
-    jshint   : {
+    jshint       : {
       options   : {
         jshintrc : '.jshintrc',
         reporter : require('jshint-stylish')
@@ -35,7 +35,7 @@ module.exports = function (grunt) {
         src : ['test/**/*.js']
       }
     },
-    watch    : {
+    watch        : {
       gruntfile : {
         files : '<%= jshint.gruntfile.src %>',
         tasks : ['jshint:gruntfile']
@@ -49,7 +49,7 @@ module.exports = function (grunt) {
         tasks : ['jshint:test', 'nodeunit']
       }
     },
-    yuidoc   : {
+    yuidoc       : {
       compile : {
         name        : '<%= pkg.name %>',
         description : '<%= pkg.description %>',
@@ -62,10 +62,27 @@ module.exports = function (grunt) {
           outdir   : 'doc/'
         }
       }
+    },
+    buildcontrol : {
+      options : {
+        dir     : 'doc',
+        commit  : true,
+        push    : true,
+        message : 'Built %sourceName% API documentation from commit %sourceCommit% on branch %sourceBranch%'
+      },
+      pages   : {
+        options : {
+          remote : 'git@github.com:kollavarsham/kollavarsham-nodejs.git',
+          branch : 'gh-pages'
+        }
+      }
     }
   });
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'nodeunit']);
+
+  // Build documentation and test
+  grunt.registerTask('build', ['jshint', 'yuidoc', 'nodeunit']);
 
 };

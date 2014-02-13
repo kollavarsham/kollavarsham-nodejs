@@ -1,52 +1,53 @@
 {
-  "name"            : "kollavarsham",
-  "version"         : "0.0.1",
-  "main"            : "lib/kollavarsham.js",
-  "description"     : "Convert Gregorian date to Kollavarsham date and vice versa",
-  "bin"             : "lib/cli.js",
-  "homepage"        : "http://kollavarsham.org",
-  "bugs"            : "https://github.com/kollavarsham/kollavarsham-nodejs/issues",
-  "author"          : {
-    "name"  : "The Kollavarsham Team",
-    "email" : "info@kollavarsham.org",
-    "url"   : "http://kollavarsham.org"
+  "name": "kollavarsham",
+  "version": "0.0.1",
+  "main": "lib/kollavarsham.js",
+  "description": "Convert Gregorian date to Kollavarsham date and vice versa",
+  "bin": "lib/cli.js",
+  "homepage": "http://kollavarsham.org",
+  "bugs": "https://github.com/kollavarsham/kollavarsham-nodejs/issues",
+  "author": {
+    "name": "The Kollavarsham Team",
+    "email": "info@kollavarsham.org",
+    "url": "http://kollavarsham.org"
   },
-  "contributors"    : [
+  "contributors": [
     {
-      "name"  : "Arun N. Kutty",
-      "email" : "kuttysulthan@yahoo.com",
-      "url"   : "https://github.com/arunkutty"
+      "name": "Arun N. Kutty",
+      "email": "kuttysulthan@yahoo.com",
+      "url": "https://github.com/arunkutty"
     },
     {
-      "name"  : "Floyd Pink",
-      "email" : "imbleedingme@googlemail.com",
-      "url"   : "https://github.com/floydpink"
+      "name": "Floyd Pink",
+      "email": "imbleedingme@googlemail.com",
+      "url": "https://github.com/floydpink"
     }
   ],
-  "repository"      : {
-    "type" : "git",
-    "url"  : "https://github.com/kollavarsham/kollavarsham-nodejs"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kollavarsham/kollavarsham-nodejs"
   },
-  "licenses"        : [
+  "licenses": [
     {
-      "type" : "MIT"
+      "type": "MIT"
     }
   ],
-  "scripts"         : {
-    "test" : "grunt"
+  "scripts": {
+    "test": "grunt"
   },
-  "devDependencies" : {
-    "grunt-contrib-jshint"   : "~0.7.0",
-    "grunt-contrib-nodeunit" : "~0.2.0",
-    "grunt-contrib-watch"    : "~0.5.0",
-    "load-grunt-tasks"       : "~0.2.0",
-    "time-grunt"             : "~0.2.0",
-    "jshint-stylish"         : "~0.1.3",
-    "grunt-contrib-yuidoc"   : "~0.5.0"
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.7.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-watch": "~0.5.0",
+    "load-grunt-tasks": "~0.2.0",
+    "time-grunt": "~0.2.0",
+    "jshint-stylish": "~0.1.3",
+    "grunt-contrib-yuidoc": "~0.5.0",
+    "grunt-build-control": "~0.1.2"
   },
-  "dependencies"    : {
-    "chalk"       : "~0.4.0",
-    "nopt"        : "~2.1.2",
-    "node.extend" : "~1.0.9"
+  "dependencies": {
+    "chalk": "~0.4.0",
+    "nopt": "~2.1.2",
+    "node.extend": "~1.0.9"
   }
 }
