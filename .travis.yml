@@ -10,7 +10,7 @@ before_script:
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 after_script:
   # If build is successful, push the documentation from this build to the gh-pages
-  - grunt buildcontrol:pages
+  - if [ $PUSHDOC -eq TRUE ]; then grunt buildcontrol:pages; fi
 install:
   - npm install -g grunt-cli
   - npm install
@@ -45,3 +45,6 @@ env:
     - secure: "KQoujIlItQjPQ739eGIO/spPU2KRH7xHByejlSjdwG9zihQTiD/pNtxnQTizL/2JH9Prru7LDa0Z8HQxrQXctxjB69Xzaw119f51NnQDgKc3DqyP9gNnkmADByqT70Wk2opo66yJTg2M21rA6HuKsx8k4Dmv+jeOd4ssGnKbjTk="
     - secure: "Ylqc/d4MXJDoEVEYBRMF5mWNwy3j/DVRrt86Mz+SSSXhzugtjcmAiWjk0UWwZWUPSPQl0gsQOfZeFixdnN8iLu/j4M+HwzD/vi4mPt4h47sXmntY4SYcVAiaiSE4hAf0nA8u7Ra7Y09PEUxOJP9EhfdScQWHhwtBVId+omRmg78="
     - secure: "Az0DUg0Jyf7uz/Fw0nzHV2zzA1NCH1VEZg3xiT0epve6Hk3t4JtqypORvCNIgmVoxcqLB0TFdalVrglQ+hi/ZAIV3o8XXDWRkNyVO8u3FgMjdpRkbHAQo8TYXHhGYXtOWBKjhTxbmiT2+t+AKjTHoBJyPuGeo8Gpt0pSk10l2hs="
+  matrix:
+    - PUSHDOC=true
+    - PUSHDOC=false
