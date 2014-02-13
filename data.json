@@ -424,6 +424,19 @@
             },
             "class": "JulianDate",
             "module": "JulianDate"
+        },
+        {
+            "file": "lib/kollavarsham.js",
+            "line": 54,
+            "description": "Sets the input Gregorian date for conversion\nmethod setInputDate",
+            "params": [
+                {
+                    "name": "date",
+                    "description": ""
+                }
+            ],
+            "class": "locations",
+            "module": "kollavrsham"
         }
     ],
     "warnings": [
@@ -446,6 +459,10 @@
         {
             "message": "Missing item type\nPads zeroes to print the date in a pretty format",
             "line": " lib/julianDate.js:29"
+        },
+        {
+            "message": "Missing item type\nSets the input Gregorian date for conversion\nmethod setInputDate",
+            "line": " lib/kollavarsham.js:54"
         }
     ]
 }
