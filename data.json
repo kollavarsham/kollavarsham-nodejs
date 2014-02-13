@@ -1,0 +1,451 @@
+{
+    "project": {
+        "name": "kollavarsham",
+        "description": "Convert Gregorian date to Kollavarsham date and vice versa",
+        "version": "0.0.1",
+        "url": "http://kollavarsham.org"
+    },
+    "files": {
+        "lib/calculations.js": {
+            "name": "lib/calculations.js",
+            "modules": {
+                "calculations": 1
+            },
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib/calendar.js": {
+            "name": "lib/calendar.js",
+            "modules": {
+                "calendar": 1
+            },
+            "classes": {
+                "calendar": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib/cli-helper.js": {
+            "name": "lib/cli-helper.js",
+            "modules": {
+                "cli-helper": 1
+            },
+            "classes": {
+                "cliHelper": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib/cli.js": {
+            "name": "lib/cli.js",
+            "modules": {
+                "cli": 1
+            },
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib/globals.js": {
+            "name": "lib/globals.js",
+            "modules": {
+                "globals": 1
+            },
+            "classes": {
+                "globals": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib/julianDate.js": {
+            "name": "lib/julianDate.js",
+            "modules": {
+                "JulianDate": 1
+            },
+            "classes": {
+                "JulianDate": 1
+            },
+            "fors": {
+                "JulianDate": 1
+            },
+            "namespaces": {}
+        },
+        "lib/kollavarsham.js": {
+            "name": "lib/kollavarsham.js",
+            "modules": {
+                "kollavrsham": 1
+            },
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib/locations.js": {
+            "name": "lib/locations.js",
+            "modules": {
+                "locations": 1
+            },
+            "classes": {
+                "locations": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib/math.js": {
+            "name": "lib/math.js",
+            "modules": {
+                "math": 1
+            },
+            "classes": {
+                "math": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "calculations": {
+            "name": "calculations",
+            "submodules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "lib/calculations.js",
+            "line": 9,
+            "description": "Calculations involved in the to and fro conversions of Kollavarsham to Gregorian dates and vice versa"
+        },
+        "calendar": {
+            "name": "calendar",
+            "submodules": {},
+            "classes": {
+                "calendar": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "lib/calendar.js",
+            "line": 19
+        },
+        "cli-helper": {
+            "name": "cli-helper",
+            "submodules": {},
+            "classes": {
+                "cliHelper": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "lib/cli-helper.js",
+            "line": 15,
+            "description": "Helper functions for the CLI app"
+        },
+        "cli": {
+            "name": "cli",
+            "submodules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "lib/cli.js",
+            "line": 11,
+            "description": "CLI app to convert Gregorian date to Kollavarsham date and vice versa"
+        },
+        "globals": {
+            "name": "globals",
+            "submodules": {},
+            "classes": {
+                "globals": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "lib/globals.js",
+            "line": 9,
+            "description": "Temporary module that holds all the Perl global variables",
+            "static": 1
+        },
+        "JulianDate": {
+            "name": "JulianDate",
+            "submodules": {},
+            "classes": {
+                "JulianDate": 1
+            },
+            "fors": {
+                "JulianDate": 1
+            },
+            "namespaces": {},
+            "tag": "module",
+            "file": "lib/julianDate.js",
+            "line": 15
+        },
+        "kollavrsham": {
+            "name": "kollavrsham",
+            "submodules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "lib/kollavarsham.js",
+            "line": 9,
+            "description": "CLI app to convert Gregorian date to Kollavarsham date and vice versa"
+        },
+        "locations": {
+            "name": "locations",
+            "submodules": {},
+            "classes": {
+                "locations": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "lib/locations.js",
+            "line": 15
+        },
+        "math": {
+            "name": "math",
+            "submodules": {},
+            "classes": {
+                "math": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "lib/math.js",
+            "line": 15
+        }
+    },
+    "classes": {
+        "calendar": {
+            "name": "calendar",
+            "shortname": "calendar",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "calendar",
+            "namespace": "",
+            "file": "lib/calendar.js",
+            "line": 19,
+            "static": 1,
+            "type": "{{weekdays: {0: string, 1: string, 2: string, 3: string, 4: string, 5: string, 6: string}, months: {January: number, February: number, March: number, April: number, May: number, June: number, July: number, August: number, September: number, October: number, November: number, December: number}, masaNames: {0: string, 1: string, 2: string, 3: string, 4: string, 5: string, 6: string, 7: string, 8: string, 9: string, 10: string, 11: string}, sauraMasaNames: {0: string, 1: string, 2: string, 3: string, 4: string, 5: string, 6: string, 7: string, 8: string, 9: string, 10: string, 11: string}, naksatras: {0: string, 1: string, 2: string, 3: string, 4: string, 5: string, 6: string, 7: string, 8: string, 9: string, 10: string, 11: string, 12: string, 13: string, 14: string, 15: string, 16: string, 17: string, 18: string, 19: string, 20: string, 21: string, 22: string, 23: string, 24: string, 25: string, 26: string, 27: string}, nextDate: nextDate, gregorianDateToJulianDay: gregorianDateToJulianDay, julianInEngland: julianInEngland, julianDayToJulianDate: julianDayToJulianDate, julianDayToGregorianDate: julianDayToGregorianDate, julianDayToModernDate: julianDayToModernDate, julianDayToAhargana: julianDayToAhargana, aharganaToJulianDay: aharganaToJulianDay, aharganaToKali: aharganaToKali, kaliToSaka: kaliToSaka, julianDayToWeekday: julianDayToWeekday, getAdhimasa: getAdhimasa, getMasaNum: getMasaNum, getMasaName: getMasaName, findSamkranti: findSamkranti, setSamkranti: setSamkranti, isTodaySauraMasaFirst: isTodaySauraMasaFirst, getSauraMasaMonthDay: getSauraMasaMonthDay, getSauraMasaName: getSauraMasaName, getNaksatraName: getNaksatraName}}"
+        },
+        "cliHelper": {
+            "name": "cliHelper",
+            "shortname": "cliHelper",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "cli-helper",
+            "namespace": "",
+            "file": "lib/cli-helper.js",
+            "line": 15,
+            "static": 1,
+            "type": "{{openingMessage: openingMessage, helpMessage: helpMessage, showLatitudes: showLatitudes, showLongitudes: showLongitudes, parseDate: parseDate}}"
+        },
+        "globals": {
+            "name": "globals",
+            "shortname": "globals",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "globals",
+            "namespace": "",
+            "file": "lib/globals.js",
+            "line": 9,
+            "description": "Temporary module that holds all the Perl global variables"
+        },
+        "JulianDate": {
+            "name": "JulianDate",
+            "shortname": "JulianDate",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "JulianDate",
+            "namespace": "",
+            "file": "lib/julianDate.js",
+            "line": 15,
+            "description": "Represents a Julian Date's year, month and day",
+            "params": [
+                {
+                    "name": "year",
+                    "description": ""
+                },
+                {
+                    "name": "month",
+                    "description": ""
+                },
+                {
+                    "name": "day",
+                    "description": ""
+                }
+            ],
+            "is_constructor": 1
+        },
+        "locations": {
+            "name": "locations",
+            "shortname": "locations",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "locations",
+            "namespace": "",
+            "file": "lib/locations.js",
+            "line": 15,
+            "static": 1,
+            "type": "{{Agra: {latitude: number, longitude: number}, Ahmedabad: {latitude: number, longitude: number}, Ajmer: {latitude: number, longitude: number}, Aligarh: {latitude: number, longitude: number}, Amritsar: {latitude: number, longitude: number}, Bangalore: {latitude: number, longitude: number}, Bhuvaneswar: {latitude: number, longitude: number}, Bombay: {latitude: number, longitude: number}, Calcutta: {latitude: number, longitude: number}, Cochin: {latitude: number, longitude: number}, Colombo: {latitude: number, longitude: number}, Dacca: {latitude: number, longitude: number}, Delhi: {latitude: number, longitude: number}, Hyderabad: {latitude: number, longitude: number}, Jaipur: {latitude: number, longitude: number}, Kathmandu: {latitude: number, longitude: number}, Lahor: {latitude: number, longitude: number}, Madras: {latitude: number, longitude: number}, Mathura: {latitude: number, longitude: number}, Mysore: {latitude: number, longitude: number}, Patna: {latitude: number, longitude: number}, Pune: {latitude: number, longitude: number}, Srinagar: {latitude: number, longitude: number}, Trivandrum: {latitude: number, longitude: number}, Varanasi: {latitude: number, longitude: number}, Ujjain: {latitude: number, longitude: number}}}"
+        },
+        "math": {
+            "name": "math",
+            "shortname": "math",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "math",
+            "namespace": "",
+            "file": "lib/math.js",
+            "line": 15,
+            "static": 1,
+            "type": "{{epsilon: number, radianInDegrees: number, floatingPointEqual: floatingPointEqual, isNumber: isNumber, isInt: isInt, truncateDecimals: truncateDecimals, truncate: truncate, floor: floor, fractional: fractional, round: round, square: square}}"
+        }
+    },
+    "classitems": [
+        {
+            "file": "lib/cli-helper.js",
+            "line": 21,
+            "description": "Prints the opening message/banner when the CLI is invoked",
+            "itemtype": "method",
+            "name": "openingMessage",
+            "static": 1,
+            "class": "cliHelper",
+            "module": "cli-helper"
+        },
+        {
+            "file": "lib/cli-helper.js",
+            "line": 34,
+            "description": "Displays the help message for the CLI",
+            "itemtype": "method",
+            "name": "helpMessage",
+            "static": 1,
+            "class": "cliHelper",
+            "module": "cli-helper"
+        },
+        {
+            "file": "lib/cli-helper.js",
+            "line": 83,
+            "description": "Shows the latitude values for various Indian cities on the map - legacy from Perl",
+            "itemtype": "method",
+            "name": "showLatitudes",
+            "static": 1,
+            "class": "cliHelper",
+            "module": "cli-helper"
+        },
+        {
+            "file": "lib/cli-helper.js",
+            "line": 112,
+            "description": "Shows the longitude values for various Indian cities on the map - legacy from Perl",
+            "itemtype": "method",
+            "name": "showLongitudes",
+            "static": 1,
+            "class": "cliHelper",
+            "module": "cli-helper"
+        },
+        {
+            "file": "lib/cli-helper.js",
+            "line": 142,
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "parseDate",
+            "static": 1,
+            "params": [
+                {
+                    "name": "date",
+                    "description": "*"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Date"
+            },
+            "class": "cliHelper",
+            "module": "cli-helper"
+        },
+        {
+            "file": "lib/globals.js",
+            "line": 20,
+            "static": 1,
+            "type": "{{planet: boolean, YugaCivilDays: boolean, YugaSynodicMonth: boolean, YugaAdhimasa: boolean, YugaTithi: boolean, YugaKsayadina: boolean, lagna: boolean, back_clong_ahar: number, back_nclong_ahar: number, back_clong: number, back_nclong: number, year: boolean, month: boolean, paksa: boolean, day: boolean, ahar: boolean, ahargana: boolean, hours: boolean, minutes: boolean, JulianDay: boolean, YearKali: boolean, YearSaka: boolean, YearVikrama: boolean, masa_num: boolean, saura_masa_num: boolean, saura_masa_day: boolean, tithi_day: boolean, mslong: boolean, tslong: boolean, mllong: boolean, tllong: boolean, clong: boolean, nclong: boolean, tithi: boolean, ftithi: boolean, eqtime: boolean, sriseh: boolean, srisem: boolean, weekday_name: boolean, sukla_krsna: boolean, adhimasa: boolean, masa: boolean, naksatra: boolean, samkranti: boolean, samkranti_year: boolean, samkranti_month: boolean, samkranti_day: boolean, samkranti_hour: boolean, samkranti_min: boolean, ayanadeg: boolean, ayanamin: boolean, desantara: number, counter: boolean}}",
+            "class": "globals",
+            "module": "globals"
+        },
+        {
+            "file": "lib/julianDate.js",
+            "line": 29,
+            "description": "Pads zeroes to print the date in a pretty format",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "num",
+                    "description": ""
+                },
+                {
+                    "name": "size",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "JulianDate",
+            "module": "JulianDate"
+        },
+        {
+            "file": "lib/julianDate.js",
+            "line": 41,
+            "description": "Converts the Julian Date to a nicely formatted string with year, month and date",
+            "itemtype": "method",
+            "name": "toString",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "JulianDate",
+            "module": "JulianDate"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib/cli-helper.js:142"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib/julianDate.js:29"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib/julianDate.js:41"
+        },
+        {
+            "message": "Missing item type",
+            "line": " lib/globals.js:20"
+        },
+        {
+            "message": "Missing item type\nPads zeroes to print the date in a pretty format",
+            "line": " lib/julianDate.js:29"
+        }
+    ]
+}

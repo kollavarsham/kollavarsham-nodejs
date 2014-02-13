@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>lib/globals.js - kollavarsham</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.7.0/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap-responsive.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+        
+	    <img alt="kollavarsham" src="../assets/css/logo.png" style="max-height: 65%;" title="kollavarsham">
+        
+            kollavarsham
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>0.0.1</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/calendar", "classes/cliHelper", "classes/globals", "classes/JulianDate", "classes/locations", "classes/math", "modules/calculations", "modules/calendar", "modules/cli", "modules/cli-helper", "modules/globals", "modules/JulianDate", "modules/kollavrsham", "modules/locations", "modules/math"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+    <h3>APIs</h3>
+    <div id="sidebar">
+        <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+            <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+            <li><a href="#modules" data-toggle="tab">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" placeholder="Type to filter APIs">
+        </div>
+
+        <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+            <div class="tab-pane active" id="classes">
+                <ul id="api-classes" class="nav nav-list">
+                    
+                        <li><a href="../classes/calendar.html">calendar</a></li>
+                    
+                        <li><a href="../classes/cliHelper.html">cliHelper</a></li>
+                    
+                        <li><a href="../classes/globals.html">globals</a></li>
+                    
+                        <li><a href="../classes/JulianDate.html">JulianDate</a></li>
+                    
+                        <li><a href="../classes/locations.html">locations</a></li>
+                    
+                        <li><a href="../classes/math.html">math</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="tab-pane" id="modules">
+                <ul id="api-modules" class="nav nav-list">
+                    
+                        <li><a href="../modules/calculations.html">calculations</a></li>
+                    
+                        <li><a href="../modules/calendar.html">calendar</a></li>
+                    
+                        <li><a href="../modules/cli.html">cli</a></li>
+                    
+                        <li><a href="../modules/cli-helper.html">cli-helper</a></li>
+                    
+                        <li><a href="../modules/globals.html">globals</a></li>
+                    
+                        <li><a href="../modules/JulianDate.html">JulianDate</a></li>
+                    
+                        <li><a href="../modules/kollavrsham.html">kollavrsham</a></li>
+                    
+                        <li><a href="../modules/locations.html">locations</a></li>
+                    
+                        <li><a href="../modules/math.html">math</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+    <h1>lib/globals.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+/*
+ * kollavarsham
+ * http://kollavarsham.org
+ *
+ * Copyright (c) 2014 The Kollavarsham Team
+ * Licensed under the MIT license.
+ */
+
+/**
+ * Temporary module that holds all the Perl global variables
+ * @module globals
+ * @class globals
+ * @static
+ */
+&#x27;use strict&#x27;;
+
+// TODO:
+//  This module is just a starting point to enable an easier porting of the below globals from Perl
+//  The below data elements need to be refactored out into the corresponding modules as when possible,
+/**
+ * @static
+ * @type {{planet: boolean, YugaCivilDays: boolean, YugaSynodicMonth: boolean, YugaAdhimasa: boolean, YugaTithi: boolean, YugaKsayadina: boolean, lagna: boolean, back_clong_ahar: number, back_nclong_ahar: number, back_clong: number, back_nclong: number, year: boolean, month: boolean, paksa: boolean, day: boolean, ahar: boolean, ahargana: boolean, hours: boolean, minutes: boolean, JulianDay: boolean, YearKali: boolean, YearSaka: boolean, YearVikrama: boolean, masa_num: boolean, saura_masa_num: boolean, saura_masa_day: boolean, tithi_day: boolean, mslong: boolean, tslong: boolean, mllong: boolean, tllong: boolean, clong: boolean, nclong: boolean, tithi: boolean, ftithi: boolean, eqtime: boolean, sriseh: boolean, srisem: boolean, weekday_name: boolean, sukla_krsna: boolean, adhimasa: boolean, masa: boolean, naksatra: boolean, samkranti: boolean, samkranti_year: boolean, samkranti_month: boolean, samkranti_day: boolean, samkranti_hour: boolean, samkranti_min: boolean, ayanadeg: boolean, ayanamin: boolean, desantara: number, counter: boolean}}
+ */
+var globals = {
+  planet           : true,
+  YugaCivilDays    : true,
+  YugaSynodicMonth : true,
+  YugaAdhimasa     : true,
+  YugaTithi        : true,
+  YugaKsayadina    : true,
+  lagna            : true,
+
+  back_clong_ahar  : -1,
+  back_nclong_ahar : -1,
+  back_clong       : -1,
+  back_nclong      : -1,
+
+  //    type  paksas :(suklapaksa, krsnapaksa),
+  year             : true,
+  month            : true,
+  paksa            : true,
+
+  // (suklapaksa, krsnapaksa),
+  day              : true,              // {for ahargana}
+  ahar             : true,              // {for ahargana}
+  ahargana         : true,
+  hours            : true,
+  minutes          : true,
+  JulianDay        : true,              // {for Julian days}
+  YearKali         : true,
+  YearSaka         : true,
+  YearVikrama      : true,
+  masa_num         : true,
+  saura_masa_num   : true,
+  saura_masa_day   : true,
+  tithi_day        : true,
+  mslong           : true,              // {solar position}
+  tslong           : true,              // {solar position}
+  mllong           : true,              // {lunar position}
+  tllong           : true,              // {lunar position}
+  clong            : true,
+  nclong           : true,
+  tithi            : true,
+  ftithi           : true,
+  eqtime           : true,              // {for equation of time}
+  sriseh           : true,
+  srisem           : true,
+  weekday_name     : true,
+  sukla_krsna      : true,
+  adhimasa         : true,
+  masa             : true,
+  naksatra         : true,
+  // Jovian_Year_north : true,
+  // Jovian_Year_south : true,
+  samkranti        : true,
+  samkranti_year   : true,
+  samkranti_month  : true,
+  samkranti_day    : true,
+  samkranti_hour   : true,
+  samkranti_min    : true,
+  ayanadeg         : true,
+  ayanamin         : true,
+  desantara        : 0,     // actually it is &#x60;(kollavarsham.settings.longitude - locations.Ujjain.longitude) / 360&#x60; =~ 0
+
+  counter : true
+};
+
+module.exports = globals;
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

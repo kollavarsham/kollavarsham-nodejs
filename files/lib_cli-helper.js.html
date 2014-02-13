@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>lib/cli-helper.js - kollavarsham</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.7.0/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap-responsive.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+        
+	    <img alt="kollavarsham" src="../assets/css/logo.png" style="max-height: 65%;" title="kollavarsham">
+        
+            kollavarsham
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>0.0.1</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/calendar", "classes/cliHelper", "classes/globals", "classes/JulianDate", "classes/locations", "classes/math", "modules/calculations", "modules/calendar", "modules/cli", "modules/cli-helper", "modules/globals", "modules/JulianDate", "modules/kollavrsham", "modules/locations", "modules/math"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+    <h3>APIs</h3>
+    <div id="sidebar">
+        <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+            <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+            <li><a href="#modules" data-toggle="tab">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" placeholder="Type to filter APIs">
+        </div>
+
+        <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+            <div class="tab-pane active" id="classes">
+                <ul id="api-classes" class="nav nav-list">
+                    
+                        <li><a href="../classes/calendar.html">calendar</a></li>
+                    
+                        <li><a href="../classes/cliHelper.html">cliHelper</a></li>
+                    
+                        <li><a href="../classes/globals.html">globals</a></li>
+                    
+                        <li><a href="../classes/JulianDate.html">JulianDate</a></li>
+                    
+                        <li><a href="../classes/locations.html">locations</a></li>
+                    
+                        <li><a href="../classes/math.html">math</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="tab-pane" id="modules">
+                <ul id="api-modules" class="nav nav-list">
+                    
+                        <li><a href="../modules/calculations.html">calculations</a></li>
+                    
+                        <li><a href="../modules/calendar.html">calendar</a></li>
+                    
+                        <li><a href="../modules/cli.html">cli</a></li>
+                    
+                        <li><a href="../modules/cli-helper.html">cli-helper</a></li>
+                    
+                        <li><a href="../modules/globals.html">globals</a></li>
+                    
+                        <li><a href="../modules/JulianDate.html">JulianDate</a></li>
+                    
+                        <li><a href="../modules/kollavrsham.html">kollavrsham</a></li>
+                    
+                        <li><a href="../modules/locations.html">locations</a></li>
+                    
+                        <li><a href="../modules/math.html">math</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+    <h1>lib/cli-helper.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+/*
+ * kollavarsham
+ * http://kollavarsham.org
+ *
+ * Copyright (c) 2014 The Kollavarsham Team
+ * Licensed under the MIT license.
+ */
+
+/**
+ * Helper functions for the CLI app
+ * @module cli-helper
+ */
+var chalk = require(&#x27;chalk&#x27;);
+
+/**
+ * @class cliHelper
+ * @static
+ * @type {{openingMessage: openingMessage, helpMessage: helpMessage, showLatitudes: showLatitudes, showLongitudes: showLongitudes, parseDate: parseDate}}
+ */
+var cliHelper = {
+  /**
+   * Prints the opening message/banner when the CLI is invoked
+   * @method openingMessage
+   * @static
+   **/
+  openingMessage : function () {
+    console.log();
+    console.log(chalk.green.bold(&quot;                          kollavarsham&quot;));
+    console.log(chalk.gray(&quot;   Based on the Pancanga Perl library by M. YANO and M. FUSHIMI&quot;));
+    console.log(chalk.gray(&quot;   http://www.cc.kyoto-su.ac.jp/~yanom/pancanga/message313.html&quot;));
+    console.log(chalk.gray(&quot;   ------------------------------------------------------------&quot;));
+    console.log();
+  },
+  /**
+   * Displays the help message for the CLI
+   * @method helpMessage
+   * @static
+   **/
+  helpMessage    : function () {
+    //console.log(chalk.blue(&quot;TODO:// Usage along with a documentation of all options available&quot;));
+    console.log(chalk.magenta(&quot;./cli.js [options] arg&quot;));
+    console.log(chalk.magenta.bold(&quot;options&quot;));
+    console.log(chalk.magenta.bold(&quot;=======&quot;));
+    console.log(chalk.magenta(&quot;-h --help&quot;));
+    console.log(chalk.magenta(&quot;   Show this text&quot;));
+    console.log(chalk.magenta(&quot;-a --showlatitude&quot;));
+    console.log(chalk.magenta(&quot;   Display a map of India with the latitudes&quot;));
+    console.log(chalk.magenta(&quot;-s --showlongitude&quot;));
+    console.log(chalk.magenta(&quot;   Display a map of India with the longitudes&quot;));
+    console.log(chalk.magenta(&quot;-b --bija&quot;));
+    console.log(chalk.magenta(&quot;   Set Bija to true&quot;));
+    console.log(chalk.magenta(&quot;-m --mode &lt;0/1&gt;&quot;));
+    console.log(chalk.magenta(&quot;   0 for Gregorian Calendar Date to Malayalam Calendar Date&quot;));
+    console.log(chalk.magenta(&quot;   1 for Malayalam Calendar Date to Gregorian Calendar Date&quot;));
+    console.log(chalk.magenta(&quot;-t --latitude number&quot;));
+    console.log(chalk.magenta(&quot;   number signifying degrees of Latitude of the location Where the event occurred&quot;));
+    console.log(chalk.magenta(&quot;   default: 23.2 (Use option --showlatitude for help) &quot;));
+    console.log(chalk.magenta(&quot;-g --longitude number&quot;));
+    console.log(chalk.magenta(&quot;   number signifying degrees of Latitude of the location Where the event occurred&quot;));
+    console.log(chalk.magenta(&quot;   default: 75.8 (Use option --showlongitude for help)&quot;));
+    console.log(chalk.magenta(&quot;-b --bija &lt;true/false&gt;&quot;));
+    console.log(chalk.magenta(&quot;   Turn bija on or off. Default off.&quot;));
+    console.log(chalk.magenta(&quot;-o --output &lt;list/verbose&gt;&quot;));
+    console.log(chalk.magenta(&quot;   list: for dates on both sides of the entered&quot;));
+    console.log(chalk.magenta(&quot;   verbose: for detailed view of the output date&quot;));
+    console.log(chalk.magenta.bold(&quot;arguments&quot;));
+    console.log(chalk.magenta.bold(&quot;=========&quot;));
+    console.log(chalk.magenta(&quot;Date&quot;));
+    console.log(chalk.magenta(&quot;   Input date to be converted. Use the following date formats.&quot;));
+    console.log(chalk.magenta(&quot;   Date format: DD:MM:YYYY when mode is 0 (Gregorian to Malayalam)&quot;));
+    console.log(chalk.magenta(&quot;   Date format: DD:MM:YYYY when mode is 1 (Malayalam to Gregorian) where&quot;));
+    console.log(chalk.magenta(&quot;   DD is the day of the Malayalam month&quot;));
+    console.log(chalk.magenta(&quot;   MM 01 for Chingam, 02 for Kanni, 03 for Thulam, 04 for Vrischikam, 05 for Dhanu, 06 for Makaram, 07 for Kumbham, 08 for Meenam, 09 for Medam, 10 for Edavam, 11 for Mithunam, 12 for Karkidakam&quot;));
+    console.log(chalk.magenta(&quot;   YYYY is the Malayalam Year (Kollavarsham)&quot;));
+    console.log(chalk.magenta.bold(&quot;Examples&quot;));
+    console.log(chalk.magenta.bold(&quot;========&quot;));
+    console.log(chalk.magenta(&quot;To convert Modern Date to Kollavarsham Date for Location (100 deg east, 90 deg north&quot;));
+    console.log(chalk.magenta(&quot;With bija and list output:&quot;));
+    console.log(chalk.magenta(&quot;kollavarsham -b -t 90 -g 100 -m 0 -o list 23:08:2008&quot;));
+    console.log(chalk.magenta(&quot;To convert Modern Date to with default settings (Location: Ujjain)&quot;));
+    console.log(chalk.magenta(&quot;kollavarsham 04:04:2011&quot;));
+  },
+  /**
+   * Shows the latitude values for various Indian cities on the map - legacy from Perl
+   * @method showLatitudes
+   * @static
+   **/
+  showLatitudes  : function () {
+    console.log(chalk.grey(&quot; ------------------------------------------------------------ &quot;));
+    console.log(chalk.grey(&quot;|                  Latitude                                  |&quot;));
+    console.log(chalk.grey(&quot;|                                                            |&quot;));
+    console.log(chalk.grey(&quot;|_____                              ______36                 |&quot;));
+    console.log(chalk.grey(&quot;|                  *                         Srinagar:34.1   |&quot;));
+    console.log(chalk.grey(&quot;|_____                              ______32                 |&quot;));
+    console.log(chalk.grey(&quot;|                    *                       Delhi:28.6      |&quot;));
+    console.log(chalk.grey(&quot;|_____                         *    ______28 Kathmandu:27.7  |&quot;));
+    console.log(chalk.grey(&quot;|                          *                 Varanasi:25.3   |&quot;));
+    console.log(chalk.grey(&quot;|_____ ---\\                         ______24 Ujjain:23.2     |&quot;));
+    console.log(chalk.grey(&quot;|          \\//      *           *___         Calcutta:22.6   |&quot;));
+    console.log(chalk.grey(&quot;|_____       \\_/|             _/~   ~_____20                 |&quot;));
+    console.log(chalk.grey(&quot;|               |*          _/               Bombay:19.0      |&quot;));
+    console.log(chalk.grey(&quot;|_____           \\     *  _/        ______16 Hyderabad:17.4  |&quot;));
+    console.log(chalk.grey(&quot;|                 \\      |                                   |&quot;));
+    console.log(chalk.grey(&quot;|_____             \\    *|          ______12 Madras:13.1     |&quot;));
+    console.log(chalk.grey(&quot;|                   \\   /                                    |&quot;));
+    console.log(chalk.grey(&quot;|_____               \\*/ /\\         ______08 Trivandrum:8.5  |&quot;));
+    console.log(chalk.grey(&quot;|                       |* |                 Colombo:6.9     |&quot;));
+    console.log(chalk.grey(&quot;|_____                   --         ______04                 |&quot;));
+    console.log(chalk.grey(&quot;|                                                            |&quot;));
+    console.log(chalk.grey(&quot; ------------------------------------------------------------ &quot;));
+  },
+  /**
+   * Shows the longitude values for various Indian cities on the map - legacy from Perl
+   * @method showLongitudes
+   * @static
+   **/
+  showLongitudes : function () {
+    console.log(chalk.grey(&quot; ------------------------------------------------------------ &quot;));
+    console.log(chalk.grey(&quot;|                  Longitude                                 |&quot;));
+    console.log(chalk.grey(&quot;|            |     |     |     |     |                       |&quot;));
+    console.log(chalk.grey(&quot;|            |     |     |     |     |                       |&quot;));
+    console.log(chalk.grey(&quot;|                  *                         Srinagar:74.8   |&quot;));
+    console.log(chalk.grey(&quot;|                                                            |&quot;));
+    console.log(chalk.grey(&quot;|                    *                       Delhi:77.2      |&quot;));
+    console.log(chalk.grey(&quot;|                              *             Kathmandu:85.2  |&quot;));
+    console.log(chalk.grey(&quot;|                          *                 Varanasi:83.0   |&quot;));
+    console.log(chalk.grey(&quot;|      ---\\                                  Ujjain:75.8     |&quot;));
+    console.log(chalk.grey(&quot;|          \\//      *           *___         Calcutta:88.4   |&quot;));
+    console.log(chalk.grey(&quot;|            \\_/|             _/~   ~                        |&quot;));
+    console.log(chalk.grey(&quot;|               |*          _/               Bombay:72.8     |&quot;));
+    console.log(chalk.grey(&quot;|                \\     *  _/                 Hyderabad:78.5  |&quot;));
+    console.log(chalk.grey(&quot;|                 \\      |                                   |&quot;));
+    console.log(chalk.grey(&quot;|                  \\    *|                   Madras:80.2     |&quot;));
+    console.log(chalk.grey(&quot;|                   \\   /                                    |&quot;));
+    console.log(chalk.grey(&quot;|                    \\*/ /\\                  Trivandrum:77.0 |&quot;));
+    console.log(chalk.grey(&quot;|                       |* |                 Colombo:79.9    |&quot;));
+    console.log(chalk.grey(&quot;|            |     |     --    |     |                       |&quot;));
+    console.log(chalk.grey(&quot;|            |     |           |     |                       |&quot;));
+    console.log(chalk.grey(&quot;|            70          80          90                      |&quot;));
+    console.log(chalk.grey(&quot; ------------------------------------------------------------ &quot;));
+  },
+  /**
+   * @private
+   * @method parseDate
+   * @static
+   * @param date *
+   * @returns {Date}
+   */
+  parseDate      : function (date) {
+    var split = date.split(&quot;:&quot;);
+    if (split.length === 3) {
+      var InputDate = new Date(split[2], split[1] - 1, split[0]);
+      if (!isNaN(InputDate)) {
+        //console.log(&quot;Input Date is &quot; + InputDate.getDate() + &quot; &quot;  + InputDate.getMonth() + &quot; &quot; + InputDate.getYear());
+        console.log(&quot;Date is &quot; + InputDate);
+        return InputDate;
+      }
+    }
+    console.log(&quot;Invalid Date Format. Please enter Date in the format DD:MM:YYYY&quot;);
+  }
+};
+
+module.exports = cliHelper;
+
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>lib/calendar.js - kollavarsham</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.7.0/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap-responsive.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+        
+	    <img alt="kollavarsham" src="../assets/css/logo.png" style="max-height: 65%;" title="kollavarsham">
+        
+            kollavarsham
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>0.0.1</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/calendar", "classes/cliHelper", "classes/globals", "classes/JulianDate", "classes/locations", "classes/math", "modules/calculations", "modules/calendar", "modules/cli", "modules/cli-helper", "modules/globals", "modules/JulianDate", "modules/kollavrsham", "modules/locations", "modules/math"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+    <h3>APIs</h3>
+    <div id="sidebar">
+        <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+            <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+            <li><a href="#modules" data-toggle="tab">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" placeholder="Type to filter APIs">
+        </div>
+
+        <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+            <div class="tab-pane active" id="classes">
+                <ul id="api-classes" class="nav nav-list">
+                    
+                        <li><a href="../classes/calendar.html">calendar</a></li>
+                    
+                        <li><a href="../classes/cliHelper.html">cliHelper</a></li>
+                    
+                        <li><a href="../classes/globals.html">globals</a></li>
+                    
+                        <li><a href="../classes/JulianDate.html">JulianDate</a></li>
+                    
+                        <li><a href="../classes/locations.html">locations</a></li>
+                    
+                        <li><a href="../classes/math.html">math</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="tab-pane" id="modules">
+                <ul id="api-modules" class="nav nav-list">
+                    
+                        <li><a href="../modules/calculations.html">calculations</a></li>
+                    
+                        <li><a href="../modules/calendar.html">calendar</a></li>
+                    
+                        <li><a href="../modules/cli.html">cli</a></li>
+                    
+                        <li><a href="../modules/cli-helper.html">cli-helper</a></li>
+                    
+                        <li><a href="../modules/globals.html">globals</a></li>
+                    
+                        <li><a href="../modules/JulianDate.html">JulianDate</a></li>
+                    
+                        <li><a href="../modules/kollavrsham.html">kollavrsham</a></li>
+                    
+                        <li><a href="../modules/locations.html">locations</a></li>
+                    
+                        <li><a href="../modules/math.html">math</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+    <h1>lib/calendar.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+/*
+ * kollavarsham
+ * http://kollavarsham.org
+ *
+ * Copyright (c) 2014 The Kollavarsham Team
+ * Licensed under the MIT license.
+ */
+
+/**
+ * @module calendar
+ */
+&#x27;use strict&#x27;;
+
+var celestial = require(&#x27;./celestial&#x27;);
+var globals = require(&#x27;./globals&#x27;);
+var math = require(&#x27;./math&#x27;);
+var JulianDate = require(&#x27;./julianDate&#x27;);
+
+/**
+ * @class calendar
+ * @static
+ * @type {{weekdays: {0: string, 1: string, 2: string, 3: string, 4: string, 5: string, 6: string}, months: {January: number, February: number, March: number, April: number, May: number, June: number, July: number, August: number, September: number, October: number, November: number, December: number}, masaNames: {0: string, 1: string, 2: string, 3: string, 4: string, 5: string, 6: string, 7: string, 8: string, 9: string, 10: string, 11: string}, sauraMasaNames: {0: string, 1: string, 2: string, 3: string, 4: string, 5: string, 6: string, 7: string, 8: string, 9: string, 10: string, 11: string}, naksatras: {0: string, 1: string, 2: string, 3: string, 4: string, 5: string, 6: string, 7: string, 8: string, 9: string, 10: string, 11: string, 12: string, 13: string, 14: string, 15: string, 16: string, 17: string, 18: string, 19: string, 20: string, 21: string, 22: string, 23: string, 24: string, 25: string, 26: string, 27: string}, nextDate: nextDate, gregorianDateToJulianDay: gregorianDateToJulianDay, julianInEngland: julianInEngland, julianDayToJulianDate: julianDayToJulianDate, julianDayToGregorianDate: julianDayToGregorianDate, julianDayToModernDate: julianDayToModernDate, julianDayToAhargana: julianDayToAhargana, aharganaToJulianDay: aharganaToJulianDay, aharganaToKali: aharganaToKali, kaliToSaka: kaliToSaka, julianDayToWeekday: julianDayToWeekday, getAdhimasa: getAdhimasa, getMasaNum: getMasaNum, getMasaName: getMasaName, findSamkranti: findSamkranti, setSamkranti: setSamkranti, isTodaySauraMasaFirst: isTodaySauraMasaFirst, getSauraMasaMonthDay: getSauraMasaMonthDay, getSauraMasaName: getSauraMasaName, getNaksatraName: getNaksatraName}}
+ */
+var calendar = {
+  weekdays                 : {
+    0 : &#x27;Monday&#x27;,
+    1 : &#x27;Tuesday&#x27;,
+    2 : &#x27;Wednesday&#x27;,
+    3 : &#x27;Thursday&#x27;,
+    4 : &#x27;Friday&#x27;,
+    5 : &#x27;Saturday&#x27;,
+    6 : &#x27;Sunday&#x27;
+  },
+  months                   : {
+    &quot;January&quot;   : 0,
+    &quot;February&quot;  : 1,
+    &quot;March&quot;     : 2,
+    &quot;April&quot;     : 3,
+    &quot;May&quot;       : 4,
+    &quot;June&quot;      : 5,
+    &quot;July&quot;      : 6,
+    &quot;August&quot;    : 7,
+    &quot;September&quot; : 8,
+    &quot;October&quot;   : 9,
+    &quot;November&quot;  : 10,
+    &quot;December&quot;  : 11
+  },
+  masaNames                : {
+    0  : &#x27;Caitra    &#x27;,
+    1  : &#x27;Vaisakha  &#x27;,
+    2  : &#x27;Jyaistha  &#x27;,
+    3  : &#x27;Asadha    &#x27;,
+    4  : &#x27;Sravana   &#x27;,
+    5  : &#x27;Bhadrapada&#x27;,
+    6  : &#x27;Asvina    &#x27;,
+    7  : &#x27;Karttika  &#x27;,
+    8  : &#x27;Margasirsa&#x27;,
+    9  : &#x27;Pausa     &#x27;,
+    10 : &#x27;Magha     &#x27;,
+    11 : &#x27;Phalguna  &#x27;
+  },
+  sauraMasaNames           : {
+    0  : &#x27;Mesa   &#x27;,
+    1  : &#x27;Vrsa   &#x27;,
+    2  : &#x27;Mithuna&#x27;,
+    3  : &#x27;Karkata&#x27;,
+    4  : &#x27;Simha  &#x27;,
+    5  : &#x27;Kanya  &#x27;,
+    6  : &#x27;Tula   &#x27;,
+    7  : &#x27;Vrscika&#x27;,
+    8  : &#x27;Dhanus &#x27;,
+    9  : &#x27;Makara &#x27;,
+    10 : &#x27;Kumbha &#x27;,
+    11 : &#x27;Mina   &#x27;
+  },
+  naksatras                : {
+    0  : &#x27;Asvini&#x27;,
+    1  : &#x27;Bharani&#x27;,
+    2  : &#x27;Krttika&#x27;,
+    3  : &#x27;Rohini&#x27;,
+    4  : &#x27;Mrgasira&#x27;,
+    5  : &#x27;Ardra&#x27;,
+    6  : &#x27;Punarvasu&#x27;,
+    7  : &#x27;Pusya&#x27;,
+    8  : &#x27;Aslesa&#x27;,
+    9  : &#x27;Magha&#x27;,
+    10 : &#x27;P-phalguni&#x27;,
+    11 : &#x27;U-phalguni&#x27;,
+    12 : &#x27;Hasta&#x27;,
+    13 : &#x27;Citra&#x27;,
+    14 : &#x27;Svati&#x27;,
+    15 : &#x27;Visakha&#x27;,
+    16 : &#x27;Anuradha&#x27;,
+    17 : &#x27;Jyestha&#x27;,
+    18 : &#x27;Mula&#x27;,
+    19 : &#x27;P-asadha&#x27;,
+    20 : &#x27;U-asadha&#x27;,
+    21 : &#x27;Sravana&#x27;,
+    22 : &#x27;Dhanistha&#x27;,
+    23 : &#x27;Satabhisaj&#x27;,
+    24 : &#x27;P-bhadrapada&#x27;,
+    25 : &#x27;U-bhadrapada&#x27;,
+    26 : &#x27;Revati&#x27;,
+    27 : &#x27;Asvini&#x27;
+
+  },
+  nextDate                 : function (date) {
+    date.setUTCDate(date.getUTCDate() + 1);
+    return date;
+  },
+  gregorianDateToJulianDay : function (date) {
+    //  TODO:
+    // Annotate all the magic numbers below !
+    // There is some explanation here - http://quasar.as.utexas.edu/BillInfo/JulianDatesG.html
+
+    var year = date.getUTCFullYear(),
+        month = date.getUTCMonth() + 1,
+        day = date.getUTCDate();
+
+    if (month &lt; 3) {
+      year -= 1;
+      month += 12;
+    }
+
+    var julianDay = math.truncate(365.25 * year) + math.truncate(30.59 * (month - 2)) + day + 1721086.5;
+
+    if (year &lt; 0) {
+      julianDay -= 1;
+      if (year % 4 === 0 &amp;&amp; 3 &lt;= month) {
+        julianDay += 1;
+      }
+    }
+
+    if (2299160 &lt; julianDay) {
+      julianDay += (math.truncate(year / 400) - math.truncate(year / 100) + 2);
+    }
+
+    return julianDay;
+  },
+  julianInEngland          : function (julianDay) {
+    // Gregorian calendar was first introduced in most of Europe in 1582,
+    // but it wasn&#x27;t adopted in England (and so in US and Canada) until 1752
+    //
+    // - http://www.timeanddate.com/calendar/julian-gregorian-switch.html
+    //
+    // This function returns true between
+    //      October 14th, 1582 and September 14th, 1752, both dates exclusive
+    return 2299160 &lt; julianDay &amp;&amp; julianDay &lt;= 2361221;
+  },
+  julianDayToJulianDate    : function (julianDay) {
+    var j, k, l, n, i, J, I, year, month, day;
+
+    j = math.truncate(julianDay) + 1402;
+    k = math.truncate((j - 1) / 1461);
+    l = j - 1461 * k;
+    n = math.truncate((l - 1) / 365) - math.truncate(l / 1461);
+    i = l - 365 * n + 30;
+    J = math.truncate(80 * i / 2447);
+    I = math.truncate(J / 11);
+
+    day = i - math.truncate(2447 * J / 80);
+    month = J + 2 - 12 * I;
+    year = 4 * k + n + I - 4716;
+
+    return new JulianDate(year, month, day);
+  },
+  julianDayToGregorianDate : function (julianDay) {
+    var a, b, c, e, f, g, h, year, month, day;
+
+    a = julianDay + 68569;
+    b = math.truncate(a / 36524.25);
+    c = a - math.truncate(36524.25 * b + 0.75);
+    e = math.truncate((c + 1) / 365.2425);
+    f = c - math.truncate(365.25 * e) + 31;
+    g = math.truncate(f / 30.59);
+    h = math.truncate(g / 11);
+
+    day = math.truncate(f - math.truncate(30.59 * g) + (julianDay - math.truncate(julianDay)));
+    month = math.truncate(g - 12 * h + 2);
+    year = math.truncate(100 * (b - 49) + e + h);
+
+    var result = new Date(year, month - 1, day);
+    if (year &gt; 0 &amp;&amp; year &lt;= 99) {
+      result.setFullYear(year);
+    }
+    return  result;
+  },
+  julianDayToModernDate    : function (julianDay) {
+    return julianDay &lt; 2299239 ? this.julianDayToJulianDate(julianDay) : this.julianDayToGregorianDate(julianDay);
+  },
+  julianDayToAhargana      : function (julianDay) {
+    return julianDay - 588465.50;
+  },
+  aharganaToJulianDay      : function (ahargana) {
+    return 588465.50 + ahargana;
+  },
+  aharganaToKali           : function (ahargana) {
+    return math.truncate(ahargana * celestial.YugaRotation.sun / globals.YugaCivilDays);
+  },
+  kaliToSaka               : function (yearKali) {
+    return yearKali - 3179;
+  },
+  julianDayToWeekday       : function (julianDay) {
+    return this.weekdays[math.truncate(julianDay + 0.5) % 7];
+  },
+  getAdhimasa              : function (clong, nclong) {
+    return math.floatingPointEqual(math.truncate(clong / 30), math.truncate(nclong / 30), false) ? &#x27;Adhika-&#x27; : &#x27;&#x27;;
+  },
+  getMasaNum               : function (tslong, clong) {
+    var masaNum = math.truncate(tslong / 30) % 12;
+    if (masaNum === math.truncate(clong / 30) % 12) {
+      masaNum += 1;
+    }
+    masaNum = (masaNum + 12) % 12;
+    return masaNum;
+  },
+  getMasaName              : function (masaNum) {
+    return this.masaNames[masaNum];
+  },
+  findSamkranti            : function (leftAhargana, rightAhargana) {
+    /* The below block seems to be redundant   */
+    /* --- START REDUNDANT ------------------- */
+    var leftTslong = celestial.getTslong(leftAhargana);
+    var rightTslong = celestial.getTslong(rightAhargana);
+
+    leftTslong -= math.truncate(leftTslong / 30) * 30;
+    rightTslong -= math.truncate(rightTslong / 30) * 30;
+    /* --- END   REDUNDANT ------------------- */
+
+    var width = (rightAhargana - leftAhargana) / 2;
+    var centreAhargana = (rightAhargana + leftAhargana) / 2;
+
+    if (width &lt; math.epsilon) {
+      return centreAhargana;
+    } else {
+      var centreTslong = celestial.getTslong(centreAhargana);
+      centreTslong -= math.truncate(centreTslong / 30) * 30;
+      if (centreTslong &lt; 5) {
+        return this.findSamkranti(leftAhargana, centreAhargana);
+      } else {
+        return this.findSamkranti(centreAhargana, rightAhargana);
+      }
+    }
+  },
+  setSamkranti             : function (ahargana) {
+    globals.samkranti = this.findSamkranti(ahargana, ahargana + 1) + globals.desantara;
+    var samkrantiModernDate = this.julianDayToModernDate(this.aharganaToJulianDay(globals.samkranti));
+    if (JulianDate.prototype.isPrototypeOf(samkrantiModernDate)) {
+      globals.samkranti_year = samkrantiModernDate.year;
+      globals.samkranti_month = samkrantiModernDate.month;
+      globals.samkranti_day = samkrantiModernDate.day;
+    } else {
+      globals.samkranti_year = samkrantiModernDate.getFullYear();
+      globals.samkranti_month = samkrantiModernDate.getMonth() + 1;
+      globals.samkranti_day = samkrantiModernDate.getDate();
+    }
+    var fractionalDay = math.fractional(globals.samkranti) * 24;
+    globals.samkranti_hour = math.truncate(fractionalDay);
+    globals.samkranti_min = math.truncate(60 * math.fractional(fractionalDay));
+  },
+  isTodaySauraMasaFirst    : function (ahargana) {
+    /*
+    //    Definition of the first day
+    //    samkranti is between today&#x27;s 0:00 and 24:00
+    //    ==
+    //    at 0:00 before 30x, at 24:00 after 30x
+    */
+    var tslongToday = celestial.getTslong(ahargana - globals.desantara);
+    var tslongTomorrow = celestial.getTslong(ahargana - globals.desantara + 1);
+
+    tslongToday -= math.truncate(tslongToday / 30) * 30;
+    tslongTomorrow -= math.truncate(tslongTomorrow / 30) * 30;
+
+    if (25 &lt; tslongToday &amp;&amp; tslongTomorrow &lt; 5) {
+      this.setSamkranti(ahargana);
+      return true;
+    }
+
+    return false;
+  },
+  getSauraMasaMonthDay     : function (ahargana) {
+    // If today is the first day then 1
+    // Otherwise yesterday&#x27;s + 1
+    var month, day;
+    ahargana = math.truncate(ahargana);
+    if (this.isTodaySauraMasaFirst(ahargana)) {
+      day = 1;
+      var tsLongTomorrow = celestial.getTslong(ahargana + 1);
+      month = math.truncate(tsLongTomorrow / 30) % 12;
+      month = (month + 12) % 12;
+    } else {
+      var sauraMasaMonthDay = this.getSauraMasaMonthDay(ahargana - 1);
+      month = sauraMasaMonthDay.month;
+      day = sauraMasaMonthDay.day + 1;
+    }
+    return {month : month, day : day};
+  },
+  getSauraMasaName         : function (number) {
+    return this.sauraMasaNames[number];
+  },
+  getNaksatraName          : function (tllong) {
+    return this.naksatras[math.truncate(tllong * 27 / 360)];
+  }
+};
+
+module.exports = calendar;
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

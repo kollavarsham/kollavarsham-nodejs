@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>lib/calculations.js - kollavarsham</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.7.0/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap-responsive.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+        
+	    <img alt="kollavarsham" src="../assets/css/logo.png" style="max-height: 65%;" title="kollavarsham">
+        
+            kollavarsham
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>0.0.1</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/calendar", "classes/cliHelper", "classes/globals", "classes/JulianDate", "classes/locations", "classes/math", "modules/calculations", "modules/calendar", "modules/cli", "modules/cli-helper", "modules/globals", "modules/JulianDate", "modules/kollavrsham", "modules/locations", "modules/math"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+    <h3>APIs</h3>
+    <div id="sidebar">
+        <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+            <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+            <li><a href="#modules" data-toggle="tab">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" placeholder="Type to filter APIs">
+        </div>
+
+        <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+            <div class="tab-pane active" id="classes">
+                <ul id="api-classes" class="nav nav-list">
+                    
+                        <li><a href="../classes/calendar.html">calendar</a></li>
+                    
+                        <li><a href="../classes/cliHelper.html">cliHelper</a></li>
+                    
+                        <li><a href="../classes/globals.html">globals</a></li>
+                    
+                        <li><a href="../classes/JulianDate.html">JulianDate</a></li>
+                    
+                        <li><a href="../classes/locations.html">locations</a></li>
+                    
+                        <li><a href="../classes/math.html">math</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="tab-pane" id="modules">
+                <ul id="api-modules" class="nav nav-list">
+                    
+                        <li><a href="../modules/calculations.html">calculations</a></li>
+                    
+                        <li><a href="../modules/calendar.html">calendar</a></li>
+                    
+                        <li><a href="../modules/cli.html">cli</a></li>
+                    
+                        <li><a href="../modules/cli-helper.html">cli-helper</a></li>
+                    
+                        <li><a href="../modules/globals.html">globals</a></li>
+                    
+                        <li><a href="../modules/JulianDate.html">JulianDate</a></li>
+                    
+                        <li><a href="../modules/kollavrsham.html">kollavrsham</a></li>
+                    
+                        <li><a href="../modules/locations.html">locations</a></li>
+                    
+                        <li><a href="../modules/math.html">math</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <div class="page-header">
+    <h1>lib/calculations.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+/*
+ * kollavarsham
+ * http://kollavarsham.org
+ *
+ * Copyright (c) 2014 The Kollavarsham Team
+ * Licensed under the MIT license.
+ */
+
+/**
+ Calculations involved in the to and fro conversions of Kollavarsham to Gregorian dates and vice versa
+ @module calculations
+ */
+
+&#x27;use strict&#x27;;
+
+var calendar = require(&#x27;./calendar&#x27;);
+var celestial = require(&#x27;./celestial&#x27;);
+var globals = require(&#x27;./globals&#x27;);
+var math = require(&#x27;./math&#x27;);
+
+var calculations = {
+  setConstants      : function (settings) {
+    // TODO: Add Tests if/when feasible
+    celestial.setPrimaryConstants();
+    if (settings.bija) {
+      celestial.applyBija();
+    }
+    celestial.setSecondaryConstants();
+    celestial.setPlanetaryConstants();
+  },
+  main : function (settings) {
+    // TODO: Add Tests if/when feasible
+    this.setConstants(settings);
+    globals.JulianDay = calendar.gregorianDateToJulianDay(new Date(globals.year, globals.month - 1, globals.day));
+    globals.ahar = calendar.julianDayToAhargana(globals.JulianDay);
+    globals.JulianDay = math.truncate(globals.JulianDay + 0.5);
+    globals.ahargana = math.truncate(globals.ahar + 0.5);
+    globals.weekday_name = calendar.julianDayToWeekday(globals.JulianDay);
+    celestial.setAyanamsa(globals.ahargana);
+
+    // at 6 o&#x27;clock
+    globals.ahar += 0.25;
+
+    // desantara
+    globals.ahar -= globals.desantara;
+
+    // time of sunrise at local latitude
+    globals.eqtime = celestial.getDaylightEquation(globals.year, settings.latitude);
+    globals.ahar -= globals.eqtime;
+    celestial.setSunriseTime(globals.eqtime);
+
+    // Lunar apogee and node at sunrise
+    celestial.PlanetMeanPosition.Candrocca = celestial.getMeanLongitude(globals.ahar, celestial.YugaRotation.Candrocca) + 90;
+    celestial.PlanetMeanPosition.Candrocca = celestial.zero360(celestial.PlanetMeanPosition.Candrocca);
+
+    celestial.PlanetMeanPosition.Rahu = celestial.getMeanLongitude(globals.ahar, celestial.YugaRotation.Rahu) + 180;
+    celestial.PlanetMeanPosition.Rahu = celestial.zero360(celestial.PlanetMeanPosition.Rahu);
+
+    // mean and true sun at sunrise
+    globals.mslong = celestial.getMeanLongitude(globals.ahar, celestial.YugaRotation.sun);
+    celestial.PlanetMeanPosition.sun = globals.mslong;
+    globals.tslong = celestial.zero360(globals.mslong -
+        celestial.getMandaEquation((globals.mslong - celestial.PlanetApogee.sun), &#x27;sun&#x27;));
+    celestial.PlanetMeanPosition.sun = globals.tslong;
+
+    // mean and true moon at sunrise
+    globals.mllong = celestial.getMeanLongitude(globals.ahar, celestial.YugaRotation.moon);
+    celestial.YugaRotation.moon = globals.mllong;
+    celestial.PlanetApogee.moon = celestial.PlanetMeanPosition.Candrocca;
+    globals.tllong = celestial.zero360(globals.mllong -
+        celestial.getMandaEquation(( globals.mllong - celestial.PlanetApogee.moon), &#x27;moon&#x27;));
+    celestial.PlanetTruePosition.moon = globals.tllong;
+
+    // finding tithi and longitude of conjunction
+    globals.tithi = celestial.getTithi(globals.tllong, globals.tslong);
+    celestial.setTithiSet(globals.tithi);
+    celestial.setSuklaKrsna();
+
+    // last conjunction
+    globals.clong = celestial.getClong(globals.ahar, globals.tithi);
+
+    // next conjunction
+    globals.nclong = celestial.getNclong(globals.ahar, globals.tithi);
+
+    globals.adhimasa = calendar.getAdhimasa(globals.clong, globals.nclong);
+    globals.masa_num = calendar.getMasaNum(globals.tslong, globals.clong);
+    globals.masa = calendar.getMasaName(globals.masa_num);
+
+    var sauraMasaMonthDay = calendar.getSauraMasaMonthDay(globals.ahar);
+    globals.saura_masa_num = sauraMasaMonthDay.month;
+    globals.saura_masa_day = sauraMasaMonthDay.day;
+    globals.saura_masa = calendar.getSauraMasaName(globals.saura_masa_num);
+    globals.naksatra = calendar.getNaksatraName(globals.tllong);
+
+    // kali and Saka era
+    globals.YearKali = calendar.aharganaToKali(globals.ahar + ( 4 - globals.masa_num ) * 30);
+    globals.YearSaka = calendar.kaliToSaka(globals.YearKali);
+    globals.YearVikrama = globals.YearSaka + 135;
+  },
+  planetary:function(){
+    var planets = [&#x27;mercury&#x27;, &#x27;venus&#x27;, &#x27;mars&#x27;, &#x27;jupiter&#x27;, &#x27;saturn&#x27;];
+    for (var i = 0; i &lt; planets.length; i++){
+      celestial.PlanetMeanPosition[planets[i]] = celestial.getMeanLongitude(globals.ahar, celestial.PlanetRotation[planets[i]]);
+      celestial.PlanetTruePosition[planets[i]] = celestial.getTrueLongitude(globals.ahar, globals.mslong, planets[i]);
+    }
+  }
+};
+
+module.exports = calculations;
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>
