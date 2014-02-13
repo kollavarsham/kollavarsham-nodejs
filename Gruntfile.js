@@ -57,8 +57,6 @@ module.exports = function (grunt) {
         url         : '<%= pkg.homepage %>',
         options     : {
           paths    : 'lib/',
-          themedir : 'yuidoc-theme/yuidoc-bootstrap-theme',
-          helpers  : ['yuidoc-theme/yuidoc-bootstrap-theme/helpers/helpers.js'],
           outdir   : 'doc/'
         }
       }
