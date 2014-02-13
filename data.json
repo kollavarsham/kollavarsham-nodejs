@@ -305,7 +305,7 @@
             "file": "lib/kollavarsham.js",
             "line": 19,
             "static": 1,
-            "type": "{{settings: {bija: boolean, mode: number, latitude: number, longitude: number, output: string, gregorianDate: Date}, setMode: 'setMode', setBija: 'setBija', setLatitude: 'setLatitude', setLongitude: 'setLongitude', setOutput: 'setOutput', displaySettings: 'displaySettings', setInputDate: 'setInputDate'}}"
+            "type": "{{settings: {bija: boolean, mode: number, latitude: number, longitude: number, output: string, gregorianDate: Date}, setMode: 'setMode', setBija: 'setBija', setLatitude: 'setLatitude', setLongitude: 'setLongitude', setOutput: 'setOutput', displaySettings: 'displaySettings', setGregorianDate: 'setGregorianDate'}}"
         },
         "locations": {
             "name": "locations",
@@ -447,7 +447,9 @@
         {
             "file": "lib/kollavarsham.js",
             "line": 59,
-            "description": "Sets the input Gregorian date for conversion\nmethod setInputDate",
+            "description": "Sets the input Gregorian date for conversion",
+            "itemtype": "method",
+            "name": "setGregorianDate",
             "params": [
                 {
                     "name": "date",
@@ -478,10 +480,6 @@
         {
             "message": "Missing item type\nPads zeroes to print the date in a pretty format",
             "line": " lib/julianDate.js:29"
-        },
-        {
-            "message": "Missing item type\nSets the input Gregorian date for conversion\nmethod setInputDate",
-            "line": " lib/kollavarsham.js:59"
         }
     ]
 }
