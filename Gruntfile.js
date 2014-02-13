@@ -16,6 +16,7 @@ module.exports = function (grunt) {
 
   // Project configuration.
   grunt.initConfig({
+    pkg      : grunt.file.readJSON('package.json'),
     nodeunit : {
       files : ['test/**/*_test.js']
     },
@@ -46,6 +47,20 @@ module.exports = function (grunt) {
       test      : {
         files : '<%= jshint.test.src %>',
         tasks : ['jshint:test', 'nodeunit']
+      }
+    },
+    yuidoc   : {
+      compile : {
+        name        : '<%= pkg.name %>',
+        description : '<%= pkg.description %>',
+        version     : '<%= pkg.version %>',
+        url         : '<%= pkg.homepage %>',
+        options     : {
+          paths    : 'lib/',
+          themedir : 'yuidoc-theme/yuidoc-bootstrap-theme',
+          helpers  : ['yuidoc-theme/yuidoc-bootstrap-theme/helpers/helpers.js'],
+          outdir   : 'doc/'
+        }
       }
     }
   });
