@@ -68,7 +68,7 @@ module.exports = function (grunt) {
         dir     : 'doc',
         commit  : true,
         push    : true,
-        message : 'Built %sourceName% API documentation from commit %sourceCommit% on branch %sourceBranch%'
+        message : 'Built %sourceName% API documentation from commit %sourceCommit% on branch master'
       },
       pages   : {
         options : {

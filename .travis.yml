@@ -2,6 +2,9 @@ language: node_js
 node_js:
   - '0.10'
   - '0.8'
+branches:
+  only:
+    - master
 before_script:
   # Extract the deploy key from secure variables for pushing the YUI documentation
   - echo -n $id_rsa_{00..30} >> ~/.ssh/id_rsa_base64
