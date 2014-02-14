@@ -47,7 +47,7 @@
             
                 <li><a href="../classes/JulianDate.html">JulianDate</a></li>
             
-                <li><a href="../classes/kollavarsham.html">kollavarsham</a></li>
+                <li><a href="../classes/Kollavarsham.html">Kollavarsham</a></li>
             
                 <li><a href="../classes/locations.html">locations</a></li>
             
@@ -69,7 +69,7 @@
             
                 <li><a href="../modules/JulianDate.html">JulianDate</a></li>
             
-                <li><a href="../modules/kollavrsham.html">kollavrsham</a></li>
+                <li><a href="../modules/kollavarsham.html">kollavarsham</a></li>
             
                 <li><a href="../modules/locations.html">locations</a></li>
             
@@ -123,25 +123,29 @@
  */
 
 /**
- CLI app to convert Gregorian date to Kollavarsham date and vice versa
- @module kollavrsham
+ CLI app to convert Gregorian date to Kollavarsham (Malayalam Era) date and vice versa
+ @module kollavarsham
  */
 
 &#x27;use strict&#x27;;
 
+var extend = require(&#x27;node.extend&#x27;);
 var globals = require(&#x27;./globals&#x27;);
 var locations = require(&#x27;./locations&#x27;);
 
 /**
- * @class kollavarsham
- * @static
+ * @class Kollavarsham
+ * @param options
+ * @constructor
  */
-var kollavarsham = {
+var Kollavarsham = function (options) {
+
   /**
    * Default values for the settings
-   * @property settings
+   * @property defaults
+   * @private
    */
-  settings          : {
+  var defaults = {
     //These are the defaults
     bija          : false,
     mode          : 0,
@@ -149,65 +153,94 @@ var kollavarsham = {
     longitude     : 75.8,
     output        : &quot;verbose&quot;,
     gregorianDate : new Date()
-  },
+  };
+
   /**
-   * Sets the mode of conversion - from Gregorian to Malayalam Era or vice versa. 0 and 1 (any non-zero value is considered as 1) are valid values
-   *
-   * @method setMode
-   * @param mode {Number} A value of 0 will do Gregorian to Malayalam Era and a value of 1 (or any non-zero value) will do Malayalam Era date to Gregorian
-   * @example
-   *    var kollavarsham = require(&#x27;kollavarsham&#x27;);
-   *    kollavarsham.setMode(0);
-   *    kollavarsham.setInputDate(new Date(2014, 2, 14));
-   *    kollvarsham.convert();
+   * @property _settings
+   * @type {*}
+   * @private
    */
-  &#x27;setMode&#x27;         : function (mode) {
-    this.settings.mode = mode;
-  },
-  /**
-   * Sets or unsets the Bija factor
-   * @method setBija
-   * @param bija {Boolean}
-   * @example
-   *    var kollavarsham = require(&#x27;kollavarsham&#x27;);
-   *    kollavarsham.setMode(0);
-   *    kollavarsham.setBija(true);
-   *    kollavarsham.setInputDate(new Date(2014, 2, 14));
-   *    kollvarsham.convert();
-   */
-  &#x27;setBija&#x27;         : function (bija) {
-    this.settings.bija = bija;
-  },
-  &#x27;setLatitude&#x27;     : function (latitude) {
-    this.settings.latitude = latitude;
-  },
-  &#x27;setLongitude&#x27;    : function (longitude) {
-    this.settings.longitude = longitude;
-    globals.desantara = (longitude - locations.Ujjain.longitude) / 360;
-  },
-  &#x27;setOutput&#x27;       : function (output) {
-    this.settings.output = output;
-  },
-  &#x27;displaySettings&#x27; : function () {
-    console.log(&quot;The settings for kollavarsham calculations are as follows:&quot;);
-    console.log(&quot;Bija      : &quot; + this.settings.bija);
-    console.log(&quot;Mode      : &quot; + this.settings.mode);
-    console.log(&quot;Latitude  : &quot; + this.settings.latitude);
-    console.log(&quot;Longitude : &quot; + this.settings.longitude);
-    console.log(&quot;Output    : &quot; + this.settings.output);
-    console.log(&quot;Gregorian Date: &quot; + this.settings.gregorianDate);
-  },
-  /**
-   * Sets the input Gregorian date for conversion
-   * @method setInputDate
-   * @param date
-   */
-  &quot;setInputDate&quot;    : function (date) {
-    this.settings.gregorianDate = date;
-  }
+  this.settings = extend(defaults, options);
+
 };
 
-module.exports = kollavarsham;
+/**
+ * Sets the mode of conversion - from Gregorian to Malayalam Era or vice versa. &#x60;0&#x60;and &#x60;1&#x60; (any non-zero value is considered as 1) are valid values
+ *
+ * @method setMode
+ * @param mode {Number} A value of &#x60;0&#x60; will do Gregorian to Malayalam Era and a value of &#x60;1&#x60; (or any non-zero value) will do Malayalam Era date to Gregorian
+ * @example
+ * &#x60;&#x60;&#x60;
+ *var kollavarsham = require(&#x27;kollavarsham&#x27;);
+ *kollavarsham.setMode(0);
+ *kollavarsham.setInputDate(new Date(2014, 2, 14));
+ *kollavarsham.convert();
+ * &#x60;&#x60;&#x60;
+ */
+Kollavarsham.prototype.setMode = function (mode) {
+  this.settings.mode = mode;
+};
+
+/**
+ * Sets or unsets the Bija factor
+ * @method setBija
+ * @param bija {Boolean}
+ * @example
+ * &#x60;&#x60;&#x60;
+ *var kollavarsham = require(&#x27;kollavarsham&#x27;);
+ *kollavarsham.setMode(0);
+ *kollavarsham.setBija(true);
+ *kollavarsham.setInputDate(new Date(2014, 2, 14));
+ *kollavarsham.convert();
+ * &#x60;&#x60;&#x60;
+ */
+Kollavarsham.prototype.setBija = function (bija) {
+  this.settings.bija = bija;
+};
+
+/**
+ * Sets the latitude for the location that will be used as the basis for the conversion
+ * @method setLatitude
+ * @param latitude
+ * @example
+ * &#x60;&#x60;&#x60;
+ * var kollavarsham = require(&#x27;kollavarsham&#x27;);
+ * kollavarsham.setLatitude(8.5);
+ * &#x60;&#x60;&#x60;
+ */
+Kollavarsham.prototype.setLatitude = function (latitude) {
+  this.settings.latitude = latitude;
+};
+
+Kollavarsham.prototype.setLongitude = function (longitude) {
+  this.settings.longitude = longitude;
+  globals.desantara = (longitude - locations.Ujjain.longitude) / 360;
+};
+
+Kollavarsham.prototype.setOutput = function (output) {
+  this.settings.output = output;
+};
+
+Kollavarsham.prototype.displaySettings = function () {
+  console.log(&quot;The settings for kollavarsham calculations are as follows:&quot;);
+  console.log(&quot;Bija           : &quot; + this.settings.bija);
+  console.log(&quot;Mode           : &quot; + this.settings.mode);
+  console.log(&quot;Latitude       : &quot; + this.settings.latitude);
+  console.log(&quot;Longitude      : &quot; + this.settings.longitude);
+  console.log(&quot;Output         : &quot; + this.settings.output);
+  console.log(&quot;Gregorian Date : &quot; + this.settings.gregorianDate);
+};
+
+/**
+ * Sets the input Gregorian date for conversion
+ * @method setInputDate
+ * @param date
+ */
+Kollavarsham.prototype.setInputDate = function (date) {
+  this.settings.gregorianDate = date;
+};
+
+module.exports = Kollavarsham;
 
     </pre>
 </div>
@@ -221,7 +254,7 @@ module.exports = kollavarsham;
 <footer id="footer">
   <span class="copyright">&copy; 2014 The Kollavarsham Team</span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Fri, 14 Feb 2014 07:34:30 GMT</span>
+  <span class="last-modified">Last Updated: Fri, 14 Feb 2014 20:50:34 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>

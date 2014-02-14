@@ -47,7 +47,7 @@
             
                 <li><a href="../classes/JulianDate.html">JulianDate</a></li>
             
-                <li><a href="../classes/kollavarsham.html">kollavarsham</a></li>
+                <li><a href="../classes/Kollavarsham.html">Kollavarsham</a></li>
             
                 <li><a href="../classes/locations.html">locations</a></li>
             
@@ -69,7 +69,7 @@
             
                 <li><a href="../modules/JulianDate.html">JulianDate</a></li>
             
-                <li><a href="../modules/kollavrsham.html">kollavrsham</a></li>
+                <li><a href="../modules/kollavarsham.html">kollavarsham</a></li>
             
                 <li><a href="../modules/locations.html">locations</a></li>
             
@@ -153,48 +153,48 @@ var cliHelper = {
    * @static
    **/
   helpMessage    : function () {
-    //console.log(chalk.blue(&quot;TODO:// Usage along with a documentation of all options available&quot;));
-    console.log(chalk.magenta(&quot;./cli.js [options] arg&quot;));
-    console.log(chalk.magenta.bold(&quot;options&quot;));
-    console.log(chalk.magenta.bold(&quot;=======&quot;));
-    console.log(chalk.magenta(&quot;-h --help&quot;));
-    console.log(chalk.magenta(&quot;   Show this text&quot;));
-    console.log(chalk.magenta(&quot;-a --showlatitude&quot;));
-    console.log(chalk.magenta(&quot;   Display a map of India with the latitudes&quot;));
-    console.log(chalk.magenta(&quot;-s --showlongitude&quot;));
-    console.log(chalk.magenta(&quot;   Display a map of India with the longitudes&quot;));
-    console.log(chalk.magenta(&quot;-b --bija&quot;));
-    console.log(chalk.magenta(&quot;   Set Bija to true&quot;));
-    console.log(chalk.magenta(&quot;-m --mode &lt;0/1&gt;&quot;));
-    console.log(chalk.magenta(&quot;   0 for Gregorian Calendar Date to Malayalam Calendar Date&quot;));
-    console.log(chalk.magenta(&quot;   1 for Malayalam Calendar Date to Gregorian Calendar Date&quot;));
-    console.log(chalk.magenta(&quot;-t --latitude number&quot;));
-    console.log(chalk.magenta(&quot;   number signifying degrees of Latitude of the location Where the event occurred&quot;));
-    console.log(chalk.magenta(&quot;   default: 23.2 (Use option --showlatitude for help) &quot;));
-    console.log(chalk.magenta(&quot;-g --longitude number&quot;));
-    console.log(chalk.magenta(&quot;   number signifying degrees of Latitude of the location Where the event occurred&quot;));
-    console.log(chalk.magenta(&quot;   default: 75.8 (Use option --showlongitude for help)&quot;));
-    console.log(chalk.magenta(&quot;-b --bija &lt;true/false&gt;&quot;));
-    console.log(chalk.magenta(&quot;   Turn bija on or off. Default off.&quot;));
-    console.log(chalk.magenta(&quot;-o --output &lt;list/verbose&gt;&quot;));
-    console.log(chalk.magenta(&quot;   list: for dates on both sides of the entered&quot;));
-    console.log(chalk.magenta(&quot;   verbose: for detailed view of the output date&quot;));
-    console.log(chalk.magenta.bold(&quot;arguments&quot;));
-    console.log(chalk.magenta.bold(&quot;=========&quot;));
-    console.log(chalk.magenta(&quot;Date&quot;));
-    console.log(chalk.magenta(&quot;   Input date to be converted. Use the following date formats.&quot;));
-    console.log(chalk.magenta(&quot;   Date format: DD:MM:YYYY when mode is 0 (Gregorian to Malayalam)&quot;));
-    console.log(chalk.magenta(&quot;   Date format: DD:MM:YYYY when mode is 1 (Malayalam to Gregorian) where&quot;));
-    console.log(chalk.magenta(&quot;   DD is the day of the Malayalam month&quot;));
-    console.log(chalk.magenta(&quot;   MM 01 for Chingam, 02 for Kanni, 03 for Thulam, 04 for Vrischikam, 05 for Dhanu, 06 for Makaram, 07 for Kumbham, 08 for Meenam, 09 for Medam, 10 for Edavam, 11 for Mithunam, 12 for Karkidakam&quot;));
-    console.log(chalk.magenta(&quot;   YYYY is the Malayalam Year (Kollavarsham)&quot;));
-    console.log(chalk.magenta.bold(&quot;Examples&quot;));
-    console.log(chalk.magenta.bold(&quot;========&quot;));
-    console.log(chalk.magenta(&quot;To convert Modern Date to Kollavarsham Date for Location (100 deg east, 90 deg north&quot;));
-    console.log(chalk.magenta(&quot;With bija and list output:&quot;));
-    console.log(chalk.magenta(&quot;kollavarsham -b -t 90 -g 100 -m 0 -o list 23:08:2008&quot;));
-    console.log(chalk.magenta(&quot;To convert Modern Date to with default settings (Location: Ujjain)&quot;));
-    console.log(chalk.magenta(&quot;kollavarsham 04:04:2011&quot;));
+    console.log(chalk.yellow.bold(&quot;./cli.js [options] arg&quot;));
+    console.log(chalk.yellow(&quot;options&quot;));
+    console.log(chalk.yellow(&quot;=======&quot;));
+    console.log(chalk.yellow.bold(&quot;-h --help&quot;));
+    console.log(chalk.yellow.bold(&quot;   Show this text&quot;));
+    console.log(chalk.yellow.bold(&quot;-a --show-latitudes&quot;));
+    console.log(chalk.yellow.bold(&quot;   Display a map of India with the latitudes&quot;));
+    console.log(chalk.yellow.bold(&quot;-o --show-longitudes&quot;));
+    console.log(chalk.yellow.bold(&quot;   Display a map of India with the longitudes&quot;));
+    console.log(chalk.yellow.bold(&quot;-b --bija&quot;));
+    console.log(chalk.yellow.bold(&quot;   Set Bija to true&quot;));
+    console.log(chalk.yellow.bold(&quot;-m --mode &lt;0/1&gt;&quot;));
+    console.log(chalk.yellow.bold(&quot;   0 for Gregorian Calendar Date to Malayalam Calendar Date&quot;));
+    console.log(chalk.yellow.bold(&quot;   1 for Malayalam Calendar Date to Gregorian Calendar Date&quot;));
+    console.log(chalk.yellow.bold(&quot;-t --latitude number&quot;));
+    console.log(chalk.yellow.bold(&quot;   number signifying degrees of Latitude of the location Where the event occurred&quot;));
+    console.log(chalk.yellow.bold(&quot;   default: 23.2 (Use option --showlatitude for help) &quot;));
+    console.log(chalk.yellow.bold(&quot;-g --longitude number&quot;));
+    console.log(chalk.yellow.bold(&quot;   number signifying degrees of Latitude of the location Where the event occurred&quot;));
+    console.log(chalk.yellow.bold(&quot;   default: 75.8 (Use option --showlongitude for help)&quot;));
+    console.log(chalk.yellow.bold(&quot;-b --bija &lt;true/false&gt;&quot;));
+    console.log(chalk.yellow.bold(&quot;   Turn bija on or off. Default off.&quot;));
+    console.log(chalk.yellow.bold(&quot;-o --output-format &lt;list/verbose&gt;&quot;));
+    console.log(chalk.yellow.bold(&quot;   list: for dates on both sides of the entered&quot;));
+    console.log(chalk.yellow.bold(&quot;   verbose: for detailed view of the output date&quot;));
+    console.log(chalk.yellow(&quot;arguments&quot;));
+    console.log(chalk.yellow(&quot;=========&quot;));
+    console.log(chalk.yellow.bold(&quot;Date&quot;));
+    console.log(chalk.yellow.bold(&quot;   Input date to be converted. Use the following date formats.&quot;));
+    console.log(chalk.yellow.bold(&quot;   Date format: DD:MM:YYYY when mode is 0 (Gregorian to Malayalam)&quot;));
+    console.log(chalk.yellow.bold(&quot;   Date format: DD:MM:YYYY when mode is 1 (Malayalam to Gregorian) where&quot;));
+    console.log(chalk.yellow.bold(&quot;   DD is the day of the Malayalam month&quot;));
+    console.log(chalk.yellow.bold(&quot;   MM 01 for Chingam, 02 for Kanni, 03 for Thulam, 04 for Vrischikam, 05 for Dhanu, 06 for Makaram, &quot;));
+    console.log(chalk.yellow.bold(&quot;      07 for Kumbham, 08 for Meenam, 09 for Medam, 10 for Edavam, 11 for Mithunam, 12 for Karkidakam&quot;));
+    console.log(chalk.yellow.bold(&quot;   YYYY is the Malayalam Year (Kollavarsham)&quot;));
+    console.log(chalk.yellow(&quot;Examples&quot;));
+    console.log(chalk.yellow(&quot;========&quot;));
+    console.log(chalk.yellow.bold(&quot;To convert Modern Date to Kollavarsham Date for Location (100 deg east, 90 deg north&quot;));
+    console.log(chalk.yellow.bold(&quot;With bija and list output:&quot;));
+    console.log(chalk.yellow.bold(&quot;kollavarsham -b -t 90 -g 100 -m 0 -o list 23:08:2008&quot;));
+    console.log(chalk.yellow.bold(&quot;To convert Modern Date to with default settings (Location: Ujjain)&quot;));
+    console.log(chalk.yellow.bold(&quot;kollavarsham 04:04:2011&quot;));
   },
   /**
    * Shows the latitude values for various Indian cities on the map - legacy from Perl
@@ -291,7 +291,7 @@ module.exports = cliHelper;
 <footer id="footer">
   <span class="copyright">&copy; 2014 The Kollavarsham Team</span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Fri, 14 Feb 2014 07:34:30 GMT</span>
+  <span class="last-modified">Last Updated: Fri, 14 Feb 2014 20:50:34 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>

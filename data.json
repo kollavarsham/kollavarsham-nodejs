@@ -73,10 +73,10 @@
         "lib/kollavarsham.js": {
             "name": "lib/kollavarsham.js",
             "modules": {
-                "kollavrsham": 1
+                "kollavarsham": 1
             },
             "classes": {
-                "kollavarsham": 1
+                "Kollavarsham": 1
             },
             "fors": {},
             "namespaces": {}
@@ -180,18 +180,18 @@
             "file": "lib/julianDate.js",
             "line": 15
         },
-        "kollavrsham": {
-            "name": "kollavrsham",
+        "kollavarsham": {
+            "name": "kollavarsham",
             "submodules": {},
             "classes": {
-                "kollavarsham": 1
+                "Kollavarsham": 1
             },
             "fors": {},
             "namespaces": {},
             "tag": "module",
             "file": "lib/kollavarsham.js",
-            "line": 19,
-            "description": "CLI app to convert Gregorian date to Kollavarsham date and vice versa"
+            "line": 20,
+            "description": "CLI app to convert Gregorian date to Kollavarsham (Malayalam Era) date and vice versa"
         },
         "locations": {
             "name": "locations",
@@ -292,19 +292,25 @@
             ],
             "is_constructor": 1
         },
-        "kollavarsham": {
-            "name": "kollavarsham",
-            "shortname": "kollavarsham",
+        "Kollavarsham": {
+            "name": "Kollavarsham",
+            "shortname": "Kollavarsham",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "kollavrsham",
+            "module": "kollavarsham",
             "namespace": "",
             "file": "lib/kollavarsham.js",
-            "line": 19,
-            "static": 1
+            "line": 20,
+            "params": [
+                {
+                    "name": "options",
+                    "description": ""
+                }
+            ],
+            "is_constructor": 1
         },
         "locations": {
             "name": "locations",
@@ -445,35 +451,48 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 24,
+            "line": 27,
             "description": "Default values for the settings",
             "itemtype": "property",
-            "name": "settings",
-            "class": "kollavarsham",
-            "module": "kollavrsham"
+            "name": "defaults",
+            "access": "private",
+            "tagname": "",
+            "class": "Kollavarsham",
+            "module": "kollavarsham"
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 37,
-            "description": "Sets the mode of conversion - from Gregorian to Malayalam Era or vice versa. 0 and 1 (any non-zero value is considered as 1) are valid values",
+            "line": 42,
+            "itemtype": "property",
+            "name": "_settings",
+            "type": "{*}",
+            "access": "private",
+            "tagname": "",
+            "class": "Kollavarsham",
+            "module": "kollavarsham"
+        },
+        {
+            "file": "lib/kollavarsham.js",
+            "line": 51,
+            "description": "Sets the mode of conversion - from Gregorian to Malayalam Era or vice versa. `0`and `1` (any non-zero value is considered as 1) are valid values",
             "itemtype": "method",
             "name": "setMode",
             "params": [
                 {
                     "name": "mode",
-                    "description": "A value of 0 will do Gregorian to Malayalam Era and a value of 1 (or any non-zero value) will do Malayalam Era date to Gregorian",
+                    "description": "A value of `0` will do Gregorian to Malayalam Era and a value of `1` (or any non-zero value) will do Malayalam Era date to Gregorian",
                     "type": "Number"
                 }
             ],
             "example": [
-                "\n   var kollavarsham = require('kollavarsham');\n   kollavarsham.setMode(0);\n   kollavarsham.setInputDate(new Date(2014, 2, 14));\n   kollvarsham.convert();"
+                "\n```\nvar kollavarsham = require('kollavarsham');\nkollavarsham.setMode(0);\nkollavarsham.setInputDate(new Date(2014, 2, 14));\nkollavarsham.convert();\n```"
             ],
-            "class": "kollavarsham",
-            "module": "kollavrsham"
+            "class": "Kollavarsham",
+            "module": "kollavarsham"
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 51,
+            "line": 68,
             "description": "Sets or unsets the Bija factor",
             "itemtype": "method",
             "name": "setBija",
@@ -485,14 +504,32 @@
                 }
             ],
             "example": [
-                "\n   var kollavarsham = require('kollavarsham');\n   kollavarsham.setMode(0);\n   kollavarsham.setBija(true);\n   kollavarsham.setInputDate(new Date(2014, 2, 14));\n   kollvarsham.convert();"
+                "\n```\nvar kollavarsham = require('kollavarsham');\nkollavarsham.setMode(0);\nkollavarsham.setBija(true);\nkollavarsham.setInputDate(new Date(2014, 2, 14));\nkollavarsham.convert();\n```"
             ],
-            "class": "kollavarsham",
-            "module": "kollavrsham"
+            "class": "Kollavarsham",
+            "module": "kollavarsham"
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 84,
+            "line": 85,
+            "description": "Sets the latitude for the location that will be used as the basis for the conversion",
+            "itemtype": "method",
+            "name": "setLatitude",
+            "params": [
+                {
+                    "name": "latitude",
+                    "description": ""
+                }
+            ],
+            "example": [
+                "\n```\nvar kollavarsham = require('kollavarsham');\nkollavarsham.setLatitude(8.5);\n```"
+            ],
+            "class": "Kollavarsham",
+            "module": "kollavarsham"
+        },
+        {
+            "file": "lib/kollavarsham.js",
+            "line": 118,
             "description": "Sets the input Gregorian date for conversion",
             "itemtype": "method",
             "name": "setInputDate",
@@ -502,8 +539,8 @@
                     "description": ""
                 }
             ],
-            "class": "kollavarsham",
-            "module": "kollavrsham"
+            "class": "Kollavarsham",
+            "module": "kollavarsham"
         }
     ],
     "warnings": [

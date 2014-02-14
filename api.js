@@ -2,10 +2,10 @@ YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
         "JulianDate",
+        "Kollavarsham",
         "calendar",
         "cliHelper",
         "globals",
-        "kollavarsham",
         "locations",
         "math"
     ],
@@ -16,7 +16,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "cli",
         "cli-helper",
         "globals",
-        "kollavrsham",
+        "kollavarsham",
         "locations",
         "math"
     ],
@@ -50,9 +50,9 @@ YUI.add("yuidoc-meta", function(Y) {
             "name": "JulianDate"
         },
         {
-            "displayName": "kollavrsham",
-            "name": "kollavrsham",
-            "description": "CLI app to convert Gregorian date to Kollavarsham date and vice versa"
+            "displayName": "kollavarsham",
+            "name": "kollavarsham",
+            "description": "CLI app to convert Gregorian date to Kollavarsham (Malayalam Era) date and vice versa"
         },
         {
             "displayName": "locations",
