@@ -11,14 +11,20 @@
 var calculations = require('../lib/calculations.js');
 var celestial = require('../lib/celestial.js');
 var globals = require('../lib/globals.js');
-var kollavarsham = require('../lib/kollavarsham.js');
 var math = require('../lib/math.js');
 
 var runCalculationsWithADate = function () {
   globals.year = 2014;
   globals.month = 2;
   globals.day = 11;
-  calculations.main(kollavarsham.settings);
+  calculations.main({
+    bija          : false,
+    mode          : 0,
+    latitude      : 23.2,
+    longitude     : 75.8,
+    output        : "verbose",
+    gregorianDate : new Date()
+  });
   calculations.planetary();
 };
 

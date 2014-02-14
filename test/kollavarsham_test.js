@@ -8,7 +8,7 @@
 
 'use strict';
 
-// var kollavarsham = require('../lib/kollavarsham.js');
+// var kollavarsham = require('../lib/Kollavarsham.js');
 
 /*
   ======== A Handy Little Nodeunit Reference ========
