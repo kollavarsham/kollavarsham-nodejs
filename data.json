@@ -304,8 +304,7 @@
             "namespace": "",
             "file": "lib/kollavarsham.js",
             "line": 19,
-            "static": 1,
-            "type": "{{settings: {bija: boolean, mode: number, latitude: number, longitude: number, output: string, gregorianDate: Date}, setMode: 'setMode', setBija: 'setBija', setLatitude: 'setLatitude', setLongitude: 'setLongitude', setOutput: 'setOutput', displaySettings: 'displaySettings', setGregorianDate: 'setGregorianDate'}}"
+            "static": 1
         },
         "locations": {
             "name": "locations",
@@ -446,10 +445,57 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 59,
+            "line": 24,
+            "description": "Default values for the settings",
+            "itemtype": "property",
+            "name": "settings",
+            "class": "kollavarsham",
+            "module": "kollavrsham"
+        },
+        {
+            "file": "lib/kollavarsham.js",
+            "line": 37,
+            "description": "Sets the mode of conversion - from Gregorian to Malayalam Era or vice versa. 0 and 1 (any non-zero value is considered as 1) are valid values",
+            "itemtype": "method",
+            "name": "setMode",
+            "params": [
+                {
+                    "name": "mode",
+                    "description": "A value of 0 will do Gregorian to Malayalam Era and a value of 1 (or any non-zero value) will do Malayalam Era date to Gregorian",
+                    "type": "Number"
+                }
+            ],
+            "example": [
+                "\n   var kollavarsham = require('kollavarsham');\n   kollavarsham.setMode(0);\n   kollavarsham.setInputDate(new Date(2014, 2, 14));\n   kollvarsham.convert();"
+            ],
+            "class": "kollavarsham",
+            "module": "kollavrsham"
+        },
+        {
+            "file": "lib/kollavarsham.js",
+            "line": 51,
+            "description": "Sets or unsets the Bija factor",
+            "itemtype": "method",
+            "name": "setBija",
+            "params": [
+                {
+                    "name": "bija",
+                    "description": "",
+                    "type": "Boolean"
+                }
+            ],
+            "example": [
+                "\n   var kollavarsham = require('kollavarsham');\n   kollavarsham.setMode(0);\n   kollavarsham.setBija(true);\n   kollavarsham.setInputDate(new Date(2014, 2, 14));\n   kollvarsham.convert();"
+            ],
+            "class": "kollavarsham",
+            "module": "kollavrsham"
+        },
+        {
+            "file": "lib/kollavarsham.js",
+            "line": 84,
             "description": "Sets the input Gregorian date for conversion",
             "itemtype": "method",
-            "name": "setGregorianDate",
+            "name": "setInputDate",
             "params": [
                 {
                     "name": "date",
