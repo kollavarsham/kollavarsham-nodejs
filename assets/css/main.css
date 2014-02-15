@@ -19,7 +19,7 @@ Here's a quick lookup table:
 */
 
 html {
-  background : #fff;
+  background : #efefef;
   color      : #333;
   overflow-y : scroll;
 }
@@ -101,8 +101,8 @@ code, kbd, pre, samp {
 }
 
 p code, p kbd, p samp, li code {
-  background : #fcfbfa;
-  border     : 1px solid #efeeed;
+  background : #dcdbda;
+  border     : 1px solid #dfdedd;
   padding    : 0 3px;
 }
 
@@ -672,10 +672,9 @@ kbd .cmd { font-family : Monaco, Helvetica; }
 /* -- File Source View ------------------------------------------------------ */
 .apidocs .file pre.code,
 #doc .apidocs .file pre.prettyprint {
-  background : inherit;
-  border     : none;
-  overflow   : visible;
-  padding    : 0;
+  border   : none;
+  overflow : visible;
+  padding  : 0;
 }
 
 .apidocs .L0,
@@ -803,8 +802,8 @@ kbd .cmd { font-family : Monaco, Helvetica; }
 }
 
 .version em {
-  font-size: large;
-  margin : 15px;
+  font-size : large;
+  margin    : 15px;
 }
 
 .copyright {
@@ -831,6 +830,8 @@ kbd .cmd { font-family : Monaco, Helvetica; }
   width      : 100%;
   background : #ccc;
   text-align : center;
+  box-shadow : 0 -2px 10px #999;
+  color      : #666;
 }
 
 /* IE 6 */
@@ -838,3 +839,41 @@ kbd .cmd { font-family : Monaco, Helvetica; }
   position : absolute;
   top      : expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
 }
+
+/* Sons of Obsidian */
+
+.pln { color : #f1f2f3 }
+
+.str { color : #ec7600 }
+
+.kwd { color : #93c763 }
+
+.com { color : #777; font-style : italic }
+
+.typ { color : #678cb1 }
+
+.lit { color : #facd22 }
+
+.clo, .opn, .pun { color : #f1f2f3 }
+
+.tag { color : #8ac763 }
+
+.atn { color : #e0e2e4 }
+
+.atv { color : #ec7600 }
+
+.dec { color : purple }
+
+.var { color : #ff9da4 }
+
+.fun { color : #bbdaff }
+
+pre.prettyprint { background-color : #111; padding : 10px; border : 1px solid #e1e1e8; border-radius : 4px; box-shadow : -5px 4px 10px #ccc }
+
+ol.linenums { color : #7285b7; margin : 0 0 0 40px }
+
+ol.linenums li { line-height : 18px; padding-left : 12px }
+
+ol.linenums li.L0, ol.linenums li.L1, ol.linenums li.L2, ol.linenums li.L3, ol.linenums li.L4, ol.linenums li.L5, ol.linenums li.L6, ol.linenums li.L7, ol.linenums li.L8, ol.linenums li.L9 { color : #555 }
+
+ol.linenums li.L1, ol.linenums li.L3, ol.linenums li.L5, ol.linenums li.L7, ol.linenums li.L9 { background : #222 }

@@ -134,9 +134,30 @@ var globals = require(&#x27;./globals&#x27;);
 var locations = require(&#x27;./locations&#x27;);
 
 /**
+ * The Kollavarsham class implements all the public APIs of the library.
+ *
+ * Create a new instance of this class, passing in the relevant options and call methods on this instance.
+ *
  * @class Kollavarsham
  * @param options
  * @constructor
+ * @example
+ * &#x60;&#x60;&#x60;
+ *     var Kollavarsham = require(&#x27;kollavarsham&#x27;);
+ *
+ *     var options = {
+ *       bija: true,
+ *       latitude: 10,
+ *       longitude: 76.2,
+ *       outputFormat: &quot;verbose&quot;
+ *     };
+ *
+ *     var kollavarsham = new Kollavarsham(options);
+ *
+ *     var todayInMalayalamEra = kollavarsham.fromGregorianDate(new Date());
+ *
+ *     var today = kollavarsham.toGregorianDate(todayInMalayalamEra);
+ *&#x60;&#x60;&#x60;
  */
 var Kollavarsham = function (options) {
 
@@ -156,7 +177,8 @@ var Kollavarsham = function (options) {
   };
 
   /**
-   * @property _settings
+   * Holds the settings state of the Kollavarsham instance
+   * @property settings
    * @type {*}
    * @private
    */
@@ -171,10 +193,11 @@ var Kollavarsham = function (options) {
  * @param mode {Number} A value of &#x60;0&#x60; will do Gregorian to Malayalam Era and a value of &#x60;1&#x60; (or any non-zero value) will do Malayalam Era date to Gregorian
  * @example
  * &#x60;&#x60;&#x60;
- *var kollavarsham = require(&#x27;kollavarsham&#x27;);
- *kollavarsham.setMode(0);
- *kollavarsham.setInputDate(new Date(2014, 2, 14));
- *kollavarsham.convert();
+ *    var Kollavarsham = require(&#x27;Kollavarsham&#x27;);
+ *    var kollavarsham = new Kolavarsham({});
+ *    kollavarsham.setMode(0);
+ *    kollavarsham.setInputDate(new Date(2014, 2, 14));
+ *    kollavarsham.convert();
  * &#x60;&#x60;&#x60;
  */
 Kollavarsham.prototype.setMode = function (mode) {
@@ -183,15 +206,17 @@ Kollavarsham.prototype.setMode = function (mode) {
 
 /**
  * Sets or unsets the Bija factor
+ *
  * @method setBija
  * @param bija {Boolean}
  * @example
  * &#x60;&#x60;&#x60;
- *var kollavarsham = require(&#x27;kollavarsham&#x27;);
- *kollavarsham.setMode(0);
- *kollavarsham.setBija(true);
- *kollavarsham.setInputDate(new Date(2014, 2, 14));
- *kollavarsham.convert();
+ *    var Kollavarsham = require(&#x27;Kollavarsham&#x27;);
+ *    var kollavarsham = new Kolavarsham({});
+ *    kollavarsham.setMode(0);
+ *    kollavarsham.setBija(true);
+ *    kollavarsham.setInputDate(new Date(2014, 2, 14));
+ *    kollavarsham.convert();
  * &#x60;&#x60;&#x60;
  */
 Kollavarsham.prototype.setBija = function (bija) {
@@ -204,14 +229,26 @@ Kollavarsham.prototype.setBija = function (bija) {
  * @param latitude
  * @example
  * &#x60;&#x60;&#x60;
- * var kollavarsham = require(&#x27;kollavarsham&#x27;);
- * kollavarsham.setLatitude(8.5);
+ *    var Kollavarsham = require(&#x27;Kollavarsham&#x27;);
+ *    var kollavarsham = new Kolavarsham({});
+ *    kollavarsham.setLatitude(8.5);
  * &#x60;&#x60;&#x60;
  */
 Kollavarsham.prototype.setLatitude = function (latitude) {
   this.settings.latitude = latitude;
 };
 
+/**
+ * Sets the longitude for the location that will be used as the basis of the conversion
+ * @method setLongitude
+ * @param longitude
+ * @example
+ * &#x60;&#x60;&#x60;
+ *    var Kollavarsham = require(&#x27;Kollavarsham&#x27;);
+ *    var kollavarsham = new Kolavarsham({});
+ *    kollavarsham.setLongitude(77.0);
+ *&#x60;&#x60;&#x60;
+ */
 Kollavarsham.prototype.setLongitude = function (longitude) {
   this.settings.longitude = longitude;
   globals.desantara = (longitude - locations.Ujjain.longitude) / 360;
@@ -254,7 +291,7 @@ module.exports = Kollavarsham;
 <footer id="footer">
   <span class="copyright">&copy; 2014 The Kollavarsham Team</span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Fri, 14 Feb 2014 20:50:34 GMT</span>
+  <span class="last-modified">Last Updated: Sat, 15 Feb 2014 21:34:37 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>

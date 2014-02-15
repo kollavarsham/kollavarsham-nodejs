@@ -246,8 +246,7 @@
             "namespace": "",
             "file": "lib/cli-helper.js",
             "line": 15,
-            "static": 1,
-            "type": "{{openingMessage: openingMessage, helpMessage: helpMessage, showLatitudes: showLatitudes, showLongitudes: showLongitudes, parseDate: parseDate}}"
+            "static": 1
         },
         "globals": {
             "name": "globals",
@@ -304,13 +303,17 @@
             "namespace": "",
             "file": "lib/kollavarsham.js",
             "line": 20,
+            "description": "The Kollavarsham class implements all the public APIs of the library.\n\nCreate a new instance of this class, passing in the relevant options and call methods on this instance.",
             "params": [
                 {
                     "name": "options",
                     "description": ""
                 }
             ],
-            "is_constructor": 1
+            "is_constructor": 1,
+            "example": [
+                "\n```\n    var Kollavarsham = require('kollavarsham');\n\n    var options = {\n      bija: true,\n      latitude: 10,\n      longitude: 76.2,\n      outputFormat: \"verbose\"\n    };\n\n    var kollavarsham = new Kollavarsham(options);\n\n    var todayInMalayalamEra = kollavarsham.fromGregorianDate(new Date());\n\n    var today = kollavarsham.toGregorianDate(todayInMalayalamEra);\n```"
+            ]
         },
         "locations": {
             "name": "locations",
@@ -346,7 +349,7 @@
     "classitems": [
         {
             "file": "lib/cli-helper.js",
-            "line": 21,
+            "line": 20,
             "description": "Prints the opening message/banner when the CLI is invoked",
             "itemtype": "method",
             "name": "openingMessage",
@@ -356,7 +359,7 @@
         },
         {
             "file": "lib/cli-helper.js",
-            "line": 34,
+            "line": 33,
             "description": "Displays the help message for the CLI",
             "itemtype": "method",
             "name": "helpMessage",
@@ -366,7 +369,7 @@
         },
         {
             "file": "lib/cli-helper.js",
-            "line": 83,
+            "line": 82,
             "description": "Shows the latitude values for various Indian cities on the map - legacy from Perl",
             "itemtype": "method",
             "name": "showLatitudes",
@@ -376,7 +379,7 @@
         },
         {
             "file": "lib/cli-helper.js",
-            "line": 112,
+            "line": 111,
             "description": "Shows the longitude values for various Indian cities on the map - legacy from Perl",
             "itemtype": "method",
             "name": "showLongitudes",
@@ -386,7 +389,7 @@
         },
         {
             "file": "lib/cli-helper.js",
-            "line": 142,
+            "line": 141,
             "access": "private",
             "tagname": "",
             "itemtype": "method",
@@ -395,7 +398,8 @@
             "params": [
                 {
                     "name": "date",
-                    "description": "*"
+                    "description": "String representation of the date to be parsed",
+                    "type": "String"
                 }
             ],
             "return": {
@@ -451,7 +455,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 27,
+            "line": 48,
             "description": "Default values for the settings",
             "itemtype": "property",
             "name": "defaults",
@@ -462,9 +466,10 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 42,
+            "line": 63,
+            "description": "Holds the settings state of the Kollavarsham instance",
             "itemtype": "property",
-            "name": "_settings",
+            "name": "settings",
             "type": "{*}",
             "access": "private",
             "tagname": "",
@@ -473,7 +478,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 51,
+            "line": 73,
             "description": "Sets the mode of conversion - from Gregorian to Malayalam Era or vice versa. `0`and `1` (any non-zero value is considered as 1) are valid values",
             "itemtype": "method",
             "name": "setMode",
@@ -485,14 +490,14 @@
                 }
             ],
             "example": [
-                "\n```\nvar kollavarsham = require('kollavarsham');\nkollavarsham.setMode(0);\nkollavarsham.setInputDate(new Date(2014, 2, 14));\nkollavarsham.convert();\n```"
+                "\n```\n   var Kollavarsham = require('Kollavarsham');\n   var kollavarsham = new Kolavarsham({});\n   kollavarsham.setMode(0);\n   kollavarsham.setInputDate(new Date(2014, 2, 14));\n   kollavarsham.convert();\n```"
             ],
             "class": "Kollavarsham",
             "module": "kollavarsham"
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 68,
+            "line": 91,
             "description": "Sets or unsets the Bija factor",
             "itemtype": "method",
             "name": "setBija",
@@ -504,14 +509,14 @@
                 }
             ],
             "example": [
-                "\n```\nvar kollavarsham = require('kollavarsham');\nkollavarsham.setMode(0);\nkollavarsham.setBija(true);\nkollavarsham.setInputDate(new Date(2014, 2, 14));\nkollavarsham.convert();\n```"
+                "\n```\n   var Kollavarsham = require('Kollavarsham');\n   var kollavarsham = new Kolavarsham({});\n   kollavarsham.setMode(0);\n   kollavarsham.setBija(true);\n   kollavarsham.setInputDate(new Date(2014, 2, 14));\n   kollavarsham.convert();\n```"
             ],
             "class": "Kollavarsham",
             "module": "kollavarsham"
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 85,
+            "line": 110,
             "description": "Sets the latitude for the location that will be used as the basis for the conversion",
             "itemtype": "method",
             "name": "setLatitude",
@@ -522,14 +527,32 @@
                 }
             ],
             "example": [
-                "\n```\nvar kollavarsham = require('kollavarsham');\nkollavarsham.setLatitude(8.5);\n```"
+                "\n```\n   var Kollavarsham = require('Kollavarsham');\n   var kollavarsham = new Kolavarsham({});\n   kollavarsham.setLatitude(8.5);\n```"
             ],
             "class": "Kollavarsham",
             "module": "kollavarsham"
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 118,
+            "line": 125,
+            "description": "Sets the longitude for the location that will be used as the basis of the conversion",
+            "itemtype": "method",
+            "name": "setLongitude",
+            "params": [
+                {
+                    "name": "longitude",
+                    "description": ""
+                }
+            ],
+            "example": [
+                "\n```\n   var Kollavarsham = require('Kollavarsham');\n   var kollavarsham = new Kolavarsham({});\n   kollavarsham.setLongitude(77.0);\n```"
+            ],
+            "class": "Kollavarsham",
+            "module": "kollavarsham"
+        },
+        {
+            "file": "lib/kollavarsham.js",
+            "line": 155,
             "description": "Sets the input Gregorian date for conversion",
             "itemtype": "method",
             "name": "setInputDate",
@@ -546,7 +569,7 @@
     "warnings": [
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/cli-helper.js:142"
+            "line": " lib/cli-helper.js:141"
         },
         {
             "message": "replacing incorrect tag: returns with return",
