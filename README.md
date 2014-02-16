@@ -61,7 +61,7 @@ Resources and Documentation
 http://kollavarsham.org
 
 ## Documentation
-_(Coming soon)_
+Click [here](http://kollavarsham.org/kollavarsham-nodejs) to visit the API Documentation
 
 ## Examples
 To convert Modern Date to Kollavarsham Date for Location (100 deg east, 90 deg north with bija and list output:
