@@ -3,6 +3,7 @@ YUI.add("yuidoc-meta", function(Y) {
     "classes": [
         "JulianDate",
         "Kollavarsham",
+        "KollavarshamDate",
         "calendar",
         "cliHelper",
         "globals",
@@ -10,11 +11,11 @@ YUI.add("yuidoc-meta", function(Y) {
         "math"
     ],
     "modules": [
-        "JulianDate",
         "calculations",
         "calendar",
         "cli",
         "cli-helper",
+        "date",
         "globals",
         "kollavarsham",
         "locations",
@@ -41,13 +42,13 @@ YUI.add("yuidoc-meta", function(Y) {
             "description": "Helper functions for the CLI app"
         },
         {
+            "displayName": "date",
+            "name": "date"
+        },
+        {
             "displayName": "globals",
             "name": "globals",
             "description": "Temporary module that holds all the Perl global variables"
-        },
-        {
-            "displayName": "JulianDate",
-            "name": "JulianDate"
         },
         {
             "displayName": "kollavarsham",

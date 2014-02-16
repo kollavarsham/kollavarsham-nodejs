@@ -46,6 +46,21 @@
             "fors": {},
             "namespaces": {}
         },
+        "lib/date.js": {
+            "name": "lib/date.js",
+            "modules": {
+                "date": 1
+            },
+            "classes": {
+                "JulianDate": 1,
+                "KollavarshamDate": 1
+            },
+            "fors": {
+                "JulianDate": 1,
+                "KollavarshamDate": 1
+            },
+            "namespaces": {}
+        },
         "lib/globals.js": {
             "name": "lib/globals.js",
             "modules": {
@@ -55,19 +70,6 @@
                 "globals": 1
             },
             "fors": {},
-            "namespaces": {}
-        },
-        "lib/julianDate.js": {
-            "name": "lib/julianDate.js",
-            "modules": {
-                "JulianDate": 1
-            },
-            "classes": {
-                "JulianDate": 1
-            },
-            "fors": {
-                "JulianDate": 1
-            },
             "namespaces": {}
         },
         "lib/kollavarsham.js": {
@@ -152,6 +154,22 @@
             "line": 11,
             "description": "CLI app to convert Gregorian date to Kollavarsham date and vice versa"
         },
+        "date": {
+            "name": "date",
+            "submodules": {},
+            "classes": {
+                "JulianDate": 1,
+                "KollavarshamDate": 1
+            },
+            "fors": {
+                "JulianDate": 1,
+                "KollavarshamDate": 1
+            },
+            "namespaces": {},
+            "tag": "module",
+            "file": "lib/date.js",
+            "line": 57
+        },
         "globals": {
             "name": "globals",
             "submodules": {},
@@ -165,20 +183,6 @@
             "line": 9,
             "description": "Temporary module that holds all the Perl global variables",
             "static": 1
-        },
-        "JulianDate": {
-            "name": "JulianDate",
-            "submodules": {},
-            "classes": {
-                "JulianDate": 1
-            },
-            "fors": {
-                "JulianDate": 1
-            },
-            "namespaces": {},
-            "tag": "module",
-            "file": "lib/julianDate.js",
-            "line": 15
         },
         "kollavarsham": {
             "name": "kollavarsham",
@@ -248,6 +252,75 @@
             "line": 15,
             "static": 1
         },
+        "JulianDate": {
+            "name": "JulianDate",
+            "shortname": "JulianDate",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "date",
+            "namespace": "",
+            "file": "lib/date.js",
+            "line": 29,
+            "description": "Represents a Julian Date's year, month and day",
+            "params": [
+                {
+                    "name": "year",
+                    "description": "Julian year",
+                    "type": "Number"
+                },
+                {
+                    "name": "month",
+                    "description": "Julian month",
+                    "type": "Number"
+                },
+                {
+                    "name": "day",
+                    "description": "Julian day",
+                    "type": "Number"
+                }
+            ],
+            "is_constructor": 1
+        },
+        "KollavarshamDate": {
+            "name": "KollavarshamDate",
+            "shortname": "KollavarshamDate",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "date",
+            "namespace": "",
+            "file": "lib/date.js",
+            "line": 57,
+            "params": [
+                {
+                    "name": "year",
+                    "description": "The Kollavarsham year",
+                    "type": "Number",
+                    "optional": true,
+                    "optdefault": "1"
+                },
+                {
+                    "name": "month",
+                    "description": "The Kollavarsham month",
+                    "type": "Number",
+                    "optional": true,
+                    "optdefault": "1"
+                },
+                {
+                    "name": "day",
+                    "description": "The Kollavarsham day",
+                    "type": "Number",
+                    "optional": true,
+                    "optdefault": "1"
+                }
+            ],
+            "is_constructor": 1
+        },
         "globals": {
             "name": "globals",
             "shortname": "globals",
@@ -261,35 +334,6 @@
             "file": "lib/globals.js",
             "line": 9,
             "description": "Temporary module that holds all the Perl global variables"
-        },
-        "JulianDate": {
-            "name": "JulianDate",
-            "shortname": "JulianDate",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [],
-            "module": "JulianDate",
-            "namespace": "",
-            "file": "lib/julianDate.js",
-            "line": 15,
-            "description": "Represents a Julian Date's year, month and day",
-            "params": [
-                {
-                    "name": "year",
-                    "description": ""
-                },
-                {
-                    "name": "month",
-                    "description": ""
-                },
-                {
-                    "name": "day",
-                    "description": ""
-                }
-            ],
-            "is_constructor": 1
         },
         "Kollavarsham": {
             "name": "Kollavarsham",
@@ -307,12 +351,44 @@
             "params": [
                 {
                     "name": "options",
-                    "description": ""
+                    "description": "A set of key value pairs to configure the Kollavarsham instance. All settings are optional.",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "bija",
+                            "description": "Set this to true to use the Bija correction",
+                            "type": "Boolean",
+                            "optional": true,
+                            "optdefault": "false"
+                        },
+                        {
+                            "name": "latitude",
+                            "description": "Sets the latitude for the location for the conversions",
+                            "type": "Number",
+                            "optional": true,
+                            "optdefault": "23.2"
+                        },
+                        {
+                            "name": "longitude",
+                            "description": "Sets the longitude for the location for the conversions",
+                            "type": "Number",
+                            "optional": true,
+                            "optdefault": "75.8"
+                        },
+                        {
+                            "name": "output",
+                            "description": "Set to 'list' or 'verbose' for the output",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "'verbose'"
+                        }
+                    ]
                 }
             ],
             "is_constructor": 1,
             "example": [
-                "\n```\n    var Kollavarsham = require('kollavarsham');\n\n    var options = {\n      bija: true,\n      latitude: 10,\n      longitude: 76.2,\n      outputFormat: \"verbose\"\n    };\n\n    var kollavarsham = new Kollavarsham(options);\n\n    var todayInMalayalamEra = kollavarsham.fromGregorianDate(new Date());\n\n    var today = kollavarsham.toGregorianDate(todayInMalayalamEra);\n```"
+                "\n```\n    var Kollavarsham = require('kollavarsham');\n\n    var options = {\n      bija: true,\n      latitude: 10,\n      longitude: 76.2,\n      outputFormat: 'verbose'\n    };\n\n    var kollavarsham = new Kollavarsham(options);\n\n    var todayInMalayalamEra = kollavarsham.fromGregorianDate(new Date());\n\n    var today = kollavarsham.toGregorianDate(todayInMalayalamEra);\n```"
             ]
         },
         "locations": {
@@ -410,16 +486,8 @@
             "module": "cli-helper"
         },
         {
-            "file": "lib/globals.js",
-            "line": 20,
-            "static": 1,
-            "type": "{{planet: boolean, YugaCivilDays: boolean, YugaSynodicMonth: boolean, YugaAdhimasa: boolean, YugaTithi: boolean, YugaKsayadina: boolean, lagna: boolean, back_clong_ahar: number, back_nclong_ahar: number, back_clong: number, back_nclong: number, year: boolean, month: boolean, paksa: boolean, day: boolean, ahar: boolean, ahargana: boolean, hours: boolean, minutes: boolean, JulianDay: boolean, YearKali: boolean, YearSaka: boolean, YearVikrama: boolean, masa_num: boolean, saura_masa_num: boolean, saura_masa_day: boolean, tithi_day: boolean, mslong: boolean, tslong: boolean, mllong: boolean, tllong: boolean, clong: boolean, nclong: boolean, tithi: boolean, ftithi: boolean, eqtime: boolean, sriseh: boolean, srisem: boolean, weekday_name: boolean, sukla_krsna: boolean, adhimasa: boolean, masa: boolean, naksatra: boolean, samkranti: boolean, samkranti_year: boolean, samkranti_month: boolean, samkranti_day: boolean, samkranti_hour: boolean, samkranti_min: boolean, ayanadeg: boolean, ayanamin: boolean, desantara: number, counter: boolean}}",
-            "class": "globals",
-            "module": "globals"
-        },
-        {
-            "file": "lib/julianDate.js",
-            "line": 29,
+            "file": "lib/date.js",
+            "line": 15,
             "description": "Pads zeroes to print the date in a pretty format",
             "access": "private",
             "tagname": "",
@@ -438,11 +506,17 @@
                 "type": "String"
             },
             "class": "JulianDate",
-            "module": "JulianDate"
+            "module": "date"
         },
         {
-            "file": "lib/julianDate.js",
-            "line": 41,
+            "file": "lib/date.js",
+            "line": 27,
+            "class": "JulianDate",
+            "module": "date"
+        },
+        {
+            "file": "lib/date.js",
+            "line": 43,
             "description": "Converts the Julian Date to a nicely formatted string with year, month and date",
             "itemtype": "method",
             "name": "toString",
@@ -451,11 +525,38 @@
                 "type": "String"
             },
             "class": "JulianDate",
-            "module": "JulianDate"
+            "module": "date"
+        },
+        {
+            "file": "lib/date.js",
+            "line": 55,
+            "class": "JulianDate",
+            "module": "date"
+        },
+        {
+            "file": "lib/date.js",
+            "line": 72,
+            "description": "Converts the Kollavarsham Date to a nicely formatted string with year, month and date",
+            "itemtype": "method",
+            "name": "toString",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "KollavarshamDate",
+            "module": "date"
+        },
+        {
+            "file": "lib/globals.js",
+            "line": 20,
+            "static": 1,
+            "type": "{{planet: boolean, YugaCivilDays: boolean, YugaSynodicMonth: boolean, YugaAdhimasa: boolean, YugaTithi: boolean, YugaKsayadina: boolean, lagna: boolean, back_clong_ahar: number, back_nclong_ahar: number, back_clong: number, back_nclong: number, year: boolean, month: boolean, paksa: boolean, day: boolean, ahar: boolean, ahargana: boolean, hours: boolean, minutes: boolean, JulianDay: boolean, YearKali: boolean, YearSaka: boolean, YearVikrama: boolean, masa_num: boolean, saura_masa_num: boolean, saura_masa_day: boolean, tithi_day: boolean, mslong: boolean, tslong: boolean, mllong: boolean, tllong: boolean, clong: boolean, nclong: boolean, tithi: boolean, ftithi: boolean, eqtime: boolean, sriseh: boolean, srisem: boolean, weekday_name: boolean, sukla_krsna: boolean, adhimasa: boolean, masa: boolean, naksatra: boolean, samkranti: boolean, samkranti_year: boolean, samkranti_month: boolean, samkranti_day: boolean, samkranti_hour: boolean, samkranti_min: boolean, ayanadeg: boolean, ayanamin: boolean, desantara: number, counter: boolean}}",
+            "class": "globals",
+            "module": "globals"
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 48,
+            "line": 52,
             "description": "Default values for the settings",
             "itemtype": "property",
             "name": "defaults",
@@ -466,7 +567,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 63,
+            "line": 67,
             "description": "Holds the settings state of the Kollavarsham instance",
             "itemtype": "property",
             "name": "settings",
@@ -478,7 +579,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 73,
+            "line": 77,
             "description": "Sets the mode of conversion - from Gregorian to Malayalam Era or vice versa. `0`and `1` (any non-zero value is considered as 1) are valid values",
             "itemtype": "method",
             "name": "setMode",
@@ -497,7 +598,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 91,
+            "line": 95,
             "description": "Sets or unsets the Bija factor",
             "itemtype": "method",
             "name": "setBija",
@@ -516,7 +617,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 110,
+            "line": 114,
             "description": "Sets the latitude for the location that will be used as the basis for the conversion",
             "itemtype": "method",
             "name": "setLatitude",
@@ -534,7 +635,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 125,
+            "line": 129,
             "description": "Sets the longitude for the location that will be used as the basis of the conversion",
             "itemtype": "method",
             "name": "setLongitude",
@@ -552,7 +653,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 155,
+            "line": 159,
             "description": "Sets the input Gregorian date for conversion",
             "itemtype": "method",
             "name": "setInputDate",
@@ -573,19 +674,23 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/julianDate.js:29"
+            "line": " lib/date.js:15"
         },
         {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " lib/julianDate.js:41"
+            "message": "Missing item type\nPads zeroes to print the date in a pretty format",
+            "line": " lib/date.js:15"
+        },
+        {
+            "message": "Missing item type",
+            "line": " lib/date.js:27"
+        },
+        {
+            "message": "Missing item type",
+            "line": " lib/date.js:55"
         },
         {
             "message": "Missing item type",
             "line": " lib/globals.js:20"
-        },
-        {
-            "message": "Missing item type\nPads zeroes to print the date in a pretty format",
-            "line": " lib/julianDate.js:29"
         }
     ]
 }

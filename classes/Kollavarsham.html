@@ -49,6 +49,8 @@
             
                 <li><a href="../classes/Kollavarsham.html">Kollavarsham</a></li>
             
+                <li><a href="../classes/KollavarshamDate.html">KollavarshamDate</a></li>
+            
                 <li><a href="../classes/locations.html">locations</a></li>
             
                 <li><a href="../classes/math.html">math</a></li>
@@ -65,9 +67,9 @@
             
                 <li><a href="../modules/cli-helper.html">cli-helper</a></li>
             
-                <li><a href="../modules/globals.html">globals</a></li>
+                <li><a href="../modules/date.html">date</a></li>
             
-                <li><a href="../modules/JulianDate.html">JulianDate</a></li>
+                <li><a href="../modules/globals.html">globals</a></li>
             
                 <li><a href="../modules/kollavarsham.html">kollavarsham</a></li>
             
@@ -151,7 +153,7 @@
             
                 <li class="arg">
                     
-                        <code>options</code>
+                        <code class="optional">[options]</code>
                     
                 </li>
             
@@ -206,16 +208,82 @@
             
                 <li class="param">
                     
-                        <code class="param-name">options</code>
+                        <code class="param-name optional">[options]</code>
                         <span class="type">Object</span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
                     
 
                     
 
                     <div class="param-description">
-                         
+                        <p>A set of key value pairs to configure the Kollavarsham instance. All settings are optional.</p>
+
                     </div>
 
+                    
+                        <ul class="params-list">
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[bija=false]</code>
+                                    <span class="type">Boolean</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Set this to true to use the Bija correction</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[latitude=23.2]</code>
+                                    <span class="type">Number</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Sets the latitude for the location for the conversions</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[longitude=75.8]</code>
+                                    <span class="type">Number</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Sets the longitude for the location for the conversions</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                            <li class="param">
+                                
+                                    <code class="param-name optional">[output=&#x27;verbose&#x27;]</code>
+                                    <span class="type">String</span>
+                                    <span class="flag optional" title="This parameter is optional.">optional</span>
+                                
+
+                                <div class="param-description">
+                                    <p>Set to &#39;list&#39; or &#39;verbose&#39; for the output</p>
+
+                                </div>
+
+                                
+                            </li>
+                            
+                        </ul>
                     
                 </li>
             
@@ -236,7 +304,7 @@
       bija: true,
       latitude: 10,
       longitude: 76.2,
-      outputFormat: "verbose"
+      outputFormat: &#39;verbose&#39;
     };
 
     var kollavarsham = new Kollavarsham(options);
@@ -392,7 +460,7 @@
             
         
         
-        <a href="../files/lib_kollavarsham.js.html#l91"><code>lib&#x2F;kollavarsham.js:91</code></a>
+        <a href="../files/lib_kollavarsham.js.html#l95"><code>lib&#x2F;kollavarsham.js:95</code></a>
         
         </p>
 
@@ -494,7 +562,7 @@
             
         
         
-        <a href="../files/lib_kollavarsham.js.html#l155"><code>lib&#x2F;kollavarsham.js:155</code></a>
+        <a href="../files/lib_kollavarsham.js.html#l159"><code>lib&#x2F;kollavarsham.js:159</code></a>
         
         </p>
 
@@ -582,7 +650,7 @@
             
         
         
-        <a href="../files/lib_kollavarsham.js.html#l110"><code>lib&#x2F;kollavarsham.js:110</code></a>
+        <a href="../files/lib_kollavarsham.js.html#l114"><code>lib&#x2F;kollavarsham.js:114</code></a>
         
         </p>
 
@@ -681,7 +749,7 @@
             
         
         
-        <a href="../files/lib_kollavarsham.js.html#l125"><code>lib&#x2F;kollavarsham.js:125</code></a>
+        <a href="../files/lib_kollavarsham.js.html#l129"><code>lib&#x2F;kollavarsham.js:129</code></a>
         
         </p>
 
@@ -780,7 +848,7 @@
             
         
         
-        <a href="../files/lib_kollavarsham.js.html#l73"><code>lib&#x2F;kollavarsham.js:73</code></a>
+        <a href="../files/lib_kollavarsham.js.html#l77"><code>lib&#x2F;kollavarsham.js:77</code></a>
         
         </p>
 
@@ -873,7 +941,7 @@
             
         
         
-        <a href="../files/lib_kollavarsham.js.html#l48"><code>lib&#x2F;kollavarsham.js:48</code></a>
+        <a href="../files/lib_kollavarsham.js.html#l52"><code>lib&#x2F;kollavarsham.js:52</code></a>
         
         </p>
 
@@ -920,7 +988,7 @@
             
         
         
-        <a href="../files/lib_kollavarsham.js.html#l63"><code>lib&#x2F;kollavarsham.js:63</code></a>
+        <a href="../files/lib_kollavarsham.js.html#l67"><code>lib&#x2F;kollavarsham.js:67</code></a>
         
         </p>
 
@@ -960,7 +1028,7 @@
 <footer id="footer">
   <span class="copyright">&copy; 2014 The Kollavarsham Team</span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Sat, 15 Feb 2014 21:34:37 GMT</span>
+  <span class="last-modified">Last Updated: Sun, 16 Feb 2014 06:35:22 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>

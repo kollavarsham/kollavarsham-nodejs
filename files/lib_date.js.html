@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>lib/julianDate.js - kollavarsham</title>
+    <title>lib/date.js - kollavarsham</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -49,6 +49,8 @@
             
                 <li><a href="../classes/Kollavarsham.html">Kollavarsham</a></li>
             
+                <li><a href="../classes/KollavarshamDate.html">KollavarshamDate</a></li>
+            
                 <li><a href="../classes/locations.html">locations</a></li>
             
                 <li><a href="../classes/math.html">math</a></li>
@@ -65,9 +67,9 @@
             
                 <li><a href="../modules/cli-helper.html">cli-helper</a></li>
             
-                <li><a href="../modules/globals.html">globals</a></li>
+                <li><a href="../modules/date.html">date</a></li>
             
-                <li><a href="../modules/JulianDate.html">JulianDate</a></li>
+                <li><a href="../modules/globals.html">globals</a></li>
             
                 <li><a href="../modules/kollavarsham.html">kollavarsham</a></li>
             
@@ -110,7 +112,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: lib/julianDate.js</h1>
+                        <h1 class="file-heading">File: lib/date.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
@@ -123,24 +125,10 @@
  */
 
 /**
- @module JulianDate
+ @module date
  */
 
 &#x27;use strict&#x27;;
-
-/**
- * Represents a Julian Date&#x27;s year, month and day
- * @class JulianDate
- * @param year
- * @param month
- * @param day
- * @constructor
- */
-var JulianDate = function (year, month, day) {
-  this.year = year;
-  this.month = month;
-  this.day = day;
-};
 
 /**
  * Pads zeroes to print the date in a pretty format
@@ -154,18 +142,62 @@ var pad = function (num, size) {
   return s.substr(s.length - size);
 };
 
+/****************** Julian Date *************************************/
+
+/**
+ * Represents a Julian Date&#x27;s year, month and day
+ * @class JulianDate
+ * @param year {Number} Julian year
+ * @param month {Number} Julian month
+ * @param day {Number} Julian day
+ * @constructor
+ */
+var JulianDate = function (year, month, day) {
+  this.year = year;
+  this.month = month;
+  this.day = day;
+};
+
 /**
  * Converts the Julian Date to a nicely formatted string with year, month and date
  * @method toString
  * @for JulianDate
- * @returns {string}
+ * @return {string}
  */
 JulianDate.prototype.toString = function () {
   return pad(this.year, 4) + &quot; &quot; + pad(this.month, 2) + &quot; &quot; + pad(this.day, 2);
 };
 
-module.exports = JulianDate;
+module.exports.JulianDate = JulianDate;
 
+/****************** Kollavarsham Date *******************************/
+
+/**
+ * @class KollavarshamDate
+ * @param [year=1] {Number} The Kollavarsham year
+ * @param [month=1] {Number} The Kollavarsham month
+ * @param [day=1] {Number} The Kollavarsham day
+ * @constructor
+ */
+var KollavarshamDate = function (year, month, day) {
+
+  this.year = year || 1;
+  this.month = month || 1;
+  this.day = day || 1;
+
+};
+
+/**
+ * Converts the Kollavarsham Date to a nicely formatted string with year, month and date
+ * @method toString
+ * @for KollavarshamDate
+ * @return {string}
+ */
+KollavarshamDate.prototype.toString = function () {
+  return pad(this.year, 4) + &quot; &quot; + pad(this.month, 2) + &quot; &quot; + pad(this.day, 2);
+};
+
+module.exports.KollavarshamDate = KollavarshamDate;
     </pre>
 </div>
 
@@ -178,7 +210,7 @@ module.exports = JulianDate;
 <footer id="footer">
   <span class="copyright">&copy; 2014 The Kollavarsham Team</span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Sat, 15 Feb 2014 21:34:37 GMT</span>
+  <span class="last-modified">Last Updated: Sun, 16 Feb 2014 06:35:22 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>
