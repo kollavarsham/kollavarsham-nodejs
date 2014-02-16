@@ -8,7 +8,7 @@
 
 'use strict';
 
-var JulianDate = require('../lib/julianDate.js');
+var JulianDate = require('../lib/date.js').JulianDate;
 
 var julianDate = new JulianDate(2013, 12, 31); // Not perhaps a valid Julian Date
 
@@ -27,7 +27,7 @@ exports.geolocation = {
   'toString'    : function (test) {
     test.expect(2);
     test.equal(julianDate.toString(), '2013 12 31');
-    test.equal(new JulianDate(1,1,1).toString(), '0001 01 01');
+    test.equal(new JulianDate(1, 1, 1).toString(), '0001 01 01');
     test.done();
   }
 };

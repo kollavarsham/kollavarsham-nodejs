@@ -31,7 +31,7 @@
 */
 
 exports.kollavarsham = {
-  setUp: function(done) {
+  setUp : function (done) {
     // setup here
     done();
   }
