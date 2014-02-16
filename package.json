@@ -3,6 +3,27 @@
   "version"         : "0.0.1",
   "main"            : "lib/main.js",
   "description"     : "Convert Gregorian date to Kollavarsham date and vice versa",
+  "keywords"        : [
+    "kollavarsham",
+    "malayalam calendar",
+    "malayalam era",
+    "gregorian calendar",
+    "hindu calendar",
+    "solar months",
+    "sidereal calendar",
+    "chingam",
+    "kanni",
+    "thulam",
+    "vrischikam",
+    "dhanu",
+    "makaram",
+    "kumbham",
+    "meenam",
+    "medam",
+    "idavam",
+    "mithunam",
+    "karkitakam"
+  ],
   "bin"             : "lib/cli.js",
   "homepage"        : "http://kollavarsham.org",
   "bugs"            : "https://github.com/kollavarsham/kollavarsham-nodejs/issues",
@@ -23,17 +44,25 @@
       "url"   : "https://github.com/floydpink"
     }
   ],
+  "engines"         : {
+    "node" : ">=0.10.0"
+  },
   "repository"      : {
     "type" : "git",
     "url"  : "https://github.com/kollavarsham/kollavarsham-nodejs"
   },
   "licenses"        : [
     {
-      "type" : "MIT"
+      "type" : "MIT",
+      "url"  : "http://kollavarsham.org/LICENSE.txt"
     }
   ],
   "scripts"         : {
     "test" : "grunt build"
+  },
+  "directories"     : {
+    "lib"  : "lib",
+    "test" : "test"
   },
   "devDependencies" : {
     "grunt-contrib-jshint"   : "~0.7.0",
