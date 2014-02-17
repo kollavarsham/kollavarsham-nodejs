@@ -22,7 +22,7 @@ var runCalculationsWithADate = function () {
     mode          : 0,
     latitude      : 23.2,
     longitude     : 75.8,
-    output        : "verbose",
+    outputformat  : "verbose",
     gregorianDate : new Date()
   });
   calculations.planetary();
