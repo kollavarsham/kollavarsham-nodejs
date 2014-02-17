@@ -22,7 +22,7 @@ npm install -g kollavarsham
 kollavarsham [options] [arguments]
 
 options
--------
+=======
 -h --help
    Show this text
 -a --show-latitudes
@@ -45,15 +45,17 @@ options
 -o --output-format <list/verbose>
    list: for dates on both sides of the entered
    verbose: for detailed view of the output date
+   (Any other value than 'list' or 'verbose' will be discarded)
 arguments
----------
+=========
 Date
-   Input date to be converted. Use the following date formats.
-   Date format: DD:MM:YYYY when mode is 0 (Gregorian to Malayalam)
-   Date format: DD:MM:YYYY when mode is 1 (Malayalam to Gregorian) where
-   DD is the day of the Malayalam month
-   MM 01 for Chingam, 02 for Kanni, 03 for Thulam, 04 for Vrischikam, 05 for Dhanu, 06 for Makaram, 07 for Kumbham, 08 for Meenam, 09 for Medam, 10 for Edavam, 11 for Mithunam, 12 for Karkidakam
-   YYYY is the Malayalam Year (Kollavarsham)
+    Input date to be converted. Use the following date formats.
+    Date format: DD:MM:YYYY when mode is 0 (Gregorian to Malayalam)
+    Date format: DD:MM:YYYY when mode is 1 (Malayalam to Gregorian) where
+    DD is the day of the Malayalam month
+    MM 01 for Chingam, 02 for Kanni, 03 for Thulam, 04 for Vrischikam, 05 for Dhanu, 06 for Makaram,
+       07 for Kumbham, 08 for Meenam, 09 for Medam, 10 for Edavam, 11 for Mithunam, 12 for Karkidakam
+    YYYY is the Malayalam Year (Kollavarsham)
 ```
 
 Resources and Documentation
