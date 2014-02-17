@@ -136,7 +136,7 @@
  * @returns {string}
  */
 var pad = function (num, size) {
-  var s = &quot;000000000&quot; + num;
+  var s = &#x27;000000000&#x27; + num;
   return s.substr(s.length - size);
 };
 
@@ -163,7 +163,7 @@ var JulianDate = function (year, month, day) {
  * @return {string}
  */
 JulianDate.prototype.toString = function () {
-  return pad(this.year, 4) + &quot; &quot; + pad(this.month, 2) + &quot; &quot; + pad(this.day, 2);
+  return pad(this.year, 4) + &#x27; &#x27; + pad(this.month, 2) + &#x27; &#x27; + pad(this.day, 2);
 };
 
 module.exports.JulianDate = JulianDate;
@@ -193,17 +193,20 @@ var KollavarshamDate = function (year, month, day) {
  * @return {string}
  */
 KollavarshamDate.prototype.toString = function () {
-  return pad(this.year, 4) + &quot; &quot; + pad(this.month, 2) + &quot; &quot; + pad(this.day, 2);
+  return pad(this.year, 4) + &#x27; &#x27; + pad(this.month, 2) + &#x27; &#x27; + pad(this.day, 2);
 };
 
 KollavarshamDate.prototype.print = function () {
   if (this.globals) {
-    var result = &#x27;Saka : &#x27; + pad(this.globals.YearSaka, 4) + &#x27;\t&#x27; + this.globals.masa + &quot; (&quot; +
-        pad(this.globals.masa_num, 2) + &quot;) &quot; + this.globals.paksa + &#x27;\t&#x27; + pad(this.globals.tithi_day, 2) + &#x27;\n&#x27;;
-    result += &#x27;Saura: &#x27; + pad(this.globals.YearSaka, 4) + &#x27;\t&#x27; + this.globals.saura_masa + &quot; (&quot; +
-        pad(this.globals.saura_masa_num, 2) + &quot;) &quot; + pad(this.globals.saura_masa_day, 2) + &#x27;\t&#x27; + this.globals.naksatra + &#x27;\n&#x27;;
-    result += &#x27;ME   : &#x27; + pad(this.globals.MalayalamYear, 4) + &#x27;\t&#x27; + this.globals.malayala_masa + &quot; (&quot; +
-        pad(this.globals.malayala_masa_num, 2) + &quot;) &quot; + pad(this.globals.saura_masa_day, 2) + &#x27;\t&#x27; + this.globals.malayala_naksatra + &#x27;\n&#x27;;
+    var result = &#x27;Saka : &#x27; + pad(this.globals.YearSaka, 4) + &#x27;\t&#x27; + pad(this.globals.tithiDay, 2) + &#x27; &#x27; +
+        this.globals.masa + &#x27; (&#x27; + pad(this.globals.masaNum, 2) + &#x27;) &#x27; + &#x27;\t[&#x27; + this.globals.paksa + &#x27;]\n&#x27;;
+
+    result += &#x27;Saura: &#x27; + pad(this.globals.YearSaka, 4) + &#x27;\t&#x27; + pad(this.globals.sauraMasaDay, 2) + &#x27; &#x27; +
+        this.globals.sauraMasa + &#x27; (&#x27; + pad(this.globals.sauraMasaNum, 2) + &#x27;) &#x27; + &#x27;\t&#x27; + this.globals.naksatra + &#x27;\n&#x27;;
+
+    result += &#x27;ME   : &#x27; + pad(this.globals.MalayalamYear, 4) + &#x27;\t&#x27; + pad(this.globals.sauraMasaDay, 2) + &#x27; &#x27; +
+        this.globals.malayalaMasa + &#x27; (&#x27; + pad(this.globals.malayalaMasaNum, 2) + &#x27;) &#x27; + &#x27;\t&#x27; + this.globals.malayalaNaksatra + &#x27;\n&#x27;;
+
     return result;
   }
   return this.toString();
@@ -222,7 +225,7 @@ module.exports.KollavarshamDate = KollavarshamDate;
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2014 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Mon, 17 Feb 2014 06:49:04 GMT</span>
+  <span class="last-modified">Last Updated: Mon, 17 Feb 2014 22:30:44 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>

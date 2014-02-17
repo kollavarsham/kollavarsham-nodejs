@@ -131,7 +131,7 @@
             "namespaces": {},
             "tag": "module",
             "file": "lib/cli-helper.js",
-            "line": 15,
+            "line": 17,
             "description": "Helper functions for the CLI app"
         },
         "date": {
@@ -229,7 +229,7 @@
             "module": "cli-helper",
             "namespace": "",
             "file": "lib/cli-helper.js",
-            "line": 15,
+            "line": 17,
             "static": 1
         },
         "JulianDate": {
@@ -405,7 +405,7 @@
     "classitems": [
         {
             "file": "lib/cli-helper.js",
-            "line": 20,
+            "line": 22,
             "description": "Prints the opening message/banner when the CLI is invoked",
             "itemtype": "method",
             "name": "openingMessage",
@@ -415,7 +415,7 @@
         },
         {
             "file": "lib/cli-helper.js",
-            "line": 33,
+            "line": 35,
             "description": "Displays the help message for the CLI",
             "itemtype": "method",
             "name": "helpMessage",
@@ -425,7 +425,7 @@
         },
         {
             "file": "lib/cli-helper.js",
-            "line": 83,
+            "line": 85,
             "description": "Shows the latitude values for various Indian cities on the map - legacy from Perl",
             "itemtype": "method",
             "name": "showLatitudes",
@@ -435,7 +435,7 @@
         },
         {
             "file": "lib/cli-helper.js",
-            "line": 112,
+            "line": 114,
             "description": "Shows the longitude values for various Indian cities on the map - legacy from Perl",
             "itemtype": "method",
             "name": "showLongitudes",
@@ -445,7 +445,7 @@
         },
         {
             "file": "lib/cli-helper.js",
-            "line": 161,
+            "line": 163,
             "itemtype": "method",
             "name": "parseDate",
             "static": 1,
@@ -685,7 +685,7 @@
     "warnings": [
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/cli-helper.js:161"
+            "line": " lib/cli-helper.js:163"
         },
         {
             "message": "replacing incorrect tag: returns with return",

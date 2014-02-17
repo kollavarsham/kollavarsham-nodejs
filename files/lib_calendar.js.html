@@ -148,18 +148,18 @@ var calendar = {
     6 : &#x27;Sunday&#x27;
   },
   months                   : {
-    &quot;January&quot;   : 0,
-    &quot;February&quot;  : 1,
-    &quot;March&quot;     : 2,
-    &quot;April&quot;     : 3,
-    &quot;May&quot;       : 4,
-    &quot;June&quot;      : 5,
-    &quot;July&quot;      : 6,
-    &quot;August&quot;    : 7,
-    &quot;September&quot; : 8,
-    &quot;October&quot;   : 9,
-    &quot;November&quot;  : 10,
-    &quot;December&quot;  : 11
+    &#x27;January&#x27;   : 0,
+    &#x27;February&#x27;  : 1,
+    &#x27;March&#x27;     : 2,
+    &#x27;April&#x27;     : 3,
+    &#x27;May&#x27;       : 4,
+    &#x27;June&#x27;      : 5,
+    &#x27;July&#x27;      : 6,
+    &#x27;August&#x27;    : 7,
+    &#x27;September&#x27; : 8,
+    &#x27;October&#x27;   : 9,
+    &#x27;November&#x27;  : 10,
+    &#x27;December&#x27;  : 11
   },
   masaNames                : {
     0  : &#x27;Caitra    &#x27;,
@@ -176,18 +176,18 @@ var calendar = {
     11 : &#x27;Phalguna  &#x27;
   },
   sauraMasaNames           : {
-    0  : &#x27;Mesa   &#x27;,
-    1  : &#x27;Vrsa   &#x27;,
-    2  : &#x27;Mithuna&#x27;,
-    3  : &#x27;Karkata&#x27;,
-    4  : &#x27;Simha  &#x27;,
-    5  : &#x27;Kanya  &#x27;,
-    6  : &#x27;Tula   &#x27;,
-    7  : &#x27;Vrscika&#x27;,
-    8  : &#x27;Dhanus &#x27;,
-    9  : &#x27;Makara &#x27;,
-    10 : &#x27;Kumbha &#x27;,
-    11 : &#x27;Mina   &#x27;
+    0  : &#x27;Mesa      &#x27;,
+    1  : &#x27;Vrsa      &#x27;,
+    2  : &#x27;Mithuna   &#x27;,
+    3  : &#x27;Karkata   &#x27;,
+    4  : &#x27;Simha     &#x27;,
+    5  : &#x27;Kanya     &#x27;,
+    6  : &#x27;Tula      &#x27;,
+    7  : &#x27;Vrscika   &#x27;,
+    8  : &#x27;Dhanus    &#x27;,
+    9  : &#x27;Makara    &#x27;,
+    10 : &#x27;Kumbha    &#x27;,
+    11 : &#x27;Mina      &#x27;
   },
   malayalaMasaNames        : {
     0  : &#x27;Chingam   &#x27;,
@@ -201,7 +201,7 @@ var calendar = {
     8  : &#x27;Medam     &#x27;,
     9  : &#x27;Idavam    &#x27;,
     10 : &#x27;Mithunam  &#x27;,
-    11 : &#x27;Karkatakam&#x27;
+    11 : &#x27;Karkitakam&#x27;
   },
   naksatras                : {
     0  : &#x27;Asvini&#x27;,
@@ -272,9 +272,9 @@ var calendar = {
     // Annotate all the magic numbers below !
     // There is some explanation here - http://quasar.as.utexas.edu/BillInfo/JulianDatesG.html
 
-    var year = date.getUTCFullYear(),
-        month = date.getUTCMonth() + 1,
-        day = date.getUTCDate();
+    var year = date.getFullYear(),
+        month = date.getMonth() + 1,
+        day = date.getDate();
 
     if (month &lt; 3) {
       year -= 1;
@@ -405,17 +405,17 @@ var calendar = {
     globals.samkranti = this.findSamkranti(ahargana, ahargana + 1) + globals.desantara;
     var samkrantiModernDate = this.julianDayToModernDate(this.aharganaToJulianDay(globals.samkranti));
     if (JulianDate.prototype.isPrototypeOf(samkrantiModernDate)) {
-      globals.samkranti_year = samkrantiModernDate.year;
-      globals.samkranti_month = samkrantiModernDate.month;
-      globals.samkranti_day = samkrantiModernDate.day;
+      globals.samkrantiYear = samkrantiModernDate.year;
+      globals.samkrantiMonth = samkrantiModernDate.month;
+      globals.samkrantiDay = samkrantiModernDate.day;
     } else {
-      globals.samkranti_year = samkrantiModernDate.getFullYear();
-      globals.samkranti_month = samkrantiModernDate.getMonth() + 1;
-      globals.samkranti_day = samkrantiModernDate.getDate();
+      globals.samkrantiYear = samkrantiModernDate.getFullYear();
+      globals.samkrantiMonth = samkrantiModernDate.getMonth() + 1;
+      globals.samkrantiDay = samkrantiModernDate.getDate();
     }
     var fractionalDay = math.fractional(globals.samkranti) * 24;
-    globals.samkranti_hour = math.truncate(fractionalDay);
-    globals.samkranti_min = math.truncate(60 * math.fractional(fractionalDay));
+    globals.samkrantiHour = math.truncate(fractionalDay);
+    globals.samkrantiMin = math.truncate(60 * math.fractional(fractionalDay));
   },
   isTodaySauraMasaFirst    : function (ahargana) {
     /*
@@ -482,7 +482,7 @@ module.exports = calendar;
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2014 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Mon, 17 Feb 2014 06:49:04 GMT</span>
+  <span class="last-modified">Last Updated: Mon, 17 Feb 2014 22:30:44 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>

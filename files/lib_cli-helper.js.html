@@ -122,6 +122,8 @@
  * Licensed under the MIT license.
  */
 
+&#x27;use strict&#x27;;
+
 /**
  * Helper functions for the CLI app
  * @module cli-helper
@@ -140,10 +142,10 @@ var cliHelper = {
    **/
   openingMessage  : function () {
     console.log();
-    console.log(chalk.green.bold(&quot;                          kollavarsham&quot;));
-    console.log(chalk.gray(&quot;   Based on the Pancanga Perl library by M. YANO and M. FUSHIMI&quot;));
-    console.log(chalk.gray(&quot;   http://www.cc.kyoto-su.ac.jp/~yanom/pancanga/message313.html&quot;));
-    console.log(chalk.gray(&quot;   ------------------------------------------------------------&quot;));
+    console.log(chalk.green.bold(&#x27;                          kollavarsham&#x27;));
+    console.log(chalk.gray(&#x27;   Based on the Pancanga Perl library by M. YANO and M. FUSHIMI&#x27;));
+    console.log(chalk.gray(&#x27;   http://www.cc.kyoto-su.ac.jp/~yanom/pancanga/message313.html&#x27;));
+    console.log(chalk.gray(&#x27;   ------------------------------------------------------------&#x27;));
     console.log();
   },
   /**
@@ -152,49 +154,49 @@ var cliHelper = {
    * @static
    **/
   helpMessage     : function () {
-    console.log(chalk.red(&quot;kollavarsham [options] [arguments]\n&quot;));
-    console.log(chalk.green(&quot;options&quot;));
-    console.log(chalk.green(&quot;=======&quot;));
-    console.log(chalk.blue(&quot;-h --help&quot;));
-    console.log(&quot;   Show this text&quot;);
-    console.log(chalk.blue(&quot;-a --show-latitudes&quot;));
-    console.log(&quot;   Display a map of India with the latitudes&quot;);
-    console.log(chalk.blue(&quot;-o --show-longitudes&quot;));
-    console.log(&quot;   Display a map of India with the longitudes&quot;);
-    console.log(chalk.blue(&quot;-b --bija&quot;));
-    console.log(&quot;   Set Bija to true&quot;);
-    console.log(chalk.blue(&quot;-m --mode &lt;0/1&gt;&quot;));
-    console.log(&quot;   0 for Gregorian Calendar Date to Malayalam Calendar Date&quot;);
-    console.log(&quot;   1 for Malayalam Calendar Date to Gregorian Calendar Date&quot;);
-    console.log(chalk.blue(&quot;-t --latitude number&quot;));
-    console.log(&quot;   number signifying degrees of Latitude of the location Where the event occurred&quot;);
-    console.log(chalk.gray(&quot;   default: 23.2 (Use option --showlatitude for help) &quot;));
-    console.log(chalk.blue(&quot;-g --longitude number&quot;));
-    console.log(&quot;   number signifying degrees of Latitude of the location Where the event occurred&quot;);
-    console.log(chalk.gray(&quot;   default: 75.8 (Use option --showlongitude for help)&quot;));
-    console.log(chalk.blue(&quot;-b --bija &lt;true/false&gt;&quot;));
-    console.log(&quot;   Turn bija on or off. Default off.&quot;);
-    console.log(chalk.blue(&quot;-o --output-format &lt;list/verbose&gt;&quot;));
-    console.log(&quot;   list: for dates on both sides of the entered&quot;);
-    console.log(&quot;   verbose: for detailed view of the output date&quot;);
-    console.log(chalk.gray(&quot;   (Any other value than &#x27;list&#x27; or &#x27;verbose&#x27; will be discarded)&quot;));
-    console.log(chalk.green(&quot;arguments&quot;));
-    console.log(chalk.green(&quot;=========&quot;));
-    console.log(chalk.blue(&quot;Date&quot;));
-    console.log(&quot;    Input date to be converted. Use the following date formats.&quot;);
-    console.log(&quot;    Date format: DD:MM:YYYY when mode is 0 (Gregorian to Malayalam)&quot;);
-    console.log(&quot;    Date format: DD:MM:YYYY when mode is 1 (Malayalam to Gregorian) where&quot;);
-    console.log(&quot;    DD is the day of the Malayalam month&quot;);
-    console.log(&quot;    MM 01 for Chingam, 02 for Kanni, 03 for Thulam, 04 for Vrischikam, 05 for Dhanu, 06 for Makaram, &quot;);
-    console.log(&quot;       07 for Kumbham, 08 for Meenam, 09 for Medam, 10 for Edavam, 11 for Mithunam, 12 for Karkidakam&quot;);
-    console.log(&quot;    YYYY is the Malayalam Year (Kollavarsham)&quot;);
-    console.log(chalk.green(&quot;Examples&quot;));
-    console.log(chalk.green(&quot;========&quot;));
-    console.log(&quot;To convert Modern Date to Kollavarsham Date for Location (100 deg east, 90 deg north&quot;);
-    console.log(&quot;With bija and list output:&quot;);
-    console.log(chalk.yellow(&quot;    kollavarsham -b -t 90 -g 100 -m 0 -o list 23:08:2008&quot;));
-    console.log(&quot;To convert Modern Date to with default settings (Location: Ujjain)&quot;);
-    console.log(chalk.yellow(&quot;    kollavarsham 04:04:2011&quot;));
+    console.log(chalk.red(&#x27;kollavarsham [options] [arguments]\n&#x27;));
+    console.log(chalk.green(&#x27;options&#x27;));
+    console.log(chalk.green(&#x27;=======&#x27;));
+    console.log(chalk.blue(&#x27;-h --help&#x27;));
+    console.log(&#x27;   Show this text&#x27;);
+    console.log(chalk.blue(&#x27;-a --show-latitudes&#x27;));
+    console.log(&#x27;   Display a map of India with the latitudes&#x27;);
+    console.log(chalk.blue(&#x27;-o --show-longitudes&#x27;));
+    console.log(&#x27;   Display a map of India with the longitudes&#x27;);
+    console.log(chalk.blue(&#x27;-b --bija&#x27;));
+    console.log(&#x27;   Set Bija to true&#x27;);
+    console.log(chalk.blue(&#x27;-m --mode &lt;0/1&gt;&#x27;));
+    console.log(&#x27;   0 for Gregorian Calendar Date to Malayalam Calendar Date&#x27;);
+    console.log(&#x27;   1 for Malayalam Calendar Date to Gregorian Calendar Date&#x27;);
+    console.log(chalk.blue(&#x27;-t --latitude number&#x27;));
+    console.log(&#x27;   number signifying degrees of Latitude of the location Where the event occurred&#x27;);
+    console.log(chalk.gray(&#x27;   default: 23.2 (Use option --showlatitude for help) &#x27;));
+    console.log(chalk.blue(&#x27;-g --longitude number&#x27;));
+    console.log(&#x27;   number signifying degrees of Latitude of the location Where the event occurred&#x27;);
+    console.log(chalk.gray(&#x27;   default: 75.8 (Use option --showlongitude for help)&#x27;));
+    console.log(chalk.blue(&#x27;-b --bija &lt;true/false&gt;&#x27;));
+    console.log(&#x27;   Turn bija on or off. Default off.&#x27;);
+    console.log(chalk.blue(&#x27;-o --output-format &lt;list/verbose&gt;&#x27;));
+    console.log(&#x27;   list: for dates on both sides of the entered&#x27;);
+    console.log(&#x27;   verbose: for detailed view of the output date&#x27;);
+    console.log(chalk.gray(&#x27;   (Any other value than \&#x27;list\&#x27; or \&#x27;verbose\&#x27; will be discarded)&#x27;));
+    console.log(chalk.green(&#x27;arguments&#x27;));
+    console.log(chalk.green(&#x27;=========&#x27;));
+    console.log(chalk.blue(&#x27;Date&#x27;));
+    console.log(&#x27;    Input date to be converted. Use the following date formats.&#x27;);
+    console.log(&#x27;    Date format: DD:MM:YYYY when mode is 0 (Gregorian to Malayalam)&#x27;);
+    console.log(&#x27;    Date format: DD:MM:YYYY when mode is 1 (Malayalam to Gregorian) where&#x27;);
+    console.log(&#x27;    DD is the day of the Malayalam month&#x27;);
+    console.log(&#x27;    MM 01 for Chingam, 02 for Kanni, 03 for Thulam, 04 for Vrischikam, 05 for Dhanu, 06 for Makaram, &#x27;);
+    console.log(&#x27;       07 for Kumbham, 08 for Meenam, 09 for Medam, 10 for Edavam, 11 for Mithunam, 12 for Karkidakam&#x27;);
+    console.log(&#x27;    YYYY is the Malayalam Year (Kollavarsham)&#x27;);
+    console.log(chalk.green(&#x27;Examples&#x27;));
+    console.log(chalk.green(&#x27;========&#x27;));
+    console.log(&#x27;To convert Modern Date to Kollavarsham Date for Location (100 deg east, 90 deg north&#x27;);
+    console.log(&#x27;With bija and list output:&#x27;);
+    console.log(chalk.yellow(&#x27;    kollavarsham -b -t 90 -g 100 -m 0 -o list 23:08:2008&#x27;));
+    console.log(&#x27;To convert Modern Date to with default settings (Location: Ujjain)&#x27;);
+    console.log(chalk.yellow(&#x27;    kollavarsham 04:04:2011&#x27;));
   },
   /**
    * Shows the latitude values for various Indian cities on the map - legacy from Perl
@@ -202,28 +204,28 @@ var cliHelper = {
    * @static
    **/
   showLatitudes   : function () {
-    console.log(chalk.grey(&quot; ------------------------------------------------------------ &quot;));
-    console.log(chalk.grey(&quot;|                  Latitude                                  |&quot;));
-    console.log(chalk.grey(&quot;|                                                            |&quot;));
-    console.log(chalk.grey(&quot;|_____                              ______36                 |&quot;));
-    console.log(chalk.grey(&quot;|                  *                         Srinagar:34.1   |&quot;));
-    console.log(chalk.grey(&quot;|_____                              ______32                 |&quot;));
-    console.log(chalk.grey(&quot;|                    *                       Delhi:28.6      |&quot;));
-    console.log(chalk.grey(&quot;|_____                         *    ______28 Kathmandu:27.7  |&quot;));
-    console.log(chalk.grey(&quot;|                          *                 Varanasi:25.3   |&quot;));
-    console.log(chalk.grey(&quot;|_____ ---\\                         ______24 Ujjain:23.2     |&quot;));
-    console.log(chalk.grey(&quot;|          \\//      *           *___         Calcutta:22.6   |&quot;));
-    console.log(chalk.grey(&quot;|_____       \\_/|             _/~   ~_____20                 |&quot;));
-    console.log(chalk.grey(&quot;|               |*          _/               Bombay:19.0     |&quot;));
-    console.log(chalk.grey(&quot;|_____           \\     *  _/        ______16 Hyderabad:17.4  |&quot;));
-    console.log(chalk.grey(&quot;|                 \\      |                                   |&quot;));
-    console.log(chalk.grey(&quot;|_____             \\    *|          ______12 Madras:13.1     |&quot;));
-    console.log(chalk.grey(&quot;|                   \\   /                                    |&quot;));
-    console.log(chalk.grey(&quot;|_____               \\*/ /\\         ______08 Trivandrum:8.5  |&quot;));
-    console.log(chalk.grey(&quot;|                       |* |                 Colombo:6.9     |&quot;));
-    console.log(chalk.grey(&quot;|_____                   --         ______04                 |&quot;));
-    console.log(chalk.grey(&quot;|                                                            |&quot;));
-    console.log(chalk.grey(&quot; ------------------------------------------------------------ &quot;));
+    console.log(chalk.grey(&#x27; ------------------------------------------------------------ &#x27;));
+    console.log(chalk.grey(&#x27;|                  Latitude                                  |&#x27;));
+    console.log(chalk.grey(&#x27;|                                                            |&#x27;));
+    console.log(chalk.grey(&#x27;|_____                              ______36                 |&#x27;));
+    console.log(chalk.grey(&#x27;|                  *                         Srinagar:34.1   |&#x27;));
+    console.log(chalk.grey(&#x27;|_____                              ______32                 |&#x27;));
+    console.log(chalk.grey(&#x27;|                    *                       Delhi:28.6      |&#x27;));
+    console.log(chalk.grey(&#x27;|_____                         *    ______28 Kathmandu:27.7  |&#x27;));
+    console.log(chalk.grey(&#x27;|                          *                 Varanasi:25.3   |&#x27;));
+    console.log(chalk.grey(&#x27;|_____ ---\\                         ______24 Ujjain:23.2     |&#x27;));
+    console.log(chalk.grey(&#x27;|          \\//      *           *___         Calcutta:22.6   |&#x27;));
+    console.log(chalk.grey(&#x27;|_____       \\_/|             _/~   ~_____20                 |&#x27;));
+    console.log(chalk.grey(&#x27;|               |*          _/               Bombay:19.0     |&#x27;));
+    console.log(chalk.grey(&#x27;|_____           \\     *  _/        ______16 Hyderabad:17.4  |&#x27;));
+    console.log(chalk.grey(&#x27;|                 \\      |                                   |&#x27;));
+    console.log(chalk.grey(&#x27;|_____             \\    *|          ______12 Madras:13.1     |&#x27;));
+    console.log(chalk.grey(&#x27;|                   \\   /                                    |&#x27;));
+    console.log(chalk.grey(&#x27;|_____               \\*/ /\\         ______08 Trivandrum:8.5  |&#x27;));
+    console.log(chalk.grey(&#x27;|                       |* |                 Colombo:6.9     |&#x27;));
+    console.log(chalk.grey(&#x27;|_____                   --         ______04                 |&#x27;));
+    console.log(chalk.grey(&#x27;|                                                            |&#x27;));
+    console.log(chalk.grey(&#x27; ------------------------------------------------------------ &#x27;));
   },
   /**
    * Shows the longitude values for various Indian cities on the map - legacy from Perl
@@ -231,29 +233,29 @@ var cliHelper = {
    * @static
    **/
   showLongitudes  : function () {
-    console.log(chalk.grey(&quot; ------------------------------------------------------------ &quot;));
-    console.log(chalk.grey(&quot;|                  Longitude                                 |&quot;));
-    console.log(chalk.grey(&quot;|            |     |     |     |     |                       |&quot;));
-    console.log(chalk.grey(&quot;|            |     |     |     |     |                       |&quot;));
-    console.log(chalk.grey(&quot;|                  *                         Srinagar:74.8   |&quot;));
-    console.log(chalk.grey(&quot;|                                                            |&quot;));
-    console.log(chalk.grey(&quot;|                    *                       Delhi:77.2      |&quot;));
-    console.log(chalk.grey(&quot;|                              *             Kathmandu:85.2  |&quot;));
-    console.log(chalk.grey(&quot;|                          *                 Varanasi:83.0   |&quot;));
-    console.log(chalk.grey(&quot;|      ---\\                                  Ujjain:75.8     |&quot;));
-    console.log(chalk.grey(&quot;|          \\//      *           *___         Calcutta:88.4   |&quot;));
-    console.log(chalk.grey(&quot;|            \\_/|             _/~   ~                        |&quot;));
-    console.log(chalk.grey(&quot;|               |*          _/               Bombay:72.8     |&quot;));
-    console.log(chalk.grey(&quot;|                \\     *  _/                 Hyderabad:78.5  |&quot;));
-    console.log(chalk.grey(&quot;|                 \\      |                                   |&quot;));
-    console.log(chalk.grey(&quot;|                  \\    *|                   Madras:80.2     |&quot;));
-    console.log(chalk.grey(&quot;|                   \\   /                                    |&quot;));
-    console.log(chalk.grey(&quot;|                    \\*/ /\\                  Trivandrum:77.0 |&quot;));
-    console.log(chalk.grey(&quot;|                       |* |                 Colombo:79.9    |&quot;));
-    console.log(chalk.grey(&quot;|            |     |     --    |     |                       |&quot;));
-    console.log(chalk.grey(&quot;|            |     |           |     |                       |&quot;));
-    console.log(chalk.grey(&quot;|            70          80          90                      |&quot;));
-    console.log(chalk.grey(&quot; ------------------------------------------------------------ &quot;));
+    console.log(chalk.grey(&#x27; ------------------------------------------------------------ &#x27;));
+    console.log(chalk.grey(&#x27;|                  Longitude                                 |&#x27;));
+    console.log(chalk.grey(&#x27;|            |     |     |     |     |                       |&#x27;));
+    console.log(chalk.grey(&#x27;|            |     |     |     |     |                       |&#x27;));
+    console.log(chalk.grey(&#x27;|                  *                         Srinagar:74.8   |&#x27;));
+    console.log(chalk.grey(&#x27;|                                                            |&#x27;));
+    console.log(chalk.grey(&#x27;|                    *                       Delhi:77.2      |&#x27;));
+    console.log(chalk.grey(&#x27;|                              *             Kathmandu:85.2  |&#x27;));
+    console.log(chalk.grey(&#x27;|                          *                 Varanasi:83.0   |&#x27;));
+    console.log(chalk.grey(&#x27;|      ---\\                                  Ujjain:75.8     |&#x27;));
+    console.log(chalk.grey(&#x27;|          \\//      *           *___         Calcutta:88.4   |&#x27;));
+    console.log(chalk.grey(&#x27;|            \\_/|             _/~   ~                        |&#x27;));
+    console.log(chalk.grey(&#x27;|               |*          _/               Bombay:72.8     |&#x27;));
+    console.log(chalk.grey(&#x27;|                \\     *  _/                 Hyderabad:78.5  |&#x27;));
+    console.log(chalk.grey(&#x27;|                 \\      |                                   |&#x27;));
+    console.log(chalk.grey(&#x27;|                  \\    *|                   Madras:80.2     |&#x27;));
+    console.log(chalk.grey(&#x27;|                   \\   /                                    |&#x27;));
+    console.log(chalk.grey(&#x27;|                    \\*/ /\\                  Trivandrum:77.0 |&#x27;));
+    console.log(chalk.grey(&#x27;|                       |* |                 Colombo:79.9    |&#x27;));
+    console.log(chalk.grey(&#x27;|            |     |     --    |     |                       |&#x27;));
+    console.log(chalk.grey(&#x27;|            |     |           |     |                       |&#x27;));
+    console.log(chalk.grey(&#x27;|            70          80          90                      |&#x27;));
+    console.log(chalk.grey(&#x27; ------------------------------------------------------------ &#x27;));
   },
   parseOptions    : function (opts) {
     var options = {};
@@ -282,14 +284,14 @@ var cliHelper = {
    */
   parseDate       : function (date) {
     try {
-      var split = date.split(&quot;:&quot;);
+      var split = date.split(&#x27;:&#x27;);
       if (split.length === 3) {
         var InputDate = new Date(split[2], split[1] - 1, split[0]);
-        //console.log(&quot;Input Date is &quot; + InputDate.getDate() + &quot; &quot;  + InputDate.getMonth() + &quot; &quot; + InputDate.getYear());
-        console.log(&quot;Date is &quot; + InputDate);
+        //console.log(&#x27;Input Date is &#x27; + InputDate.getDate() + &#x27; &#x27;  + InputDate.getMonth() + &#x27; &#x27; + InputDate.getYear());
+        console.log(&#x27;Date is &#x27; + InputDate);
         return InputDate;
       }
-      throw new Error(&quot;\nInvalid Date Format. Please enter Date in the format DD:MM:YYYY&quot;);
+      throw new Error(&#x27;\nInvalid Date Format. Please enter Date in the format DD:MM:YYYY&#x27;);
     }
     catch (e) {
       console.log(chalk.red.bold(e.message));
@@ -297,7 +299,7 @@ var cliHelper = {
     }
   },
   displaySettings : function (settings) {
-    console.log(chalk.gray(&#x27;The current settings for &#x27;) + chalk.green(&#x27;kollavarsham &#x27;) +
+    console.log(chalk.gray(&#x27;\nThe current settings for &#x27;) + chalk.green(&#x27;kollavarsham &#x27;) +
         chalk.gray(&#x27;calculations are as follows:&#x27;));
     console.log(chalk.gray(&#x27;Bija           : &#x27; + settings.bija));
     console.log(chalk.gray(&#x27;Mode           : &#x27; + settings.mode));
@@ -322,7 +324,7 @@ module.exports = cliHelper;
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2014 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Mon, 17 Feb 2014 06:49:04 GMT</span>
+  <span class="last-modified">Last Updated: Mon, 17 Feb 2014 22:30:44 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>

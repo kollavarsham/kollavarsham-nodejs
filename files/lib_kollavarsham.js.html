@@ -169,11 +169,11 @@ var Kollavarsham = function (options) {
 
   var defaults = {
     //These are the defaults
-    bija          : false,
-    mode          : 0,
-    latitude      : 23.2,
-    longitude     : 75.8,
-    outputformat  : &#x27;verbose&#x27;
+    bija         : false,
+    mode         : 0,
+    latitude     : 23.2,
+    longitude    : 75.8,
+    outputformat : &#x27;verbose&#x27;
   };
 
   /**
@@ -295,14 +295,18 @@ Kollavarsham.prototype.setInputDate = function (date) {
  * @returns {KollavarshamDate} Converted date
  */
 Kollavarsham.prototype.fromGregorianDate = function (date) {
+// Rather than doing how it is done in perl by first setting year, month and day, let&#x27;s create a new gregorianDate global - HP
+//  globals.year = date.getFullYear();
+//  globals.month = date.getMonth() + 1; //globals.month should be 1 to 12 and not 0 to 11
+//  globals.day = date.getDate();
+  globals.gregorianDate = date;
+  // We still need the year for a couple of other places, so saving that separately
   globals.year = date.getFullYear();
-  globals.month = date.getMonth();
-  globals.day = date.getDay();
 
   calculations.main(this._settings);
   calculations.planetary();
 
-  var kollavarshamDate = new KollavarshamDate(globals.YearKali, globals.saura_masa_num, globals.saura_masa_day);
+  var kollavarshamDate = new KollavarshamDate(globals.YearKali, globals.sauraMasaNum, globals.sauraMasaDay);
   kollavarshamDate.globals = globals;
 
   return kollavarshamDate;
@@ -322,7 +326,7 @@ module.exports = Kollavarsham;
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2014 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Mon, 17 Feb 2014 06:49:04 GMT</span>
+  <span class="last-modified">Last Updated: Mon, 17 Feb 2014 22:30:44 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>
