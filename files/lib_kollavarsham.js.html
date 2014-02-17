@@ -133,6 +133,7 @@
 
 var extend = require(&#x27;node.extend&#x27;);
 var globals = require(&#x27;./globals&#x27;);
+var KollavarshamDate = require(&#x27;./date&#x27;).KollavarshamDate;
 var locations = require(&#x27;./locations&#x27;);
 
 /**
@@ -145,7 +146,7 @@ var locations = require(&#x27;./locations&#x27;);
  *  @param {Boolean} [options.bija=false] Set this to true to use the Bija correction
  *  @param {Number} [options.latitude=23.2] Sets the latitude for the location for the conversions
  *  @param {Number} [options.longitude=75.8] Sets the longitude for the location for the conversions
- *  @param {String} [options.output=&#x27;verbose&#x27;] Set to &#x27;list&#x27; or &#x27;verbose&#x27; for the output
+ *  @param {String} [options.outputformat=&#x27;verbose&#x27;] Set to &#x27;list&#x27; or &#x27;verbose&#x27; for the output
  * @constructor
  * @example
  * &#x60;&#x60;&#x60;
@@ -167,29 +168,33 @@ var locations = require(&#x27;./locations&#x27;);
  */
 var Kollavarsham = function (options) {
 
-  /**
-   * Default values for the settings
-   * @property defaults
-   * @private
-   */
   var defaults = {
     //These are the defaults
     bija          : false,
     mode          : 0,
     latitude      : 23.2,
     longitude     : 75.8,
-    output        : &#x27;verbose&#x27;,  //TODO: Isn&#x27;t this a CLI only concern?
+    outputformat  : &#x27;verbose&#x27;,
     gregorianDate : new Date()  //TODO: This does not need to be here. What about the KollavarshamDate
   };
 
   /**
-   * Holds the settings state of the Kollavarsham instance
-   * @property settings
-   * @type {*}
+   * Holds the settings state of the Kollavarsham instance. To access a snapshot use the {{#crossLink &quot;Kollavarsham/getSettings:method&quot;}}{{/crossLink}} method
+   * @property _settings
+   * @type {Object}
    * @private
    */
-  this.settings = extend(defaults, options);
+  this._settings = extend(defaults, options);
 
+};
+
+/**
+ * Gets a snapshot of the current settings
+ * @method getSettings
+ * @returns {Object} The current snapshot of the settings/configuration
+ */
+Kollavarsham.prototype.getSettings = function () {
+  return this._settings;
 };
 
 /**
@@ -207,7 +212,7 @@ var Kollavarsham = function (options) {
  * &#x60;&#x60;&#x60;
  */
 Kollavarsham.prototype.setMode = function (mode) {
-  this.settings.mode = mode;
+  this._settings.mode = mode;
 };
 
 /**
@@ -226,7 +231,7 @@ Kollavarsham.prototype.setMode = function (mode) {
  * &#x60;&#x60;&#x60;
  */
 Kollavarsham.prototype.setBija = function (bija) {
-  this.settings.bija = bija;
+  this._settings.bija = bija;
 };
 
 /**
@@ -241,7 +246,7 @@ Kollavarsham.prototype.setBija = function (bija) {
  * &#x60;&#x60;&#x60;
  */
 Kollavarsham.prototype.setLatitude = function (latitude) {
-  this.settings.latitude = latitude;
+  this._settings.latitude = latitude;
 };
 
 /**
@@ -256,31 +261,41 @@ Kollavarsham.prototype.setLatitude = function (latitude) {
  *&#x60;&#x60;&#x60;
  */
 Kollavarsham.prototype.setLongitude = function (longitude) {
-  this.settings.longitude = longitude;
+  this._settings.longitude = longitude;
   globals.desantara = (longitude - locations.Ujjain.longitude) / 360;
 };
 
+//TODO: This below function is more of a CLI concern
+/**
+ * Sets the output to be as &#x27;list&#x27; or &#x27;verbose&#x27;
+ * @method setOutput
+ * @param output {String} Valid values are &#x27;verbose&#x27; (default) and &#x27;list&#x27;
+ */
 Kollavarsham.prototype.setOutput = function (output) {
-  this.settings.output = output;
+  this._settings.output = output;
 };
 
-Kollavarsham.prototype.displaySettings = function () {
-  console.log(&#x27;The settings for kollavarsham calculations are as follows:&#x27;);
-  console.log(&#x27;Bija           : &#x27; + this.settings.bija);
-  console.log(&#x27;Mode           : &#x27; + this.settings.mode);
-  console.log(&#x27;Latitude       : &#x27; + this.settings.latitude);
-  console.log(&#x27;Longitude      : &#x27; + this.settings.longitude);
-  console.log(&#x27;Output         : &#x27; + this.settings.output);
-  console.log(&#x27;Gregorian Date : &#x27; + this.settings.gregorianDate);
-};
-
+//TODO: Rather than a method to set the date to be converted, can the dates come in as parameters
+// to specific methods with single responsibility?
 /**
  * Sets the input Gregorian date for conversion
  * @method setInputDate
  * @param date
  */
 Kollavarsham.prototype.setInputDate = function (date) {
-  this.settings.gregorianDate = date;
+  this._settings.gregorianDate = date;
+};
+
+/**
+ * Converts a Gregorian date to the equivalent Kollavarsham date, respecting the current configuration
+ *
+ * @method fromGregorianDate
+ * @param date {Date} The Gregorian date to be converted to Kollavarsham
+ * @returns {KollavarshamDate} Converted date
+ */
+Kollavarsham.prototype.fromGregorianDate = function (date) {
+  console.log(&#x27;Incoming date parameter: %s&#x27;, date.toISOString());
+  return new KollavarshamDate();
 };
 
 module.exports = Kollavarsham;
@@ -297,7 +312,7 @@ module.exports = Kollavarsham;
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2014 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Sun, 16 Feb 2014 20:39:11 GMT</span>
+  <span class="last-modified">Last Updated: Mon, 17 Feb 2014 02:33:28 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>

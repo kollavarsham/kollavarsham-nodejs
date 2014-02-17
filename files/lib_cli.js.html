@@ -133,82 +133,65 @@
 
 &#x27;use strict&#x27;;
 
+var chalk = require(&#x27;chalk&#x27;);
 var nopt = require(&#x27;nopt&#x27;);
 var pkg = require(&#x27;./../package.json&#x27;);
 var cliHelper = require(&#x27;./cli-helper&#x27;);
 var Kollavarsham = require(&#x27;./Kollavarsham&#x27;);
-var kollavarsham = new Kollavarsham();
 
 //TODO akutty
 //Option for setting latitude/longitude using preset values from ./locations.js
 var opts = nopt({
-  help           : Boolean,
-  version        : Boolean,
-  bija           : Boolean,
-  mode           : Number,
-  showLongitudes : Boolean,
-  showLatitudes  : Boolean,
-  latitude       : Number,
-  longitude      : Number,
-  output         : [&quot;list&quot;, &quot;verbose&quot;]
+  &#x27;help&#x27;           : Boolean,
+  &#x27;version&#x27;        : Boolean,
+  &#x27;bija&#x27;           : Boolean,
+  &#x27;mode&#x27;           : Number,
+  &#x27;showlongitudes&#x27; : Boolean,
+  &#x27;showlatitudes&#x27;  : Boolean,
+  &#x27;latitude&#x27;       : Number,
+  &#x27;longitude&#x27;      : Number,
+  &#x27;outputformat&#x27;   : [&#x27;list&#x27;, &#x27;verbose&#x27;]
 
 }, {
   h : &#x27;--help&#x27;,
   v : &#x27;--version&#x27;,
   b : &#x27;--bija&#x27;,
   m : &#x27;--mode&#x27;,
-  a : &#x27;--show-latitudes&#x27;,
-  o : &#x27;--show-longitudes&#x27;,
+  a : &#x27;--showlatitudes&#x27;,
+  o : &#x27;--showlongitudes&#x27;,
   t : &#x27;--latitude&#x27;,
   g : &#x27;--longitude&#x27;,
-  f : &#x27;--output-format&#x27;
+  f : &#x27;--outputformat&#x27;
 });
 
 var args = opts.argv.remain;
-var cmd = args[0];
+var firstArgument = args[0];
 
 cliHelper.openingMessage();
 
 if (opts.help) {
-  cliHelper.helpMessage();
+  return cliHelper.helpMessage();
 } else if (opts.version) {
   return console.log(pkg.version);
-} else if (opts.showLatitudes) {
-  cliHelper.showLatitudes();
-} else if (opts.showLongitudes) {
-  cliHelper.showLongitudes();
+} else if (opts.showlatitudes) {
+  return cliHelper.showLatitudes();
+} else if (opts.showlongitudes) {
+  return cliHelper.showLongitudes();
 }
 else {
-  // TODO: Instead of setting one setting at a time, collect them into an options object and
-  // invoke the Kollavarsham constructor
-  //      var kollavarsham = new Kollavarsham(option);
-  if (opts.mode) {
-    kollavarsham.setMode(opts.mode);
-  }
-  if (opts.bija) {
-    kollavarsham.setBija(opts.bija);
-  }
-  if (opts.latitude) {
-    kollavarsham.setLatitude(opts.latitude);
-  }
-  if (opts.longitude) {
-    kollavarsham.setLongitude(opts.longitude);
-  }
-  if (opts.output) {
-    kollavarsham.setOutput(opts.output);
-  }
+  var kollavarsham = new Kollavarsham(cliHelper.parseOptions(opts));
 
-  if (cmd) {
-    console.log(&#x27;You are trying to convert: %s&#x27;, cmd);
-    var inputDate = cliHelper.parseDate(cmd);
-    if (!isNaN(inputDate)) {
-      kollavarsham.setInputDate(inputDate);
+  if (firstArgument) {
+    console.log(&#x27;You are trying to convert the Gregorian date &#x27; + chalk.blue.bold(&#x27;%s&#x27;) +
+        &#x27; to Kollavarsham date&#x27;, firstArgument);
+    var date = cliHelper.parseDate(firstArgument);
+    if (date) {
+      cliHelper.displaySettings(kollavarsham.getSettings());
+      kollavarsham.fromGregorianDate(date);
     }
   }
 }
 
-// TODO: Shouldn&#x27;t displaySettings be a cli concern?
-kollavarsham.displaySettings();
 
     </pre>
 </div>
@@ -222,7 +205,7 @@ kollavarsham.displaySettings();
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2014 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Sun, 16 Feb 2014 20:39:11 GMT</span>
+  <span class="last-modified">Last Updated: Mon, 17 Feb 2014 02:33:28 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>

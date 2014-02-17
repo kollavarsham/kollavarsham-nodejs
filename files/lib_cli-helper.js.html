@@ -140,7 +140,7 @@ var cliHelper = {
    * @method openingMessage
    * @static
    **/
-  openingMessage : function () {
+  openingMessage  : function () {
     console.log();
     console.log(chalk.green.bold(&quot;                          kollavarsham&quot;));
     console.log(chalk.gray(&quot;   Based on the Pancanga Perl library by M. YANO and M. FUSHIMI&quot;));
@@ -153,56 +153,57 @@ var cliHelper = {
    * @method helpMessage
    * @static
    **/
-  helpMessage    : function () {
-    console.log(chalk.yellow.bold(&quot;./cli.js [options] arg&quot;));
-    console.log(chalk.yellow(&quot;options&quot;));
-    console.log(chalk.yellow(&quot;=======&quot;));
-    console.log(chalk.yellow.bold(&quot;-h --help&quot;));
-    console.log(chalk.yellow.bold(&quot;   Show this text&quot;));
-    console.log(chalk.yellow.bold(&quot;-a --show-latitudes&quot;));
-    console.log(chalk.yellow.bold(&quot;   Display a map of India with the latitudes&quot;));
-    console.log(chalk.yellow.bold(&quot;-o --show-longitudes&quot;));
-    console.log(chalk.yellow.bold(&quot;   Display a map of India with the longitudes&quot;));
-    console.log(chalk.yellow.bold(&quot;-b --bija&quot;));
-    console.log(chalk.yellow.bold(&quot;   Set Bija to true&quot;));
-    console.log(chalk.yellow.bold(&quot;-m --mode &lt;0/1&gt;&quot;));
-    console.log(chalk.yellow.bold(&quot;   0 for Gregorian Calendar Date to Malayalam Calendar Date&quot;));
-    console.log(chalk.yellow.bold(&quot;   1 for Malayalam Calendar Date to Gregorian Calendar Date&quot;));
-    console.log(chalk.yellow.bold(&quot;-t --latitude number&quot;));
-    console.log(chalk.yellow.bold(&quot;   number signifying degrees of Latitude of the location Where the event occurred&quot;));
-    console.log(chalk.yellow.bold(&quot;   default: 23.2 (Use option --showlatitude for help) &quot;));
-    console.log(chalk.yellow.bold(&quot;-g --longitude number&quot;));
-    console.log(chalk.yellow.bold(&quot;   number signifying degrees of Latitude of the location Where the event occurred&quot;));
-    console.log(chalk.yellow.bold(&quot;   default: 75.8 (Use option --showlongitude for help)&quot;));
-    console.log(chalk.yellow.bold(&quot;-b --bija &lt;true/false&gt;&quot;));
-    console.log(chalk.yellow.bold(&quot;   Turn bija on or off. Default off.&quot;));
-    console.log(chalk.yellow.bold(&quot;-o --output-format &lt;list/verbose&gt;&quot;));
-    console.log(chalk.yellow.bold(&quot;   list: for dates on both sides of the entered&quot;));
-    console.log(chalk.yellow.bold(&quot;   verbose: for detailed view of the output date&quot;));
-    console.log(chalk.yellow(&quot;arguments&quot;));
-    console.log(chalk.yellow(&quot;=========&quot;));
-    console.log(chalk.yellow.bold(&quot;Date&quot;));
-    console.log(chalk.yellow.bold(&quot;   Input date to be converted. Use the following date formats.&quot;));
-    console.log(chalk.yellow.bold(&quot;   Date format: DD:MM:YYYY when mode is 0 (Gregorian to Malayalam)&quot;));
-    console.log(chalk.yellow.bold(&quot;   Date format: DD:MM:YYYY when mode is 1 (Malayalam to Gregorian) where&quot;));
-    console.log(chalk.yellow.bold(&quot;   DD is the day of the Malayalam month&quot;));
-    console.log(chalk.yellow.bold(&quot;   MM 01 for Chingam, 02 for Kanni, 03 for Thulam, 04 for Vrischikam, 05 for Dhanu, 06 for Makaram, &quot;));
-    console.log(chalk.yellow.bold(&quot;      07 for Kumbham, 08 for Meenam, 09 for Medam, 10 for Edavam, 11 for Mithunam, 12 for Karkidakam&quot;));
-    console.log(chalk.yellow.bold(&quot;   YYYY is the Malayalam Year (Kollavarsham)&quot;));
-    console.log(chalk.yellow(&quot;Examples&quot;));
-    console.log(chalk.yellow(&quot;========&quot;));
-    console.log(chalk.yellow.bold(&quot;To convert Modern Date to Kollavarsham Date for Location (100 deg east, 90 deg north&quot;));
-    console.log(chalk.yellow.bold(&quot;With bija and list output:&quot;));
-    console.log(chalk.yellow.bold(&quot;kollavarsham -b -t 90 -g 100 -m 0 -o list 23:08:2008&quot;));
-    console.log(chalk.yellow.bold(&quot;To convert Modern Date to with default settings (Location: Ujjain)&quot;));
-    console.log(chalk.yellow.bold(&quot;kollavarsham 04:04:2011&quot;));
+  helpMessage     : function () {
+    console.log(chalk.red(&quot;kollavarsham [options] [arguments]\n&quot;));
+    console.log(chalk.green(&quot;options&quot;));
+    console.log(chalk.green(&quot;=======&quot;));
+    console.log(chalk.blue(&quot;-h --help&quot;));
+    console.log(&quot;   Show this text&quot;);
+    console.log(chalk.blue(&quot;-a --show-latitudes&quot;));
+    console.log(&quot;   Display a map of India with the latitudes&quot;);
+    console.log(chalk.blue(&quot;-o --show-longitudes&quot;));
+    console.log(&quot;   Display a map of India with the longitudes&quot;);
+    console.log(chalk.blue(&quot;-b --bija&quot;));
+    console.log(&quot;   Set Bija to true&quot;);
+    console.log(chalk.blue(&quot;-m --mode &lt;0/1&gt;&quot;));
+    console.log(&quot;   0 for Gregorian Calendar Date to Malayalam Calendar Date&quot;);
+    console.log(&quot;   1 for Malayalam Calendar Date to Gregorian Calendar Date&quot;);
+    console.log(chalk.blue(&quot;-t --latitude number&quot;));
+    console.log(&quot;   number signifying degrees of Latitude of the location Where the event occurred&quot;);
+    console.log(chalk.gray(&quot;   default: 23.2 (Use option --showlatitude for help) &quot;));
+    console.log(chalk.blue(&quot;-g --longitude number&quot;));
+    console.log(&quot;   number signifying degrees of Latitude of the location Where the event occurred&quot;);
+    console.log(chalk.gray(&quot;   default: 75.8 (Use option --showlongitude for help)&quot;));
+    console.log(chalk.blue(&quot;-b --bija &lt;true/false&gt;&quot;));
+    console.log(&quot;   Turn bija on or off. Default off.&quot;);
+    console.log(chalk.blue(&quot;-o --output-format &lt;list/verbose&gt;&quot;));
+    console.log(&quot;   list: for dates on both sides of the entered&quot;);
+    console.log(&quot;   verbose: for detailed view of the output date&quot;);
+    console.log(chalk.gray(&quot;   (Any other value than &#x27;list&#x27; or &#x27;verbose&#x27; will be discarded)&quot;));
+    console.log(chalk.green(&quot;arguments&quot;));
+    console.log(chalk.green(&quot;=========&quot;));
+    console.log(chalk.blue(&quot;Date&quot;));
+    console.log(&quot;    Input date to be converted. Use the following date formats.&quot;);
+    console.log(&quot;    Date format: DD:MM:YYYY when mode is 0 (Gregorian to Malayalam)&quot;);
+    console.log(&quot;    Date format: DD:MM:YYYY when mode is 1 (Malayalam to Gregorian) where&quot;);
+    console.log(&quot;    DD is the day of the Malayalam month&quot;);
+    console.log(&quot;    MM 01 for Chingam, 02 for Kanni, 03 for Thulam, 04 for Vrischikam, 05 for Dhanu, 06 for Makaram, &quot;);
+    console.log(&quot;       07 for Kumbham, 08 for Meenam, 09 for Medam, 10 for Edavam, 11 for Mithunam, 12 for Karkidakam&quot;);
+    console.log(&quot;    YYYY is the Malayalam Year (Kollavarsham)&quot;);
+    console.log(chalk.green(&quot;Examples&quot;));
+    console.log(chalk.green(&quot;========&quot;));
+    console.log(&quot;To convert Modern Date to Kollavarsham Date for Location (100 deg east, 90 deg north&quot;);
+    console.log(&quot;With bija and list output:&quot;);
+    console.log(chalk.yellow(&quot;    kollavarsham -b -t 90 -g 100 -m 0 -o list 23:08:2008&quot;));
+    console.log(&quot;To convert Modern Date to with default settings (Location: Ujjain)&quot;);
+    console.log(chalk.yellow(&quot;    kollavarsham 04:04:2011&quot;));
   },
   /**
    * Shows the latitude values for various Indian cities on the map - legacy from Perl
    * @method showLatitudes
    * @static
    **/
-  showLatitudes  : function () {
+  showLatitudes   : function () {
     console.log(chalk.grey(&quot; ------------------------------------------------------------ &quot;));
     console.log(chalk.grey(&quot;|                  Latitude                                  |&quot;));
     console.log(chalk.grey(&quot;|                                                            |&quot;));
@@ -215,7 +216,7 @@ var cliHelper = {
     console.log(chalk.grey(&quot;|_____ ---\\                         ______24 Ujjain:23.2     |&quot;));
     console.log(chalk.grey(&quot;|          \\//      *           *___         Calcutta:22.6   |&quot;));
     console.log(chalk.grey(&quot;|_____       \\_/|             _/~   ~_____20                 |&quot;));
-    console.log(chalk.grey(&quot;|               |*          _/               Bombay:19.0      |&quot;));
+    console.log(chalk.grey(&quot;|               |*          _/               Bombay:19.0     |&quot;));
     console.log(chalk.grey(&quot;|_____           \\     *  _/        ______16 Hyderabad:17.4  |&quot;));
     console.log(chalk.grey(&quot;|                 \\      |                                   |&quot;));
     console.log(chalk.grey(&quot;|_____             \\    *|          ______12 Madras:13.1     |&quot;));
@@ -231,7 +232,7 @@ var cliHelper = {
    * @method showLongitudes
    * @static
    **/
-  showLongitudes : function () {
+  showLongitudes  : function () {
     console.log(chalk.grey(&quot; ------------------------------------------------------------ &quot;));
     console.log(chalk.grey(&quot;|                  Longitude                                 |&quot;));
     console.log(chalk.grey(&quot;|            |     |     |     |     |                       |&quot;));
@@ -256,24 +257,55 @@ var cliHelper = {
     console.log(chalk.grey(&quot;|            70          80          90                      |&quot;));
     console.log(chalk.grey(&quot; ------------------------------------------------------------ &quot;));
   },
+  parseOptions    : function (opts) {
+    var options = {};
+    if (opts.mode) {
+      options.mode = opts.mode;
+    }
+    if (opts.bija) {
+      options.bija = opts.bija;
+    }
+    if (opts.latitude) {
+      options.latitude = opts.latitude;
+    }
+    if (opts.longitude) {
+      options.longitude = opts.longitude;
+    }
+    if (opts.outputformat) {
+      options.outputformat = opts.outputformat;
+    }
+    return options;
+  },
+  displaySettings : function (settings) {
+    console.log(&#x27;The current settings for &#x27; + chalk.green(&#x27;kollavarsham &#x27;) + &#x27;calculations are as follows:&#x27;);
+    console.log(&#x27;Bija           : &#x27; + settings.bija);
+    console.log(&#x27;Mode           : &#x27; + settings.mode);
+    console.log(&#x27;Latitude       : &#x27; + settings.latitude);
+    console.log(&#x27;Longitude      : &#x27; + settings.longitude);
+    console.log(&#x27;Output         : &#x27; + settings.outputformat);
+    console.log(&#x27;Gregorian Date : &#x27; + settings.gregorianDate);
+  },
   /**
-   * @private
    * @method parseDate
    * @static
    * @param date {String} String representation of the date to be parsed
    * @returns {Date}
    */
-  parseDate      : function (date) {
-    var split = date.split(&quot;:&quot;);
-    if (split.length === 3) {
-      var InputDate = new Date(split[2], split[1] - 1, split[0]);
-      if (!isNaN(InputDate)) {
+  parseDate       : function (date) {
+    try {
+      var split = date.split(&quot;:&quot;);
+      if (split.length === 3) {
+        var InputDate = new Date(split[2], split[1] - 1, split[0]);
         //console.log(&quot;Input Date is &quot; + InputDate.getDate() + &quot; &quot;  + InputDate.getMonth() + &quot; &quot; + InputDate.getYear());
         console.log(&quot;Date is &quot; + InputDate);
         return InputDate;
       }
+      throw new Error(&quot;\nInvalid Date Format. Please enter Date in the format DD:MM:YYYY&quot;);
     }
-    console.log(&quot;Invalid Date Format. Please enter Date in the format DD:MM:YYYY&quot;);
+    catch (e) {
+      console.log(chalk.red.bold(e.message));
+      return null;
+    }
   }
 };
 
@@ -292,7 +324,7 @@ module.exports = cliHelper;
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2014 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Sun, 16 Feb 2014 20:39:11 GMT</span>
+  <span class="last-modified">Last Updated: Mon, 17 Feb 2014 02:33:28 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>
