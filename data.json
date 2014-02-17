@@ -37,15 +37,6 @@
             "fors": {},
             "namespaces": {}
         },
-        "lib/cli.js": {
-            "name": "lib/cli.js",
-            "modules": {
-                "cli": 1
-            },
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
         "lib/date.js": {
             "name": "lib/date.js",
             "modules": {
@@ -143,17 +134,6 @@
             "line": 15,
             "description": "Helper functions for the CLI app"
         },
-        "cli": {
-            "name": "cli",
-            "submodules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {},
-            "tag": "module",
-            "file": "lib/cli.js",
-            "line": 11,
-            "description": "CLI app to convert Gregorian date to Kollavarsham date and vice versa"
-        },
         "date": {
             "name": "date",
             "submodules": {},
@@ -194,7 +174,7 @@
             "namespaces": {},
             "tag": "module",
             "file": "lib/kollavarsham.js",
-            "line": 21,
+            "line": 22,
             "description": "CLI app to convert Gregorian date to Kollavarsham (Malayalam Era) date and vice versa"
         },
         "locations": {
@@ -207,7 +187,7 @@
             "namespaces": {},
             "tag": "module",
             "file": "lib/locations.js",
-            "line": 15
+            "line": 17
         },
         "math": {
             "name": "math",
@@ -346,7 +326,7 @@
             "module": "kollavarsham",
             "namespace": "",
             "file": "lib/kollavarsham.js",
-            "line": 21,
+            "line": 22,
             "description": "The Kollavarsham class implements all the public APIs of the library.\n\nCreate a new instance of this class, passing in the relevant options and call methods on this instance.",
             "params": [
                 {
@@ -402,7 +382,7 @@
             "module": "locations",
             "namespace": "",
             "file": "lib/locations.js",
-            "line": 15,
+            "line": 17,
             "static": 1,
             "type": "{{Agra: {latitude: number, longitude: number}, Ahmedabad: {latitude: number, longitude: number}, Ajmer: {latitude: number, longitude: number}, Aligarh: {latitude: number, longitude: number}, Amritsar: {latitude: number, longitude: number}, Bangalore: {latitude: number, longitude: number}, Bhuvaneswar: {latitude: number, longitude: number}, Bombay: {latitude: number, longitude: number}, Calcutta: {latitude: number, longitude: number}, Cochin: {latitude: number, longitude: number}, Colombo: {latitude: number, longitude: number}, Dacca: {latitude: number, longitude: number}, Delhi: {latitude: number, longitude: number}, Hyderabad: {latitude: number, longitude: number}, Jaipur: {latitude: number, longitude: number}, Kathmandu: {latitude: number, longitude: number}, Lahor: {latitude: number, longitude: number}, Madras: {latitude: number, longitude: number}, Mathura: {latitude: number, longitude: number}, Mysore: {latitude: number, longitude: number}, Patna: {latitude: number, longitude: number}, Pune: {latitude: number, longitude: number}, Srinagar: {latitude: number, longitude: number}, Trivandrum: {latitude: number, longitude: number}, Varanasi: {latitude: number, longitude: number}, Ujjain: {latitude: number, longitude: number}}}"
         },
@@ -465,7 +445,7 @@
         },
         {
             "file": "lib/cli-helper.js",
-            "line": 170,
+            "line": 161,
             "itemtype": "method",
             "name": "parseDate",
             "static": 1,
@@ -533,7 +513,7 @@
         },
         {
             "file": "lib/date.js",
-            "line": 72,
+            "line": 73,
             "description": "Converts the Kollavarsham Date to a nicely formatted string with year, month and date",
             "itemtype": "method",
             "name": "toString",
@@ -554,7 +534,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 63,
+            "line": 64,
             "description": "Holds the settings state of the Kollavarsham instance. To access a snapshot use the {{#crossLink \"Kollavarsham/getSettings:method\"}}{{/crossLink}} method",
             "itemtype": "property",
             "name": "_settings",
@@ -566,7 +546,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 73,
+            "line": 77,
             "description": "Gets a snapshot of the current settings",
             "itemtype": "method",
             "name": "getSettings",
@@ -579,7 +559,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 82,
+            "line": 86,
             "description": "Sets the mode of conversion - from Gregorian to Malayalam Era or vice versa. `0`and `1` (any non-zero value is considered as 1) are valid values",
             "itemtype": "method",
             "name": "setMode",
@@ -598,7 +578,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 100,
+            "line": 104,
             "description": "Sets or unsets the Bija factor",
             "itemtype": "method",
             "name": "setBija",
@@ -617,7 +597,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 119,
+            "line": 123,
             "description": "Sets the latitude for the location that will be used as the basis for the conversion",
             "itemtype": "method",
             "name": "setLatitude",
@@ -635,7 +615,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 134,
+            "line": 138,
             "description": "Sets the longitude for the location that will be used as the basis of the conversion",
             "itemtype": "method",
             "name": "setLongitude",
@@ -653,7 +633,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 151,
+            "line": 155,
             "description": "Sets the output to be as 'list' or 'verbose'",
             "itemtype": "method",
             "name": "setOutput",
@@ -669,7 +649,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 162,
+            "line": 166,
             "description": "Sets the input Gregorian date for conversion",
             "itemtype": "method",
             "name": "setInputDate",
@@ -684,7 +664,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 171,
+            "line": 175,
             "description": "Converts a Gregorian date to the equivalent Kollavarsham date, respecting the current configuration",
             "itemtype": "method",
             "name": "fromGregorianDate",
@@ -706,7 +686,7 @@
     "warnings": [
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/cli-helper.js:170"
+            "line": " lib/cli-helper.js:161"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -714,11 +694,11 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/kollavarsham.js:73"
+            "line": " lib/kollavarsham.js:77"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/kollavarsham.js:171"
+            "line": " lib/kollavarsham.js:175"
         },
         {
             "message": "Missing item type\nPads zeroes to print the date in a pretty format",

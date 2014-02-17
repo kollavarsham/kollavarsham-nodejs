@@ -13,7 +13,6 @@ YUI.add("yuidoc-meta", function(Y) {
     "modules": [
         "calculations",
         "calendar",
-        "cli",
         "cli-helper",
         "date",
         "globals",
@@ -30,11 +29,6 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "calendar",
             "name": "calendar"
-        },
-        {
-            "displayName": "cli",
-            "name": "cli",
-            "description": "CLI app to convert Gregorian date to Kollavarsham date and vice versa"
         },
         {
             "displayName": "cli-helper",
