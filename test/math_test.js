@@ -8,7 +8,7 @@
 
 'use strict';
 
-var math = require('../lib/math.js');
+var math = require('../lib/math');
 
 exports.math = {
   setUp              : function (done) {

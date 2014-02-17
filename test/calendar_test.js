@@ -8,9 +8,9 @@
 
 'use strict';
 
-var cal = require('../lib/calendar.js');
-var celestial = require('../lib/celestial.js');
-var math = require('../lib/math.js');
+var cal = require('../lib/calendar');
+var celestial = require('../lib/celestial');
+var math = require('../lib/math');
 
 function cmpDates(date1, date2) {
   return date1.getFullYear() === date2.getFullYear() &&
@@ -39,7 +39,8 @@ exports.calendar = {
     test.done();
   },
   'gregorianDateToJulianDay'     : function (test) {
-    test.expect(14);
+    test.expect(15);
+    test.equal(cal.gregorianDateToJulianDay(new Date(2014, cal.months.February, 16)), 2456704.5);
     test.equal(cal.gregorianDateToJulianDay(new Date(2013, cal.months.December, 30)), 2456656.5);
     test.equal(cal.gregorianDateToJulianDay(new Date(2013, cal.months.December, 31)), 2456657.5);
     test.equal(cal.gregorianDateToJulianDay(new Date(2012, cal.months.January, 31)), 2455957.5);
@@ -268,18 +269,34 @@ exports.calendar = {
   },
   'getSauraMasaName'             : function (test) {
     test.expect(12);
-    test.equal(cal.getSauraMasaName(0), 'Mesa   ');
-    test.equal(cal.getSauraMasaName(1), 'Vrsa   ');
-    test.equal(cal.getSauraMasaName(2), 'Mithuna');
-    test.equal(cal.getSauraMasaName(3), 'Karkata');
-    test.equal(cal.getSauraMasaName(4), 'Simha  ');
-    test.equal(cal.getSauraMasaName(5), 'Kanya  ');
-    test.equal(cal.getSauraMasaName(6), 'Tula   ');
-    test.equal(cal.getSauraMasaName(7), 'Vrscika');
-    test.equal(cal.getSauraMasaName(8), 'Dhanus ');
-    test.equal(cal.getSauraMasaName(9), 'Makara ');
-    test.equal(cal.getSauraMasaName(10), 'Kumbha ');
-    test.equal(cal.getSauraMasaName(11), 'Mina   ');
+    test.equal(cal.getSauraMasaName(0), 'Mesa      ');
+    test.equal(cal.getSauraMasaName(1), 'Vrsa      ');
+    test.equal(cal.getSauraMasaName(2), 'Mithuna   ');
+    test.equal(cal.getSauraMasaName(3), 'Karkata   ');
+    test.equal(cal.getSauraMasaName(4), 'Simha     ');
+    test.equal(cal.getSauraMasaName(5), 'Kanya     ');
+    test.equal(cal.getSauraMasaName(6), 'Tula      ');
+    test.equal(cal.getSauraMasaName(7), 'Vrscika   ');
+    test.equal(cal.getSauraMasaName(8), 'Dhanus    ');
+    test.equal(cal.getSauraMasaName(9), 'Makara    ');
+    test.equal(cal.getSauraMasaName(10), 'Kumbha    ');
+    test.equal(cal.getSauraMasaName(11), 'Mina      ');
+    test.done();
+  },
+  'getMalayalaMasaName'          : function (test) {
+    test.expect(12);
+    test.equal(cal.getMalayalaMasaName(0), 'Chingam   ');
+    test.equal(cal.getMalayalaMasaName(1), 'Kanni     ');
+    test.equal(cal.getMalayalaMasaName(2), 'Thulam    ');
+    test.equal(cal.getMalayalaMasaName(3), 'Vrischikam');
+    test.equal(cal.getMalayalaMasaName(4), 'Dhanu     ');
+    test.equal(cal.getMalayalaMasaName(5), 'Makaram   ');
+    test.equal(cal.getMalayalaMasaName(6), 'Kumbham   ');
+    test.equal(cal.getMalayalaMasaName(7), 'Meenam    ');
+    test.equal(cal.getMalayalaMasaName(8), 'Medam     ');
+    test.equal(cal.getMalayalaMasaName(9), 'Idavam    ');
+    test.equal(cal.getMalayalaMasaName(10), 'Mithunam  ');
+    test.equal(cal.getMalayalaMasaName(11), 'Karkitakam');
     test.done();
   },
   'getNaksatraName'              : function (test) {
@@ -298,6 +315,24 @@ exports.calendar = {
     test.equal(cal.getNaksatraName(316.081404838166), 'Satabhisaj');
     test.equal(cal.getNaksatraName(165.854323537076), 'Hasta');
     test.equal(cal.getNaksatraName(236.806759936797), 'Jyestha');
+    test.done();
+  },
+  'getMalayalaNaksatraName'      : function (test) {
+    test.expect(14);
+    test.equal(cal.getMalayalaNaksatraName(167.084587116821), 'Atham');
+    test.equal(cal.getMalayalaNaksatraName(179.618866280373), 'Chithra');
+    test.equal(cal.getMalayalaNaksatraName(191.953219840454), 'Chothi');
+    test.equal(cal.getMalayalaNaksatraName(204.131519861513), 'Vishakham');
+    test.equal(cal.getMalayalaNaksatraName(349.195739637822), 'Revathi');
+    test.equal(cal.getMalayalaNaksatraName(1.82309136307406), 'Ashwathi');
+    test.equal(cal.getMalayalaNaksatraName(14.6945040053245), 'Bharani');
+    test.equal(cal.getMalayalaNaksatraName(6.55724149356419), 'Ashwathi');
+    test.equal(cal.getMalayalaNaksatraName(16.24829446685), 'Bharani');
+    test.equal(cal.getMalayalaNaksatraName(29.8253740270552), 'Karthika');
+    test.equal(cal.getMalayalaNaksatraName(156.709071062542), 'Uthram');
+    test.equal(cal.getMalayalaNaksatraName(316.081404838166), 'Chathayam');
+    test.equal(cal.getMalayalaNaksatraName(165.854323537076), 'Atham');
+    test.equal(cal.getMalayalaNaksatraName(236.806759936797), 'Thrikketta');
     test.done();
   },
   'aharganaToKali'               : function (test) {
