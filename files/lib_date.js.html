@@ -196,6 +196,19 @@ KollavarshamDate.prototype.toString = function () {
   return pad(this.year, 4) + &quot; &quot; + pad(this.month, 2) + &quot; &quot; + pad(this.day, 2);
 };
 
+KollavarshamDate.prototype.print = function () {
+  if (this.globals) {
+    var result = &#x27;Saka : &#x27; + pad(this.globals.YearSaka, 4) + &#x27;\t&#x27; + this.globals.masa + &quot; (&quot; +
+        pad(this.globals.masa_num, 2) + &quot;) &quot; + this.globals.paksa + &#x27;\t&#x27; + pad(this.globals.tithi_day, 2) + &#x27;\n&#x27;;
+    result += &#x27;Saura: &#x27; + pad(this.globals.YearSaka, 4) + &#x27;\t&#x27; + this.globals.saura_masa + &quot; (&quot; +
+        pad(this.globals.saura_masa_num, 2) + &quot;) &quot; + pad(this.globals.saura_masa_day, 2) + &#x27;\t&#x27; + this.globals.naksatra + &#x27;\n&#x27;;
+    result += &#x27;ME   : &#x27; + pad(this.globals.MalayalamYear, 4) + &#x27;\t&#x27; + this.globals.malayala_masa + &quot; (&quot; +
+        pad(this.globals.malayala_masa_num, 2) + &quot;) &quot; + pad(this.globals.saura_masa_day, 2) + &#x27;\t&#x27; + this.globals.malayala_naksatra + &#x27;\n&#x27;;
+    return result;
+  }
+  return this.toString();
+};
+
 module.exports.KollavarshamDate = KollavarshamDate;
     </pre>
 </div>
@@ -209,7 +222,7 @@ module.exports.KollavarshamDate = KollavarshamDate;
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2014 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Mon, 17 Feb 2014 03:27:14 GMT</span>
+  <span class="last-modified">Last Updated: Mon, 17 Feb 2014 06:49:04 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>

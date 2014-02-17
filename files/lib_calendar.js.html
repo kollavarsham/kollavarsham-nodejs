@@ -189,6 +189,20 @@ var calendar = {
     10 : &#x27;Kumbha &#x27;,
     11 : &#x27;Mina   &#x27;
   },
+  malayalaMasaNames        : {
+    0  : &#x27;Chingam   &#x27;,
+    1  : &#x27;Kanni     &#x27;,
+    2  : &#x27;Thulam    &#x27;,
+    3  : &#x27;Vrischikam&#x27;,
+    4  : &#x27;Dhanu     &#x27;,
+    5  : &#x27;Makaram   &#x27;,
+    6  : &#x27;Kumbham   &#x27;,
+    7  : &#x27;Meenam    &#x27;,
+    8  : &#x27;Medam     &#x27;,
+    9  : &#x27;Idavam    &#x27;,
+    10 : &#x27;Mithunam  &#x27;,
+    11 : &#x27;Karkatakam&#x27;
+  },
   naksatras                : {
     0  : &#x27;Asvini&#x27;,
     1  : &#x27;Bharani&#x27;,
@@ -218,7 +232,36 @@ var calendar = {
     25 : &#x27;U-bhadrapada&#x27;,
     26 : &#x27;Revati&#x27;,
     27 : &#x27;Asvini&#x27;
-
+  },
+  malayalaNaksatras        : {
+    0  : &#x27;Ashwathi&#x27;,
+    1  : &#x27;Bharani&#x27;,
+    2  : &#x27;Karthika&#x27;,
+    3  : &#x27;Rohini&#x27;,
+    4  : &#x27;Makiryam&#x27;,
+    5  : &#x27;Thiruvathira&#x27;,
+    6  : &#x27;Punartham&#x27;,
+    7  : &#x27;Pooyam&#x27;,
+    8  : &#x27;Aayilyam&#x27;,
+    9  : &#x27;Makam&#x27;,
+    10 : &#x27;Pooram&#x27;,
+    11 : &#x27;Uthram&#x27;,
+    12 : &#x27;Atham&#x27;,
+    13 : &#x27;Chithra&#x27;,
+    14 : &#x27;Chothi&#x27;,
+    15 : &#x27;Vishakham&#x27;,
+    16 : &#x27;Anizham&#x27;,
+    17 : &#x27;Thrikketta&#x27;,
+    18 : &#x27;Moolam&#x27;,
+    19 : &#x27;Pooradam&#x27;,
+    20 : &#x27;Uthradam&#x27;,
+    21 : &#x27;Thiruvonam&#x27;,
+    22 : &#x27;Avittam&#x27;,
+    23 : &#x27;Chathayam&#x27;,
+    24 : &#x27;Poororuttathi&#x27;,
+    25 : &#x27;Uthrattathi&#x27;,
+    26 : &#x27;Revathi&#x27;,
+    27 : &#x27;Ashwathi&#x27;
   },
   nextDate                 : function (date) {
     date.setUTCDate(date.getUTCDate() + 1);
@@ -414,8 +457,14 @@ var calendar = {
   getSauraMasaName         : function (number) {
     return this.sauraMasaNames[number];
   },
+  getMalayalaMasaName      : function (number) {
+    return this.malayalaMasaNames[number];
+  },
   getNaksatraName          : function (tllong) {
     return this.naksatras[math.truncate(tllong * 27 / 360)];
+  },
+  getMalayalaNaksatraName  : function (tllong) {
+    return this.malayalaNaksatras[math.truncate(tllong * 27 / 360)];
   }
 };
 
@@ -433,7 +482,7 @@ module.exports = calendar;
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2014 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Mon, 17 Feb 2014 03:27:14 GMT</span>
+  <span class="last-modified">Last Updated: Mon, 17 Feb 2014 06:49:04 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>

@@ -528,13 +528,12 @@
             "file": "lib/globals.js",
             "line": 20,
             "static": 1,
-            "type": "{{planet: boolean, YugaCivilDays: boolean, YugaSynodicMonth: boolean, YugaAdhimasa: boolean, YugaTithi: boolean, YugaKsayadina: boolean, lagna: boolean, back_clong_ahar: number, back_nclong_ahar: number, back_clong: number, back_nclong: number, year: boolean, month: boolean, paksa: boolean, day: boolean, ahar: boolean, ahargana: boolean, hours: boolean, minutes: boolean, JulianDay: boolean, YearKali: boolean, YearSaka: boolean, YearVikrama: boolean, masa_num: boolean, saura_masa_num: boolean, saura_masa_day: boolean, tithi_day: boolean, mslong: boolean, tslong: boolean, mllong: boolean, tllong: boolean, clong: boolean, nclong: boolean, tithi: boolean, ftithi: boolean, eqtime: boolean, sriseh: boolean, srisem: boolean, weekday_name: boolean, sukla_krsna: boolean, adhimasa: boolean, masa: boolean, naksatra: boolean, samkranti: boolean, samkranti_year: boolean, samkranti_month: boolean, samkranti_day: boolean, samkranti_hour: boolean, samkranti_min: boolean, ayanadeg: boolean, ayanamin: boolean, desantara: number, counter: boolean}}",
             "class": "globals",
             "module": "globals"
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 64,
+            "line": 63,
             "description": "Holds the settings state of the Kollavarsham instance. To access a snapshot use the {{#crossLink \"Kollavarsham/getSettings:method\"}}{{/crossLink}} method",
             "itemtype": "property",
             "name": "_settings",
@@ -546,7 +545,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 77,
+            "line": 76,
             "description": "Gets a snapshot of the current settings",
             "itemtype": "method",
             "name": "getSettings",
@@ -559,7 +558,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 86,
+            "line": 85,
             "description": "Sets the mode of conversion - from Gregorian to Malayalam Era or vice versa. `0`and `1` (any non-zero value is considered as 1) are valid values",
             "itemtype": "method",
             "name": "setMode",
@@ -578,7 +577,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 104,
+            "line": 103,
             "description": "Sets or unsets the Bija factor",
             "itemtype": "method",
             "name": "setBija",
@@ -597,7 +596,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 123,
+            "line": 122,
             "description": "Sets the latitude for the location that will be used as the basis for the conversion",
             "itemtype": "method",
             "name": "setLatitude",
@@ -615,7 +614,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 138,
+            "line": 137,
             "description": "Sets the longitude for the location that will be used as the basis of the conversion",
             "itemtype": "method",
             "name": "setLongitude",
@@ -633,7 +632,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 155,
+            "line": 154,
             "description": "Sets the output to be as 'list' or 'verbose'",
             "itemtype": "method",
             "name": "setOutput",
@@ -649,7 +648,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 166,
+            "line": 165,
             "description": "Sets the input Gregorian date for conversion",
             "itemtype": "method",
             "name": "setInputDate",
@@ -664,7 +663,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 175,
+            "line": 174,
             "description": "Converts a Gregorian date to the equivalent Kollavarsham date, respecting the current configuration",
             "itemtype": "method",
             "name": "fromGregorianDate",
@@ -694,11 +693,11 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/kollavarsham.js:77"
+            "line": " lib/kollavarsham.js:76"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/kollavarsham.js:175"
+            "line": " lib/kollavarsham.js:174"
         },
         {
             "message": "Missing item type\nPads zeroes to print the date in a pretty format",

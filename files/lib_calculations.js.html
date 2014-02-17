@@ -135,7 +135,7 @@ var globals = require(&#x27;./globals&#x27;);
 var math = require(&#x27;./math&#x27;);
 
 var calculations = {
-  setConstants      : function (settings) {
+  setConstants : function (settings) {
     // TODO: Add Tests if/when feasible
     celestial.setPrimaryConstants();
     if (settings.bija) {
@@ -144,7 +144,7 @@ var calculations = {
     celestial.setSecondaryConstants();
     celestial.setPlanetaryConstants();
   },
-  main : function (settings) {
+  main         : function (settings) {
     // TODO: Add Tests if/when feasible
     this.setConstants(settings);
     globals.JulianDay = calendar.gregorianDateToJulianDay(new Date(globals.year, globals.month - 1, globals.day));
@@ -206,16 +206,24 @@ var calculations = {
     globals.saura_masa_num = sauraMasaMonthDay.month;
     globals.saura_masa_day = sauraMasaMonthDay.day;
     globals.saura_masa = calendar.getSauraMasaName(globals.saura_masa_num);
+
+    globals.malayala_masa_num = (globals.saura_masa_num - 4 + 12 ) % 12;
+    globals.malayala_masa = calendar.getMalayalaMasaName(globals.malayala_masa_num);
+
     globals.naksatra = calendar.getNaksatraName(globals.tllong);
+    globals.malayala_naksatra = calendar.getMalayalaNaksatraName(globals.tllong);
 
     // kali and Saka era
     globals.YearKali = calendar.aharganaToKali(globals.ahar + ( 4 - globals.masa_num ) * 30);
     globals.YearSaka = calendar.kaliToSaka(globals.YearKali);
     globals.YearVikrama = globals.YearSaka + 135;
+    globals.MalayalamYear = globals.YearSaka - 747 +
+        math.truncate((globals.saura_masa_num - globals.malayala_masa_num + 12) / 12);
+    //globals.MEYear = globals.;
   },
-  planetary:function(){
+  planetary    : function () {
     var planets = [&#x27;mercury&#x27;, &#x27;venus&#x27;, &#x27;mars&#x27;, &#x27;jupiter&#x27;, &#x27;saturn&#x27;];
-    for (var i = 0; i &lt; planets.length; i++){
+    for (var i = 0; i &lt; planets.length; i++) {
       celestial.PlanetMeanPosition[planets[i]] = celestial.getMeanLongitude(globals.ahar, celestial.PlanetRotation[planets[i]]);
       celestial.PlanetTruePosition[planets[i]] = celestial.getTrueLongitude(globals.ahar, globals.mslong, planets[i]);
     }
@@ -235,7 +243,7 @@ module.exports = calculations;
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2014 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Mon, 17 Feb 2014 03:27:14 GMT</span>
+  <span class="last-modified">Last Updated: Mon, 17 Feb 2014 06:49:04 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>

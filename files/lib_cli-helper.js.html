@@ -297,13 +297,13 @@ var cliHelper = {
     }
   },
   displaySettings : function (settings) {
-    console.log(&#x27;The current settings for &#x27; + chalk.green(&#x27;kollavarsham &#x27;) + &#x27;calculations are as follows:&#x27;);
-    console.log(&#x27;Bija           : &#x27; + settings.bija);
-    console.log(&#x27;Mode           : &#x27; + settings.mode);
-    console.log(&#x27;Latitude       : &#x27; + settings.latitude);
-    console.log(&#x27;Longitude      : &#x27; + settings.longitude);
-    console.log(&#x27;Output         : &#x27; + settings.outputformat);
-    console.log(&#x27;Gregorian Date : &#x27; + settings.gregorianDate);
+    console.log(chalk.gray(&#x27;The current settings for &#x27;) + chalk.green(&#x27;kollavarsham &#x27;) +
+        chalk.gray(&#x27;calculations are as follows:&#x27;));
+    console.log(chalk.gray(&#x27;Bija           : &#x27; + settings.bija));
+    console.log(chalk.gray(&#x27;Mode           : &#x27; + settings.mode));
+    console.log(chalk.gray(&#x27;Latitude       : &#x27; + settings.latitude));
+    console.log(chalk.gray(&#x27;Longitude      : &#x27; + settings.longitude));
+    console.log(chalk.gray(&#x27;Output         : &#x27; + settings.outputformat));
   }
 };
 
@@ -322,7 +322,7 @@ module.exports = cliHelper;
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2014 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Mon, 17 Feb 2014 03:27:14 GMT</span>
+  <span class="last-modified">Last Updated: Mon, 17 Feb 2014 06:49:04 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>
