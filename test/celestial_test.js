@@ -11,14 +11,9 @@
 var calculations = require('../lib/calculations');
 var calendar = require('../lib/calendar');
 var celestial = require('../lib/celestial');
-var globals = require('../lib/globals');
 var math = require('../lib/math');
 
 var runCalculationsWithADate = function () {
-//  globals.year = 2014;
-//  globals.month = 2;
-//  globals.day = 11;
-  globals.gregorianDate = new Date(2014, calendar.months.February, 11);
   calculations.fromGregorian({
     bija          : false,
     mode          : 0,
@@ -26,7 +21,7 @@ var runCalculationsWithADate = function () {
     longitude     : 75.8,
     outputformat  : 'verbose',
     gregorianDate : new Date()
-  });
+  }, new Date(2014, calendar.months.February, 11));
 };
 
 exports.celestial = {
