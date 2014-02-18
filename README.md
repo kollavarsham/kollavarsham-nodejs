@@ -1,4 +1,4 @@
-# kollavarsham [![Build Status](https://secure.travis-ci.org/kollavarsham/kollavarsham-nodejs.png?branch=master)](http://travis-ci.org/kollavarsham/kollavarsham-nodejs)
+# kollavarsham [![Build Status](https://secure.travis-ci.org/kollavarsham/kollavarsham-nodejs.png?branch=master)](http://travis-ci.org/kollavarsham/kollavarsham-nodejs)[![Dependency Status](https://gemnasium.com/kollavarsham/kollavarsham-nodejs.png)](https://gemnasium.com/kollavarsham/kollavarsham-nodejs)
 
 Convert Gregorian date to Kollavarsham date and vice versa
 
