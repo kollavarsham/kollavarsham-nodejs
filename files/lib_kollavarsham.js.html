@@ -253,17 +253,6 @@ Kollavarsham.prototype.setOutput = function (output) {
   this._settings.output = output;
 };
 
-//TODO: Rather than a method to set the date to be converted, can the dates come in as parameters
-// to specific methods with single responsibility?
-/**
- * Sets the input Gregorian date for conversion
- * @method setInputDate
- * @param date
- */
-Kollavarsham.prototype.setInputDate = function (date) {
-  this._settings.gregorianDate = date;
-};
-
 /**
  * Converts a Gregorian date to the equivalent Kollavarsham date, respecting the current configuration
  *
@@ -272,13 +261,8 @@ Kollavarsham.prototype.setInputDate = function (date) {
  * @returns {KollavarshamDate} Converted date
  */
 Kollavarsham.prototype.fromGregorianDate = function (date) {
-// Rather than doing how it is done in perl by first setting year, month and day, let&#x27;s create a new gregorianDate global - HP
-//  globals.year = date.getFullYear();
-//  globals.month = date.getMonth() + 1; //globals.month should be 1 to 12 and not 0 to 11
-//  globals.day = date.getDate();
-  globals.gregorianDate = date;
+  var kollavarshamDate = calculations.fromGregorian(this._settings, date);
 
-  var kollavarshamDate = calculations.fromGregorian(this._settings);
   kollavarshamDate.globals = globals;
 
   return kollavarshamDate;
@@ -332,7 +316,7 @@ module.exports = Kollavarsham;
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2014 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Tue, 18 Feb 2014 22:45:35 GMT</span>
+  <span class="last-modified">Last Updated: Tue, 18 Feb 2014 23:21:02 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>
