@@ -371,7 +371,7 @@
         {
             "file": "lib/kollavarsham.js",
             "line": 198,
-            "description": "Converts a Kollavarsham date to its equivalent Gregorian date, respecting the current configuration",
+            "description": "Converts a Kollavarsham date to its equivalent Gregorian date, respecting the current configuration\n**This API is still work in progress**",
             "itemtype": "method",
             "name": "toGregorianDate",
             "params": [
@@ -390,7 +390,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 210,
+            "line": 211,
             "description": "Exports the {{#crossLink \"KollavarshamDate\"}}{{/crossLink}} class for referencing via `require`. This is the class\nthat is returned when converting {{#crossLink \"Kollavarsham/fromGregorianDate:method\"}}{{/crossLink}} and is passed in\nto {{#crossLink \"Kollavarsham/toGregorianDate:method\"}}{{/crossLink}}. See example below.",
             "itemtype": "property",
             "name": "kollavarshamDate",
