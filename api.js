@@ -3,46 +3,18 @@ YUI.add("yuidoc-meta", function(Y) {
     "classes": [
         "JulianDate",
         "Kollavarsham",
-        "KollavarshamDate",
-        "calendar",
-        "cliHelper",
-        "globals",
-        "locations",
-        "math"
+        "KollavarshamDate"
     ],
     "modules": [
-        "calculations",
-        "calendar",
-        "cli-helper",
         "date",
-        "globals",
         "kollavarsham",
-        "locations",
-        "math"
+        "main"
     ],
     "allModules": [
         {
-            "displayName": "calculations",
-            "name": "calculations",
-            "description": "Calculations involved in the to and fro conversions of Kollavarsham to Gregorian dates and vice versa"
-        },
-        {
-            "displayName": "calendar",
-            "name": "calendar"
-        },
-        {
-            "displayName": "cli-helper",
-            "name": "cli-helper",
-            "description": "Helper functions for the CLI app"
-        },
-        {
             "displayName": "date",
-            "name": "date"
-        },
-        {
-            "displayName": "globals",
-            "name": "globals",
-            "description": "Temporary module that holds all the Perl global variables"
+            "name": "date",
+            "description": "Defines the KollavarshamDate and JulianDate classes"
         },
         {
             "displayName": "kollavarsham",
@@ -50,12 +22,9 @@ YUI.add("yuidoc-meta", function(Y) {
             "description": "CLI app to convert Gregorian date to Kollavarsham (Malayalam Era) date and vice versa"
         },
         {
-            "displayName": "locations",
-            "name": "locations"
-        },
-        {
-            "displayName": "math",
-            "name": "math"
+            "displayName": "main",
+            "name": "main",
+            "description": "This is the module that gets exported when `require('kollavarsham')` is invoked by any other\napps including this as a library. It exposes all the public classes and API in Kollavarsham"
         }
     ]
 } };

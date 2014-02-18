@@ -39,41 +39,21 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
-                <li><a href="../classes/calendar.html">calendar</a></li>
-            
-                <li><a href="../classes/cliHelper.html">cliHelper</a></li>
-            
-                <li><a href="../classes/globals.html">globals</a></li>
-            
                 <li><a href="../classes/JulianDate.html">JulianDate</a></li>
             
                 <li><a href="../classes/Kollavarsham.html">Kollavarsham</a></li>
             
                 <li><a href="../classes/KollavarshamDate.html">KollavarshamDate</a></li>
             
-                <li><a href="../classes/locations.html">locations</a></li>
-            
-                <li><a href="../classes/math.html">math</a></li>
-            
             </ul>
 
             <ul id="api-modules" class="apis modules">
             
-                <li><a href="../modules/calculations.html">calculations</a></li>
-            
-                <li><a href="../modules/calendar.html">calendar</a></li>
-            
-                <li><a href="../modules/cli-helper.html">cli-helper</a></li>
-            
                 <li><a href="../modules/date.html">date</a></li>
-            
-                <li><a href="../modules/globals.html">globals</a></li>
             
                 <li><a href="../modules/kollavarsham.html">kollavarsham</a></li>
             
-                <li><a href="../modules/locations.html">locations</a></li>
-            
-                <li><a href="../modules/math.html">math</a></li>
+                <li><a href="../modules/main.html">main</a></li>
             
             </ul>
         </div>
@@ -123,7 +103,8 @@
  */
 
 /**
- @module date
+ * Defines the KollavarshamDate and JulianDate classes
+ * @module date
  */
 
 &#x27;use strict&#x27;;
@@ -196,6 +177,11 @@ KollavarshamDate.prototype.toString = function () {
   return pad(this.year, 4) + &#x27; &#x27; + pad(this.month, 2) + &#x27; &#x27; + pad(this.day, 2);
 };
 
+/**
+ * Returns the out string (that is probably relevant only from the CLI perspective)
+ * @method print
+ * @returns {string}
+ */
 KollavarshamDate.prototype.print = function () {
   if (this.globals) {
     var result = &#x27;Saka : &#x27; + pad(this.globals.YearSaka, 4) + &#x27;\t&#x27; + pad(this.globals.tithiDay, 2) + &#x27; &#x27; +
@@ -225,7 +211,7 @@ module.exports.KollavarshamDate = KollavarshamDate;
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2014 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Mon, 17 Feb 2014 22:30:44 GMT</span>
+  <span class="last-modified">Last Updated: Tue, 18 Feb 2014 04:17:21 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>
