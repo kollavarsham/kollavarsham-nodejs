@@ -19,7 +19,6 @@ var runCalculationsWithADate = function () {
 //  globals.month = 2;
 //  globals.day = 11;
   globals.gregorianDate = new Date(2014, calendar.months.February, 11);
-  globals.year = globals.gregorianDate.getFullYear();
   calculations.fromGregorian({
     bija          : false,
     mode          : 0,
