@@ -39,8 +39,6 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
-                <li><a href="../classes/JulianDate.html">JulianDate</a></li>
-            
                 <li><a href="../classes/Kollavarsham.html">Kollavarsham</a></li>
             
                 <li><a href="../classes/KollavarshamDate.html">KollavarshamDate</a></li>
@@ -52,8 +50,6 @@
                 <li><a href="../modules/date.html">date</a></li>
             
                 <li><a href="../modules/kollavarsham.html">kollavarsham</a></li>
-            
-                <li><a href="../modules/main.html">main</a></li>
             
             </ul>
         </div>
@@ -103,10 +99,9 @@
  */
 
 /**
- CLI app to convert Gregorian date to Kollavarsham (Malayalam Era) date and vice versa
- @module kollavarsham
+ * The main module that exposes all of the public API in the library
+ * @module kollavarsham
  */
-
 &#x27;use strict&#x27;;
 
 var calculations = require(&#x27;./calculations&#x27;);
@@ -292,6 +287,36 @@ Kollavarsham.prototype.fromGregorianDate = function (date) {
   return kollavarshamDate;
 };
 
+/**
+ * Converts a Kollavarsham date to its equivalent Gregorian date, respecting the current configuration
+ *
+ * @method toGregorianDate
+ * @param date {KollavarshamDate} The Kollavarsham date to be converted to Gregorian
+ * @returns {Date} Converted date
+ */
+Kollavarsham.prototype.toGregorianDate = function (date) {
+  //TODO: Implement this function
+  console.log(&#x27;When the API is implemented, will convert %s&#x27;, date);
+};
+
+/**
+ * Exports the {{#crossLink &quot;KollavarshamDate&quot;}}{{/crossLink}} class for referencing via &#x60;require&#x60;. This is the class
+ * that is returned when converting {{#crossLink &quot;Kollavarsham/fromGregorianDate:method&quot;}}{{/crossLink}} and is passed in
+ * to {{#crossLink &quot;Kollavarsham/toGregorianDate:method&quot;}}{{/crossLink}}. See example below.
+ * @property kollavarshamDate
+ * @type {KollavarshamDate}
+ * @static
+ * @example
+ * &#x60;&#x60;&#x60;
+ * var Kollavarsham = require(&#x27;kollavarsham&#x27;);
+ * var KollavarshamDate = require(&#x27;kollavarsham&#x27;).kollavarshamDate;
+ *
+ * var myKollavarshamDate = new KollavarshamDate(1189, 7, 13); // Create a new Malayalam Date representation
+ * var myDateInGregorian = (new Kollavarsham({&#x27;bija&#x27;: true})).toGregorianDate(myKollavarshamDate);
+ * &#x60;&#x60;&#x60;
+ */
+Kollavarsham.kollavarshamDate = KollavarshamDate;
+
 module.exports = Kollavarsham;
 
     </pre>
@@ -306,7 +331,7 @@ module.exports = Kollavarsham;
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2014 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Tue, 18 Feb 2014 05:15:04 GMT</span>
+  <span class="last-modified">Last Updated: Tue, 18 Feb 2014 06:13:00 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>

@@ -12,11 +12,9 @@
                 "date": 1
             },
             "classes": {
-                "JulianDate": 1,
                 "KollavarshamDate": 1
             },
             "fors": {
-                "JulianDate": 1,
                 "KollavarshamDate": 1
             },
             "namespaces": {}
@@ -31,15 +29,6 @@
             },
             "fors": {},
             "namespaces": {}
-        },
-        "lib/main.js": {
-            "name": "lib/main.js",
-            "modules": {
-                "main": 1
-            },
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
         }
     },
     "modules": {
@@ -47,18 +36,16 @@
             "name": "date",
             "submodules": {},
             "classes": {
-                "JulianDate": 1,
                 "KollavarshamDate": 1
             },
             "fors": {
-                "JulianDate": 1,
                 "KollavarshamDate": 1
             },
             "namespaces": {},
             "tag": "module",
             "file": "lib/date.js",
-            "line": 58,
-            "description": "Defines the KollavarshamDate and JulianDate classes"
+            "line": 44,
+            "description": "Defines the KollavarshamDate and another private class"
         },
         "kollavarsham": {
             "name": "kollavarsham",
@@ -70,54 +57,11 @@
             "namespaces": {},
             "tag": "module",
             "file": "lib/kollavarsham.js",
-            "line": 22,
-            "description": "CLI app to convert Gregorian date to Kollavarsham (Malayalam Era) date and vice versa"
-        },
-        "main": {
-            "name": "main",
-            "submodules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {},
-            "tag": "module",
-            "file": "lib/main.js",
-            "line": 9,
-            "description": "This is the module that gets exported when `require('kollavarsham')` is invoked by any other\napps including this as a library. It exposes all the public classes and API in Kollavarsham"
+            "line": 21,
+            "description": "The main module that exposes all of the public API in the library"
         }
     },
     "classes": {
-        "JulianDate": {
-            "name": "JulianDate",
-            "shortname": "JulianDate",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [],
-            "module": "date",
-            "namespace": "",
-            "file": "lib/date.js",
-            "line": 30,
-            "description": "Represents a Julian Date's year, month and day",
-            "params": [
-                {
-                    "name": "year",
-                    "description": "Julian year",
-                    "type": "Number"
-                },
-                {
-                    "name": "month",
-                    "description": "Julian month",
-                    "type": "Number"
-                },
-                {
-                    "name": "day",
-                    "description": "Julian day",
-                    "type": "Number"
-                }
-            ],
-            "is_constructor": 1
-        },
         "KollavarshamDate": {
             "name": "KollavarshamDate",
             "shortname": "KollavarshamDate",
@@ -129,7 +73,7 @@
             "module": "date",
             "namespace": "",
             "file": "lib/date.js",
-            "line": 58,
+            "line": 44,
             "params": [
                 {
                     "name": "year",
@@ -166,7 +110,7 @@
             "module": "kollavarsham",
             "namespace": "",
             "file": "lib/kollavarsham.js",
-            "line": 22,
+            "line": 21,
             "description": "The Kollavarsham class implements all the public APIs of the library.\n\nCreate a new instance of this class, passing in the relevant options and call methods on this instance.",
             "params": [
                 {
@@ -233,37 +177,24 @@
                 "description": "",
                 "type": "String"
             },
-            "class": "JulianDate",
+            "class": "KollavarshamDate",
             "module": "date"
         },
         {
             "file": "lib/date.js",
             "line": 28,
-            "class": "JulianDate",
+            "class": "KollavarshamDate",
             "module": "date"
         },
         {
             "file": "lib/date.js",
-            "line": 44,
-            "description": "Converts the Julian Date to a nicely formatted string with year, month and date",
-            "itemtype": "method",
-            "name": "toString",
-            "return": {
-                "description": "",
-                "type": "String"
-            },
-            "class": "JulianDate",
+            "line": 42,
+            "class": "KollavarshamDate",
             "module": "date"
         },
         {
             "file": "lib/date.js",
-            "line": 56,
-            "class": "JulianDate",
-            "module": "date"
-        },
-        {
-            "file": "lib/date.js",
-            "line": 74,
+            "line": 60,
             "description": "Converts the Kollavarsham Date to a nicely formatted string with year, month and date",
             "itemtype": "method",
             "name": "toString",
@@ -276,8 +207,8 @@
         },
         {
             "file": "lib/date.js",
-            "line": 84,
-            "description": "Returns the out string (that is probably relevant only from the CLI perspective)",
+            "line": 70,
+            "description": "Returns the output string (that is probably relevant only from the CLI perspective)",
             "itemtype": "method",
             "name": "print",
             "return": {
@@ -289,7 +220,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 63,
+            "line": 62,
             "description": "Holds the settings state of the Kollavarsham instance. To access a snapshot use the {{#crossLink \"Kollavarsham/getSettings:method\"}}{{/crossLink}} method",
             "itemtype": "property",
             "name": "_settings",
@@ -301,7 +232,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 76,
+            "line": 75,
             "description": "Gets a snapshot of the current settings",
             "itemtype": "method",
             "name": "getSettings",
@@ -314,7 +245,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 85,
+            "line": 84,
             "description": "Sets the mode of conversion - from Gregorian to Malayalam Era or vice versa. `0`and `1` (any non-zero value is considered as 1) are valid values",
             "itemtype": "method",
             "name": "setMode",
@@ -333,7 +264,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 103,
+            "line": 102,
             "description": "Sets or unsets the Bija factor",
             "itemtype": "method",
             "name": "setBija",
@@ -352,7 +283,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 122,
+            "line": 121,
             "description": "Sets the latitude for the location that will be used as the basis for the conversion",
             "itemtype": "method",
             "name": "setLatitude",
@@ -370,7 +301,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 137,
+            "line": 136,
             "description": "Sets the longitude for the location that will be used as the basis of the conversion",
             "itemtype": "method",
             "name": "setLongitude",
@@ -388,7 +319,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 154,
+            "line": 153,
             "description": "Sets the output to be as 'list' or 'verbose'",
             "itemtype": "method",
             "name": "setOutput",
@@ -404,7 +335,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 165,
+            "line": 164,
             "description": "Sets the input Gregorian date for conversion",
             "itemtype": "method",
             "name": "setInputDate",
@@ -419,7 +350,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 174,
+            "line": 173,
             "description": "Converts a Gregorian date to the equivalent Kollavarsham date, respecting the current configuration",
             "itemtype": "method",
             "name": "fromGregorianDate",
@@ -436,6 +367,40 @@
             },
             "class": "Kollavarsham",
             "module": "kollavarsham"
+        },
+        {
+            "file": "lib/kollavarsham.js",
+            "line": 198,
+            "description": "Converts a Kollavarsham date to its equivalent Gregorian date, respecting the current configuration",
+            "itemtype": "method",
+            "name": "toGregorianDate",
+            "params": [
+                {
+                    "name": "date",
+                    "description": "The Kollavarsham date to be converted to Gregorian",
+                    "type": "KollavarshamDate"
+                }
+            ],
+            "return": {
+                "description": "Converted date",
+                "type": "Date"
+            },
+            "class": "Kollavarsham",
+            "module": "kollavarsham"
+        },
+        {
+            "file": "lib/kollavarsham.js",
+            "line": 210,
+            "description": "Exports the {{#crossLink \"KollavarshamDate\"}}{{/crossLink}} class for referencing via `require`. This is the class\nthat is returned when converting {{#crossLink \"Kollavarsham/fromGregorianDate:method\"}}{{/crossLink}} and is passed in\nto {{#crossLink \"Kollavarsham/toGregorianDate:method\"}}{{/crossLink}}. See example below.",
+            "itemtype": "property",
+            "name": "kollavarshamDate",
+            "type": "{KollavarshamDate}",
+            "static": 1,
+            "example": [
+                "\n```\nvar Kollavarsham = require('kollavarsham');\nvar KollavarshamDate = require('kollavarsham').kollavarshamDate;\n\nvar myKollavarshamDate = new KollavarshamDate(1189, 7, 13); // Create a new Malayalam Date representation\nvar myDateInGregorian = (new Kollavarsham({'bija': true})).toGregorianDate(myKollavarshamDate);\n```"
+            ],
+            "class": "Kollavarsham",
+            "module": "kollavarsham"
         }
     ],
     "warnings": [
@@ -445,15 +410,19 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/date.js:84"
+            "line": " lib/date.js:70"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/kollavarsham.js:76"
+            "line": " lib/kollavarsham.js:75"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/kollavarsham.js:174"
+            "line": " lib/kollavarsham.js:173"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " lib/kollavarsham.js:198"
         },
         {
             "message": "Missing item type\nPads zeroes to print the date in a pretty format",
@@ -465,7 +434,7 @@
         },
         {
             "message": "Missing item type",
-            "line": " lib/date.js:56"
+            "line": " lib/date.js:42"
         }
     ]
 }

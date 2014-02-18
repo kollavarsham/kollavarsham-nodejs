@@ -39,8 +39,6 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
-                <li><a href="../classes/JulianDate.html">JulianDate</a></li>
-            
                 <li><a href="../classes/Kollavarsham.html">Kollavarsham</a></li>
             
                 <li><a href="../classes/KollavarshamDate.html">KollavarshamDate</a></li>
@@ -52,8 +50,6 @@
                 <li><a href="../modules/date.html">date</a></li>
             
                 <li><a href="../modules/kollavarsham.html">kollavarsham</a></li>
-            
-                <li><a href="../modules/main.html">main</a></li>
             
             </ul>
         </div>
@@ -103,7 +99,7 @@
  */
 
 /**
- * Defines the KollavarshamDate and JulianDate classes
+ * Defines the KollavarshamDate and another private class
  * @module date
  */
 
@@ -121,28 +117,14 @@ var pad = function (num, size) {
   return s.substr(s.length - size);
 };
 
-/****************** Julian Date *************************************/
+/****************** Julian Date (private) ***************************/
 
-/**
- * Represents a Julian Date&#x27;s year, month and day
- * @class JulianDate
- * @param year {Number} Julian year
- * @param month {Number} Julian month
- * @param day {Number} Julian day
- * @constructor
- */
 var JulianDate = function (year, month, day) {
   this.year = year;
   this.month = month;
   this.day = day;
 };
 
-/**
- * Converts the Julian Date to a nicely formatted string with year, month and date
- * @method toString
- * @for JulianDate
- * @return {string}
- */
 JulianDate.prototype.toString = function () {
   return pad(this.year, 4) + &#x27; &#x27; + pad(this.month, 2) + &#x27; &#x27; + pad(this.day, 2);
 };
@@ -178,7 +160,7 @@ KollavarshamDate.prototype.toString = function () {
 };
 
 /**
- * Returns the out string (that is probably relevant only from the CLI perspective)
+ * Returns the output string (that is probably relevant only from the CLI perspective)
  * @method print
  * @returns {string}
  */
@@ -211,7 +193,7 @@ module.exports.KollavarshamDate = KollavarshamDate;
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2014 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Tue, 18 Feb 2014 05:15:04 GMT</span>
+  <span class="last-modified">Last Updated: Tue, 18 Feb 2014 06:13:00 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>
