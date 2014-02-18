@@ -1,6 +1,7 @@
 YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
+        "JulianDate",
         "Kollavarsham",
         "KollavarshamDate"
     ],
@@ -12,7 +13,7 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "date",
             "name": "date",
-            "description": "Defines the KollavarshamDate and another private class"
+            "description": "Defines the KollavarshamDate and JulianDate classes"
         },
         {
             "displayName": "kollavarsham",

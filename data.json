@@ -12,9 +12,11 @@
                 "date": 1
             },
             "classes": {
+                "JulianDate": 1,
                 "KollavarshamDate": 1
             },
             "fors": {
+                "JulianDate": 1,
                 "KollavarshamDate": 1
             },
             "namespaces": {}
@@ -36,16 +38,18 @@
             "name": "date",
             "submodules": {},
             "classes": {
+                "JulianDate": 1,
                 "KollavarshamDate": 1
             },
             "fors": {
+                "JulianDate": 1,
                 "KollavarshamDate": 1
             },
             "namespaces": {},
             "tag": "module",
             "file": "lib/date.js",
-            "line": 44,
-            "description": "Defines the KollavarshamDate and another private class"
+            "line": 58,
+            "description": "Defines the KollavarshamDate and JulianDate classes"
         },
         "kollavarsham": {
             "name": "kollavarsham",
@@ -62,6 +66,38 @@
         }
     },
     "classes": {
+        "JulianDate": {
+            "name": "JulianDate",
+            "shortname": "JulianDate",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "date",
+            "namespace": "",
+            "file": "lib/date.js",
+            "line": 30,
+            "description": "Represents a Julian Date's year, month and day",
+            "params": [
+                {
+                    "name": "year",
+                    "description": "Julian year",
+                    "type": "Number"
+                },
+                {
+                    "name": "month",
+                    "description": "Julian month",
+                    "type": "Number"
+                },
+                {
+                    "name": "day",
+                    "description": "Julian day",
+                    "type": "Number"
+                }
+            ],
+            "is_constructor": 1
+        },
         "KollavarshamDate": {
             "name": "KollavarshamDate",
             "shortname": "KollavarshamDate",
@@ -73,7 +109,7 @@
             "module": "date",
             "namespace": "",
             "file": "lib/date.js",
-            "line": 44,
+            "line": 58,
             "params": [
                 {
                     "name": "year",
@@ -177,24 +213,37 @@
                 "description": "",
                 "type": "String"
             },
-            "class": "KollavarshamDate",
+            "class": "JulianDate",
             "module": "date"
         },
         {
             "file": "lib/date.js",
             "line": 28,
-            "class": "KollavarshamDate",
+            "class": "JulianDate",
             "module": "date"
         },
         {
             "file": "lib/date.js",
-            "line": 42,
-            "class": "KollavarshamDate",
+            "line": 44,
+            "description": "Converts the Julian Date to a nicely formatted string with year, month and date",
+            "itemtype": "method",
+            "name": "toString",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "JulianDate",
             "module": "date"
         },
         {
             "file": "lib/date.js",
-            "line": 60,
+            "line": 56,
+            "class": "JulianDate",
+            "module": "date"
+        },
+        {
+            "file": "lib/date.js",
+            "line": 74,
             "description": "Converts the Kollavarsham Date to a nicely formatted string with year, month and date",
             "itemtype": "method",
             "name": "toString",
@@ -207,7 +256,7 @@
         },
         {
             "file": "lib/date.js",
-            "line": 70,
+            "line": 84,
             "description": "Returns the output string (that is probably relevant only from the CLI perspective)",
             "itemtype": "method",
             "name": "print",
@@ -370,8 +419,8 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 198,
-            "description": "Converts a Kollavarsham date to its equivalent Gregorian date, respecting the current configuration\n**This API is still work in progress**",
+            "line": 197,
+            "description": "Converts a Kollavarsham date to its equivalent Gregorian date, respecting the current configuration.\nThis method Will return {{#crossLink \"JulianDate\"}}{{/crossLink}} object for any date before 1st January 1583 AD and\n[Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) objects for later dates.\n\n **This API is still work in progress**",
             "itemtype": "method",
             "name": "toGregorianDate",
             "params": [
@@ -383,14 +432,14 @@
             ],
             "return": {
                 "description": "Converted date",
-                "type": "Date"
+                "type": "Date|JulianDate"
             },
             "class": "Kollavarsham",
             "module": "kollavarsham"
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 211,
+            "line": 213,
             "description": "Exports the {{#crossLink \"KollavarshamDate\"}}{{/crossLink}} class for referencing via `require`. This is the class\nthat is returned when converting {{#crossLink \"Kollavarsham/fromGregorianDate:method\"}}{{/crossLink}} and is passed in\nto {{#crossLink \"Kollavarsham/toGregorianDate:method\"}}{{/crossLink}}. See example below.",
             "itemtype": "property",
             "name": "kollavarshamDate",
@@ -410,7 +459,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/date.js:70"
+            "line": " lib/date.js:84"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -422,7 +471,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/kollavarsham.js:198"
+            "line": " lib/kollavarsham.js:197"
         },
         {
             "message": "Missing item type\nPads zeroes to print the date in a pretty format",
@@ -434,7 +483,7 @@
         },
         {
             "message": "Missing item type",
-            "line": " lib/date.js:42"
+            "line": " lib/date.js:56"
         }
     ]
 }

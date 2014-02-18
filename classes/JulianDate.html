@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>KollavarshamDate - kollavarsham</title>
+    <title>JulianDate - kollavarsham</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -88,7 +88,7 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>KollavarshamDate Class</h1>
+                        <h1>JulianDate Class</h1>
 <div class="box meta">
     
 
@@ -96,7 +96,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/lib_date.js.html#l58"><code>lib&#x2F;date.js:58</code></a>
+            Defined in: <a href="../files/lib_date.js.html#l30"><code>lib&#x2F;date.js:30</code></a>
         </div>
     
 
@@ -112,14 +112,15 @@
 
 
 <div class="box intro">
-    
+    <p>Represents a Julian Date&#39;s year, month and day</p>
+
 </div>
 
 
     <div class="constructor">
         <h2>Constructor</h2>
-        <div id="method_KollavarshamDate" class="method item">
-    <h3 class="name"><code>KollavarshamDate</code></h3>
+        <div id="method_JulianDate" class="method item">
+    <h3 class="name"><code>JulianDate</code></h3>
 
     
         <div class="args">
@@ -127,19 +128,19 @@
             
                 <li class="arg">
                     
-                        <code class="optional">[year=1]</code>
+                        <code>year</code>
                     
                 </li>
             
                 <li class="arg">
                     
-                        <code class="optional">[month=1]</code>
+                        <code>month</code>
                     
                 </li>
             
                 <li class="arg">
                     
-                        <code class="optional">[day=1]</code>
+                        <code>day</code>
                     
                 </li>
             
@@ -172,7 +173,7 @@
             
         
         
-        <a href="../files/lib_date.js.html#l58"><code>lib&#x2F;date.js:58</code></a>
+        <a href="../files/lib_date.js.html#l30"><code>lib&#x2F;date.js:30</code></a>
         
         </p>
 
@@ -194,15 +195,14 @@
             
                 <li class="param">
                     
-                        <code class="param-name optional">[year=1]</code>
+                        <code class="param-name">year</code>
                         <span class="type">Number</span>
-                        <span class="flag optional" title="This parameter is optional.">optional</span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>The Kollavarsham year</p>
+                        <p>Julian year</p>
 
                     </div>
 
@@ -211,15 +211,14 @@
             
                 <li class="param">
                     
-                        <code class="param-name optional">[month=1]</code>
+                        <code class="param-name">month</code>
                         <span class="type">Number</span>
-                        <span class="flag optional" title="This parameter is optional.">optional</span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>The Kollavarsham month</p>
+                        <p>Julian month</p>
 
                     </div>
 
@@ -228,15 +227,14 @@
             
                 <li class="param">
                     
-                        <code class="param-name optional">[day=1]</code>
+                        <code class="param-name">day</code>
                         <span class="type">Number</span>
-                        <span class="flag optional" title="This parameter is optional.">optional</span>
                     
 
                     
 
                     <div class="param-description">
-                        <p>The Kollavarsham day</p>
+                        <p>Julian day</p>
 
                     </div>
 
@@ -278,13 +276,6 @@
                     <ul class="index-list methods">
                         
                             <li class="index-item method">
-                                <a href="#method_print">print</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method">
                                 <a href="#method_toString">toString</a>
 
                                 
@@ -305,77 +296,6 @@
         
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
-
-                
-                    <div id="method_print" class="method item">
-    <h3 class="name"><code>print</code></h3>
-
-    
-        <span class="paren">()</span>
-    
-
-    
-        <span class="returns-inline">
-            <span class="type">String</span>
-        </span>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/lib_date.js.html#l84"><code>lib&#x2F;date.js:84</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Returns the output string (that is probably relevant only from the CLI perspective)</p>
-
-    </div>
-
-    
-
-    
-        <div class="returns">
-            <h4>Returns:</h4>
-
-            <div class="returns-description">
-                
-                    
-                        <span class="type">String</span>:
-                    
-                
-            </div>
-        </div>
-    
-
-    
-</div>
 
                 
                     <div id="method_toString" class="method item">
@@ -414,7 +334,7 @@
             
         
         
-        <a href="../files/lib_date.js.html#l74"><code>lib&#x2F;date.js:74</code></a>
+        <a href="../files/lib_date.js.html#l44"><code>lib&#x2F;date.js:44</code></a>
         
         </p>
 
@@ -425,7 +345,7 @@
     </div>
 
     <div class="description">
-        <p>Converts the Kollavarsham Date to a nicely formatted string with year, month and date</p>
+        <p>Converts the Julian Date to a nicely formatted string with year, month and date</p>
 
     </div>
 
