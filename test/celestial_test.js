@@ -20,7 +20,7 @@ var runCalculationsWithADate = function () {
 //  globals.day = 11;
   globals.gregorianDate = new Date(2014, calendar.months.February, 11);
   globals.year = globals.gregorianDate.getFullYear();
-  calculations.main({
+  calculations.fromGregorian({
     bija          : false,
     mode          : 0,
     latitude      : 23.2,
@@ -28,7 +28,6 @@ var runCalculationsWithADate = function () {
     outputformat  : 'verbose',
     gregorianDate : new Date()
   });
-  calculations.planetary();
 };
 
 exports.celestial = {
