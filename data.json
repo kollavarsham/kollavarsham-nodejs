@@ -255,19 +255,6 @@
             "module": "date"
         },
         {
-            "file": "lib/date.js",
-            "line": 84,
-            "description": "Returns the output string (that is probably relevant only from the CLI perspective)",
-            "itemtype": "method",
-            "name": "print",
-            "return": {
-                "description": "",
-                "type": "String"
-            },
-            "class": "KollavarshamDate",
-            "module": "date"
-        },
-        {
             "file": "lib/kollavarsham.js",
             "line": 62,
             "description": "Holds the settings state of the Kollavarsham instance. To access a snapshot use the {{#crossLink \"Kollavarsham/getSettings:method\"}}{{/crossLink}} method",
@@ -419,7 +406,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 197,
+            "line": 193,
             "description": "Converts a Kollavarsham date to its equivalent Gregorian date, respecting the current configuration.\nThis method Will return {{#crossLink \"JulianDate\"}}{{/crossLink}} object for any date before 1st January 1583 AD and\n[Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) objects for later dates.\n\n **This API is still work in progress**",
             "itemtype": "method",
             "name": "toGregorianDate",
@@ -439,7 +426,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 213,
+            "line": 209,
             "description": "Exports the {{#crossLink \"KollavarshamDate\"}}{{/crossLink}} class for referencing via `require`. This is the class\nthat is returned when converting {{#crossLink \"Kollavarsham/fromGregorianDate:method\"}}{{/crossLink}} and is passed in\nto {{#crossLink \"Kollavarsham/toGregorianDate:method\"}}{{/crossLink}}. See example below.",
             "itemtype": "property",
             "name": "kollavarshamDate",
@@ -459,10 +446,6 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/date.js:84"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
             "line": " lib/kollavarsham.js:75"
         },
         {
@@ -471,7 +454,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/kollavarsham.js:197"
+            "line": " lib/kollavarsham.js:193"
         },
         {
             "message": "Missing item type\nPads zeroes to print the date in a pretty format",

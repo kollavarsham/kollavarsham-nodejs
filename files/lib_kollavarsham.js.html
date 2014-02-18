@@ -277,12 +277,8 @@ Kollavarsham.prototype.fromGregorianDate = function (date) {
 //  globals.month = date.getMonth() + 1; //globals.month should be 1 to 12 and not 0 to 11
 //  globals.day = date.getDate();
   globals.gregorianDate = date;
-  // We still need the year for a couple of other places, so saving that separately
-  globals.year = date.getFullYear();
 
-  calculations.fromGregorian(this._settings);
-
-  var kollavarshamDate = new KollavarshamDate(globals.YearKali, globals.sauraMasaNum, globals.sauraMasaDay);
+  var kollavarshamDate = calculations.fromGregorian(this._settings);
   kollavarshamDate.globals = globals;
 
   return kollavarshamDate;
@@ -336,7 +332,7 @@ module.exports = Kollavarsham;
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2014 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Tue, 18 Feb 2014 20:35:33 GMT</span>
+  <span class="last-modified">Last Updated: Tue, 18 Feb 2014 22:45:35 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>
