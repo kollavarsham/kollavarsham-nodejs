@@ -1,9 +1,9 @@
 {
-  "name"            : "kollavarsham",
-  "version"         : "0.0.1",
-  "main"            : "lib/kollavarsham.js",
-  "description"     : "Convert Gregorian date to Kollavarsham date and vice versa",
-  "keywords"        : [
+  "name": "kollavarsham",
+  "version": "0.0.2",
+  "main": "lib/kollavarsham.js",
+  "description": "Convert Gregorian date to Kollavarsham date and vice versa",
+  "keywords": [
     "kollavarsham",
     "malayalam calendar",
     "malayalam era",
@@ -24,59 +24,59 @@
     "mithunam",
     "karkitakam"
   ],
-  "bin"             : "lib/cli.js",
-  "homepage"        : "http://kollavarsham.org",
-  "bugs"            : "https://github.com/kollavarsham/kollavarsham-nodejs/issues",
-  "author"          : {
-    "name"  : "The Kollavarsham Team",
-    "email" : "info@kollavarsham.org",
-    "url"   : "http://kollavarsham.org"
+  "bin": "lib/cli.js",
+  "homepage": "http://kollavarsham.org",
+  "bugs": "https://github.com/kollavarsham/kollavarsham-nodejs/issues",
+  "author": {
+    "name": "The Kollavarsham Team",
+    "email": "info@kollavarsham.org",
+    "url": "http://kollavarsham.org"
   },
-  "contributors"    : [
+  "contributors": [
     {
-      "name"  : "Arun N. Kutty",
-      "email" : "kuttysulthan@yahoo.com",
-      "url"   : "https://github.com/arunkutty"
+      "name": "Arun N. Kutty",
+      "email": "kuttysulthan@yahoo.com",
+      "url": "https://github.com/arunkutty"
     },
     {
-      "name"  : "Floyd Pink",
-      "email" : "imbleedingme@googlemail.com",
-      "url"   : "https://github.com/floydpink"
+      "name": "Floyd Pink",
+      "email": "imbleedingme@googlemail.com",
+      "url": "https://github.com/floydpink"
     }
   ],
-  "engines"         : {
-    "node" : ">=0.10.0"
+  "engines": {
+    "node": ">=0.10.0"
   },
-  "repository"      : {
-    "type" : "git",
-    "url"  : "https://github.com/kollavarsham/kollavarsham-nodejs"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kollavarsham/kollavarsham-nodejs"
   },
-  "licenses"        : [
+  "licenses": [
     {
-      "type" : "MIT",
-      "url"  : "http://kollavarsham.org/LICENSE.txt"
+      "type": "MIT",
+      "url": "http://kollavarsham.org/LICENSE.txt"
     }
   ],
-  "scripts"         : {
-    "test" : "grunt build"
+  "scripts": {
+    "test": "grunt build"
   },
-  "directories"     : {
-    "lib"  : "lib",
-    "test" : "test"
+  "directories": {
+    "lib": "lib",
+    "test": "test"
   },
-  "devDependencies" : {
-    "grunt-contrib-jshint"   : "~0.8.0",
-    "grunt-contrib-nodeunit" : "~0.3.2",
-    "grunt-contrib-watch"    : "~0.5.0",
-    "load-grunt-tasks"       : "~0.3.0",
-    "time-grunt"             : "~0.2.0",
-    "jshint-stylish"         : "~0.1.3",
-    "grunt-contrib-yuidoc"   : "~0.5.0",
-    "grunt-build-control"    : "~0.1.2"
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-nodeunit": "~0.3.2",
+    "grunt-contrib-watch": "~0.5.0",
+    "load-grunt-tasks": "~0.3.0",
+    "time-grunt": "~0.2.0",
+    "jshint-stylish": "~0.1.3",
+    "grunt-contrib-yuidoc": "~0.5.0",
+    "grunt-build-control": "~0.1.2"
   },
-  "dependencies"    : {
-    "chalk"       : "~0.4.0",
-    "nopt"        : "~2.2.0",
-    "node.extend" : "~1.0.9"
+  "dependencies": {
+    "chalk": "~0.4.0",
+    "nopt": "~2.2.0",
+    "node.extend": "~1.0.9"
   }
 }
