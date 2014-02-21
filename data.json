@@ -2,7 +2,7 @@
     "project": {
         "name": "kollavarsham",
         "description": "Convert Gregorian date to Kollavarsham date and vice versa",
-        "version": "0.0.3",
+        "version": "0.0.4",
         "url": "http://kollavarsham.org"
     },
     "files": {
@@ -391,7 +391,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 174,
+            "line": 172,
             "description": "Converts a Kollavarsham date to its equivalent Gregorian date, respecting the current configuration.\nThis method Will return {{#crossLink \"JulianDate\"}}{{/crossLink}} object for any date before 1st January 1583 AD and\n[Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) objects for later dates.\n\n **This API is still work in progress**",
             "itemtype": "method",
             "name": "toGregorianDate",
@@ -411,7 +411,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 190,
+            "line": 188,
             "description": "Exports the {{#crossLink \"KollavarshamDate\"}}{{/crossLink}} class for referencing via `require`. This is the class\nthat is returned when converting {{#crossLink \"Kollavarsham/fromGregorianDate:method\"}}{{/crossLink}} and is passed in\nto {{#crossLink \"Kollavarsham/toGregorianDate:method\"}}{{/crossLink}}. See example below.",
             "itemtype": "property",
             "name": "kollavarshamDate",
@@ -439,7 +439,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/kollavarsham.js:174"
+            "line": " lib/kollavarsham.js:172"
         },
         {
             "message": "Missing item type\nPads zeroes to print the date in a pretty format",
