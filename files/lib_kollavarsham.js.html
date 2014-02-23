@@ -146,7 +146,6 @@ var Kollavarsham = function (options) {
   var defaults = {
     //These are the defaults
     bija         : false,
-    mode         : 0,
     latitude     : 23.2,
     longitude    : 75.8,
     outputformat : &#x27;verbose&#x27;
@@ -175,24 +174,6 @@ Kollavarsham.prototype.getSettings = function () {
 };
 
 /**
- * Sets the mode of conversion - from Gregorian to Malayalam Era or vice versa. &#x60;0&#x60;and &#x60;1&#x60; (any non-zero value is considered as 1) are valid values
- *
- * @method setMode
- * @param mode {Number} A value of &#x60;0&#x60; will do Gregorian to Malayalam Era and a value of &#x60;1&#x60; (or any non-zero value) will do Malayalam Era date to Gregorian
- * @example
- * &#x60;&#x60;&#x60;
- *    var Kollavarsham = require(&#x27;Kollavarsham&#x27;);
- *    var kollavarsham = new Kolavarsham({});
- *    kollavarsham.setMode(0);
- *    kollavarsham.setInputDate(new Date(2014, 2, 14));
- *    kollavarsham.convert();
- * &#x60;&#x60;&#x60;
- */
-Kollavarsham.prototype.setMode = function (mode) {
-  this._settings.mode = mode;
-};
-
-/**
  * Sets or unsets the Bija factor
  *
  * @method setBija
@@ -201,7 +182,6 @@ Kollavarsham.prototype.setMode = function (mode) {
  * &#x60;&#x60;&#x60;
  *    var Kollavarsham = require(&#x27;Kollavarsham&#x27;);
  *    var kollavarsham = new Kolavarsham({});
- *    kollavarsham.setMode(0);
  *    kollavarsham.setBija(true);
  *    kollavarsham.setInputDate(new Date(2014, 2, 14));
  *    kollavarsham.convert();
@@ -279,6 +259,10 @@ Kollavarsham.prototype.toGregorianDate = function (date) {
   console.log(&#x27;When the API is implemented, will convert %s&#x27;, date);
 };
 
+Kollavarsham.prototype.toGregorianDateFromSaka = function (hinduDate) {
+  return calculations.toGregorianFromSaka(this._settings, hinduDate);
+};
+
 /**
  * Exports the {{#crossLink &quot;KollavarshamDate&quot;}}{{/crossLink}} class for referencing via &#x60;require&#x60;. This is the class
  * that is returned when converting {{#crossLink &quot;Kollavarsham/fromGregorianDate:method&quot;}}{{/crossLink}} and is passed in
@@ -311,7 +295,7 @@ module.exports = Kollavarsham;
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2014 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Fri, 21 Feb 2014 18:17:43 GMT</span>
+  <span class="last-modified">Last Updated: Sun, 23 Feb 2014 19:33:29 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>
