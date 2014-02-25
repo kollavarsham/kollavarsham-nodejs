@@ -61,7 +61,7 @@
             "namespaces": {},
             "tag": "module",
             "file": "lib/kollavarsham.js",
-            "line": 20,
+            "line": 19,
             "description": "The main module that exposes all of the public API in the library"
         }
     },
@@ -146,7 +146,7 @@
             "module": "kollavarsham",
             "namespace": "",
             "file": "lib/kollavarsham.js",
-            "line": 20,
+            "line": 19,
             "description": "The Kollavarsham class implements all the public APIs of the library.\n\nCreate a new instance of this class, passing in the relevant options and call methods on this instance.",
             "params": [
                 {
@@ -256,7 +256,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 60,
+            "line": 59,
             "description": "Holds the settings state of the Kollavarsham instance. To access a snapshot use the {{#crossLink \"Kollavarsham/getSettings:method\"}}{{/crossLink}} method",
             "itemtype": "property",
             "name": "_settings",
@@ -268,7 +268,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 73,
+            "line": 68,
             "description": "Gets a snapshot of the current settings",
             "itemtype": "method",
             "name": "getSettings",
@@ -281,7 +281,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 82,
+            "line": 77,
             "description": "Sets or unsets the Bija factor",
             "itemtype": "method",
             "name": "setBija",
@@ -300,7 +300,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 100,
+            "line": 95,
             "description": "Sets the latitude for the location that will be used as the basis for the conversion",
             "itemtype": "method",
             "name": "setLatitude",
@@ -318,7 +318,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 115,
+            "line": 110,
             "description": "Sets the longitude for the location that will be used as the basis of the conversion",
             "itemtype": "method",
             "name": "setLongitude",
@@ -336,7 +336,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 132,
+            "line": 126,
             "description": "Sets the output to be as 'list' or 'verbose'",
             "itemtype": "method",
             "name": "setOutput",
@@ -352,7 +352,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 141,
+            "line": 135,
             "description": "Converts a Gregorian date to the equivalent Kollavarsham date, respecting the current configuration",
             "itemtype": "method",
             "name": "fromGregorianDate",
@@ -372,7 +372,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 152,
+            "line": 146,
             "description": "Converts a Kollavarsham date to its equivalent Gregorian date, respecting the current configuration.\nThis method Will return {{#crossLink \"JulianDate\"}}{{/crossLink}} object for any date before 1st January 1583 AD and\n[Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) objects for later dates.\n\n **This API is still work in progress**",
             "itemtype": "method",
             "name": "toGregorianDate",
@@ -392,7 +392,7 @@
         },
         {
             "file": "lib/kollavarsham.js",
-            "line": 172,
+            "line": 166,
             "description": "Exports the {{#crossLink \"KollavarshamDate\"}}{{/crossLink}} class for referencing via `require`. This is the class\nthat is returned when converting {{#crossLink \"Kollavarsham/fromGregorianDate:method\"}}{{/crossLink}} and is passed in\nto {{#crossLink \"Kollavarsham/toGregorianDate:method\"}}{{/crossLink}}. See example below.",
             "itemtype": "property",
             "name": "kollavarshamDate",
@@ -412,15 +412,15 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/kollavarsham.js:73"
+            "line": " lib/kollavarsham.js:68"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/kollavarsham.js:141"
+            "line": " lib/kollavarsham.js:135"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " lib/kollavarsham.js:152"
+            "line": " lib/kollavarsham.js:146"
         },
         {
             "message": "Missing item type\nPads zeroes to print the date in a pretty format",

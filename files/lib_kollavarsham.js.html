@@ -109,7 +109,6 @@
 var calculations = require(&#x27;./calculations&#x27;);
 var extend = require(&#x27;node.extend&#x27;);
 var KollavarshamDate = require(&#x27;./date&#x27;).KollavarshamDate;
-var locations = require(&#x27;./locations&#x27;);
 
 /**
  * The Kollavarsham class implements all the public APIs of the library.
@@ -158,10 +157,6 @@ var Kollavarsham = function (options) {
    * @private
    */
   this._settings = extend(defaults, options);
-
-  // TODO: Ideally this below call should be triggered every time _settings.longitude ic changed...
-  // Or in other words, globals.desantara is a calculated property dependant on this._settings.longitude
-  locations.setDesantara(this._settings.longitude);
 };
 
 /**
@@ -219,7 +214,6 @@ Kollavarsham.prototype.setLatitude = function (latitude) {
  */
 Kollavarsham.prototype.setLongitude = function (longitude) {
   this._settings.longitude = longitude;
-  locations.setDesantara(this._settings.longitude);
 };
 
 //TODO: This below function is more of a CLI concern
@@ -295,7 +289,7 @@ module.exports = Kollavarsham;
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2014 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Mon, 24 Feb 2014 22:51:46 GMT</span>
+  <span class="last-modified">Last Updated: Tue, 25 Feb 2014 01:22:33 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>
