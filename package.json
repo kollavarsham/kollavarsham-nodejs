@@ -1,6 +1,6 @@
 {
   "name": "kollavarsham",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": "lib/kollavarsham.js",
   "description": "Convert Gregorian date to Kollavarsham date and vice versa",
   "keywords": [
