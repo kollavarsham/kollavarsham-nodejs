@@ -1,7 +1,7 @@
 language: node_js
 node_js:
 - '0.10'
-- '0.8'
+- '0.11'
 branches:
   only:
   - master
@@ -13,8 +13,6 @@ before_script:
 - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - git config --global user.email "info@kollavarsham.org"
 - git config --global user.name "The Kollavarsham Team"
-before_install:
-- npm update -g npm
 after_success:
   # If build is successful, push the documentation from this build to the gh-pages (run only on one job)
 - if [ "$TRAVIS_NODE_VERSION" = "0.10" ]; then grunt buildcontrol:pages; fi
