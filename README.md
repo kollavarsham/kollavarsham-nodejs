@@ -51,7 +51,7 @@ kollavarsham 04:04:2011
 ```
 
 ## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
+Check the [Contributing](CONTRIBUTING.md) guide.
 
 ## Release History
 _(Nothing yet)_
