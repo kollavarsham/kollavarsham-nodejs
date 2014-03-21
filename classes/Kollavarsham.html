@@ -201,13 +201,13 @@
                             
                             <li class="param">
                                 
-                                    <code class="param-name optional">[bija=false]</code>
-                                    <span class="type">Boolean</span>
+                                    <code class="param-name optional">[system=&#x27;SuryaSiddhanta&#x27;]</code>
+                                    <span class="type">String</span>
                                     <span class="flag optional" title="This parameter is optional.">optional</span>
                                 
 
                                 <div class="param-description">
-                                    <p>Set this to true to use the Bija correction</p>
+                                    <p>Set to &#39;InPancasiddhantika&#39; or &#39;SuryaSiddhanta&#39; to use the corresponding system</p>
 
                                 </div>
 
@@ -277,7 +277,7 @@
                 <pre class="code prettyprint"><code>    var Kollavarsham = require(&#39;kollavarsham&#39;);
 
     var options = {
-      bija: true,
+      system: &#39;SuryaSiddhanta&#39;,
       latitude: 10,
       longitude: 76.2,
       outputFormat: &#39;verbose&#39;
@@ -336,13 +336,6 @@
                             </li>
                         
                             <li class="index-item method">
-                                <a href="#method_setBija">setBija</a>
-
-                                
-                                
-                            </li>
-                        
-                            <li class="index-item method">
                                 <a href="#method_setLatitude">setLatitude</a>
 
                                 
@@ -358,6 +351,13 @@
                         
                             <li class="index-item method">
                                 <a href="#method_setOutput">setOutput</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_setSystem">setSystem</a>
 
                                 
                                 
@@ -586,107 +586,6 @@
         </div>
     
 
-    
-</div>
-
-                
-                    <div id="method_setBija" class="method item">
-    <h3 class="name"><code>setBija</code></h3>
-
-    
-        <div class="args">
-            <span class="paren">(</span><ul class="args-list inline commas">
-            
-                <li class="arg">
-                    
-                        <code>bija</code>
-                    
-                </li>
-            
-            </ul><span class="paren">)</span>
-        </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p>
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/lib_kollavarsham.js.html#l77"><code>lib&#x2F;kollavarsham.js:77</code></a>
-        
-        </p>
-
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <p>Sets or unsets the Bija factor</p>
-
-    </div>
-
-    
-        <div class="params">
-            <h4>Parameters:</h4>
-
-            <ul class="params-list">
-            
-                <li class="param">
-                    
-                        <code class="param-name">bija</code>
-                        <span class="type">Boolean</span>
-                    
-
-                    
-
-                    <div class="param-description">
-                         
-                    </div>
-
-                    
-                </li>
-            
-            </ul>
-        </div>
-    
-
-    
-
-    
-        <div class="example">
-            <h4>Example:</h4>
-
-            <div class="example-content">
-                <pre class="code prettyprint"><code>   var Kollavarsham = require(&#39;Kollavarsham&#39;);
-   var kollavarsham = new Kolavarsham({});
-   kollavarsham.setBija(true);
-   kollavarsham.setInputDate(new Date(2014, 2, 14));
-   kollavarsham.convert();</code></pre>
-
-            </div>
-        </div>
     
 </div>
 
@@ -978,6 +877,107 @@
 </div>
 
                 
+                    <div id="method_setSystem" class="method item">
+    <h3 class="name"><code>setSystem</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>system</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/lib_kollavarsham.js.html#l77"><code>lib&#x2F;kollavarsham.js:77</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Sets the system to be either &#39;InPancasiddhantika&#39; or &#39;SuryaSiddhanta&#39;</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">system</code>
+                        <span class="type">String</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+        <div class="example">
+            <h4>Example:</h4>
+
+            <div class="example-content">
+                <pre class="code prettyprint"><code>   var Kollavarsham = require(&#39;Kollavarsham&#39;);
+   var kollavarsham = new Kolavarsham({});
+   kollavarsham.setSystem(&#39;InPancasiddhantika&#39;);
+   kollavarsham.setInputDate(new Date(2014, 2, 14));
+   kollavarsham.convert();</code></pre>
+
+            </div>
+        </div>
+    
+</div>
+
+                
                     <div id="method_toGregorianDate" class="method item">
     <h3 class="name"><code>toGregorianDate</code></h3>
 
@@ -1195,7 +1195,7 @@ to <a href="../classes/Kollavarsham.html#method_toGregorianDate" class="crosslin
 var KollavarshamDate = require(&#39;kollavarsham&#39;).kollavarshamDate;
 
 var myKollavarshamDate = new KollavarshamDate(1189, 7, 13); // Create a new Malayalam Date representation
-var myDateInGregorian = (new Kollavarsham({&#39;bija&#39;: true})).toGregorianDate(myKollavarshamDate);</code></pre>
+var myDateInGregorian = (new Kollavarsham({&#39;system&#39;: &#39;InPancasiddhantika&#39;})).toGregorianDate(myKollavarshamDate);</code></pre>
 
             </div>
         </div>
@@ -1223,7 +1223,7 @@ var myDateInGregorian = (new Kollavarsham({&#39;bija&#39;: true})).toGregorianDa
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2014 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Sun, 16 Mar 2014 04:58:12 GMT</span>
+  <span class="last-modified">Last Updated: Fri, 21 Mar 2014 02:54:32 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>

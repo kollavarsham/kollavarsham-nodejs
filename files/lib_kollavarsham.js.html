@@ -117,7 +117,7 @@ var KollavarshamDate = require(&#x27;./date&#x27;).KollavarshamDate;
  *
  * @class Kollavarsham
  * @param {Object} [options] A set of key value pairs to configure the Kollavarsham instance. All settings are optional.
- *  @param {Boolean} [options.bija=false] Set this to true to use the Bija correction
+ *  @param {String} [options.system=&#x27;SuryaSiddhanta&#x27;] Set to &#x27;InPancasiddhantika&#x27; or &#x27;SuryaSiddhanta&#x27; to use the corresponding system
  *  @param {Number} [options.latitude=23.2] Sets the latitude for the location for the conversions
  *  @param {Number} [options.longitude=75.8] Sets the longitude for the location for the conversions
  *  @param {String} [options.outputformat=&#x27;verbose&#x27;] Set to &#x27;list&#x27; or &#x27;verbose&#x27; for the output
@@ -127,7 +127,7 @@ var KollavarshamDate = require(&#x27;./date&#x27;).KollavarshamDate;
  *     var Kollavarsham = require(&#x27;kollavarsham&#x27;);
  *
  *     var options = {
- *       bija: true,
+ *       system: &#x27;SuryaSiddhanta&#x27;,
  *       latitude: 10,
  *       longitude: 76.2,
  *       outputFormat: &#x27;verbose&#x27;
@@ -144,7 +144,7 @@ var Kollavarsham = function (options) {
 
   var defaults = {
     //These are the defaults
-    bija         : false,
+    system       : &#x27;SuryaSiddhanta&#x27;,
     latitude     : 23.2,
     longitude    : 75.8,
     outputformat : &#x27;verbose&#x27;
@@ -169,21 +169,21 @@ Kollavarsham.prototype.getSettings = function () {
 };
 
 /**
- * Sets or unsets the Bija factor
+ * Sets the system to be either &#x27;InPancasiddhantika&#x27; or &#x27;SuryaSiddhanta&#x27;
  *
- * @method setBija
- * @param bija {Boolean}
+ * @method setSystem
+ * @param system {String}
  * @example
  * &#x60;&#x60;&#x60;
  *    var Kollavarsham = require(&#x27;Kollavarsham&#x27;);
  *    var kollavarsham = new Kolavarsham({});
- *    kollavarsham.setBija(true);
+ *    kollavarsham.setSystem(&#x27;InPancasiddhantika&#x27;);
  *    kollavarsham.setInputDate(new Date(2014, 2, 14));
  *    kollavarsham.convert();
  * &#x60;&#x60;&#x60;
  */
-Kollavarsham.prototype.setBija = function (bija) {
-  this._settings.bija = bija;
+Kollavarsham.prototype.setSystem = function (system) {
+  this._settings.system = system;
 };
 
 /**
@@ -270,7 +270,7 @@ Kollavarsham.prototype.toGregorianDateFromSaka = function (hinduDate) {
  * var KollavarshamDate = require(&#x27;kollavarsham&#x27;).kollavarshamDate;
  *
  * var myKollavarshamDate = new KollavarshamDate(1189, 7, 13); // Create a new Malayalam Date representation
- * var myDateInGregorian = (new Kollavarsham({&#x27;bija&#x27;: true})).toGregorianDate(myKollavarshamDate);
+ * var myDateInGregorian = (new Kollavarsham({&#x27;system&#x27;: &#x27;InPancasiddhantika&#x27;})).toGregorianDate(myKollavarshamDate);
  * &#x60;&#x60;&#x60;
  */
 Kollavarsham.kollavarshamDate = KollavarshamDate;
@@ -289,7 +289,7 @@ module.exports = Kollavarsham;
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2014 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Sun, 16 Mar 2014 04:58:12 GMT</span>
+  <span class="last-modified">Last Updated: Fri, 21 Mar 2014 02:54:32 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>

@@ -156,11 +156,11 @@
                     "optional": true,
                     "props": [
                         {
-                            "name": "bija",
-                            "description": "Set this to true to use the Bija correction",
-                            "type": "Boolean",
+                            "name": "system",
+                            "description": "Set to 'InPancasiddhantika' or 'SuryaSiddhanta' to use the corresponding system",
+                            "type": "String",
                             "optional": true,
-                            "optdefault": "false"
+                            "optdefault": "'SuryaSiddhanta'"
                         },
                         {
                             "name": "latitude",
@@ -188,7 +188,7 @@
             ],
             "is_constructor": 1,
             "example": [
-                "\n```\n    var Kollavarsham = require('kollavarsham');\n\n    var options = {\n      bija: true,\n      latitude: 10,\n      longitude: 76.2,\n      outputFormat: 'verbose'\n    };\n\n    var kollavarsham = new Kollavarsham(options);\n\n    var todayInMalayalamEra = kollavarsham.fromGregorianDate(new Date());\n\n    var today = kollavarsham.toGregorianDate(todayInMalayalamEra);\n```"
+                "\n```\n    var Kollavarsham = require('kollavarsham');\n\n    var options = {\n      system: 'SuryaSiddhanta',\n      latitude: 10,\n      longitude: 76.2,\n      outputFormat: 'verbose'\n    };\n\n    var kollavarsham = new Kollavarsham(options);\n\n    var todayInMalayalamEra = kollavarsham.fromGregorianDate(new Date());\n\n    var today = kollavarsham.toGregorianDate(todayInMalayalamEra);\n```"
             ]
         }
     },
@@ -282,18 +282,18 @@
         {
             "file": "lib/kollavarsham.js",
             "line": 77,
-            "description": "Sets or unsets the Bija factor",
+            "description": "Sets the system to be either 'InPancasiddhantika' or 'SuryaSiddhanta'",
             "itemtype": "method",
-            "name": "setBija",
+            "name": "setSystem",
             "params": [
                 {
-                    "name": "bija",
+                    "name": "system",
                     "description": "",
-                    "type": "Boolean"
+                    "type": "String"
                 }
             ],
             "example": [
-                "\n```\n   var Kollavarsham = require('Kollavarsham');\n   var kollavarsham = new Kolavarsham({});\n   kollavarsham.setBija(true);\n   kollavarsham.setInputDate(new Date(2014, 2, 14));\n   kollavarsham.convert();\n```"
+                "\n```\n   var Kollavarsham = require('Kollavarsham');\n   var kollavarsham = new Kolavarsham({});\n   kollavarsham.setSystem('InPancasiddhantika');\n   kollavarsham.setInputDate(new Date(2014, 2, 14));\n   kollavarsham.convert();\n```"
             ],
             "class": "Kollavarsham",
             "module": "kollavarsham"
@@ -399,7 +399,7 @@
             "type": "{KollavarshamDate}",
             "static": 1,
             "example": [
-                "\n```\nvar Kollavarsham = require('kollavarsham');\nvar KollavarshamDate = require('kollavarsham').kollavarshamDate;\n\nvar myKollavarshamDate = new KollavarshamDate(1189, 7, 13); // Create a new Malayalam Date representation\nvar myDateInGregorian = (new Kollavarsham({'bija': true})).toGregorianDate(myKollavarshamDate);\n```"
+                "\n```\nvar Kollavarsham = require('kollavarsham');\nvar KollavarshamDate = require('kollavarsham').kollavarshamDate;\n\nvar myKollavarshamDate = new KollavarshamDate(1189, 7, 13); // Create a new Malayalam Date representation\nvar myDateInGregorian = (new Kollavarsham({'system': 'InPancasiddhantika'})).toGregorianDate(myKollavarshamDate);\n```"
             ],
             "class": "Kollavarsham",
             "module": "kollavarsham"
