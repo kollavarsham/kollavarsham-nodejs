@@ -13,7 +13,7 @@ Install the module with: `npm install kollavarsham`
 var Kollavarsham = require('kollavarsham');
 
 var options = {
-  bija: true,
+  system: 'SuryaSiddhanta',
   latitude: 10,
   longitude: 76.2,
   outputFormat: 'verbose'
@@ -38,10 +38,10 @@ kollavarsham --help
 Click [here](http://kollavarsham.org/kollavarsham-nodejs) to visit the API Documentation
 
 ## Examples
-To convert Modern Date to Kollavarsham Date for Location (100 deg east, 90 deg north with bija and list output:
+To convert Modern Date to Kollavarsham Date for Location (100 deg east, 90 deg north using 'InPancasiddhantika' system and list output:
 
 ```
-kollavarsham -b -t 90 -g 100 -m 0 -o list 23:08:2008
+kollavarsham -s 'InPancasiddhantika' -t 90 -g 100 -m 0 -o list 23:08:2008
 ```
 
 To convert Modern Date to with default settings (Location: Ujjain):

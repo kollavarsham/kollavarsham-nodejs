@@ -13,20 +13,20 @@ var calendar = require('../lib/calendar');
 var celestial = require('../lib/celestial');
 var math = require('../lib/math');
 
+var settings = {
+  system       : 'InPancasiddhantika',
+  latitude     : 23.2,
+  longitude    : 75.8,
+  outputformat : 'verbose'
+};
+
 var runCalculationsWithADate = function () {
-  calculations.fromGregorian({
-    bija          : false,
-    mode          : 0,
-    latitude      : 23.2,
-    longitude     : 75.8,
-    outputformat  : 'verbose',
-    gregorianDate : new Date()
-  }, new Date(2014, calendar.months.February, 11));
+  calculations.fromGregorian(settings, new Date(2014, calendar.months.February, 11));
 };
 
 exports.celestial = {
   setUp              : function (done) {
-    celestial.setPrimaryConstants();
+    celestial.setPrimaryConstants(settings);
     celestial.setSecondaryConstants();
     celestial.setPlanetaryConstants();
     done();

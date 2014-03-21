@@ -12,6 +12,13 @@ var cal = require('../lib/calendar');
 var celestial = require('../lib/celestial');
 var math = require('../lib/math');
 
+var settings = {
+  system       : 'InPancasiddhantika',
+  latitude     : 23.2,
+  longitude    : 75.8,
+  outputformat : 'verbose'
+};
+
 function cmpDates(date1, date2) {
   return date1.getFullYear() === date2.getFullYear() &&
       date1.getMonth() === date2.getMonth() &&
@@ -20,7 +27,7 @@ function cmpDates(date1, date2) {
 
 exports.calendar = {
   setUp                          : function (done) {
-    celestial.setPrimaryConstants();
+    celestial.setPrimaryConstants(settings);
     celestial.setSecondaryConstants();
     celestial.setPlanetaryConstants();
     done();
