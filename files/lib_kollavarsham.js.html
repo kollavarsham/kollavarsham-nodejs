@@ -25,261 +25,251 @@
         <div class="yui3-u-1-4">
             <div id="docs-sidebar" class="sidebar apidocs">
                 <div id="api-list">
-    <h2 class="off-left">APIs</h2>
-    <div id="api-tabview" class="tabview">
-        <ul class="tabs">
-            <li><a href="#api-classes">Classes</a></li>
-            <li><a href="#api-modules">Modules</a></li>
-        </ul>
-
-        <div id="api-tabview-filter">
-            <input type="search" id="api-filter" placeholder="Type to filter APIs">
-        </div>
-
-        <div id="api-tabview-panel">
-            <ul id="api-classes" class="apis classes">
-            
-                <li><a href="../classes/JulianDate.html">JulianDate</a></li>
-            
-                <li><a href="../classes/Kollavarsham.html">Kollavarsham</a></li>
-            
-                <li><a href="../classes/KollavarshamDate.html">KollavarshamDate</a></li>
-            
-            </ul>
-
-            <ul id="api-modules" class="apis modules">
-            
-                <li><a href="../modules/date.html">date</a></li>
-            
-                <li><a href="../modules/kollavarsham.html">kollavarsham</a></li>
-            
-            </ul>
-        </div>
-    </div>
-</div>
-
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/JulianDate.html">JulianDate</a></li>
+                                <li><a href="../classes/Kollavarsham.html">Kollavarsham</a></li>
+                                <li><a href="../classes/KollavarshamDate.html">KollavarshamDate</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/date.html">date</a></li>
+                                <li><a href="../modules/kollavarsham.html">kollavarsham</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="yui3-u-3-4">
                 <div id="api-options">
-        Show:
-        <label for="api-show-inherited">
-            <input type="checkbox" id="api-show-inherited" checked>
-            Inherited
-        </label>
-
-        <label for="api-show-protected">
-            <input type="checkbox" id="api-show-protected">
-            Protected
-        </label>
-
-        <label for="api-show-private">
-            <input type="checkbox" id="api-show-private">
-            Private
-        </label>
-        <label for="api-show-deprecated">
-            <input type="checkbox" id="api-show-deprecated">
-            Deprecated
-        </label>
-
-    </div>
-
-
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
                         <h1 class="file-heading">File: lib/kollavarsham.js</h1>
-
-<div class="file">
-    <pre class="code prettyprint linenums">
-/*
- * kollavarsham
- * http://kollavarsham.org
- *
- * Copyright (c) 2014 The Kollavarsham Team
- * Licensed under the MIT license.
- */
-
-/**
- * The main module that exposes all of the public API in the library
- * @module kollavarsham
- */
-&#x27;use strict&#x27;;
-
-var calculations = require(&#x27;./calculations&#x27;);
-var extend = require(&#x27;node.extend&#x27;);
-var KollavarshamDate = require(&#x27;./date&#x27;).KollavarshamDate;
-
-/**
- * The Kollavarsham class implements all the public APIs of the library.
- *
- * Create a new instance of this class, passing in the relevant options and call methods on this instance.
- *
- * @class Kollavarsham
- * @param {Object} [options] A set of key value pairs to configure the Kollavarsham instance. All settings are optional.
- *  @param {String} [options.system=&#x27;SuryaSiddhanta&#x27;] Set to &#x27;InPancasiddhantika&#x27; or &#x27;SuryaSiddhanta&#x27; to use the corresponding system
- *  @param {Number} [options.latitude=23.2] Sets the latitude for the location for the conversions
- *  @param {Number} [options.longitude=75.8] Sets the longitude for the location for the conversions
- *  @param {String} [options.outputformat=&#x27;verbose&#x27;] Set to &#x27;list&#x27; or &#x27;verbose&#x27; for the output
- * @constructor
- * @example
- * &#x60;&#x60;&#x60;
- *     var Kollavarsham = require(&#x27;kollavarsham&#x27;);
- *
- *     var options = {
- *       system: &#x27;SuryaSiddhanta&#x27;,
- *       latitude: 10,
- *       longitude: 76.2,
- *       outputFormat: &#x27;verbose&#x27;
- *     };
- *
- *     var kollavarsham = new Kollavarsham(options);
- *
- *     var todayInMalayalamEra = kollavarsham.fromGregorianDate(new Date());
- *
- *     var today = kollavarsham.toGregorianDate(todayInMalayalamEra);
- *&#x60;&#x60;&#x60;
- */
-var Kollavarsham = function (options) {
-
-  var defaults = {
-    //These are the defaults
-    system       : &#x27;SuryaSiddhanta&#x27;,
-    latitude     : 23.2,
-    longitude    : 75.8,
-    outputformat : &#x27;verbose&#x27;
-  };
-
-  /**
-   * Holds the settings state of the Kollavarsham instance. To access a snapshot use the {{#crossLink &quot;Kollavarsham/getSettings:method&quot;}}{{/crossLink}} method
-   * @property _settings
-   * @type {Object}
-   * @private
-   */
-  this._settings = extend(defaults, options);
-};
-
-/**
- * Gets a snapshot of the current settings
- * @method getSettings
- * @returns {Object} The current snapshot of the settings/configuration
- */
-Kollavarsham.prototype.getSettings = function () {
-  return this._settings;
-};
-
-/**
- * Sets the system to be either &#x27;InPancasiddhantika&#x27; or &#x27;SuryaSiddhanta&#x27;
- *
- * @method setSystem
- * @param system {String}
- * @example
- * &#x60;&#x60;&#x60;
- *    var Kollavarsham = require(&#x27;Kollavarsham&#x27;);
- *    var kollavarsham = new Kolavarsham({});
- *    kollavarsham.setSystem(&#x27;InPancasiddhantika&#x27;);
- *    kollavarsham.setInputDate(new Date(2014, 2, 14));
- *    kollavarsham.convert();
- * &#x60;&#x60;&#x60;
- */
-Kollavarsham.prototype.setSystem = function (system) {
-  this._settings.system = system;
-};
-
-/**
- * Sets the latitude for the location that will be used as the basis for the conversion
- * @method setLatitude
- * @param latitude
- * @example
- * &#x60;&#x60;&#x60;
- *    var Kollavarsham = require(&#x27;Kollavarsham&#x27;);
- *    var kollavarsham = new Kolavarsham({});
- *    kollavarsham.setLatitude(8.5);
- * &#x60;&#x60;&#x60;
- */
-Kollavarsham.prototype.setLatitude = function (latitude) {
-  this._settings.latitude = latitude;
-};
-
-/**
- * Sets the longitude for the location that will be used as the basis of the conversion
- * @method setLongitude
- * @param longitude
- * @example
- * &#x60;&#x60;&#x60;
- *    var Kollavarsham = require(&#x27;Kollavarsham&#x27;);
- *    var kollavarsham = new Kolavarsham({});
- *    kollavarsham.setLongitude(77.0);
- *&#x60;&#x60;&#x60;
- */
-Kollavarsham.prototype.setLongitude = function (longitude) {
-  this._settings.longitude = longitude;
-};
-
-//TODO: This below function is more of a CLI concern
-/**
- * Sets the output to be as &#x27;list&#x27; or &#x27;verbose&#x27;
- * @method setOutput
- * @param output {String} Valid values are &#x27;verbose&#x27; (default) and &#x27;list&#x27;
- */
-Kollavarsham.prototype.setOutput = function (output) {
-  this._settings.output = output;
-};
-
-/**
- * Converts a Gregorian date to the equivalent Kollavarsham date, respecting the current configuration
- *
- * @method fromGregorianDate
- * @param date {Date} The Gregorian date to be converted to Kollavarsham
- * @returns {KollavarshamDate} Converted date
- */
-Kollavarsham.prototype.fromGregorianDate = function (date) {
-  return calculations.fromGregorian(this._settings, date);
-};
-
-/**
- * Converts a Kollavarsham date to its equivalent Gregorian date, respecting the current configuration.
- * This method Will return {{#crossLink &quot;JulianDate&quot;}}{{/crossLink}} object for any date before 1st January 1583 AD and
- * [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) objects for later dates.
- *
- *  **This API is still work in progress**
- *
- * @method toGregorianDate
- * @param date {KollavarshamDate} The Kollavarsham date to be converted to Gregorian
- * @returns {Date|JulianDate} Converted date
- */
-Kollavarsham.prototype.toGregorianDate = function (date) {
-  //TODO: Implement this function
-  console.log(&#x27;When the API is implemented, will convert %s&#x27;, date);
-};
-
-Kollavarsham.prototype.toGregorianDateFromSaka = function (hinduDate) {
-  return calculations.toGregorianFromSaka(this._settings, hinduDate);
-};
-
-/**
- * Exports the {{#crossLink &quot;KollavarshamDate&quot;}}{{/crossLink}} class for referencing via &#x60;require&#x60;. This is the class
- * that is returned when converting {{#crossLink &quot;Kollavarsham/fromGregorianDate:method&quot;}}{{/crossLink}} and is passed in
- * to {{#crossLink &quot;Kollavarsham/toGregorianDate:method&quot;}}{{/crossLink}}. See example below.
- * @property kollavarshamDate
- * @type {KollavarshamDate}
- * @static
- * @example
- * &#x60;&#x60;&#x60;
- * var Kollavarsham = require(&#x27;kollavarsham&#x27;);
- * var KollavarshamDate = require(&#x27;kollavarsham&#x27;).kollavarshamDate;
- *
- * var myKollavarshamDate = new KollavarshamDate(1189, 7, 13); // Create a new Malayalam Date representation
- * var myDateInGregorian = (new Kollavarsham({&#x27;system&#x27;: &#x27;InPancasiddhantika&#x27;})).toGregorianDate(myKollavarshamDate);
- * &#x60;&#x60;&#x60;
- */
-Kollavarsham.kollavarshamDate = KollavarshamDate;
-
-module.exports = Kollavarsham;
-
-    </pre>
-</div>
-
+                        
+                        <div class="file">
+                            <pre class="code prettyprint linenums">
+                        /*
+                         * kollavarsham
+                         * http://kollavarsham.org
+                         *
+                         * Copyright (c) 2014 The Kollavarsham Team
+                         * Licensed under the MIT license.
+                         */
+                        
+                        /**
+                         * The main module that exposes all of the public API in the library
+                         * @module kollavarsham
+                         */
+                        &#x27;use strict&#x27;;
+                        
+                        var calculations = require(&#x27;./calculations&#x27;);
+                        var extend = require(&#x27;node.extend&#x27;);
+                        var KollavarshamDate = require(&#x27;./date&#x27;).KollavarshamDate;
+                        
+                        /**
+                         * The Kollavarsham class implements all the public APIs of the library.
+                         *
+                         * Create a new instance of this class, passing in the relevant options and call methods on this instance.
+                         *
+                         * @class Kollavarsham
+                         * @param {Object} [options] A set of key value pairs to configure the Kollavarsham instance. All settings are optional.
+                         *  @param {String} [options.system=&#x27;SuryaSiddhanta&#x27;] Set to &#x27;InPancasiddhantika&#x27; or &#x27;SuryaSiddhanta&#x27; to use the corresponding system
+                         *  @param {Number} [options.latitude=23.2] Sets the latitude for the location for the conversions
+                         *  @param {Number} [options.longitude=75.8] Sets the longitude for the location for the conversions
+                         *  @param {String} [options.outputformat=&#x27;verbose&#x27;] Set to &#x27;list&#x27; or &#x27;verbose&#x27; for the output
+                         * @constructor
+                         * @example
+                         * &#x60;&#x60;&#x60;
+                         *     var Kollavarsham = require(&#x27;kollavarsham&#x27;);
+                         *
+                         *     var options = {
+                         *       system: &#x27;SuryaSiddhanta&#x27;,
+                         *       latitude: 10,
+                         *       longitude: 76.2,
+                         *       outputFormat: &#x27;verbose&#x27;
+                         *     };
+                         *
+                         *     var kollavarsham = new Kollavarsham(options);
+                         *
+                         *     var todayInMalayalamEra = kollavarsham.fromGregorianDate(new Date());
+                         *
+                         *     var today = kollavarsham.toGregorianDate(todayInMalayalamEra);
+                         *&#x60;&#x60;&#x60;
+                         */
+                        var Kollavarsham = function (options) {
+                        
+                          var defaults = {
+                            //These are the defaults
+                            system       : &#x27;SuryaSiddhanta&#x27;,
+                            latitude     : 23.2,
+                            longitude    : 75.8,
+                            outputformat : &#x27;verbose&#x27;
+                          };
+                        
+                          /**
+                           * Holds the settings state of the Kollavarsham instance. To access a snapshot use the {{#crossLink &quot;Kollavarsham/getSettings:method&quot;}}{{/crossLink}} method
+                           * @property _settings
+                           * @type {Object}
+                           * @private
+                           */
+                          this._settings = extend(defaults, options);
+                        };
+                        
+                        /**
+                         * Gets a snapshot of the current settings
+                         * @method getSettings
+                         * @returns {Object} The current snapshot of the settings/configuration
+                         */
+                        Kollavarsham.prototype.getSettings = function () {
+                          return this._settings;
+                        };
+                        
+                        /**
+                         * Sets the system to be either &#x27;InPancasiddhantika&#x27; or &#x27;SuryaSiddhanta&#x27;
+                         *
+                         * @method setSystem
+                         * @param system {String}
+                         * @example
+                         * &#x60;&#x60;&#x60;
+                         *    var Kollavarsham = require(&#x27;Kollavarsham&#x27;);
+                         *    var kollavarsham = new Kolavarsham({});
+                         *    kollavarsham.setSystem(&#x27;InPancasiddhantika&#x27;);
+                         *    kollavarsham.setInputDate(new Date(2014, 2, 14));
+                         *    kollavarsham.convert();
+                         * &#x60;&#x60;&#x60;
+                         */
+                        Kollavarsham.prototype.setSystem = function (system) {
+                          this._settings.system = system;
+                        };
+                        
+                        /**
+                         * Sets the latitude for the location that will be used as the basis for the conversion
+                         * @method setLatitude
+                         * @param latitude
+                         * @example
+                         * &#x60;&#x60;&#x60;
+                         *    var Kollavarsham = require(&#x27;Kollavarsham&#x27;);
+                         *    var kollavarsham = new Kolavarsham({});
+                         *    kollavarsham.setLatitude(8.5);
+                         * &#x60;&#x60;&#x60;
+                         */
+                        Kollavarsham.prototype.setLatitude = function (latitude) {
+                          this._settings.latitude = latitude;
+                        };
+                        
+                        /**
+                         * Sets the longitude for the location that will be used as the basis of the conversion
+                         * @method setLongitude
+                         * @param longitude
+                         * @example
+                         * &#x60;&#x60;&#x60;
+                         *    var Kollavarsham = require(&#x27;Kollavarsham&#x27;);
+                         *    var kollavarsham = new Kolavarsham({});
+                         *    kollavarsham.setLongitude(77.0);
+                         *&#x60;&#x60;&#x60;
+                         */
+                        Kollavarsham.prototype.setLongitude = function (longitude) {
+                          this._settings.longitude = longitude;
+                        };
+                        
+                        //TODO: This below function is more of a CLI concern
+                        /**
+                         * Sets the output to be as &#x27;list&#x27; or &#x27;verbose&#x27;
+                         * @method setOutput
+                         * @param output {String} Valid values are &#x27;verbose&#x27; (default) and &#x27;list&#x27;
+                         */
+                        Kollavarsham.prototype.setOutput = function (output) {
+                          this._settings.output = output;
+                        };
+                        
+                        /**
+                         * Converts a Gregorian date to the equivalent Kollavarsham date, respecting the current configuration
+                         *
+                         * @method fromGregorianDate
+                         * @param date {Date} The Gregorian date to be converted to Kollavarsham
+                         * @returns {KollavarshamDate} Converted date
+                         */
+                        Kollavarsham.prototype.fromGregorianDate = function (date) {
+                          return calculations.fromGregorian(this._settings, date);
+                        };
+                        
+                        /**
+                         * Converts a Kollavarsham date to its equivalent Gregorian date, respecting the current configuration.
+                         * This method Will return {{#crossLink &quot;JulianDate&quot;}}{{/crossLink}} object for any date before 1st January 1583 AD and
+                         * [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) objects for later dates.
+                         *
+                         *  **This API is still work in progress**
+                         *
+                         * @method toGregorianDate
+                         * @param date {KollavarshamDate} The Kollavarsham date to be converted to Gregorian
+                         * @returns {Date|JulianDate} Converted date
+                         */
+                        Kollavarsham.prototype.toGregorianDate = function (date) {
+                          //TODO: Implement this function
+                          console.log(&#x27;When the API is implemented, will convert %s&#x27;, date);
+                        };
+                        
+                        Kollavarsham.prototype.toGregorianDateFromSaka = function (hinduDate) {
+                          return calculations.toGregorianFromSaka(this._settings, hinduDate);
+                        };
+                        
+                        /**
+                         * Exports the {{#crossLink &quot;KollavarshamDate&quot;}}{{/crossLink}} class for referencing via &#x60;require&#x60;. This is the class
+                         * that is returned when converting {{#crossLink &quot;Kollavarsham/fromGregorianDate:method&quot;}}{{/crossLink}} and is passed in
+                         * to {{#crossLink &quot;Kollavarsham/toGregorianDate:method&quot;}}{{/crossLink}}. See example below.
+                         * @property kollavarshamDate
+                         * @type {KollavarshamDate}
+                         * @static
+                         * @example
+                         * &#x60;&#x60;&#x60;
+                         * var Kollavarsham = require(&#x27;kollavarsham&#x27;);
+                         * var KollavarshamDate = require(&#x27;kollavarsham&#x27;).kollavarshamDate;
+                         *
+                         * var myKollavarshamDate = new KollavarshamDate(1189, 7, 13); // Create a new Malayalam Date representation
+                         * var myDateInGregorian = (new Kollavarsham({&#x27;system&#x27;: &#x27;InPancasiddhantika&#x27;})).toGregorianDate(myKollavarshamDate);
+                         * &#x60;&#x60;&#x60;
+                         */
+                        Kollavarsham.kollavarshamDate = KollavarshamDate;
+                        
+                        module.exports = Kollavarsham;
+                        
+                            </pre>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -289,7 +279,7 @@ module.exports = Kollavarsham;
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2015 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Mon, 09 Mar 2015 00:11:23 GMT</span>
+  <span class="last-modified">Last Updated: Mon, 09 Mar 2015 12:32:28 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>
