@@ -57,4 +57,4 @@ Check the [Contributing](CONTRIBUTING.md) guide.
 _(Nothing yet)_
 
 ## License
-Copyright (c) 2014 The Kollavarsham Team. Licensed under the MIT license.
+Copyright (c) 2014-2015 The Kollavarsham Team. Licensed under the MIT license.
