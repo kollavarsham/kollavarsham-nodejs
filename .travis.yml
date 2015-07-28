@@ -1,7 +1,13 @@
 language: node_js
 node_js:
-- '0.11'
-- '0.12'
+  - "0.12"
+  - "0.11"
+  - "0.10"
+  - "0.8"
+  - "0.6"
+  - "iojs"
+  - "iojs-v2.5.0"
+  - "iojs-v3.0.0-rc.5"
 branches:
   only:
   - master
@@ -15,7 +21,7 @@ before_script:
 - git config --global user.name "The Kollavarsham Team"
 after_success:
   # If build is successful, push the documentation from this build to the gh-pages (run only on one job)
-- if [ "$TRAVIS_NODE_VERSION" = "0.11" ]; then grunt buildcontrol:pages; fi
+- if [ "$TRAVIS_NODE_VERSION" = "0.12" ]; then grunt buildcontrol:pages; fi
 install:
 - npm install -g grunt-cli
 - npm install
