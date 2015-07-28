@@ -154,7 +154,7 @@
                                                                     <span class="flag optional" title="This parameter is optional.">optional</span>
                                 
                                                                 <div class="param-description">
-                                                                    <p>Set to &#39;InPancasiddhantika&#39; or &#39;SuryaSiddhanta&#39; to use the corresponding system</p>
+                                                                    <p>Set to 'InPancasiddhantika' or 'SuryaSiddhanta' to use the corresponding system</p>
                                 
                                                                 </div>
                                 
@@ -187,7 +187,7 @@
                                                                     <span class="flag optional" title="This parameter is optional.">optional</span>
                                 
                                                                 <div class="param-description">
-                                                                    <p>Set to &#39;list&#39; or &#39;verbose&#39; for the output</p>
+                                                                    <p>Set to 'list' or 'verbose' for the output</p>
                                 
                                                                 </div>
                                 
@@ -202,13 +202,13 @@
                                             <h4>Example:</h4>
                                 
                                             <div class="example-content">
-                                                <pre class="code prettyprint"><code>    var Kollavarsham = require(&#39;kollavarsham&#39;);
+                                                <pre class="code prettyprint"><code>    var Kollavarsham = require('kollavarsham');
                                 
                                     var options = {
-                                      system: &#39;SuryaSiddhanta&#39;,
+                                      system: 'SuryaSiddhanta',
                                       latitude: 10,
                                       longitude: 76.2,
-                                      outputFormat: &#39;verbose&#39;
+                                      outputFormat: 'verbose'
                                     };
                                 
                                     var kollavarsham = new Kollavarsham(options);
@@ -217,6 +217,7 @@
                                 
                                     var today = kollavarsham.toGregorianDate(todayInMalayalamEra);
                                 </code></pre>
+                                
                                             </div>
                                         </div>
                                 </div>
@@ -453,10 +454,11 @@
                                                         <h4>Example:</h4>
                                             
                                                         <div class="example-content">
-                                                            <pre class="code prettyprint"><code>   var Kollavarsham = require(&#39;Kollavarsham&#39;);
+                                                            <pre class="code prettyprint"><code>   var Kollavarsham = require('Kollavarsham');
                                                var kollavarsham = new Kolavarsham({});
                                                kollavarsham.setLatitude(8.5);
                                             </code></pre>
+                                            
                                                         </div>
                                                     </div>
                                             </div>
@@ -515,10 +517,11 @@
                                                         <h4>Example:</h4>
                                             
                                                         <div class="example-content">
-                                                            <pre class="code prettyprint"><code>   var Kollavarsham = require(&#39;Kollavarsham&#39;);
+                                                            <pre class="code prettyprint"><code>   var Kollavarsham = require('Kollavarsham');
                                                var kollavarsham = new Kolavarsham({});
                                                kollavarsham.setLongitude(77.0);
                                             </code></pre>
+                                            
                                                         </div>
                                                     </div>
                                             </div>
@@ -551,7 +554,7 @@
                                                 </div>
                                             
                                                 <div class="description">
-                                                    <p>Sets the output to be as &#39;list&#39; or &#39;verbose&#39;</p>
+                                                    <p>Sets the output to be as 'list' or 'verbose'</p>
                                             
                                                 </div>
                                             
@@ -565,7 +568,7 @@
                                             
                                             
                                                                 <div class="param-description">
-                                                                    <p>Valid values are &#39;verbose&#39; (default) and &#39;list&#39;</p>
+                                                                    <p>Valid values are 'verbose' (default) and 'list'</p>
                                             
                                                                 </div>
                                             
@@ -604,7 +607,7 @@
                                                 </div>
                                             
                                                 <div class="description">
-                                                    <p>Sets the system to be either &#39;InPancasiddhantika&#39; or &#39;SuryaSiddhanta&#39;</p>
+                                                    <p>Sets the system to be either 'InPancasiddhantika' or 'SuryaSiddhanta'</p>
                                             
                                                 </div>
                                             
@@ -630,12 +633,13 @@
                                                         <h4>Example:</h4>
                                             
                                                         <div class="example-content">
-                                                            <pre class="code prettyprint"><code>   var Kollavarsham = require(&#39;Kollavarsham&#39;);
+                                                            <pre class="code prettyprint"><code>   var Kollavarsham = require('Kollavarsham');
                                                var kollavarsham = new Kolavarsham({});
-                                               kollavarsham.setSystem(&#39;InPancasiddhantika&#39;);
+                                               kollavarsham.setSystem('InPancasiddhantika');
                                                kollavarsham.setInputDate(new Date(2014, 2, 14));
                                                kollavarsham.convert();
                                             </code></pre>
+                                            
                                                         </div>
                                                     </div>
                                             </div>
@@ -674,7 +678,7 @@
                                                     <p>Converts a Kollavarsham date to its equivalent Gregorian date, respecting the current configuration.
                                             This method Will return <a href="../classes/JulianDate.html" class="crosslink">JulianDate</a> object for any date before 1st January 1583 AD and
                                             <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a> objects for later dates.</p>
-                                            <p> <strong>This API is still work in progress</strong></p>
+                                            <p><strong>This API is still work in progress</strong></p>
                                             
                                                 </div>
                                             
@@ -768,12 +772,13 @@
                                                         <h4>Example:</h4>
                                             
                                                         <div class="example-content">
-                                                            <pre class="code prettyprint"><code>var Kollavarsham = require(&#39;kollavarsham&#39;);
-                                            var KollavarshamDate = require(&#39;kollavarsham&#39;).kollavarshamDate;
+                                                            <pre class="code prettyprint"><code>var Kollavarsham = require('kollavarsham');
+                                            var KollavarshamDate = require('kollavarsham').kollavarshamDate;
                                             
                                             var myKollavarshamDate = new KollavarshamDate(1189, 7, 13); // Create a new Malayalam Date representation
-                                            var myDateInGregorian = (new Kollavarsham({&#39;system&#39;: &#39;InPancasiddhantika&#39;})).toGregorianDate(myKollavarshamDate);
+                                            var myDateInGregorian = (new Kollavarsham({'system': 'InPancasiddhantika'})).toGregorianDate(myKollavarshamDate);
                                             </code></pre>
+                                            
                                                         </div>
                                                     </div>
                                             
@@ -792,7 +797,7 @@
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2015 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Mon, 09 Mar 2015 12:43:54 GMT</span>
+  <span class="last-modified">Last Updated: Tue, 28 Jul 2015 21:53:25 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>
