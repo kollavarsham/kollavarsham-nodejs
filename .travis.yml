@@ -19,13 +19,7 @@ before_script:
 after_success:
   # If build is successful, push the documentation from this build to the gh-pages (run only on one job)
   # and generate test coverage and push it to code climate
-- if [ "$TRAVIS_NODE_VERSION" = "0.12" ]; then
-- grunt buildcontrol:pages
-- npm install -g istanbul
-- istanbul cover node_modules/grunt-contrib-nodeunit/node_modules/nodeunit/bin/nodeunit -- test
-- npm install -g codeclimate-test-reporter
-- codeclimate-test-reporter < coverage/lcov.info
-- fi
+- if [ "$TRAVIS_NODE_VERSION" = "0.12" ]; then ./deploy.sh; fi
 install:
 - npm install -g grunt-cli
 - npm install
