@@ -1,6 +1,6 @@
 # [kollavarsham](http://kollavarsham.org/)
 
-[![npm](https://img.shields.io/npm/v/kollavarsham.svg)](https://www.npmjs.com/package/kollavarsham) [![Travis](https://img.shields.io/travis/kollavarsham/kollavarsham-nodejs.svg)](https://travis-ci.org/kollavarsham/kollavarsham-nodejs) [![Code Climate](https://img.shields.io/codeclimate/github/kollavarsham/kollavarsham-nodejs.svg)](https://codeclimate.com/github/kollavarsham/kollavarsham-nodejs) [![Code Climate](https://img.shields.io/codeclimate/coverage/github/kollavarsham/kollavarsham-nodejs.svg)](https://codeclimate.com/github/kollavarsham/kollavarsham-nodejs/coverage)
+[![npm](https://img.shields.io/npm/v/kollavarsham.svg)](https://www.npmjs.com/package/kollavarsham) [![Travis](https://img.shields.io/travis/kollavarsham/kollavarsham-nodejs.svg)](https://travis-ci.org/kollavarsham/kollavarsham-nodejs) [![Code Climate](https://img.shields.io/codeclimate/github/kollavarsham/kollavarsham-nodejs.svg)](https://codeclimate.com/github/kollavarsham/kollavarsham-nodejs/code) [![Code Climate](https://img.shields.io/codeclimate/coverage/github/kollavarsham/kollavarsham-nodejs.svg)](https://codeclimate.com/github/kollavarsham/kollavarsham-nodejs/coverage)
 [![David](https://img.shields.io/david/kollavarsham/kollavarsham-nodejs.svg)](https://david-dm.org/kollavarsham/kollavarsham-nodejs) [![David](https://img.shields.io/david/dev/kollavarsham/kollavarsham-nodejs.svg)](https://david-dm.org/kollavarsham/kollavarsham-nodejs#info=devDependencies&view=table) 
 
 Convert Gregorian date to Kollavarsham date and vice versa
