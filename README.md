@@ -56,7 +56,7 @@ kollavarsham 04:04:2011
 Check the [Contributing](CONTRIBUTING.md) guide.
 
 ## Release History
-_(Nothing yet)_
+Check out the history at [GitHub Releases](https://github.com/kollavarsham/kollavarsham-nodejs/releases)
 
 ## License
 Copyright (c) 2014-2015 The Kollavarsham Team. Licensed under the MIT license.
