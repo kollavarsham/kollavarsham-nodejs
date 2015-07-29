@@ -114,20 +114,20 @@ var KollavarshamDate = require(&#x27;./date&#x27;).KollavarshamDate;
  * @constructor
  * @example
  * &#x60;&#x60;&#x60;
- *     var Kollavarsham = require(&#x27;kollavarsham&#x27;);
+ *var Kollavarsham = require(&#x27;kollavarsham&#x27;);
  *
- *     var options = {
- *       system: &#x27;SuryaSiddhanta&#x27;,
- *       latitude: 10,
- *       longitude: 76.2,
- *       outputFormat: &#x27;verbose&#x27;
- *     };
+ *var options = {
+ *  system: &#x27;SuryaSiddhanta&#x27;,
+ *  latitude: 10,
+ *  longitude: 76.2,
+ *  outputFormat: &#x27;verbose&#x27;
+ *};
  *
- *     var kollavarsham = new Kollavarsham(options);
+ *var kollavarsham = new Kollavarsham(options);
  *
- *     var todayInMalayalamEra = kollavarsham.fromGregorianDate(new Date());
+ *var todayInMalayalamEra = kollavarsham.fromGregorianDate(new Date());
  *
- *     var today = kollavarsham.toGregorianDate(todayInMalayalamEra);
+ *var today = kollavarsham.toGregorianDate(todayInMalayalamEra);
  *&#x60;&#x60;&#x60;
  */
 var Kollavarsham = function (options) {
@@ -165,11 +165,11 @@ Kollavarsham.prototype.getSettings = function () {
  * @param system {String}
  * @example
  * &#x60;&#x60;&#x60;
- *    var Kollavarsham = require(&#x27;Kollavarsham&#x27;);
- *    var kollavarsham = new Kolavarsham({});
- *    kollavarsham.setSystem(&#x27;InPancasiddhantika&#x27;);
- *    kollavarsham.setInputDate(new Date(2014, 2, 14));
- *    kollavarsham.convert();
+ *var Kollavarsham = require(&#x27;Kollavarsham&#x27;);
+ *var kollavarsham = new Kolavarsham({});
+ *kollavarsham.setSystem(&#x27;InPancasiddhantika&#x27;);
+ *kollavarsham.setInputDate(new Date(2014, 2, 14));
+ *kollavarsham.convert();
  * &#x60;&#x60;&#x60;
  */
 Kollavarsham.prototype.setSystem = function (system) {
@@ -182,9 +182,9 @@ Kollavarsham.prototype.setSystem = function (system) {
  * @param latitude
  * @example
  * &#x60;&#x60;&#x60;
- *    var Kollavarsham = require(&#x27;Kollavarsham&#x27;);
- *    var kollavarsham = new Kolavarsham({});
- *    kollavarsham.setLatitude(8.5);
+ *var Kollavarsham = require(&#x27;Kollavarsham&#x27;);
+ *var kollavarsham = new Kolavarsham({});
+ *kollavarsham.setLatitude(8.5);
  * &#x60;&#x60;&#x60;
  */
 Kollavarsham.prototype.setLatitude = function (latitude) {
@@ -197,9 +197,9 @@ Kollavarsham.prototype.setLatitude = function (latitude) {
  * @param longitude
  * @example
  * &#x60;&#x60;&#x60;
- *    var Kollavarsham = require(&#x27;Kollavarsham&#x27;);
- *    var kollavarsham = new Kolavarsham({});
- *    kollavarsham.setLongitude(77.0);
+ *var Kollavarsham = require(&#x27;Kollavarsham&#x27;);
+ *var kollavarsham = new Kolavarsham({});
+ *kollavarsham.setLongitude(77.0);
  *&#x60;&#x60;&#x60;
  */
 Kollavarsham.prototype.setLongitude = function (longitude) {
@@ -278,7 +278,7 @@ module.exports = Kollavarsham;
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2015 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Wed, 29 Jul 2015 04:50:20 GMT</span>
+  <span class="last-modified">Last Updated: Wed, 29 Jul 2015 04:55:29 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>

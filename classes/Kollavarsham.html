@@ -202,20 +202,20 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>    var Kollavarsham = require('kollavarsham');
+                <pre class="code prettyprint"><code>var Kollavarsham = require('kollavarsham');
 
-    var options = {
-      system: 'SuryaSiddhanta',
-      latitude: 10,
-      longitude: 76.2,
-      outputFormat: 'verbose'
-    };
+var options = {
+ system: 'SuryaSiddhanta',
+ latitude: 10,
+ longitude: 76.2,
+ outputFormat: 'verbose'
+};
 
-    var kollavarsham = new Kollavarsham(options);
+var kollavarsham = new Kollavarsham(options);
 
-    var todayInMalayalamEra = kollavarsham.fromGregorianDate(new Date());
+var todayInMalayalamEra = kollavarsham.fromGregorianDate(new Date());
 
-    var today = kollavarsham.toGregorianDate(todayInMalayalamEra);
+var today = kollavarsham.toGregorianDate(todayInMalayalamEra);
 </code></pre>
 
             </div>
@@ -457,9 +457,9 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>   var Kollavarsham = require('Kollavarsham');
-   var kollavarsham = new Kolavarsham({});
-   kollavarsham.setLatitude(8.5);
+                <pre class="code prettyprint"><code>var Kollavarsham = require('Kollavarsham');
+var kollavarsham = new Kolavarsham({});
+kollavarsham.setLatitude(8.5);
 </code></pre>
 
             </div>
@@ -521,9 +521,9 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>   var Kollavarsham = require('Kollavarsham');
-   var kollavarsham = new Kolavarsham({});
-   kollavarsham.setLongitude(77.0);
+                <pre class="code prettyprint"><code>var Kollavarsham = require('Kollavarsham');
+var kollavarsham = new Kolavarsham({});
+kollavarsham.setLongitude(77.0);
 </code></pre>
 
             </div>
@@ -639,11 +639,11 @@
             <h4>Example:</h4>
 
             <div class="example-content">
-                <pre class="code prettyprint"><code>   var Kollavarsham = require('Kollavarsham');
-   var kollavarsham = new Kolavarsham({});
-   kollavarsham.setSystem('InPancasiddhantika');
-   kollavarsham.setInputDate(new Date(2014, 2, 14));
-   kollavarsham.convert();
+                <pre class="code prettyprint"><code>var Kollavarsham = require('Kollavarsham');
+var kollavarsham = new Kolavarsham({});
+kollavarsham.setSystem('InPancasiddhantika');
+kollavarsham.setInputDate(new Date(2014, 2, 14));
+kollavarsham.convert();
 </code></pre>
 
             </div>
@@ -804,7 +804,7 @@ var myDateInGregorian = (new Kollavarsham({'system': 'InPancasiddhantika'})).toG
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2015 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Wed, 29 Jul 2015 04:50:20 GMT</span>
+  <span class="last-modified">Last Updated: Wed, 29 Jul 2015 04:55:29 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>

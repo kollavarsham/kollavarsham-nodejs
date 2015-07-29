@@ -188,7 +188,7 @@
             ],
             "is_constructor": 1,
             "example": [
-                "\n```\n    var Kollavarsham = require('kollavarsham');\n\n    var options = {\n      system: 'SuryaSiddhanta',\n      latitude: 10,\n      longitude: 76.2,\n      outputFormat: 'verbose'\n    };\n\n    var kollavarsham = new Kollavarsham(options);\n\n    var todayInMalayalamEra = kollavarsham.fromGregorianDate(new Date());\n\n    var today = kollavarsham.toGregorianDate(todayInMalayalamEra);\n```"
+                "\n```\nvar Kollavarsham = require('kollavarsham');\n\nvar options = {\n system: 'SuryaSiddhanta',\n latitude: 10,\n longitude: 76.2,\n outputFormat: 'verbose'\n};\n\nvar kollavarsham = new Kollavarsham(options);\n\nvar todayInMalayalamEra = kollavarsham.fromGregorianDate(new Date());\n\nvar today = kollavarsham.toGregorianDate(todayInMalayalamEra);\n```"
             ]
         }
     },
@@ -293,7 +293,7 @@
                 }
             ],
             "example": [
-                "\n```\n   var Kollavarsham = require('Kollavarsham');\n   var kollavarsham = new Kolavarsham({});\n   kollavarsham.setSystem('InPancasiddhantika');\n   kollavarsham.setInputDate(new Date(2014, 2, 14));\n   kollavarsham.convert();\n```"
+                "\n```\nvar Kollavarsham = require('Kollavarsham');\nvar kollavarsham = new Kolavarsham({});\nkollavarsham.setSystem('InPancasiddhantika');\nkollavarsham.setInputDate(new Date(2014, 2, 14));\nkollavarsham.convert();\n```"
             ],
             "class": "Kollavarsham",
             "module": "kollavarsham"
@@ -311,7 +311,7 @@
                 }
             ],
             "example": [
-                "\n```\n   var Kollavarsham = require('Kollavarsham');\n   var kollavarsham = new Kolavarsham({});\n   kollavarsham.setLatitude(8.5);\n```"
+                "\n```\nvar Kollavarsham = require('Kollavarsham');\nvar kollavarsham = new Kolavarsham({});\nkollavarsham.setLatitude(8.5);\n```"
             ],
             "class": "Kollavarsham",
             "module": "kollavarsham"
@@ -329,7 +329,7 @@
                 }
             ],
             "example": [
-                "\n```\n   var Kollavarsham = require('Kollavarsham');\n   var kollavarsham = new Kolavarsham({});\n   kollavarsham.setLongitude(77.0);\n```"
+                "\n```\nvar Kollavarsham = require('Kollavarsham');\nvar kollavarsham = new Kolavarsham({});\nkollavarsham.setLongitude(77.0);\n```"
             ],
             "class": "Kollavarsham",
             "module": "kollavarsham"
