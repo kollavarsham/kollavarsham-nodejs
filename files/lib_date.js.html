@@ -78,102 +78,101 @@
             
             <div class="apidocs">
                 <div id="docs-main">
-                    <div class="content">
-                        <h1 class="file-heading">File: lib/date.js</h1>
-                        
-                        <div class="file">
-                            <pre class="code prettyprint linenums">
-                        /*
-                         * kollavarsham
-                         * http://kollavarsham.org
-                         *
-                         * Copyright (c) 2014 The Kollavarsham Team
-                         * Licensed under the MIT license.
-                         */
-                        
-                        /**
-                         * Defines the KollavarshamDate and JulianDate classes
-                         * @module date
-                         */
-                        
-                        &#x27;use strict&#x27;;
-                        
-                        /**
-                         * Pads zeroes to print the date in a pretty format
-                         * @private
-                         * @param num
-                         * @param size
-                         * @returns {string}
-                         */
-                        var pad = function (num, size) {
-                          var s = &#x27;000000000&#x27; + num;
-                          return s.substr(s.length - size);
-                        };
-                        
-                        /****************** Julian Date (private) ***************************/
-                        
-                        /**
-                         * Represents a Julian Date&#x27;s year, month and day
-                         * @class JulianDate
-                         * @param year {Number} Julian year
-                         * @param month {Number} Julian month
-                         * @param day {Number} Julian day
-                         * @constructor
-                         */
-                        var JulianDate = function (year, month, day) {
-                          this.year = year;
-                          this.month = month;
-                          this.day = day;
-                        };
-                        
-                        /**
-                         * Converts the Julian Date to a nicely formatted string with year, month and date
-                         * @method toString
-                         * @for JulianDate
-                         * @return {string}
-                         */
-                        JulianDate.prototype.toString = function () {
-                          return pad(this.year, 4) + &#x27; &#x27; + pad(this.month, 2) + &#x27; &#x27; + pad(this.day, 2);
-                        };
-                        
-                        module.exports.JulianDate = JulianDate;
-                        
-                        /****************** Kollavarsham Date *******************************/
-                        
-                        /**
-                         * @class KollavarshamDate
-                         * @param [year=1] {Number} The Kollavarsham year
-                         * @param [month=1] {Number} The Kollavarsham month
-                         * @param [day=1] {Number} The Kollavarsham day
-                         * @constructor
-                         */
-                        var KollavarshamDate = function (year, month, day) {
-                        
-                          this.year = year || 1;
-                          this.month = month || 1;
-                          this.day = day || 1;
-                        
-                          this.globals = null;
-                          this.gregorianDate = null;
-                          this.julianDay = null;
-                          this.weekdayName = null;
-                          this.ahargana = null;
-                        
-                        };
-                        
-                        /**
-                         * Converts the Kollavarsham Date to a nicely formatted string with year, month and date
-                         * @method toString
-                         * @for KollavarshamDate
-                         * @return {string}
-                         */
-                        KollavarshamDate.prototype.toString = function () {
-                          return pad(this.year, 4) + &#x27; &#x27; + pad(this.month, 2) + &#x27; &#x27; + pad(this.day, 2);
-                        };
-                        
-                        module.exports.KollavarshamDate = KollavarshamDate;
-                            </pre>
-                        </div>
+                    <div class="content"><h1 class="file-heading">File: lib/date.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+ * kollavarsham
+ * http://kollavarsham.org
+ *
+ * Copyright (c) 2014 The Kollavarsham Team
+ * Licensed under the MIT license.
+ */
+
+/**
+ * Defines the KollavarshamDate and JulianDate classes
+ * @module date
+ */
+
+&#x27;use strict&#x27;;
+
+/**
+ * Pads zeroes to print the date in a pretty format
+ * @private
+ * @param num
+ * @param size
+ * @returns {string}
+ */
+var pad = function (num, size) {
+  var s = &#x27;000000000&#x27; + num;
+  return s.substr(s.length - size);
+};
+
+/****************** Julian Date (private) ***************************/
+
+/**
+ * Represents a Julian Date&#x27;s year, month and day
+ * @class JulianDate
+ * @param year {Number} Julian year
+ * @param month {Number} Julian month
+ * @param day {Number} Julian day
+ * @constructor
+ */
+var JulianDate = function (year, month, day) {
+  this.year = year;
+  this.month = month;
+  this.day = day;
+};
+
+/**
+ * Converts the Julian Date to a nicely formatted string with year, month and date
+ * @method toString
+ * @for JulianDate
+ * @return {string}
+ */
+JulianDate.prototype.toString = function () {
+  return pad(this.year, 4) + &#x27; &#x27; + pad(this.month, 2) + &#x27; &#x27; + pad(this.day, 2);
+};
+
+module.exports.JulianDate = JulianDate;
+
+/****************** Kollavarsham Date *******************************/
+
+/**
+ * @class KollavarshamDate
+ * @param [year=1] {Number} The Kollavarsham year
+ * @param [month=1] {Number} The Kollavarsham month
+ * @param [day=1] {Number} The Kollavarsham day
+ * @constructor
+ */
+var KollavarshamDate = function (year, month, day) {
+
+  this.year = year || 1;
+  this.month = month || 1;
+  this.day = day || 1;
+
+  this.globals = null;
+  this.gregorianDate = null;
+  this.julianDay = null;
+  this.weekdayName = null;
+  this.ahargana = null;
+
+};
+
+/**
+ * Converts the Kollavarsham Date to a nicely formatted string with year, month and date
+ * @method toString
+ * @for KollavarshamDate
+ * @return {string}
+ */
+KollavarshamDate.prototype.toString = function () {
+  return pad(this.year, 4) + &#x27; &#x27; + pad(this.month, 2) + &#x27; &#x27; + pad(this.day, 2);
+};
+
+module.exports.KollavarshamDate = KollavarshamDate;
+    </pre>
+</div>
                     </div>
                 </div>
             </div>
@@ -183,7 +182,7 @@
 <footer id="footer">
   <span class="copyright"><a href="/LICENSE.txt">&copy; 2015 The Kollavarsham Team</a></span>
   <a href="/" id="footer-back"><span>Back to kollavarsham.org</span></a>
-  <span class="last-modified">Last Updated: Wed, 29 Jul 2015 02:43:18 GMT</span>
+  <span class="last-modified">Last Updated: Wed, 29 Jul 2015 04:50:09 GMT</span>
 </footer>
 <script src="../assets/vendor/prettify/prettify-min.js"></script>
 <script>prettyPrint();</script>
