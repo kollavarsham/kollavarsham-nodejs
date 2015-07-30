@@ -2,7 +2,7 @@
     "project": {
         "name": "kollavarsham",
         "description": "Convert Gregorian date to Kollavarsham date and vice versa",
-        "version": "0.1.0",
+        "version": "0.2.0",
         "url": "http://kollavarsham.org"
     },
     "files": {
@@ -243,7 +243,7 @@
         },
         {
             "file": "lib/date.js",
-            "line": 79,
+            "line": 80,
             "description": "Converts the Kollavarsham Date to a nicely formatted string with year, month and date",
             "itemtype": "method",
             "name": "toString",
