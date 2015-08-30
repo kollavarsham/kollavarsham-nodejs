@@ -69,13 +69,13 @@
     "grunt-contrib-jshint": "^0.11.2",
     "grunt-contrib-nodeunit": "^0.4.1",
     "grunt-contrib-watch": "~0.6.1",
-    "grunt-contrib-yuidoc": "~0.9.0",
+    "grunt-contrib-yuidoc": "~0.10.0",
     "jshint-stylish": "^2.0.1",
     "load-grunt-tasks": "~3.2.0",
     "time-grunt": "~1.2.1"
   },
   "dependencies": {
-    "chalk": "~1.1.0",
+    "chalk": "~1.1.1",
     "node.extend": "~1.1.5",
     "nopt": "^3.0.3",
     "update-notifier": "^0.5.0"
