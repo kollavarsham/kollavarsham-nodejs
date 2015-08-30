@@ -20,6 +20,7 @@ YUI.add("yuidoc-meta", function(Y) {
             "name": "kollavarsham",
             "description": "The main module that exposes all of the public API in the library"
         }
-    ]
+    ],
+    "elements": []
 } };
 });

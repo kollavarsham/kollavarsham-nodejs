@@ -2,7 +2,7 @@
     "project": {
         "name": "kollavarsham",
         "description": "Convert Gregorian date to Kollavarsham date and vice versa",
-        "version": "0.2.2",
+        "version": "0.2.3",
         "url": "http://kollavarsham.org"
     },
     "files": {
@@ -37,6 +37,7 @@
         "date": {
             "name": "date",
             "submodules": {},
+            "elements": {},
             "classes": {
                 "JulianDate": 1,
                 "KollavarshamDate": 1
@@ -54,6 +55,7 @@
         "kollavarsham": {
             "name": "kollavarsham",
             "submodules": {},
+            "elements": {},
             "classes": {
                 "Kollavarsham": 1
             },
@@ -192,6 +194,7 @@
             ]
         }
     },
+    "elements": {},
     "classitems": [
         {
             "file": "lib/date.js",
