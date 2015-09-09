@@ -9,8 +9,6 @@ Install the module with: `npm install kollavarsham`
 
 ## Usage
 
-#### As library/module
-
 ```javascript
 var Kollavarsham = require('kollavarsham');
 
@@ -28,14 +26,6 @@ var todayInMalayalamEra = kollavarsham.fromGregorianDate(new Date());
 var today = kollavarsham.toGregorianDate(todayInMalayalamEra);
 ```
 
-#### As globally installed node.js CLI app
-
-```plain
-npm install -g kollavarsham
-
-kollavarsham --help
-```
-
 ## Documentation
 Click [here](http://kollavarsham.org/kollavarsham-nodejs) to visit the API Documentation
 
@@ -50,6 +40,16 @@ To convert Modern Date to with default settings (Location: Ujjain):
 
 ```
 kollavarsham 04:04:2011
+```
+
+## CLI app
+
+Check out the [cli](https://www.npmjs.com/package/kollavarsham-cli) module ([GitHub repo](https://github.com/kollavarsham/cli)) for the `kollavarsham` cross-platform CLI app 
+
+```plain
+npm install -g kollavarsham-cli
+
+kollavarsham --help
 ```
 
 ## Contributing

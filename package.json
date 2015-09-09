@@ -24,7 +24,6 @@
     "mithunam",
     "karkitakam"
   ],
-  "bin": "lib/cli.js",
   "homepage": "http://kollavarsham.org",
   "bugs": "https://github.com/kollavarsham/kollavarsham-nodejs/issues",
   "author": {
@@ -75,9 +74,6 @@
     "time-grunt": "~1.2.1"
   },
   "dependencies": {
-    "chalk": "~1.1.1",
-    "node.extend": "~1.1.5",
-    "nopt": "^3.0.3",
-    "update-notifier": "^0.5.0"
+    "node.extend": "~1.1.5"
   }
 }
