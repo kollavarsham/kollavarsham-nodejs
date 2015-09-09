@@ -82,7 +82,7 @@ module.exports = function (grunt) {
   // Default task.
   grunt.registerTask('default', ['jshint', 'nodeunit']);
 
-  // Build documentation and test
-  grunt.registerTask('build', ['jshint', 'yuidoc', 'nodeunit']);
+  // Build documentation
+  grunt.registerTask('doc', ['jshint', 'yuidoc']);
 
 };
