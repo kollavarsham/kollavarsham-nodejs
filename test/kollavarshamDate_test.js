@@ -110,5 +110,68 @@ exports.kollavarshamDate = {
     test.equal(malayalamDate.mlWeekdayName, 'ബുധൻ');
     test.equal(malayalamDate.ahargana, 1857119);
     test.done();
+  },
+  'default settings'          : function (test) {
+    var kollavarsham = new Kollavarsham();
+    var settings = kollavarsham.getSettings();
+    test.expect(4);
+    test.equal(settings.system, 'SuryaSiddhanta');
+    test.equal(settings.latitude, 23.2);
+    test.equal(settings.longitude, 75.8);
+    test.equal(settings.outputformat, 'verbose');
+    test.done();
+  },
+  'setSystem'                 : function (test) {
+    var kollavarsham = new Kollavarsham();
+    kollavarsham.setSystem('DUMMY SYSTEM');
+    test.expect(1);
+    test.equal(kollavarsham.getSettings().system, 'DUMMY SYSTEM');
+    test.done();
+  },
+  'setLatitude'               : function (test) {
+    var kollavarsham = new Kollavarsham();
+    kollavarsham.setLatitude('DUMMY Latitude');
+    test.expect(1);
+    test.equal(kollavarsham.getSettings().latitude, 'DUMMY Latitude');
+    test.done();
+  },
+  'setLongitude'              : function (test) {
+    var kollavarsham = new Kollavarsham();
+    kollavarsham.setLongitude('DUMMY Longitude');
+    test.expect(1);
+    test.equal(kollavarsham.getSettings().longitude, 'DUMMY Longitude');
+    test.done();
+  },
+  'setOutput'                 : function (test) {
+    var kollavarsham = new Kollavarsham();
+    kollavarsham.setOutput('DUMMY OUTPUT');
+    test.expect(1);
+    test.equal(kollavarsham.getSettings().output, 'DUMMY OUTPUT');
+    test.done();
+  },
+  'toGregorianDate'           : function (test) {
+    var kollavarsham = new Kollavarsham();
+    test.throws(function () {
+      kollavarsham.toGregorianDate('DUMMY KOLLAVARSHAM DATE');
+    }, Error, 'When the API is implemented, will convert DUMMY KOLLAVARSHAM DATE');
+    test.done();
+  },
+  'toGregorianDateFromSaka'   : function (test) {
+    var kollavarsham = new Kollavarsham();
+    var hinduDate = {
+      yearSaka : 1937,
+      masaNum  : 4,
+      paksa    : 'Krsnapaksa',
+      tithiDay : 12
+    };
+    var date = kollavarsham.toGregorianDateFromSaka(hinduDate);
+    test.expect(6);
+    test.equal(date.gregorianDate.getFullYear(), 2015);
+    test.equal(date.gregorianDate.getMonth(), 8);
+    test.equal(date.gregorianDate.getDate(), 10);
+    test.equal(date.julianDay, 2457276);
+    test.equal(date.weekdayName, 'Thursday');
+    test.equal(date.ahargana, 1868810);
+    test.done();
   }
 };
