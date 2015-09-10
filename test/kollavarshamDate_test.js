@@ -111,6 +111,38 @@ exports.kollavarshamDate = {
     test.equal(malayalamDate.ahargana, 1857119);
     test.done();
   },
+  'end to end integration 03' : function (test) {
+    var kollavarsham = new Kollavarsham();
+    var date = new Date(1983, 8, 21);
+    var malayalamDate = kollavarsham.fromGregorianDate(date);
+    test.expect(25);
+    test.equal(malayalamDate.year, 1159);
+    test.equal(malayalamDate.month, 5);
+    test.equal(malayalamDate.day, 5);
+    test.equal(malayalamDate.calendarData.paksa, 'Suklapaksa');
+    test.equal(malayalamDate.calendarData.YearKali, 5084);
+    test.equal(malayalamDate.calendarData.YearSaka, 1905);
+    test.equal(malayalamDate.calendarData.YearVikrama, 2040);
+    test.equal(malayalamDate.calendarData.masaNum, 5);
+    test.equal(malayalamDate.calendarData.sauraMasa, 'Kanya     ');
+    test.equal(malayalamDate.calendarData.malayalaMasa, 'Kanni     ');
+    test.equal(malayalamDate.calendarData.mlMalayalaMasa, 'കന്നി');
+    test.equal(malayalamDate.calendarData.malayalaMasaNum, 1);
+    test.equal(malayalamDate.calendarData.tithiDay, 14);
+    test.equal(malayalamDate.calendarData.ftithi, 0.8946591975922775);
+    test.equal(malayalamDate.calendarData.sunriseTime.hour, 5);
+    test.equal(malayalamDate.calendarData.sunriseTime.minute, 58);
+    test.equal(malayalamDate.calendarData.adhimasa, '');
+    test.equal(malayalamDate.calendarData.masa, 'Bhadrapada');
+    test.equal(malayalamDate.calendarData.naksatra, 'P-bhadrapada');
+    test.equal(malayalamDate.calendarData.malayalaNaksatra, 'Poororuttathi');
+    test.equal(malayalamDate.calendarData.mlMalayalaNaksatra, 'പൂരുരുട്ടാതി');
+    test.equal(malayalamDate.julianDay, 2445599);
+    test.equal(malayalamDate.weekdayName, 'Wednesday');
+    test.equal(malayalamDate.mlWeekdayName, 'ബുധൻ');
+    test.equal(malayalamDate.ahargana, 1857133);
+    test.done();
+  },
   'default settings'          : function (test) {
     var kollavarsham = new Kollavarsham();
     var settings = kollavarsham.getSettings();

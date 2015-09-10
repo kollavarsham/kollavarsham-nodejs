@@ -46,7 +46,7 @@ exports.calendar = {
     test.done();
   },
   'gregorianDateToJulianDay'     : function (test) {
-    test.expect(15);
+    test.expect(16);
     test.equal(cal.gregorianDateToJulianDay(new Date(2014, cal.months.February, 16)), 2456704.5);
     test.equal(cal.gregorianDateToJulianDay(new Date(2013, cal.months.December, 30)), 2456656.5);
     test.equal(cal.gregorianDateToJulianDay(new Date(2013, cal.months.December, 31)), 2456657.5);
@@ -60,6 +60,7 @@ exports.calendar = {
     test.equal(cal.gregorianDateToJulianDay(new Date(1752, cal.months.September, 2)), 2361209.5);
     test.equal(cal.gregorianDateToJulianDay(new Date(1997, cal.months.December, 30)), 2450812.5);
     test.equal(cal.gregorianDateToJulianDay(new Date(-1, cal.months.January, 31)), 1720722.5);
+    test.equal(cal.gregorianDateToJulianDay(new Date(-4, cal.months.October, 31)), 1719900.5);
     // Special case for setting dates from years 0 - 99 AD
     var dateFrom7AD = new Date(7, cal.months.January, 1);
     dateFrom7AD.setFullYear(7);
@@ -199,6 +200,12 @@ exports.calendar = {
     test.equal(cal.julianDayToWeekday(2433313.5), 'Wednesday');
     test.done();
   },
+  'getAdhimasa'                   : function (test) {
+    test.expect(2);
+    test.equal(cal.getAdhimasa(116.77137869307474, 145.3418709668737), '');
+    test.equal(cal.getAdhimasa(120.49240077447713, 148.98071378678225), 'Adhika-');
+    test.done();
+  },
   'getMasaNum'                   : function (test) {
     test.expect(14);
     test.equal(cal.getMasaNum(31.3101877453024, 190.002232417937), 1);
@@ -218,7 +225,7 @@ exports.calendar = {
     test.done();
   },
   'getSauraMasaMonthDay'         : function (test) {
-    test.expect(28);
+    test.expect(29);
     test.equal(cal.getSauraMasaMonthDay(2299158.5, 0).month, 7);
     test.equal(cal.getSauraMasaMonthDay(2299159.5, 0).month, 7);
     test.equal(cal.getSauraMasaMonthDay(2299160.5, 0).month, 7);
@@ -247,6 +254,7 @@ exports.calendar = {
     test.equal(cal.getSauraMasaMonthDay(2456351.5, 0).day, 20);
     test.equal(cal.getSauraMasaMonthDay(2455985.5, 0).day, 19);
     test.equal(cal.getSauraMasaMonthDay(2433313.5, 0).day, 23);
+    test.equal(cal.getSauraMasaMonthDay(2313.5, 0).day, 31);
     test.done();
   },
   'findSamkranti'                : function (test) {
