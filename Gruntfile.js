@@ -14,6 +14,9 @@ module.exports = function (grunt) {
   // Load all grunt tasks
   require('load-grunt-tasks')(grunt);
 
+  // load custom grunt task for running istanbul
+  require('./grunt-istanbul')(grunt);
+
   // Project configuration.
   grunt.initConfig({
     pkg          : grunt.file.readJSON('package.json'),
@@ -63,6 +66,13 @@ module.exports = function (grunt) {
         }
       }
     },
+    istanbul     : {
+      test : {
+        options : {
+          cwd : '.'
+        }
+      }
+    },
     buildcontrol : {
       options : {
         dir     : 'doc',
@@ -79,10 +89,13 @@ module.exports = function (grunt) {
     }
   });
 
-  // Default task.
+  // Default task - lint and run the unit tests
   grunt.registerTask('default', ['jshint', 'nodeunit']);
 
   // Build documentation
   grunt.registerTask('doc', ['jshint', 'yuidoc']);
+
+  // Test
+  grunt.registerTask('test', ['doc', 'istanbul']);
 
 };
