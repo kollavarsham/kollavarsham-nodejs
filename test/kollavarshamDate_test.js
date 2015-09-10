@@ -30,9 +30,20 @@
  test.ifError(value)
  */
 
-exports.kollavarsham = {
+var KollavarshamDate = require('../lib/date').KollavarshamDate;
+
+exports.kollavarshamDate = {
   setUp : function (done) {
     // setup here
     done();
+  },
+  'empty constructor' : function (test) {
+    var date = new KollavarshamDate();
+    test.expect(4);
+    test.equal(date.day, 1);
+    test.equal(date.month, 1);
+    test.equal(date.year, 1);
+    test.equal(date.toString(), '0001 01 01');
+    test.done();
   }
 };

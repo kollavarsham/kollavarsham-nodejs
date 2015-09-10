@@ -12,7 +12,7 @@ var JulianDate = require('../lib/date').JulianDate;
 
 var julianDate = new JulianDate(2013, 12, 31); // Not perhaps a valid Julian Date
 
-exports.geolocation = {
+exports.julianDate = {
   setUp         : function (done) {
     // setup here
     done();

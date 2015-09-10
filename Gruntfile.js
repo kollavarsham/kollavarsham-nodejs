@@ -32,7 +32,7 @@ module.exports = function (grunt) {
         src : 'Gruntfile.js'
       },
       lib       : {
-        src : ['cli.js', 'lib/**/*.js']
+        src : ['lib/**/*.js']
       },
       test      : {
         src : ['test/**/*.js']
@@ -45,11 +45,11 @@ module.exports = function (grunt) {
       },
       lib       : {
         files : '<%= jshint.lib.src %>',
-        tasks : ['jshint:lib', 'nodeunit']
+        tasks : ['jshint:lib', 'istanbul']
       },
       test      : {
         files : '<%= jshint.test.src %>',
-        tasks : ['jshint:test', 'nodeunit']
+        tasks : ['jshint:test', 'istanbul']
       }
     },
     yuidoc       : {
@@ -90,7 +90,7 @@ module.exports = function (grunt) {
   });
 
   // Default task - lint and run the unit tests
-  grunt.registerTask('default', ['jshint', 'nodeunit']);
+  grunt.registerTask('default', ['jshint', 'nodeunit', 'watch']);
 
   // Build documentation
   grunt.registerTask('doc', ['jshint', 'yuidoc']);

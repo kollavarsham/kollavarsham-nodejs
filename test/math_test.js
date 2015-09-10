@@ -11,10 +11,10 @@
 var math = require('../lib/math');
 
 exports.math = {
-  setUp              : function (done) {
+  setUp                : function (done) {
     done();
   },
-  'isNumber'         : function (test) {
+  'isNumber'           : function (test) {
     test.expect(8);
     test.equal(math.isNumber(0), true);
     test.equal(math.isNumber(0.1), true);
@@ -26,7 +26,7 @@ exports.math = {
     test.equal(math.isNumber('A quick brown fox'), false);
     test.done();
   },
-  'isInt'            : function (test) {
+  'isInt'              : function (test) {
     test.expect(8);
     test.equal(math.isInt(0), true);
     test.equal(math.isInt(0.1), false);
@@ -38,7 +38,7 @@ exports.math = {
     test.equal(math.isInt('A quick brown fox'), false);
     test.done();
   },
-  'truncateDecimals' : function (test) {
+  'truncateDecimals'   : function (test) {
     test.expect(8);
     test.equal(math.truncateDecimals(0, 0), 0);
     test.equal(math.truncateDecimals(0, 2), 0);
@@ -50,7 +50,7 @@ exports.math = {
     test.equal(math.truncateDecimals('456.999', 0), 456);
     test.done();
   },
-  'truncate'         : function (test) {
+  'truncate'           : function (test) {
     test.expect(9);
     test.equal(math.truncate(0.2345), 0);
     test.equal(math.truncate(0.2385), 0);
@@ -63,7 +63,7 @@ exports.math = {
     test.equal(math.truncate('-123456'), -123456);
     test.done();
   },
-  'floor'            : function (test) {
+  'floor'              : function (test) {
     test.expect(10);
     test.equal(math.floor(0.2345), 0);
     test.equal(math.floor(-0.2385), -1);
@@ -77,7 +77,7 @@ exports.math = {
     test.equal(math.floor(42.00001), 42);
     test.done();
   },
-  'fractional'       : function (test) {
+  'fractional'         : function (test) {
     test.expect(10);
     test.ok(math.floatingPointEqual(math.fractional(0.2345), 0.2345));
     test.ok(math.floatingPointEqual(math.fractional(-0.2385), -0.2385));
@@ -91,7 +91,7 @@ exports.math = {
     test.ok(math.floatingPointEqual(math.fractional(42.00001), 0.00001));
     test.done();
   },
-  'round'            : function (test) {
+  'round'              : function (test) {
     test.expect(11);
     test.equal(math.round(0.2345), 0);
     test.equal(math.round(-0.2385), 0);
@@ -106,7 +106,7 @@ exports.math = {
     test.equal(math.round(42.00001), 42);
     test.done();
   },
-  'square'           : function (test) {
+  'square'             : function (test) {
     test.expect(11);
     test.ok(math.floatingPointEqual(math.square(0.2345), 0.05499025));
     test.ok(math.floatingPointEqual(math.square(-0.2385), 0.05688225));
@@ -119,6 +119,11 @@ exports.math = {
     test.ok(math.floatingPointEqual(math.square(42.00001), 1764.0008400001));
     test.ok(math.floatingPointEqual(math.square(5), 25));
     test.ok(math.floatingPointEqual(math.square(9), 81));
+    test.done();
+  },
+  'floatingPointEqual' : function (test) {
+    test.expect(1);
+    test.equal(math.floatingPointEqual(1, 0), false);
     test.done();
   }
 };

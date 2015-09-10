@@ -25,13 +25,60 @@ var runCalculationsWithADate = function () {
 };
 
 exports.celestial = {
-  setUp              : function (done) {
+  setUp                               : function (done) {
     celestial.setPrimaryConstants(settings);
     celestial.setSecondaryConstants();
     celestial.setPlanetaryConstants();
     done();
   },
-  'zero360'          : function (test) {
+  'default YugaRotation' : function (test) {
+    test.expect(10);
+    var yugaRotation = celestial.YugaRotation;
+    test.equal(yugaRotation.star, 1582237800);
+    test.equal(yugaRotation.sun, 4320000);
+    test.equal(yugaRotation.moon, 57753336);
+    test.equal(yugaRotation.mercury, 17937000);
+    test.equal(yugaRotation.venus, 7022388);
+    test.equal(yugaRotation.mars, 2296824);
+    test.equal(yugaRotation.jupiter, 364220);
+    test.equal(yugaRotation.saturn, 146564);
+    test.equal(yugaRotation.Candrocca, 488219);
+    test.equal(yugaRotation.Rahu, -232226);
+    test.done();
+  },
+  'setPrimaryConstantsSuryaSiddhanta' : function (test) {
+    test.expect(10);
+    celestial.setPrimaryConstantsSuryaSiddhanta();
+    var yugaRotation = celestial.YugaRotation;
+    test.equal(yugaRotation.star, 1582237828);
+    test.equal(yugaRotation.sun, 4320000);
+    test.equal(yugaRotation.moon, 57753336);
+    test.equal(yugaRotation.mercury, 17937060);
+    test.equal(yugaRotation.venus, 7022376);
+    test.equal(yugaRotation.mars, 2296832);
+    test.equal(yugaRotation.jupiter, 364220);
+    test.equal(yugaRotation.saturn, 146568);
+    test.equal(yugaRotation.Candrocca, 488203);
+    test.equal(yugaRotation.Rahu, -232238) ;
+    test.done();
+  },
+  'setPrimaryConstantsInPancasiddhantika' : function (test) {
+    test.expect(10);
+    celestial.setPrimaryConstantsInPancasiddhantika();
+    var yugaRotation = celestial.YugaRotation;
+    test.equal(yugaRotation.star, 1582237800);
+    test.equal(yugaRotation.sun, 4320000);
+    test.equal(yugaRotation.moon, 57753336);
+    test.equal(yugaRotation.mercury, 17937000);
+    test.equal(yugaRotation.venus, 7022388);
+    test.equal(yugaRotation.mars, 2296824);
+    test.equal(yugaRotation.jupiter, 364220);
+    test.equal(yugaRotation.saturn, 146564);
+    test.equal(yugaRotation.Candrocca, 488219);
+    test.equal(yugaRotation.Rahu, -232226);
+    test.done();
+  },
+  'zero360'                           : function (test) {
     test.expect(5);
     test.equal(celestial.zero360(75.2), 75.2);
     test.equal(celestial.zero360(-75.2), 284.8);
@@ -40,7 +87,7 @@ exports.celestial = {
     test.equal(celestial.zero360(0.234), 0.234);
     test.done();
   },
-  'threeRelation'    : function (test) {
+  'threeRelation'                     : function (test) {
     test.expect(4);
     test.equal(celestial.threeRelation(-1, 1, 3), 1);
     test.equal(celestial.threeRelation(1, -1, -3), -1);
@@ -48,7 +95,7 @@ exports.celestial = {
     test.equal(celestial.threeRelation(1, 5, -3), 0); //invalid scenario
     test.done();
   },
-  'getTithi'         : function (test) {
+  'getTithi'                          : function (test) {
     test.expect(6);
     test.ok(math.floatingPointEqual(celestial.getTithi(37.5275236212135, 294.989551683806), 8.54483099478396));
     test.ok(math.floatingPointEqual(celestial.getTithi(45.9229472947752, 333.593757395798), 6.02743249158144));
@@ -58,7 +105,7 @@ exports.celestial = {
     test.ok(math.floatingPointEqual(celestial.getTithi(302.3068304585275, 56.597297524597), 20.4757944111609));
     test.done();
   },
-  'getMandaEquation' : function (test) {
+  'getMandaEquation'                  : function (test) {
     test.expect(44);
     test.ok(math.floatingPointEqual(celestial.getMandaEquation(216.448410870245, 'sun'), -1.30810722363905));
     test.ok(math.floatingPointEqual(celestial.getMandaEquation(-72.3184309200178, 'moon'), -4.83281883352571));
@@ -106,7 +153,7 @@ exports.celestial = {
     test.ok(math.floatingPointEqual(celestial.getMandaEquation(-40.2050617905807, 'saturn'), -4.98912071710793));
     test.done();
   },
-  'declination'      : function (test) {
+  'declination'                       : function (test) {
     test.expect(7);
     test.ok(math.floatingPointEqual(celestial.declination(31.3101877453024), 12.2026059914001));
     test.ok(math.floatingPointEqual(celestial.declination(42.2597957259723), 15.8742931864835));
@@ -117,7 +164,7 @@ exports.celestial = {
     test.ok(math.floatingPointEqual(celestial.declination(320.8687779979979), -14.8738036439391));
     test.done();
   },
-  'getTllong'        : function (test) {
+  'getTllong'                         : function (test) {
     test.expect(14);
     test.ok(math.floatingPointEqual(celestial.getTrueLunarLongitude(2299158.5), 167.084587116821));
     test.ok(math.floatingPointEqual(celestial.getTrueLunarLongitude(2299159.5), 179.618866280373));
@@ -135,7 +182,7 @@ exports.celestial = {
     test.ok(math.floatingPointEqual(celestial.getTrueLunarLongitude(2433313.5), 236.806759936797));
     test.done();
   },
-  'getTslong'        : function (test) {
+  'getTslong'                         : function (test) {
     test.expect(14);
     test.ok(math.floatingPointEqual(celestial.getTrueSolarLongitude(2299158.5), 215.330481398828));
     test.ok(math.floatingPointEqual(celestial.getTrueSolarLongitude(2299159.5), 216.345092245966));
@@ -153,7 +200,7 @@ exports.celestial = {
     test.ok(math.floatingPointEqual(celestial.getTrueSolarLongitude(2433313.5), 322.249740952942));
     test.done();
   },
-  'getMeanLongitude' : function (test) {
+  'getMeanLongitude'                  : function (test) {
     test.expect();
     test.ok(math.floatingPointEqual(celestial.getMeanLongitude(1868236.15634155, 4320000), 298.54776362783));
     test.ok(math.floatingPointEqual(celestial.getMeanLongitude(1868236.15637207, 4320000), 298.547793708385));
@@ -171,7 +218,7 @@ exports.celestial = {
     test.ok(math.floatingPointEqual(celestial.getMeanLongitude(1868236.15636253, 4320000), 298.54778430592));
     test.done();
   },
-  'getTrueLongitude' : function (test) {
+  'getTrueLongitude'                  : function (test) {
     runCalculationsWithADate();
     test.expect(70);
     test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1710693, 215.330481398828, 'mercury'), 290.256193246842));
@@ -246,7 +293,7 @@ exports.celestial = {
     test.ok(math.floatingPointEqual(celestial.getTrueLongitude(1844848, 322.249740952942, 'saturn'), 202.010337361371));
     test.done();
   },
-  'getElong'         : function (test) {
+  'getElong'                          : function (test) {
     test.expect(70);
     test.ok(math.floatingPointEqual(celestial.getElong(1710693), 168.08719102714));
     test.ok(math.floatingPointEqual(celestial.getElong(1710694), 154.755365716082));
@@ -320,7 +367,7 @@ exports.celestial = {
     test.ok(math.floatingPointEqual(celestial.getElong(1844848), 154.486799638547));
     test.done();
   },
-  'getConjunction'   : function (test) {
+  'getConjunction'                    : function (test) {
     test.expect(70);
     test.ok(math.floatingPointEqual(celestial.getConjunction(1710693), 195.220929584348));
     test.ok(math.floatingPointEqual(celestial.getConjunction(1710694), 195.220929584348));
