@@ -9,7 +9,8 @@
 'use strict';
 
 var calculations = require('../lib/calculations');
-var celestial = require('../lib/celestial/index');
+var Celestial = require('../lib/celestial/index');
+var celestial;
 var calendar = require('../lib/calendar');
 var math = require('../lib/math');
 
@@ -25,7 +26,7 @@ var runCalculationsWithADate = function () {
 
 exports.celestial = {
   setUp                                   : function (done) {
-    celestial.setPrimaryConstants(settings);
+    celestial = new Celestial(settings);
     done();
   },
   'threeRelation'                         : function (test) {

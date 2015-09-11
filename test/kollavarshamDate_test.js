@@ -32,6 +32,7 @@
 
 var Kollavarsham = require('../lib/kollavarsham');
 var KollavarshamDate = Kollavarsham.kollavarshamDate;
+var JulianDate = require('../lib/date').JulianDate;
 
 exports.kollavarshamDate = {
   setUp                       : function (done) {
@@ -188,7 +189,7 @@ exports.kollavarshamDate = {
     }, Error, 'When the API is implemented, will convert DUMMY KOLLAVARSHAM DATE');
     test.done();
   },
-  'toGregorianDateFromSaka'   : function (test) {
+  'toGregorianDateFromSaka 01'   : function (test) {
     var kollavarsham = new Kollavarsham();
     var hinduDate = {
       yearSaka : 1937,
@@ -201,9 +202,49 @@ exports.kollavarshamDate = {
     test.equal(date.gregorianDate.getFullYear(), 2015);
     test.equal(date.gregorianDate.getMonth(), 8);
     test.equal(date.gregorianDate.getDate(), 10);
+
     test.equal(date.julianDay, 2457276);
     test.equal(date.weekdayName, 'Thursday');
     test.equal(date.ahargana, 1868810);
+    test.done();
+  },
+  'toGregorianDateFromSaka 02'   : function (test) {
+    var kollavarsham = new Kollavarsham();
+    var hinduDate = {
+      yearSaka : 1937,
+      masaNum  : 4,
+      paksa    : 'Suklapaksa',
+      tithiDay : 12
+    };
+    var date = kollavarsham.toGregorianDateFromSaka(hinduDate);
+    test.expect(6);
+    test.equal(date.gregorianDate.getFullYear(), 2015);
+    test.equal(date.gregorianDate.getMonth(), 7);
+    test.equal(date.gregorianDate.getDate(), 26);
+
+    test.equal(date.julianDay, 2457261);
+    test.equal(date.weekdayName, 'Wednesday');
+    test.equal(date.ahargana, 1868795);
+    test.done();
+  },
+  'toGregorianDateFromSaka 03'   : function (test) {
+    var kollavarsham = new Kollavarsham();
+    var hinduDate = {
+      yearSaka : 1437,
+      masaNum  : 4,
+      paksa    : 'Suklapaksa',
+      tithiDay : 12
+    };
+    var date = kollavarsham.toGregorianDateFromSaka(hinduDate);
+    test.expect(7);
+    test.ok(JulianDate.prototype.isPrototypeOf(date.gregorianDate));
+    test.equal(date.gregorianDate.year, 1515);
+    test.equal(date.gregorianDate.month, 7);
+    test.equal(date.gregorianDate.day, 23);
+
+    test.equal(date.julianDay, 2274615);
+    test.equal(date.weekdayName, 'Monday');
+    test.equal(date.ahargana, 1686149);
     test.done();
   }
 };
