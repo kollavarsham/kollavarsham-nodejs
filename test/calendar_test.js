@@ -8,9 +8,10 @@
 
 'use strict';
 
-var calendar = require('../lib/calendar');
 var Celestial = require('../lib/celestial');
 var celestial;
+var Calendar = require('../lib/calendar');
+var calendar;
 var math = require('../lib/math');
 
 var settings = {
@@ -28,7 +29,7 @@ function cmpDates(date1, date2) {
 exports.calendar = {
   setUp                          : function (done) {
     celestial = new Celestial(settings);
-    calendar.initialize(settings);
+    calendar = new Calendar(settings);
     done();
   },
   'nextDate'                     : function (test) {
