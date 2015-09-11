@@ -49,7 +49,7 @@
             "namespaces": {},
             "tag": "module",
             "file": "lib/date.js",
-            "line": 58,
+            "line": 59,
             "description": "Defines the KollavarshamDate and JulianDate classes"
         },
         "kollavarsham": {
@@ -111,7 +111,7 @@
             "module": "date",
             "namespace": "",
             "file": "lib/date.js",
-            "line": 58,
+            "line": 59,
             "params": [
                 {
                     "name": "year",
@@ -227,7 +227,7 @@
         },
         {
             "file": "lib/date.js",
-            "line": 44,
+            "line": 45,
             "description": "Converts the Julian Date to a nicely formatted string with year, month and date",
             "itemtype": "method",
             "name": "toString",
@@ -240,13 +240,13 @@
         },
         {
             "file": "lib/date.js",
-            "line": 56,
+            "line": 57,
             "class": "JulianDate",
             "module": "date"
         },
         {
             "file": "lib/date.js",
-            "line": 80,
+            "line": 81,
             "description": "Converts the Kollavarsham Date to a nicely formatted string with year, month and date",
             "itemtype": "method",
             "name": "toString",
@@ -435,7 +435,7 @@
         },
         {
             "message": "Missing item type",
-            "line": " lib/date.js:56"
+            "line": " lib/date.js:57"
         }
     ]
 }
