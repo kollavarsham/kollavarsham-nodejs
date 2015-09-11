@@ -125,5 +125,14 @@ exports.math = {
     test.expect(1);
     test.equal(math.floatingPointEqual(1, 0), false);
     test.done();
+  },
+  'zero360'            : function (test) {
+    test.expect(5);
+    test.equal(math.zero360(75.2), 75.2);
+    test.equal(math.zero360(-75.2), 284.8);
+    test.equal(math.zero360(370), 10);
+    test.equal(math.zero360(0), 0);
+    test.equal(math.zero360(0.234), 0.234);
+    test.done();
   }
 };
