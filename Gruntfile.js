@@ -89,6 +89,7 @@ module.exports = function (grunt) {
     }
   });
 
+  // TODO: We should move away from nodeunit!!!
   // Default task - lint and run the unit tests
   grunt.registerTask('default', ['jshint', 'nodeunit', 'watch']);
 

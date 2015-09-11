@@ -9,8 +9,8 @@
 'use strict';
 
 var calculations = require('../lib/calculations');
+var celestial = require('../lib/celestial/index');
 var calendar = require('../lib/calendar');
-var celestial = require('../lib/celestial');
 var math = require('../lib/math');
 
 var settings = {
@@ -27,72 +27,7 @@ var runCalculationsWithADate = function () {
 exports.celestial = {
   setUp                                   : function (done) {
     celestial.setPrimaryConstants(settings);
-    celestial.setSecondaryConstants();
-    celestial.setPlanetaryConstants();
     done();
-  },
-  'default'                               : function (test) {
-    test.expect(10);
-    var yugaRotation = celestial.YugaRotation;
-    test.equal(yugaRotation.star, 1582237800);
-    test.equal(yugaRotation.sun, 4320000);
-    test.equal(yugaRotation.moon, 57753336);
-    test.equal(yugaRotation.mercury, 17937000);
-    test.equal(yugaRotation.venus, 7022388);
-    test.equal(yugaRotation.mars, 2296824);
-    test.equal(yugaRotation.jupiter, 364220);
-    test.equal(yugaRotation.saturn, 146564);
-    test.equal(yugaRotation.Candrocca, 488219);
-    test.equal(yugaRotation.Rahu, -232226);
-    test.done();
-  },
-  'dummy'                                 : function (test) {
-    test.expect(10);
-    celestial.setPrimaryConstants({system : 'DUMMY'});
-    var yugaRotation = celestial.YugaRotation;
-    test.equal(yugaRotation.star, 1582237828);
-    test.equal(yugaRotation.sun, 4320000);
-    test.equal(yugaRotation.moon, 57753336);
-    test.equal(yugaRotation.mercury, 17937060);
-    test.equal(yugaRotation.venus, 7022376);
-    test.equal(yugaRotation.mars, 2296832);
-    test.equal(yugaRotation.jupiter, 364220);
-    test.equal(yugaRotation.saturn, 146568);
-    test.equal(yugaRotation.Candrocca, 488203);
-    test.equal(yugaRotation.Rahu, -232238);
-    test.done();
-  },
-  'setPrimaryConstantsSuryaSiddhanta'     : function (test) {
-    test.expect(10);
-    celestial.setPrimaryConstantsSuryaSiddhanta();
-    var yugaRotation = celestial.YugaRotation;
-    test.equal(yugaRotation.star, 1582237828);
-    test.equal(yugaRotation.sun, 4320000);
-    test.equal(yugaRotation.moon, 57753336);
-    test.equal(yugaRotation.mercury, 17937060);
-    test.equal(yugaRotation.venus, 7022376);
-    test.equal(yugaRotation.mars, 2296832);
-    test.equal(yugaRotation.jupiter, 364220);
-    test.equal(yugaRotation.saturn, 146568);
-    test.equal(yugaRotation.Candrocca, 488203);
-    test.equal(yugaRotation.Rahu, -232238);
-    test.done();
-  },
-  'setPrimaryConstantsInPancasiddhantika' : function (test) {
-    test.expect(10);
-    celestial.setPrimaryConstantsInPancasiddhantika();
-    var yugaRotation = celestial.YugaRotation;
-    test.equal(yugaRotation.star, 1582237800);
-    test.equal(yugaRotation.sun, 4320000);
-    test.equal(yugaRotation.moon, 57753336);
-    test.equal(yugaRotation.mercury, 17937000);
-    test.equal(yugaRotation.venus, 7022388);
-    test.equal(yugaRotation.mars, 2296824);
-    test.equal(yugaRotation.jupiter, 364220);
-    test.equal(yugaRotation.saturn, 146564);
-    test.equal(yugaRotation.Candrocca, 488219);
-    test.equal(yugaRotation.Rahu, -232226);
-    test.done();
   },
   'zero360'                               : function (test) {
     test.expect(5);
@@ -217,7 +152,7 @@ exports.celestial = {
     test.done();
   },
   'getMeanLongitude'                      : function (test) {
-    test.expect();
+    test.expect(14);
     test.ok(math.floatingPointEqual(celestial.getMeanLongitude(1868236.15634155, 4320000), 298.54776362783));
     test.ok(math.floatingPointEqual(celestial.getMeanLongitude(1868236.15637207, 4320000), 298.547793708385));
     test.ok(math.floatingPointEqual(celestial.getMeanLongitude(1868236.15635681, 4320000), 298.547778668108));

@@ -13,7 +13,6 @@ var celestial = require('../lib/celestial');
 var math = require('../lib/math');
 
 var settings = {
-  system       : 'InPancasiddhantika',
   latitude     : 23.2,
   longitude    : 75.8,
   outputformat : 'verbose'
@@ -28,8 +27,6 @@ function cmpDates(date1, date2) {
 exports.calendar = {
   setUp                          : function (done) {
     celestial.setPrimaryConstants(settings);
-    celestial.setSecondaryConstants();
-    celestial.setPlanetaryConstants();
     done();
   },
   'nextDate'                     : function (test) {
