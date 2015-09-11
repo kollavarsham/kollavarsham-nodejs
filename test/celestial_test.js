@@ -14,7 +14,6 @@ var calendar = require('../lib/calendar');
 var math = require('../lib/math');
 
 var settings = {
-  system       : 'InPancasiddhantika',
   latitude     : 23.2,
   longitude    : 75.8,
   outputformat : 'verbose'

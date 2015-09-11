@@ -65,9 +65,9 @@ exports.kollavarshamDate = {
     test.equal(malayalamDate.calendarData.mlMalayalaMasa, 'ഇടവം');
     test.equal(malayalamDate.calendarData.malayalaMasaNum, 9);
     test.equal(malayalamDate.calendarData.tithiDay, 11);
-    test.equal(malayalamDate.calendarData.ftithi, 0.79252347902327);
+    test.equal(malayalamDate.calendarData.ftithi, 0.7870052988803486);
     test.equal(malayalamDate.calendarData.sunriseTime.hour, 5);
-    test.equal(malayalamDate.calendarData.sunriseTime.minute, 24);
+    test.equal(malayalamDate.calendarData.sunriseTime.minute, 23);
     test.equal(malayalamDate.calendarData.adhimasa, '');
     test.equal(malayalamDate.calendarData.masa, 'Vaisakha  ');
     test.equal(malayalamDate.calendarData.naksatra, 'U-bhadrapada');
@@ -97,7 +97,7 @@ exports.kollavarshamDate = {
     test.equal(malayalamDate.calendarData.mlMalayalaMasa, 'ചിങ്ങം');
     test.equal(malayalamDate.calendarData.malayalaMasaNum, 0);
     test.equal(malayalamDate.calendarData.tithiDay, 15);
-    test.equal(malayalamDate.calendarData.ftithi, 0.9017860253741361);
+    test.equal(malayalamDate.calendarData.ftithi, 0.8896846200537567);
     test.equal(malayalamDate.calendarData.sunriseTime.hour, 5);
     test.equal(malayalamDate.calendarData.sunriseTime.minute, 48);
     test.equal(malayalamDate.calendarData.adhimasa, '');
@@ -129,7 +129,7 @@ exports.kollavarshamDate = {
     test.equal(malayalamDate.calendarData.mlMalayalaMasa, 'കന്നി');
     test.equal(malayalamDate.calendarData.malayalaMasaNum, 1);
     test.equal(malayalamDate.calendarData.tithiDay, 14);
-    test.equal(malayalamDate.calendarData.ftithi, 0.8946591975922775);
+    test.equal(malayalamDate.calendarData.ftithi, 0.9732245662921084);
     test.equal(malayalamDate.calendarData.sunriseTime.hour, 5);
     test.equal(malayalamDate.calendarData.sunriseTime.minute, 58);
     test.equal(malayalamDate.calendarData.adhimasa, '');
