@@ -29,19 +29,6 @@ var today = kollavarsham.toGregorianDate(todayInMalayalamEra);
 ## Documentation
 Click [here](http://kollavarsham.org/kollavarsham-nodejs) to visit the API Documentation
 
-## Examples
-To convert Modern Date to Kollavarsham Date for Location (100 deg east, 90 deg north using 'InPancasiddhantika' system and list output:
-
-```
-kollavarsham -s 'InPancasiddhantika' -t 90 -g 100 -m 0 -o list 23:08:2008
-```
-
-To convert Modern Date to with default settings (Location: Ujjain):
-
-```
-kollavarsham 04:04:2011
-```
-
 ## CLI app
 
 Check out the [cli](https://www.npmjs.com/package/kollavarsham-cli) module ([GitHub repo](https://github.com/kollavarsham/cli)) for the `kollavarsham` cross-platform CLI app 
