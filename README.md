@@ -4,6 +4,8 @@
 
 Convert Gregorian date to Kollavarsham date and vice versa
 
+**__UPDATE (9/16/2015)__**: This ES5 version of the library has been ported into an ES2015/ES6 version that is transcompiled by [Babel](http://babeljs.io/) at https://github.com/kollavarsham/kollavarsham-js. The core npm package will be published from that repo from here onwards.
+
 ## Getting Started
 Install the module with: `npm install kollavarsham`
 
